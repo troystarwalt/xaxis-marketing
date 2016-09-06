@@ -1,0 +1,16 @@
+%nav.navbar.navbar-light.bg-faded
+  %a.navbar-brand{:href => "#"} Navbar
+  %ul.nav.navbar-nav
+    %li.nav-item.active
+      %a.nav-link{:href => "#"}
+        Home
+        %span.sr-only (current)
+    %li.nav-item
+      %a.nav-link{:href => "#"} Features
+    %li.nav-item
+      %a.nav-link{:href => "#"} Pricing
+    %li.nav-item
+      %a.nav-link{:href => "#"} About
+  %form.form-inline.pull-xs-right
+    %input.form-control{:placeholder => "Search", :type => "text"}/
+    %button.btn.btn-outline-success{:type => "submit"} Search
