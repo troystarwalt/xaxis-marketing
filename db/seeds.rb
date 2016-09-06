@@ -7,11 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  Update.create(
+  tags = ["Announcement", "Event", "News"]
+  Post.create(
     title: Faker::Book.title,
     text: Faker::ChuckNorris.fact,
     author: Faker::GameOfThrones.character
-  )
+  ).tap do |post|
+    post.tag_list.add tags.sample
+    post.save
+  end
 end
 
-puts "Updates created"
+puts "posts created"

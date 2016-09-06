@@ -1,0 +1,12 @@
+.row
+  .col-md-6.col-sm-12.hidden-xs-down
+    %span
+      %i.fa.fa-car.fa-4x
+      NEWS
+    %h2= @news_posts.last.title
+    %img{src: "http://placehold.it/350x200", class: "img-fluid"}
+    %p= @news_posts.last.text
+  .col-md-6
+    - @news_posts.each do |news|
+      %h1= news.title
+      %p= news.text

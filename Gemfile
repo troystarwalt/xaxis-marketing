@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+
+gem 'acts-as-taggable-on'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'

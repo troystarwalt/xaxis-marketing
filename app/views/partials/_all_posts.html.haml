@@ -1,0 +1,6 @@
+- @posts.each do |f|
+  %h1= f.title
+  %p= f.text
+  %p
+    Tags:
+    = raw f.tag_list.map { |t| link_to t, tag_path(t.downcase) }.join(', ')

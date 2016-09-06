@@ -1,0 +1,16 @@
+.post-form
+  %h1 New post
+  = form_for @post do |f|
+    #errors
+      = render partial: 'posts/errors', locals: {post: @post}
+    .form-group
+      = f.label :title
+      = f.text_field :title
+    .form-group
+      = f.label :text
+      = f.text_area :text
+    .form-group
+      = f.label :tag_list, "Category"
+      = f.select :tag_list, options_for_select(["Announcement", "Event", "News"], "Select One")
+    .form-group
+      = f.submit :"Post post", class: 'btn btn-primary'
