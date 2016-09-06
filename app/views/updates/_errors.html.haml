@@ -1,0 +1,5 @@
+- if update.errors.any?
+  #error_explanation
+    %ul
+      - update.errors.full_messages.each do |msg|
+        %li= msg

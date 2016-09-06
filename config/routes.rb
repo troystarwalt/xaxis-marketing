@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get 'updates/index' => 'updates#index'
 
-  get 'updates/new' => 'updates#new'
-
-  get 'updates/create' => 'updates#create'
-
-  get 'updates/destroy' => 'updates#destroy'
+  resources :updates
 
   root :to => 'updates#main'
 
