@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
+gem 'activeadmin', github: 'activeadmin'
 gem 'acts-as-taggable-on'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
-gem "font-awesome-rails"
+gem 'devise'
+gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'haml'
+#required for latest activeadmin.
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg'
