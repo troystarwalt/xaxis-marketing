@@ -11,6 +11,6 @@
       = f.text_area :text
     .form-group
       = f.label :tag_list, "Category"
-      = f.select :tag_list, options_for_select(["Announcement", "Event", "News"], "Select One")
+      = f.select :tag_list, options_for_select(Post.valid_tags, "Select One")
     .form-group
       = f.submit :"Post post", class: 'btn btn-primary'
