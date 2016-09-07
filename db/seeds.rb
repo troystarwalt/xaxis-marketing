@@ -13,10 +13,11 @@
     text: Faker::ChuckNorris.fact,
     author: Faker::GameOfThrones.character
   ).tap do |post|
-    post.tag_list.add tags.sample
+    post.tag_list.add Post.valid_tags.sample
     post.save
   end
 end
 
 puts "posts created"
+AdminUser.destroy_all
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
