@@ -1,24 +1,18 @@
-# README
+# Xaxis Internal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Internal runs on:
 
-Things you may want to cover:
+```
+Ruby Version (ruby 2.3.1-p112)
+Rails Versions (5.0)
+Bootstrap 4
+```
 
-* Ruby version
+Simple Start
+```
+git clone git@github.com:Xaxis-Marketing/internal.git  (SSH)
+cd
+rails s
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Site uses Acts-As-Taggable-On for easy tagging.
