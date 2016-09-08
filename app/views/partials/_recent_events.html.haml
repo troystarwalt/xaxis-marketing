@@ -1,3 +1,7 @@
-- @event_posts.each do |events|
-  %h1= events.title
-  %p= events.text
+#events-container.section-container
+  .section-name#events-section
+    %h1.header Events
+  .content-container#latest-events
+    - @event_posts.each do |events|
+      %h1.content-header= events.title
+      %p.content-text= events.text
