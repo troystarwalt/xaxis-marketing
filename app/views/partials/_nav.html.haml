@@ -1,16 +1,10 @@
-%nav.navbar.navbar-light.bg-faded
-  %a.navbar-brand{:href => root_path } Navbar
-  %ul.nav.navbar-nav
-    %li.nav-item.active
-      %a.nav-link{:href => "#"}
-        Home
-        %span.sr-only (current)
-    %li.nav-item
-      %a.nav-link{:href => "#"} Features
-    %li.nav-item
-      %a.nav-link{:href => "#"} Pricing
-    %li.nav-item
-      %a.nav-link{:href => "#"} About
-  %form.form-inline.pull-xs-right
-    %input.form-control{:placeholder => "Search", :type => "text"}/
-    %button.btn.btn-outline-success{:type => "submit"} Search
+%nav.navbar.navbar-fixed-top.navbar-light.bgg-faded
+  .container
+    .nav.navbar-nav
+      =link_to root_path, class: "navbar-brand" do
+        =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), id: "navbar-logo"
+      =link_to "Assets", "###", class: "nav-item nav-link"
+      =link_to "News", "###", class: "nav-item nav-link"
+      =link_to "Products", "###", class: "nav-item nav-link"
+      =link_to "###", id: "search-button", class: "nav-item nav-link pull-lg-right" do
+        %span.fa.fa-search
