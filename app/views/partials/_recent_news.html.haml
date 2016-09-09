@@ -4,14 +4,20 @@
   .content-container#latest-news
     .row
       .col-md-6.col-sm-12.hidden-xs-down
-        %span
-          %i.fa.fa-car.fa-4x
-          NEWS
-        %h1.content-header= @news_posts.last.title
-        %img{src: "http://placehold.it/350x200", class: "img-fluid"}
-        %p.content-text= @news_posts.last.text
+        #currently_selected_event_container
+          .icon-info.row
+            .col-md-4
+              %i.fa.fa-car.fa-4x
+            .col-md-8
+              %p.content-text.content-text-sub.make_upcase
+                = @news_posts.last.tag_list
+                %br
+                = @news_posts.last.pretty_date
+          %h1.content-header= @news_posts.last.title
+          %img{src: "http://placehold.it/350x200", class: "img-fluid"}
+          %p.content-text= @news_posts.last.text
       .col-md-6
         - @news_posts.each do |news|
-          %h1.content-header= news.title
-          %p.content-text= news.text
-          %hr
+          .single-news-container
+            %h1.content-header= news.title
+            %p.content-text= news.text
