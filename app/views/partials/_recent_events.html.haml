@@ -2,6 +2,17 @@
   .section-name#events-section
     %h1.header Events
   .content-container#latest-events
-    - @event_posts.each do |events|
-      %h1.content-header= events.title
-      %p.content-text= events.text
+    %img{src: "http://placehold.it/350x200", class: "img-fluid"}
+    %p.make_upcase.content-text.content-text-sub
+      %span= @event_posts.last.tag_list
+      %span.vertical-bar|
+      %span= @event_posts.last.pretty_date
+    %h1.content-header= @event_posts.last.title
+    %p.content-text= @event_posts.last.text
+    - @event_posts_most_recent.each do |events|
+      .single-event-container
+        %p.make_upcase.content-text.content-text-sub
+          %span= events.tag_list
+          %span.vertical-bar|
+          %span= events.pretty_date
+        %h1.content-header= events.title

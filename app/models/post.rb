@@ -7,6 +7,10 @@ class Post < ApplicationRecord
     ["Announcement", "News", "Event", "Talent and Culture"]
   end
 
+  def pretty_date
+    created_at.to_date.strftime("%m\/\%d\/\%Y")
+  end
+
   private
 
   def tag_must_be_approved
