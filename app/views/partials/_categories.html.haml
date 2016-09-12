@@ -1,0 +1,9 @@
+#category-container.section-container
+  .section-name#categories-section
+    %h1.header.text-uppercase Categories
+  %ul.single-category-container.list-group
+    - @tags.each do |tag|
+      = link_to tag_path(tag.name) do
+        %li.list-group-item.content-text
+          = tag.name
+          %span.tag.tag-default.tag-pill.pull-xs-right= tag.taggings_count

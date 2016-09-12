@@ -1,9 +1,14 @@
 #main-page
-  %img.img-fluid(src= "http://placehold.it/1900x600")
+  %img.img-fluid(src= "http://placehold.it/1920x600")
   .container#main-content
     .row
-      .col-md-8
+      .col-md-9
         = render partial: "partials/recent_news"
-      .col-md-4
+      .col-md-3
         = render partial: "partials/recent_events"
+    .row
+      .col-md-9
+        = render partial: "partials/recent_announcements"
+      .col-md-3
+        = render partial: "partials/categories"
     = link_to "See All Updates", posts_path
