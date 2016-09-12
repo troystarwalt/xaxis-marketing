@@ -1,9 +1,9 @@
 #events-container.section-container
   .section-name#events-section
-    %h1.header Events
+    %h1.header.text-uppercase Events
   .content-container#latest-events
     %img{src: "http://placehold.it/350x200", class: "img-fluid"}
-    %p.make_upcase.content-text.content-text-sub
+    %p.text-uppercase.content-text.content-text-sub
       %span= @event_posts.last.tag_list
       %span.vertical-bar|
       %span= @event_posts.last.pretty_date
@@ -11,8 +11,11 @@
     %p.content-text= @event_posts.last.text
     - @event_posts_most_recent.each do |events|
       .single-event-container
-        %p.make_upcase.content-text.content-text-sub
+        %p.text-uppercase.content-text.content-text-sub
           %span= events.tag_list
           %span.vertical-bar|
           %span= events.pretty_date
         %h1.content-header= events.title
+  = link_to tag_path(:event), class: "text-uppercase content-text-sub pull-right" do
+    More Events
+    %i.fa.fa-angle-right.fa-lg

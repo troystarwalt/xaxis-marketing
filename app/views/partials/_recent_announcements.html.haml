@@ -1,0 +1,20 @@
+#announcements-container.section-container
+  .section-name#announcements-section
+    %h1.header.text-uppercase Announcements
+  - @announcement_posts.each do |announcement|
+    .single-announcement-container
+      .row
+        .col-md-3
+          .big_date
+            %h4= announcement.pretty_date
+            %p= announcement.pretty_date
+        .col-md-9
+          %p.text-uppercase.content-text.content-text-sub
+            %span= announcement.tag_list
+            %span.vertical-bar|
+            %span= announcement.pretty_date
+          %h1.content-header= announcement.title
+          %p.content-text= announcement.text
+  = link_to tag_path(:announcement), class: "text-uppercase content-text-sub pull-right" do
+    More Announcements
+    %i.fa.fa-angle-right.fa-lg

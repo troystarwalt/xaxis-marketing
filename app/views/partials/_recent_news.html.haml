@@ -1,6 +1,6 @@
 #news-container.section-container
   .section-name#news-section
-    %h1.header Latest News
+    %h1.header.text-uppercase Latest News
   .content-container#latest-news
     .row
       .col-md-6.col-sm-12.hidden-xs-down
@@ -9,7 +9,7 @@
             .col-md-4
               %i.fa.fa-car.fa-4x
             .col-md-8
-              %p.content-text.content-text-sub.make_upcase
+              %p.content-text.content-text-sub.text-uppercase
                 = @news_posts.last.tag_list
                 %br
                 = @news_posts.last.pretty_date

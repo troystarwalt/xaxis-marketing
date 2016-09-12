@@ -35,9 +35,10 @@ class PostsController < ApplicationController
   def main
     @posts = Post.all
     @news_posts = Post.tagged_with("News", :match_all => true).last(5)
-    @announcement_posts = Post.tagged_with("Announcement", :match_all => true).last(5)
+    @announcement_posts = Post.tagged_with("Announcement", :match_all => true).last(3)
     @event_posts = Post.tagged_with("Event", :match_all => true)
-    @event_posts_most_recent = @event_posts[2, 6]
+    @event_posts_most_recent = @event_posts[2, 4]
+    @tags = ActsAsTaggableOn::Tag.most_used
   end
 
   def post_params
