@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   acts_as_taggable
 
   def self.valid_tags
-    ["Announcement", "News", "Event", "Talent and Culture"]
+    ["Announcement", "News", "Event", "Talent & Culture"]
   end
 
   def pretty_date
@@ -19,6 +19,9 @@ class Post < ApplicationRecord
     created_at.to_date.strftime("%b, %Y")
   end
 
+  def teaser
+      text.truncate_words(15)
+  end
   private
 
   def tag_must_be_approved

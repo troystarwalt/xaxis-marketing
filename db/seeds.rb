@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do
-  tags = ["Announcement", "Event", "News"]
-  Post.create(
+Post.destroy_all
+
+50.times do
+  tags = Post.valid_tags
+  Post.create!(
     title: Faker::Book.title,
-    text: Faker::ChuckNorris.fact,
+    text: Faker::Lorem.paragraph(2),
     author: Faker::GameOfThrones.character
   ).tap do |post|
     post.tag_list.add Post.valid_tags.sample
