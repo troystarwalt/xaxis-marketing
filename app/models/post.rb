@@ -11,6 +11,14 @@ class Post < ApplicationRecord
     created_at.to_date.strftime("%m\/\%d\/\%Y")
   end
 
+  def day_only
+    created_at.to_date.strftime("%m")
+  end
+
+  def month_year_only
+    created_at.to_date.strftime("%b, %Y")
+  end
+
   private
 
   def tag_must_be_approved

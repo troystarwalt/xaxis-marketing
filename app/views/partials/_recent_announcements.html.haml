@@ -4,11 +4,11 @@
   - @announcement_posts.each do |announcement|
     .single-announcement-container
       .row
-        .col-md-3
+        .col-md-2
           .big_date
-            %h4= announcement.pretty_date
-            %p= announcement.pretty_date
-        .col-md-9
+            %h1= announcement.day_only
+            %p.text-uppercase= announcement.month_year_only
+        .col-md-10
           %p.text-uppercase.content-text.content-text-sub
             %span= announcement.tag_list
             %span.vertical-bar|
