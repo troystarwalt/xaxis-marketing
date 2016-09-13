@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     @event_posts = Post.tagged_with("Event", :match_all => true)
     @event_posts_most_recent = @event_posts[2, 4]
     @tags = ActsAsTaggableOn::Tag.most_used
+    @talent_posts = Post.tagged_with("Talent & Culture", :match_all => true)
   end
 
   def post_params
