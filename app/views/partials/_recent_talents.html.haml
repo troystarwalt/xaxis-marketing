@@ -1,10 +1,9 @@
 #talents-container.section-container
   .section-name#talents-section
     %h1.header.text-uppercase Talent & Culture
-  .row
-  - @talent_posts.each do |talent|
-    .col-md-4
-      .single-talent-container
+  .owl-carousel.owl-theme
+    - @talent_posts.each do |talent|
+      .item
         %p.text-uppercase.content-text.content-text-sub
           %span= talent.tag_list
           %span.vertical-bar|
