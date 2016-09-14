@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require tether
 //= require bootstrap-sprockets
+//= require owl.carousel.min
 //= require_tree .
