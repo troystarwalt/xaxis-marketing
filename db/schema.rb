@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907151458) do
+ActiveRecord::Schema.define(version: 20160916201254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,35 @@ ActiveRecord::Schema.define(version: 20160907151458) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "case_studies", force: :cascade do |t|
+    t.string   "title"
+    t.text     "brief"
+    t.string   "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logos", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.integer  "brand_id"
+    t.integer  "logo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_materials_on_brand_id", using: :btree
+    t.index ["logo_id"], name: "index_materials_on_logo_id", using: :btree
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "text",       null: false
@@ -79,4 +108,6 @@ ActiveRecord::Schema.define(version: 20160907151458) do
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
+  add_foreign_key "materials", "brands"
+  add_foreign_key "materials", "logos"
 end
