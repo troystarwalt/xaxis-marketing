@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Post.destroy_all
+Brand.destroy_all
 
 50.times do
   tags = Post.valid_tags
@@ -23,3 +24,9 @@ end
 puts "posts created"
 AdminUser.destroy_all
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
+brands = ["Xaxis", "plista", "Light Reaction", "Carolina"]
+
+0.upto(3) do |i|
+  Brand.create(:name => brands[i])
+end
