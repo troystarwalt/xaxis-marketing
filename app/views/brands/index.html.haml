@@ -1,14 +1,7 @@
-%h1 Brands
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @brands.each do |brand|
-      %tr
-        %td= brand.name
+=render partial: "side_nav"
+.container
+  .sub-nav-section.text-xs-center
+    %nav.nav.nav-inline
+      - @brands.each do |brand|
+        = link_to brand.name, brand_path(brand.id), class: "nav-item sub-links"
+  = render partial: "xaxis_materials"
