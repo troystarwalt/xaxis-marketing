@@ -1,3 +1,3 @@
 class Logo < ApplicationRecord
-  has_one :brand, :through => :materials
+  belongs_to :brand
 end

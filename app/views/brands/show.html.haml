@@ -3,6 +3,7 @@
 %p
   %b Name:
   = @brand.name
+  %p= @brand.logos.first.name
 
 = link_to 'Edit', edit_brand_path(@brand)
 \|

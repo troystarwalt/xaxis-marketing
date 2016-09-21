@@ -1,3 +1,3 @@
 class Brand < ApplicationRecord
-  has_many :logos, :through => :materials
+  has_many :logos, :dependent => :destroy
 end
