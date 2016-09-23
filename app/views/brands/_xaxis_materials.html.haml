@@ -1,35 +1,35 @@
 .row
   .col-lg-7.offset-lg-3.col-md-7.offset-md-3
     .brand-assets-container
-      .section.assets-welcome
+      .section#assets-welcome
         %p Welcome to the Xaxis Brand Identity Guidelines. At Xaxis, we are proud of our brand identity and the numerous elements that comprise the Xaxis brand. From our letterhead to our website, Xaxis represents powerful innovation, rich insights and a vision that keeps us at the cutting edge of the industry. By embracing the Xaxis logo and collateral, you are taking part in our mission to define the digital realm and bring only the greatest success to our clients, partners and teams.
         %p The Xaxis logo and visual identity system help bring this promise to life. These guidelines will ensure that we successfully implement the Xaxis identity system consistently across all of our communications. This is especially important to establish presence and prominence with our key audiences.
         %p We hope this identity system inspires you to create brilliant materials for the Xaxis brand.
         = link_to "download brand guidelines", "###", class: "btn xaxis-blue-button"
-      .section.assets-download-section
+      .section#assets-download-section
         %h1 Xaxis Brand Assets
         %p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
         = link_to "download all assets", "###", class: "btn xaxis-blue-button"
-      .section.assets-logo
+      .section#assets-logo
         %h3.text-uppercase Xaxis Logos
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         = image_tag "https://www.placehold.it/300x400"
         = link_to "download all logos", "###", class: "btn xaxis-blue-button"
       %hr
-      .section.assets-color-palette
+      .section#assets-color-palette
         %h3.text-upercase xaxis color palette
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in v
         = image_tag "https://www.placehold.it/600x300"
         = link_to "download color palette", "###", class: "btn xaxis-blue-button"
       %hr
-      .section.assets-fonts
+      .section#assets-fonts
         %h3.text-uppercase xaxis fonts
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehend
         =image_tag "https://www.placehold.it/400x200"
         =image_tag "https://www.placehold.it/400x200"
         = link_to "download fonts", "###", class: "btn xaxis-blue-button"
       %hr
-      .section.assets-images
+      .section#assets-images
         %h3.text-uppercase images
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         = link_to "download image bank", "###", class: "btn xaxis-blue-button"
@@ -37,12 +37,13 @@
         %h3.text-uppercase image usages
         =image_tag "https://www.placehold.it/600x400"
       %hr
-      .section.assets-ppt
+      .section#assets-ppt
         %h3.text-uppercase xaxis powerpoint template
         =image_tag "https://www.placehold.it/500x300"
         = link_to "download template", "###", class: "btn xaxis-blue-button"
       %hr
-      .section.assets-tutorial
+      .section#assets-tutorial
+        %h3.text-uppercase Tutorial: how to compress image
         =image_tag "https://www.placehold.it/500x300"
         %ol
           %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -50,12 +51,117 @@
           %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
           %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
       %hr
-      .section.assets-word
-        %h3.text-uppercase images
+      .section#assets-word
+        %h3.text-uppercase word template
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         = link_to "download image bank", "###", class: "btn xaxis-blue-button"
       %hr
-      .section.assets-facts
-        %h3.text-uppercase images
+      .section#assets-facts
+        %h3.text-uppercase xaxis fast facts
         %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        = link_to "download image bank", "###", class: "btn xaxis-blue-button"
+        = link_to "download pdf", "###", class: "btn xaxis-blue-button"
+      %hr
+      .section#assets-capability
+        %h3.text-uppercase global capability deck
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        = link_to "download deck", "###", class: "btn xaxis-blue-button"
+      %hr
+      .section#assets-headshots
+        %h3.text-uppercase executive headshots
+        .row
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600
+          .col-sm-3
+            .headshot-container
+              = link_to root_path, class: "headshot-image" do
+                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
+                %span.after-text.text-uppercase View Image
+              .text-xs-center.headshot-info
+                %p.font-weight-bold Jane Doe
+                %p VP of the Moon
+                %span.fa.fa-download
+                %span.content-text-sub 6000x3000
+                %span.content-text-sub |
+                %span.content-text-sub 900x600

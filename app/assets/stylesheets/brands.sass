@@ -6,7 +6,7 @@
 .sub-nav-section
   margin: 60px 0
 
-.side-nav
+#side-nav
   position: fixed
   top: 200px
   left: 7%
@@ -15,15 +15,15 @@
   padding-top: 30px
   padding-bottom: 40px
 
-.section > .xaxis-blue-button
-  margin-left: 10px
+.section > h1, .section > h3
+  margin-bottom: 20px
 
-#brand-templates > li > div, #brand-assets > li > div
+#brand-template-links > li > div, #brand-asset-links > li > div
   font-size: 11px
   font-family: gotham-medium
   letter-spacing: 2px
 
-#brand-templates
+#brand-template-link
   margin-top: 60px
 
 .side-nav-link
@@ -35,3 +35,67 @@
 
 .side-nav-link:active
   color: $xaxis-blue-color
+
+.headshot-container
+  margin-bottom: 20px
+
+.headshot-image
+  position: relative
+  display: inline-block
+  width: 100%
+
+.headshot-image:after
+  content: ''
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background: rgba(24, 24, 24, .5)
+  opacity: 0
+  -webkit-transition: all 0.5s
+  transition: all 0.5s
+  text-align: center
+
+.headshot-image:hover:after
+  opacity: 1
+
+.headshot-image > .after-text
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  top: 0
+  color: $xaxis-blue-color
+  border: 1px solid $xaxis-blue-color
+  text-align: center
+  margin: auto
+  width: 96%
+  height: 25px
+  border-radius: 50px
+  display: none
+  z-index: 3000
+  -webkit-transition: all 0.5s
+  transition: all 0.5s
+  font-size: 12px
+
+.headshot-image:hover > .after-text
+  display: block
+
+.headshot-image > img
+  margin: 0 auto
+
+.headshot-image > img:hover
+  cursor: pointer
+
+.headshot-info > p
+  font-size: 11px
+  margin-bottom: 5px
+
+.headshot-info > p:first-of-type
+  font-family: gotham-book
+  margin-bottom: 2px
+  margin-top: 8px
+
+.headshot-info > span
+  font-size: 8px
