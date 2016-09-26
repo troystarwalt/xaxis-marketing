@@ -1,3 +1,5 @@
+// Doesn't work yet.
+
 $(document).ready( function () {
   var sideMenu = $('#side-nav'),
   sideMenuHeight = sideMenu.outerHeight()+15

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'logos/new'
+
+  get 'logos/create'
+
+  get 'logos/delete'
+
   resources :brands, path: :brand_assets
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
