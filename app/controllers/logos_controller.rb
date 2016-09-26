@@ -10,6 +10,6 @@ class LogosController < ApplicationController
 
   private
     def logo_params
-      params.require(:logo).permit(:name, :file )
+      params.require(:logo).permit(:name, :file, :brand_id )
     end
 end
