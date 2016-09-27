@@ -27,10 +27,19 @@ show do
     row :name
     row :created_at
     row :updated_at
-    panel "Logos" do
-      table_for brand.logos do
-        column :name
-        column :file_url
+    if brand.logos.empty?
+      panel "Logos" do
+        status_tag "There are no logos associated with this brand."
+      end
+    else
+      panel "Logos" do
+        table_for brand.logos do
+          column :name do |checkit|
+            link_to checkit.name, admin_logo_path(checkit)
+          end
+          column :file_identifier
+          column :created_at
+        end
       end
     end
     active_admin_comments
@@ -40,6 +49,7 @@ end
   form do |f|
     f.inputs 'You can add a new Brand here.' do
       f.input :name, label: 'Brand Name'
+      f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
     end
     f.actions
   end
