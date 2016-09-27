@@ -1,7 +1,32 @@
 class BrandsController < InheritedResources::Base
+  require 'zip'
 
+  def index
+    @brands = Brand.all
+    byebug
+  end
+
+  def show
+    @brand = Brand.find(params[:id])
+    @logos = Logo.where(:brand_id => params[:id])
+    # Makes zip file out of logos. Will need to refactor this as there are multiple
+    # Places where we will be collecting zips.
+    respond_to do |format|
+      format.html
+      format.zip do
+        @compressed_filestream = Zip::OutputStream.write_buffer do |zos|
+          @logos.each do |logo|
+            path = logo.file_identifier
+            zos.put_next_entry(path)
+            zos.write logo.file.read
+          end
+        end
+        @compressed_filestream.rewind
+        send_data @compressed_filestream.read, filename: "logos.zip"
+      end
+    end
+  end
   private
-
     def brand_params
       params.require(:brand).permit(:name)
     end
@@ -9,7 +34,7 @@ end
 
 # Since Rails 5 must use Inherited Resources with Active Admin
 # I've provided a basic look at a controller that isn't using Inherited Resources.
-# Personally don't love it, but since I scaffolded, I got it.
+# Personally don't love it, but it does make clean controllers.
 
   # def index
   #   @products = Product.all
