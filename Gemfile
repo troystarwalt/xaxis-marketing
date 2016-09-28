@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
 gem 'acts-as-taggable-on'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
