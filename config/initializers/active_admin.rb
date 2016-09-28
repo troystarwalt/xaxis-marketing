@@ -17,7 +17,7 @@ ActiveAdmin.setup do |config|
   #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
-  # config.site_title_image = "logo.png"
+  config.site_title_image = "horiz_tiny.png"
 
   # == Default Namespace
   #
@@ -158,7 +158,7 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  # config.favicon = 'favicon.ico'
+  config.favicon = 'favicon.ico'
 
   # == Meta Tags
   #
