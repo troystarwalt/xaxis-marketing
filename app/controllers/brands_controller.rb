@@ -2,8 +2,8 @@ class BrandsController < InheritedResources::Base
   require 'zip'
 
   def index
+    # Not using index for anything at this time.
     @brands = Brand.all
-    byebug
   end
 
   def show
