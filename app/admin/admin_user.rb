@@ -24,8 +24,4 @@ ActiveAdmin.register AdminUser do
     f.actions
   end
 
-
 end
-
-      # f.input :password
-      # f.input :password_confirmation

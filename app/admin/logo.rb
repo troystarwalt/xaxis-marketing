@@ -25,5 +25,4 @@ ActiveAdmin.register Logo do
       active_admin_comments
     end
   end
-
 end
