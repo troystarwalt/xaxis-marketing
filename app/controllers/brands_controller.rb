@@ -1,5 +1,6 @@
 class BrandsController < InheritedResources::Base
   require 'zip'
+  around_filter :catch_not_found
 
   def index
     # Not using index for anything at this time.
@@ -7,7 +8,7 @@ class BrandsController < InheritedResources::Base
   end
 
   def show
-    @brand = Brand.find(params[:id])
+    @brand = Brand.friendly.find(params[:id])
     @logos = Logo.where(:brand_id => params[:id])
     # Makes zip file out of logos. Will need to refactor this as there are multiple
     # Places where we will be collecting zips.
@@ -29,6 +30,13 @@ class BrandsController < InheritedResources::Base
   private
     def brand_params
       params.require(:brand).permit(:name)
+    end
+
+    def catch_not_found
+      yield
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_url
+      puts "oh not found"
     end
 end
 

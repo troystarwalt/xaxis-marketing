@@ -3,14 +3,11 @@
 $(document).ready( function () {
   var sideMenu = $('#side-nav'),
   sideMenuHeight = sideMenu.outerHeight()+15
-  console.log(sideMenuHeight)
   menuItems = sideMenu.find("a"),
-  console.log(menuItems)
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
     if (item.length) { return item;}
   });
-  console.log(scrollItems)
   $(window).scroll(function(){
 
     var fromTop = $(this).scrollTop()+sideMenuHeight;
@@ -26,4 +23,4 @@ $(document).ready( function () {
     .parent().removeClass('active')
     .end().filter("[href='#"+id+"']").parent().addClass("active");
   });
-})
+});
