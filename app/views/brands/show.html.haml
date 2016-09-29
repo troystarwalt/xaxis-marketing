@@ -1,8 +1,13 @@
 = render partial: "side_nav"
 .container#brands
   .sub-nav-section.text-xs-center
-    %nav.nav.nav-inline
+    %nav#sub-nav.nav.nav-inline
       - @our_brands.each do |brand|
-        = link_to brand.name, brand_path(brand.id), class: "nav-item sub-links"
-- if params[:id] === "1"
-  = render partial: "xaxis_materials", brand: @brand
+        = link_to brand.name, brand_path(brand.slug), class: "nav-item sub-links #{cp(brand.slug)}"
+  - if lookup_context.find_all("brands/_#{@brand.slug}").any? === true
+    = render partial: @brand.slug, brand: @brand
+  - else
+    %p.col-lg-7.offset-lg-3.col-md-7.offset-md-3
+      Sorry, there isn't anything here with the name,
+      %strong #{@brand.name}.
+      Please check your link or click back.
