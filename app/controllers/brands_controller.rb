@@ -27,6 +27,7 @@ class BrandsController < InheritedResources::Base
       end
     end
   end
+
   private
     def brand_params
       params.require(:brand).permit(:name)

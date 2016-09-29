@@ -4,12 +4,13 @@ ActiveAdmin.register Logo do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-  form do |f|
+  form :html => { :multipart => true } do |f|
     f.inputs "New Logo" do
       f.input :name
       f.input :brand_id, as: :select, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
+      f.input :file, as: :string, required: false, hint: image_tag(object.file.url(:thumb)).html_safe unless object.file.blank?
       f.input :file
-      f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
+      f.hidden_field :file_cache
     end
     f.actions
     puts params
@@ -21,7 +22,6 @@ ActiveAdmin.register Logo do
       row :name
       row :created_at
       row :updated_at
-      row :author
       active_admin_comments
     end
   end
