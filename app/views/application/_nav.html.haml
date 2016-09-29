@@ -5,7 +5,7 @@
         =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), id: "navbar-logo"
       - if @bring_me_to_xaxis.present?
         =link_to "Assets", brand_path(@bring_me_to_xaxis), class: "nav-item nav-link"
-      =link_to "News", "###", class: "nav-item nav-link"
+      =link_to "News", posts_path, class: "nav-item nav-link"
       =link_to "Products & Platforms", "###", class: "nav-item nav-link"
       =link_to "###", id: "search-button", class: "nav-item nav-link pull-lg-right" do
         %span.fa.fa-search
