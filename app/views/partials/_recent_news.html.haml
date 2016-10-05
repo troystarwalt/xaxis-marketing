@@ -10,7 +10,7 @@
               %i.fa.fa-car.fa-4x
             .col-md-8
               %p.content-text.content-text-sub.text-uppercase
-                = @news_posts.last.tag_list
+                = @news_posts.last.get_tag_list
                 %br
                 = @news_posts.last.pretty_date
           %h1.content-header= @news_posts.last.title

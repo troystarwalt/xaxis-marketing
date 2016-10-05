@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'activeadmin'
@@ -43,5 +43,3 @@ group :development do
   gem 'faker'
   gem 'pry-rails'
 end
-
-ruby '2.3.1'

@@ -5,7 +5,7 @@
     - @talent_posts.each do |talent|
       .item
         %p.text-uppercase.content-text.content-text-sub
-          %span= talent.tag_list
+          %span= talent.get_tag_list
           %span.vertical-bar|
           %span= talent.pretty_date
         %h1.larger-content-header= talent.title

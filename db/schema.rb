@@ -54,14 +54,6 @@ ActiveRecord::Schema.define(version: 20160928200506) do
     t.index ["slug"], name: "index_brands_on_slug", unique: true, using: :btree
   end
 
-  create_table "case_studies", force: :cascade do |t|
-    t.string   "title"
-    t.text     "brief"
-    t.string   "author"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false

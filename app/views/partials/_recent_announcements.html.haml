@@ -10,7 +10,7 @@
             %p.text-uppercase= announcement.month_year_only
         .col-md-10
           %p.text-uppercase.content-text.content-text-sub
-            %span= announcement.tag_list
+            %span= announcement.get_tag_list
             %span.vertical-bar|
             %span= announcement.pretty_date
           %h1.larger-content-header= announcement.title

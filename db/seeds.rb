@@ -27,6 +27,6 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 
 brands = ["Xaxis", "plista", "Light Reaction", "Carolina"]
 
-0.upto(3) do |i|
-  Brand.create(:name => brands[i])
+brands.each do |brand_name|
+  Brand.create(:name => brand_name)
 end
