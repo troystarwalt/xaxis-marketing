@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validate :tag_must_be_approved
   acts_as_taggable
 
+  scope :tagged_by, -> (category){where(tags: {name: category})}
   def self.valid_tags
     ["Announcement", "News", "Event", "Talent & Culture"]
   end
@@ -22,6 +23,11 @@ class Post < ApplicationRecord
   def teaser
       text.truncate_words(15)
   end
+
+  def get_tag_list
+    tags.map{|tag| tag.name}.join(", ")
+  end
+
   private
 
   def tag_must_be_approved

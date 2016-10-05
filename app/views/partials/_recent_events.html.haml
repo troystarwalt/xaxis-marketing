@@ -4,7 +4,7 @@
   .content-container#latest-events
     %img{src: "http://placehold.it/350x200", class: "img-fluid"}
     %p.text-uppercase.content-text.content-text-sub
-      %span= @event_posts.last.tag_list
+      %span= @event_posts.last.get_tag_list
       %span.vertical-bar|
       %span= @event_posts.last.pretty_date
     %h1.content-header= @event_posts.last.title
@@ -12,7 +12,7 @@
     - @event_posts_most_recent.each do |events|
       .single-event-container
         %p.text-uppercase.content-text.content-text-sub
-          %span= events.tag_list
+          %span= events.get_tag_list
           %span.vertical-bar|
           %span= events.pretty_date
         %h1.content-header= events.title

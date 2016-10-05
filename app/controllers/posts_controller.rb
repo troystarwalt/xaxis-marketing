@@ -33,13 +33,15 @@ class PostsController < ApplicationController
   end
 
   def main
-    @posts = Post.all
-    @news_posts = Post.tagged_with("News", :match_all => true).last(5)
-    @announcement_posts = Post.tagged_with("Announcement", :match_all => true).last(3)
-    @event_posts = Post.tagged_with("Event", :match_all => true)
+    @posts = Post.includes(:tags).all
+    @news_posts = @posts.tagged_by("News").last(5)
+    @announcement_posts = @posts.tagged_by("Announcement").last(3)
+    @event_posts = @posts.tagged_by("Event").last(5)
     @event_posts_most_recent = @event_posts[2, 4]
+    @talent_posts = @posts.tagged_by("Talent & Culture").last(3)
+
     @tags = ActsAsTaggableOn::Tag.most_used
-    @talent_posts = Post.tagged_with("Talent & Culture", :match_all => true)
+
   end
 
   def post_params
