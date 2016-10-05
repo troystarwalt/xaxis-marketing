@@ -16,12 +16,27 @@ ActiveAdmin.register Logo do
     puts params
   end
 
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :created_at
+    column :updated_at
+    column :file do |f|
+      image_tag(f.file.url).html_safe
+    end
+    actions
+  end
+
   show do
     attributes_table do
       row :id
       row :name
       row :created_at
       row :updated_at
+      row :file do |f|
+        image_tag(f.file.url).html_safe
+      end
       active_admin_comments
     end
   end
