@@ -9,7 +9,6 @@
   padding-right: 5px
   margin: 0 5px
 
-
 .active-sub-link, .sub-links:active, .sub-links:hover
   color: $xaxis-blue-color
   border-bottom: 2px solid $xaxis-blue-color
@@ -23,6 +22,12 @@
   top: 200px
   left: 7%
 
+.brand-assets-container > .section:not(:first-child), hr
+  margin-left: 40px
+
+#assets-welcome > a
+  margin-left: 40px
+
 .section
   padding-top: 30px
   padding-bottom: 40px
@@ -35,7 +40,7 @@
   font-family: gotham-medium
   letter-spacing: 2px
 
-#brand-template-link
+#brand-template-links
   margin-top: 60px
 
 .side-nav-link
@@ -48,6 +53,11 @@
 .side-nav-link:active
   color: $xaxis-blue-color
 
+img ~ .brand-btn-primary
+  margin-top: 10px
+
+
+/* Sytling Headshots and Overlay Text */
 .headshot-container
   margin-bottom: 20px
 
@@ -111,3 +121,14 @@
 
 .headshot-info > span
   font-size: 8px
+
+@media (min-width: 1800px)
+  #side-nav
+    left: 18%
+
+@media (max-width: 767px)
+  .brand-assets-container > .section:not(:first-child), hr
+    margin-left: inherit
+
+  #assets-welcome > a
+    margin-left: inherit
