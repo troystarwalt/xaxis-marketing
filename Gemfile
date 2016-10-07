@@ -11,6 +11,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'haml'
+gem 'fog'
 gem 'friendly_id', '~> 5.1.0'
 ###required for latest activeadmin.
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
