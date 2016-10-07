@@ -68,100 +68,23 @@
       %hr
       .section#assets-headshots
         %h3.text-uppercase executive headshots
-        .row
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
-          .col-sm-3
-            .headshot-container
-              = link_to root_path, class: "headshot-image" do
-                = image_tag "https://www.placehold.it/200x200", class: "img-fluid img-fluid-width"
-                %span.after-text.text-uppercase View Image
-              .text-xs-center.headshot-info
-                %p.font-weight-bold Jane Doe
-                %p VP of the Moon
-                %span.fa.fa-download
-                %span.content-text-sub 6000x3000
-                %span.content-text-sub |
-                %span.content-text-sub 900x600
+        - unless @headshots.blank?
+          .row
+            - @headshots.each do |hs|
+              .col-sm-3.col-xs-6
+                .headshot-container
+                  = link_to root_path, class: "headshot-image" do
+                    = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
+                    %span.after-text.text-uppercase View Image
+                  .text-xs-center.headshot-info
+                    %p.font-weight-bold= hs.full_name
+                    %p= hs.title
+                    %span.fa.fa-download
+                    %span.content-text-sub
+                      =link_to "Original", hs.image_url, type: "image/jpeg"
+                    %span.content-text-sub
+                      |
+                    %span.content-text-sub
+                      =link_to "1024x768", hs.image_url(:large), type: "image/jpeg"
+        - if @headshots.blank?
+          %h4 No headshots available at this time.
