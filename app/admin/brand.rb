@@ -11,25 +11,6 @@ controller do
   end
 end
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-# for use if we want to allow uploading a logo when creating a new brand
-# f.inputs do
-#   f.has_many :logos, allow_destroy: true, new_record: true do |a|
-#     a.input :name
-#     a.input :file
-#   end
-# end
 
 show do
   attributes_table do

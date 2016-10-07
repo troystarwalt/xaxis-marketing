@@ -10,6 +10,7 @@ class BrandsController < InheritedResources::Base
   def show
     @brand = Brand.friendly.find(params[:id])
     @logos = Logo.where(:brand_id => @brand.id)
+    @headshots = Headshot.where(brand_id: @brand.id)
     # Makes zip file out of logos. Will need to refactor this as there are multiple
     # Places where we will be collecting zips.
     respond_to do |format|
