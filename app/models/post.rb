@@ -25,7 +25,7 @@ class Post < ApplicationRecord
   end
 
   def get_tag_list
-    tags.map{|tag| tag.name}.join(", ")
+    tags.map{|tag| tag.name}
   end
 
   private

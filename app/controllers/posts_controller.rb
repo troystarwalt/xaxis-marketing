@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     if params[:tag]
       @posts =  Post.tagged_with(params[:tag])
+      byebug
     else
       @posts = Post.all
     end
