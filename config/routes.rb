@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'logos/delete'
 
-  resources :brands, path: :brand_assets
+  resources :brands, path: :brand_assets, only: [:index, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :posts

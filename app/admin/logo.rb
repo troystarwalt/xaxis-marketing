@@ -23,7 +23,11 @@ ActiveAdmin.register Logo do
     column :created_at
     column :updated_at
     column :file do |f|
-      image_tag(f.file.url).html_safe
+      if file_is_image?(f.file_identifier)
+        image_tag(f.file.url).html_safe
+      else
+        f.file_identifier
+      end
     end
     actions
   end
@@ -35,7 +39,11 @@ ActiveAdmin.register Logo do
       row :created_at
       row :updated_at
       row :file do |f|
-        image_tag(f.file.url).html_safe
+        if file_is_image?(f.file_identifier)
+          image_tag(f.file.url).html_safe
+        else
+          f.file_identifier
+        end
       end
       active_admin_comments
     end

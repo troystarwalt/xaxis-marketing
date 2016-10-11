@@ -1,10 +1,13 @@
 class BrandsController < InheritedResources::Base
   require 'zip'
+  actions :index, :show   # This tells InheritedResources to only use index and show.
   around_filter :catch_not_found
 
   def index
     # Not using index for anything at this time.
     @brands = Brand.all
+    brand = Brand.find_by(:name => "Xaxis")
+    redirect_to brand_path(brand.id)
   end
 
   def show
@@ -42,50 +45,3 @@ class BrandsController < InheritedResources::Base
       puts "oh not found"
     end
 end
-
-# Since Rails 5 must use Inherited Resources with Active Admin
-# I've provided a basic look at a controller that isn't using Inherited Resources.
-# Personally don't love it, but it does make clean controllers.
-
-  # def index
-  #   @products = Product.all
-  # end
-  #
-  # def show
-  #   @product = Product.find(params[:id])
-  # end
-  #
-  # def new
-  #   @product = Product.new
-  # end
-  #
-  # def create
-  #   @product = Product.new(params[:product])
-  #   if @product.save
-  #     flash[:notice] = "Successfully created product."
-  #     redirect_to @product
-  #   else
-  #     render :action => 'new'
-  #   end
-  # end
-  #
-  # def edit
-  #   @product = Product.find(params[:id])
-  # end
-  #
-  # def update
-  #   @product = Product.find(params[:id])
-  #   if @product.update_attributes(params[:product])
-  #     flash[:notice] = "Successfully updated product."
-  #     redirect_to @product
-  #   else
-  #     render :action => 'edit'
-  #   end
-  # end
-  #
-  # def destroy
-  #   @product = Product.find(params[:id])
-  #   @product.destroy
-  #   flash[:notice] = "Successfully destroyed product."
-  #   redirect_to products_url
-  # end

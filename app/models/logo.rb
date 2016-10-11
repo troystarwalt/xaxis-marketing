@@ -4,4 +4,7 @@ class Logo < ApplicationRecord
   validates :name, :brand_id, :file, :presence => true
 
   mount_uploader :file, FileUploader
+
+
+
 end
