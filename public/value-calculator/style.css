@@ -1,0 +1,537 @@
+
+/*****************************************/
+/* Add our custom fonts   */
+/*****************************************/
+
+@font-face {
+  font-family: 'gotham-book';
+  src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Book.otf');
+}
+
+@font-face {
+    font-family: 'gotham-light';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/gotham-light-webfont.eot') format('eot');
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/gotham-light-webfont.ttf') format('ttf'),
+         url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/gotham-light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'gotham-thin';
+  src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.eot') format('eot');
+  src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'),
+       url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.otf') format('otf'),
+       url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.eot') format('eot'),
+       url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.ttf') format('ttf'),
+       url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'gotham-medium';
+  src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Medium.eot?#iefix') format('otf'),
+       url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Medium.otf');
+}
+
+@font-face{
+    font-family: 'gotham-xl';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-XLight.otf');
+}
+/*****************************************/
+/* Set Font Defaults   */
+/*****************************************/
+
+* {
+    font-family: 'gotham-book', arial, sans-serif;
+}
+
+.gotham-medium{
+  font-family: 'gotham-medium', arial, sans-serif;
+}
+
+.gotham-light{
+  font-family: 'gotham-light', arial, sans-serif;
+}
+
+.gotham-xl{
+  font-family: 'gotham-xl', arial, sans-serif;
+  font-size: 45px;
+}
+
+/*****************************************/
+/* Body Elements   */
+/*****************************************/
+
+html{
+  width: 100%;
+}
+body {
+  width: 100%;
+  letter-spacing: 1px;
+  color: #484848 !important;
+  background: #FFFFFF;
+}
+
+
+
+select option{
+    font-size: 14px;
+}
+
+.text-xs-left { text-align: left !important; }
+.text-xs-right { text-align: right !important; }
+.text-xs-center { text-align: center !important; }
+.text-xs-justify { text-align: justify !important; }
+
+@media (min-width: 768px) {
+  .text-sm-left { text-align: left !important; }
+  .text-sm-right { text-align: right !important; }
+  .text-sm-center { text-align: center !important; }
+  .text-sm-justify { text-align: justify !important; }
+}
+
+@media (min-width: 992px) {
+  .text-md-left { text-align: left !important; }
+  .text-md-right { text-align: right !important; }
+  .text-md-center { text-align: center !important; }
+  .text-md-justify { text-align: justify !important; }
+}
+
+@media (min-width: 1200px) {
+  .text-lg-left { text-align: left !important; }
+  .text-lg-right { text-align: right !important; }
+  .text-lg-center { text-align: center !important; }
+  .text-lg-justify { text-align: justify !important; }
+}
+
+.boldest-numbers{
+  font-size: 72px;
+}
+.bold-numbers{
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+.blue-text{
+  color: #00AFEF;
+}
+.dark-blue-text{
+  font-size: 24px;
+  color: #3B6E8F;
+}
+
+.dark-grey-text{
+  color: #8c8c8c
+}
+
+hr{
+  border-top: 2px solid #F6F6F6;
+  width: 30%;
+}
+
+.btn-primary{
+  background-color: color: #00AFEF;
+}
+
+
+/*********************************************/
+/* Sectional Background Colors and Styling   */
+/*********************************************/
+
+.container-fluid{
+  padding: 0 !important;
+}
+
+.section{
+  position: relative;
+}
+
+input:enabled{
+  background-color: transparent;;
+}
+input[type="number"]:disabled{
+  background-color: transparent;;
+}
+
+select {
+   background-color: #FCFCFC;
+   border: 1px solid #D8D8D8;
+   font-size: inherit;
+   margin-top: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   height: 34px;
+   width: 100%;
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar {
+ min-height: 100px;
+}
+
+.navbar-default {
+  background-color: #FFF !important;
+  border-bottom:1px;
+  border-radius: 0;
+  height: 65px;
+  margin-bottom: 0;
+  border-color: transparent;
+}
+
+#navbar-logo {
+    width: 65px;
+    margin-right: 30px;
+}
+
+ul.navbar-nav {
+    margin-top: 30px;
+}
+
+li > a {
+    color: #1D3647;
+    padding: 23px 15px 19px 15px;
+    font-size: 12px;
+}
+
+.big-margin-bottom{
+  margin-bottom: 50px
+}
+.big-margin-top{
+  margin-top: 50px
+}
+
+.big-margin-bottom{
+  margin-bottom: 30px
+}
+.big-margin-top{
+  margin-top: 30px
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.impressionScount{
+  font-size: 26px;
+}
+
+.header-image{
+    background: url('http://cdn2.hubspot.net/hubfs/436935/calculator_header.jpg');
+    background-size: cover;
+    background-position: center;
+    backround-repeat: no-repeat;
+    height: 490px;
+}
+
+.header_text{
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    text-shadow: 0px 1px 30px rgba(0, 0, 0, 1);
+}
+
+.header_year-text{
+    color: #a1d0f3;
+    font-size: 26px;
+    font-family: 'gotham-medium';
+}
+.header_descriptor-text{
+    font-size: 48px;
+    color: #fff;
+}
+/*********************************************/
+/* form-rows  */
+/*********************************************/
+
+.top-description{
+
+  background-color: #00AFEF;
+  color: white;
+}
+
+.site_title > h1 {
+    font-family: gotham-thin;
+    font-size: 48px;
+    padding-top: 24px;
+    padding-bottom: 18px;
+}
+
+.site_title > h1 > span {
+    font-weight: bold;
+}
+
+#welcome-note {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/*
+.top-description:after {
+    z-index: 2;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content:'';
+    border-top: solid 25px #006298;
+    border-left: solid 25px transparent;
+    border-right: solid 25px transparent;
+}
+*/
+
+.user-form{
+  padding: 0 0 60px 0;
+  border-radius: 10px;
+}
+
+/*
+.user-form:after {
+    z-index: 2;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content:'';
+    border-top: solid 25px #00AFEF;
+    border-left: solid 25px transparent;
+    border-right: solid 25px transparent;
+}
+*/
+
+.xaxis-difference{
+  padding: 60px 0;
+  background: #FCFCFC;
+}
+/*
+
+.xaxis-difference:after {
+    z-index: 2;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content:'';
+    border-top: solid 25px #8CD2F4;
+    border-left: solid 25px transparent;
+    border-right: solid 25px transparent;
+}
+*/
+
+.prove-it{
+  padding: 60px 0;
+}
+
+/*.form-row:not(:last-of-type){
+  border-bottom: 2px solid #00AFEF
+}*/
+
+.list-group:not(:last-child){
+  margin-bottom: 0px !important;
+  text-align: left !important;
+}
+
+.list-group .list-group-item{
+    border: none;
+    background-color: transparent;;
+}
+
+.list-group > h2 {
+    text-align: center;
+}
+
+.reduce-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.difference-group {
+    border-top: 4px solid #00AFEF;
+    padding: 10px;
+}
+
+.difference-group, .difference-group > div {
+    background: #FFF !important;
+}
+
+.difference-group > div {
+    padding: 10px 10px 10px 30px;
+}
+
+.question-container {
+    display: flex;
+}
+
+
+.text-container {
+    background: #FCFCFC;
+    padding: 30px;
+    align-items: stretch;
+}
+
+
+.data-container {
+    background: #FCFCFC;
+    padding: 20px;
+    align-items: stretch;
+}
+
+.odd {
+    background: #F8F8F8;
+}
+
+.input-group-addon {
+    background: #00AFEF;
+    color: #FFF;
+    border: none;
+    font-family: gotham-light;
+}
+
+.container > a {
+    border-radius: 100px;
+    background: #00AFEF;
+    border: 1px solid transparent;
+    font-size: 12px;
+
+}
+
+td.empty-row {
+    height: 3vh;
+}
+
+
+/****************************/
+/* Footer                   */
+/****************************/
+
+footer.footer {
+  padding: 30px 0;
+  background: #FCFCFC;
+
+}
+
+.xaxis-footer-logo {
+  width: 10%;
+  margin: 0 auto;
+  padding-top: 3%;
+}
+
+.legal-lang {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.legal-lang > p {
+  font-family: gotham-book, Helvetica, sans-serif;
+  font-size: .7em;
+    text-transform: uppercase;
+    color: #808080;
+    padding-top: 2%;
+}
+
+.bottom-img {
+    margin-top: -15px;
+}
+
+.bottom-img > img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+
+
+
+/*
+.top-img > img {
+    position: absolute;
+    width: 100% !important;
+    height: auto;
+    vertical-align: top;
+}
+.bottom-img > img {
+    width: 100% !important;
+    height: auto;
+    position: absolute;
+    vertical-align: bottom;
+}
+
+.logo-stripe{
+  width: 100% !important;
+}
+
+#bottom-logo {
+    width: 10%;
+    height: auto;
+    padding-top: 3%;
+}
+
+.legal-area {
+    text-align: center;
+    background-color: #f3f4f4;
+}
+
+.legal-lang {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.legal-lang > p {
+    font-size: .7em;
+    text-transform: uppercase;
+}
+
+*/
+
+/*****************************************/
+/* Media Query   */
+/*****************************************/
+
+@media (max-width: 767px) {
+      .question-container {display: block;}
+      ul.navbar-nav{
+        margin-top: -12px;
+        margin-left: 110px;
+        display: inline-block;
+      }
+      ul.navbar-nav li{
+        display: inline-block;
+      }
+}
+
+.left-column{
+  border-bottom: none;
+}
+.right-column{
+  border-top: none;
+}
+.center-column{
+  border-left: 2px solid #F6F6F6;
+  border-right: 2px solid #F6F6F6;
+}
+
+@media(max-width: 992px){
+  .left-column{
+    border-bottom: 2px solid #F6F6F6;
+    padding-bottom: 35px;
+  }
+  .right-column{
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-top: 2px solid #F6F6F6;
+  }
+  .center-column{
+    padding-top: 35px;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 35px;
+  }
+}
+
+.btn-primary{
+    background-color:  #00AFEF;
+}
