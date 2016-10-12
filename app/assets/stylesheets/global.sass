@@ -9,7 +9,6 @@ a:link, a:active, a:hover
 /***********  Navigation ***********/
 
 nav.navbar
-  height: 119px
   background: $alternate-white
 
 #navbar-logo
@@ -22,7 +21,8 @@ nav.navbar
     text-transform: uppercase
     padding: 40px 15px 19px 15px
     color: $nav-grey !important
-    font-size: .8rem
+    font-size: .7rem
+    letter-spacing: 1px
     .fa-search
       color: #C0C0C0
       font-size: 1rem
@@ -32,3 +32,15 @@ nav.navbar
   top: 50%
   transform: translateY(-50%)
   left: -100vw
+
+@media (max-width: 767px)
+  nav
+    .container
+      button
+        margin-top: 35px
+  #collapse-this-navbar
+    margin-top: 40px
+    text-align: center
+    .nav
+      .nav-link
+        padding: 10px

@@ -1,5 +1,3 @@
-// Doesn't work yet.
-
 $(document).ready( function () {
   var sideMenu = $('#side-nav'),
   sideMenuHeight = sideMenu.outerHeight()+400
@@ -8,7 +6,6 @@ $(document).ready( function () {
     var item = $($(this).attr("href"));
     if (item.length) { return item;}
   });
-  console.log(menuItems);
   $(window).scroll(function(){
     var fromTop = $(this).scrollTop()+sideMenuHeight;
     var cur = scrollItems.map(function(){
