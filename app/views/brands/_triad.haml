@@ -1,90 +1,89 @@
-.row
-  .col-lg-7.offset-lg-3.col-md-7.offset-md-3
-    .brand-assets-container
-      .section#assets-welcome
-        %p Welcome to the Triad Brand Identity Guidelines. At Triad, we are proud of our brand identity and the numerous elements that comprise the Triad brand. From our letterhead to our website, Triad represents powerful innovation, rich insights and a vision that keeps us at the cutting edge of the industry. By embracing the Triad logo and collateral, you are taking part in our mission to define the digital realm and bring only the greatest success to our clients, partners and teams.
-        %p The #{@brand.name} logo and visual identity system help bring this promise to life. These guidelines will ensure that we successfully implement the Triad identity system consistently across all of our communications. This is especially important to establish presence and prominence with our key audiences.
-        %p We hope this identity system inspires you to create brilliant materials for the Triad brand.
-        = link_to "download brand guidelines", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      .section#assets-download-section
-        %h1 Triad Brand Assets
-        %p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
-        = link_to "download all assets", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      .section#assets-logo
-        %h3.text-uppercase Triad Logos
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        = image_tag "https://www.placehold.it/300x400"
-        = link_to "download all logos", brand_path(format: :zip), class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-color-palette
-        %h3.text-uppercase Triad color palette
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in v
-        = image_tag "https://www.placehold.it/600x300"
-        = link_to "download color palette", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-fonts
-        %h3.text-uppercase Triad fonts
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehend
-        =image_tag "https://www.placehold.it/400x200"
-        =image_tag "https://www.placehold.it/400x200"
-        = link_to "download fonts", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-images
-        %h3.text-uppercase images
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        = link_to "download image bank", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      .section
-        %h3.text-uppercase image usages
-        =image_tag "https://www.placehold.it/600x400"
-      %hr
-      .section#assets-ppt
-        %h3.text-uppercase Triad powerpoint template
-        =image_tag "https://www.placehold.it/500x300"
-        = link_to "download template", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-tutorial
-        %h3.text-uppercase Tutorial: how to compress image
-        =image_tag "https://www.placehold.it/500x300"
-        %ol
-          %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      %hr
-      .section#assets-word
-        %h3.text-uppercase word template
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        = link_to "download image bank", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-facts
-        %h3.text-uppercase Triad fast facts
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        = link_to "download pdf", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-capability
-        %h3.text-uppercase global capability deck
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        = link_to "download deck", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
-      %hr
-      .section#assets-headshots
-        %h3.text-uppercase executive headshots
-        - unless @headshots.blank?
-          .row
-            - @headshots.each do |hs|
-              .col-sm-3.col-xs-6
-                .headshot-container
-                  = link_to root_path, class: "headshot-image" do
-                    = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
-                    %span.after-text.text-uppercase View Image
-                  .text-xs-center.headshot-info
-                    %p.font-weight-bold= hs.full_name
-                    %p= hs.title
-                    %span.fa.fa-download
-                    %span.content-text-sub
-                      =link_to "Original", hs.image_url, type: "image/jpeg"
-                    %span.content-text-sub
-                      |
-                    %span.content-text-sub
-                      =link_to "1024x768", hs.image_url(:large), type: "image/jpeg"
-        - if @headshots.blank?
-          %h4 No headshots available at this time.
+.col-md-7.offset-md-1.col-sm-12
+  .brand-assets-container
+    .section#assets-welcome
+      %p Welcome to the Triad Brand Identity Guidelines. At Triad, we are proud of our brand identity and the numerous elements that comprise the Triad brand. From our letterhead to our website, Triad represents powerful innovation, rich insights and a vision that keeps us at the cutting edge of the industry. By embracing the Triad logo and collateral, you are taking part in our mission to define the digital realm and bring only the greatest success to our clients, partners and teams.
+      %p The #{@brand.name} logo and visual identity system help bring this promise to life. These guidelines will ensure that we successfully implement the Triad identity system consistently across all of our communications. This is especially important to establish presence and prominence with our key audiences.
+      %p We hope this identity system inspires you to create brilliant materials for the Triad brand.
+      = link_to "download brand guidelines", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    .section#assets-download-section
+      %h1 Triad Brand Assets
+      %p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
+      = link_to "download all assets", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    .section#assets-logo
+      %h3.text-uppercase Triad Logos
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      = image_tag "https://www.placehold.it/300x400"
+      = link_to "download all logos", brand_path(format: :zip), class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-color-palette
+      %h3.text-uppercase Triad color palette
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in v
+      = image_tag "https://www.placehold.it/600x300"
+      = link_to "download color palette", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-fonts
+      %h3.text-uppercase Triad fonts
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehend
+      =image_tag "https://www.placehold.it/400x200"
+      =image_tag "https://www.placehold.it/400x200"
+      = link_to "download fonts", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-images
+      %h3.text-uppercase images
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      = link_to "download image bank", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    .section
+      %h3.text-uppercase image usages
+      =image_tag "https://www.placehold.it/600x400"
+    %hr
+    .section#assets-ppt
+      %h3.text-uppercase Triad powerpoint template
+      =image_tag "https://www.placehold.it/500x300"
+      = link_to "download template", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-tutorial
+      %h3.text-uppercase Tutorial: how to compress image
+      =image_tag "https://www.placehold.it/500x300"
+      %ol
+        %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        %li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    %hr
+    .section#assets-word
+      %h3.text-uppercase word template
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      = link_to "download image bank", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-facts
+      %h3.text-uppercase Triad fast facts
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      = link_to "download pdf", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-capability
+      %h3.text-uppercase global capability deck
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      = link_to "download deck", "###", class: "btn brand-btn-primary #{@brand.slug}-btn-primary"
+    %hr
+    .section#assets-headshots
+      %h3.text-uppercase executive headshots
+      - unless @headshots.blank?
+        .row
+          - @headshots.each do |hs|
+            .col-sm-3.col-xs-6
+              .headshot-container
+                = link_to root_path, class: "headshot-image" do
+                  = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
+                  %span.after-text.text-uppercase View Image
+                .text-xs-center.headshot-info
+                  %p.font-weight-bold= hs.full_name
+                  %p= hs.title
+                  %span.fa.fa-download
+                  %span.content-text-sub
+                    =link_to "Original", hs.image_url, type: "image/jpeg"
+                  %span.content-text-sub
+                    |
+                  %span.content-text-sub
+                    =link_to "1024x768", hs.image_url(:large), type: "image/jpeg"
+      - if @headshots.blank?
+        %h4 No headshots available at this time.
