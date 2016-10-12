@@ -2,56 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.sub-links
-  font-family: gotham-book
-  color: $light-grey
-  padding-left: 5px
-  padding-right: 5px
-  margin: 0 5px
-
-.active-sub-link, .sub-links:active, .sub-links:hover
-  color: $xaxis-blue-color
-  border-bottom: 2px solid $xaxis-blue-color
-  text-decoration: none
-
 .sub-nav-section
   margin: 60px 0
+  #sub-nav
+    .sub-links
+      font-family: gotham-book
+      color: $light-grey
+      padding-left: 5px
+      padding-right: 5px
+      margin: 0 4%
+      text-decoration: none
+
+    .active-sub-link, .sub-links:hover, .sub-links:active
+      color: $xaxis-blue-color
+      border-bottom: 2px solid $xaxis-blue-color
+      text-decoration: none
 
 #side-nav
   position: fixed
-  // top: 200px
-  // left: 7%
+  #brand-template-links > li > div, #brand-asset-links > li > div
+    font-size: 11px
+    font-family: gotham-medium
+    letter-spacing: 2px
+    color: $dark-grey
 
-.brand-assets-container > .section:not(:first-child), hr
-  margin-left: 40px
+  #brand-template-links
+    margin-top: 60px
 
-#assets-welcome > a
-  margin-left: 40px
-
+  #brand-template-links, #brand-asset-links
+    li
+      .side-nav-link
+        color: $dark-grey
+        font-size: 11px
+      .side-nav-link:hover, .side-nav-link:active
+        color: $xaxis-blue-color
+        text-decoration: none
+    .active-side-link
+      a
+        color: $xaxis-blue-color !important
 .section
   padding-top: 30px
   padding-bottom: 40px
 
 .section > h1, .section > h3
   margin-bottom: 20px
-
-#brand-template-links > li > div, #brand-asset-links > li > div
-  font-size: 11px
-  font-family: gotham-medium
-  letter-spacing: 2px
-
-#brand-template-links
-  margin-top: 60px
-
-.side-nav-link
-  color: $dark-grey
-  font-size: 11px
-
-.side-nav-link:hover
-  color: $xaxis-blue-color
-
-.side-nav-link:active
-  color: $xaxis-blue-color
 
 img ~ .brand-btn-primary
   margin-top: 10px
@@ -134,10 +128,3 @@ img ~ .brand-btn-primary
 @media (min-width: 1800px)
   #side-nav
     left: 18%
-
-@media (max-width: 767px)
-  .brand-assets-container > .section:not(:first-child), hr
-    margin-left: inherit
-
-  #assets-welcome > a
-    margin-left: inherit
