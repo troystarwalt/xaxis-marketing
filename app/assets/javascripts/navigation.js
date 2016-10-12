@@ -10,9 +10,7 @@ $(document).ready( function () {
   });
   console.log(menuItems);
   $(window).scroll(function(){
-    console.log(sideMenuHeight + this);
     var fromTop = $(this).scrollTop()+sideMenuHeight;
-    console.log(fromTop);
     var cur = scrollItems.map(function(){
       if ($(this).offset().top<fromTop)
       return this;
