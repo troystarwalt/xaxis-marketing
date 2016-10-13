@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006204638) do
+ActiveRecord::Schema.define(version: 20161013163204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20161006204638) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.index ["slug"], name: "index_brands_on_slug", unique: true, using: :btree
+  end
+
+  create_table "case_studies", force: :cascade do |t|
+    t.string   "title"
+    t.text     "brief"
+    t.string   "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -118,5 +126,16 @@ ActiveRecord::Schema.define(version: 20161006204638) do
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
+  create_table "templates", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.string   "file"
+    t.integer  "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_templates_on_brand_id", using: :btree
+  end
+
   add_foreign_key "logos", "brands"
+  add_foreign_key "templates", "brands"
 end

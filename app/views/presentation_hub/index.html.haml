@@ -1,0 +1,66 @@
+#presentation_hub
+  %section.top-section
+    .container
+      %h1 2016 Xaxis Global Presentation Resource Center
+      .row
+        .col-lg-3.col-md-6
+          .card.xaxis-card
+            %h2.text-uppercase Xaxis
+            %p Templates
+            %button.card-btn.brand-btn-primary.xaxis-btn-primary Powerpoint
+            %button.card-btn.brand-btn-primary.xaxis-btn-primary Word Doc
+            .hr-faker
+            %p 2016 Xaxis Global Capabilities Deck
+            %button.card-btn.brand-btn-primary.xaxis-btn-primary Download
+        .col-lg-3.col-md-6
+          .card.light-reaction-card
+            %h2.text-uppercase Light Reaction
+            %p Templates
+            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Powerpoint
+            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Word Doc
+            .hr-faker
+            %p 2016 Light Reaction Global Capabilities Deck
+            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Download
+        .col-lg-3.col-md-6
+          .card.plista-card
+            %h2 plista
+            %p Templates
+            %button.card-btn.brand-btn-primary.plista-btn-primary Powerpoint
+            %button.card-btn.brand-btn-primary.plista-btn-primary Word Doc
+            .hr-faker
+            %p 2016 plista Global Capabilities Deck
+            %button.card-btn.brand-btn-primary.plista-btn-primary Download
+        .col-lg-3.col-md-6
+          .card.triad-card
+            %h2.text-uppercase triad
+            %p Templates
+            %button.card-btn.brand-btn-primary.triad-btn-primary Powerpoint
+            %button.card-btn.brand-btn-primary.triad-btn-primary Word Doc
+            .hr-faker
+            %p 2016 triad Global Capabilities Deck
+            %button.card-btn.brand-btn-primary.triad-btn-primary Download
+  %section.middle-section
+    .container
+      .row
+        .col-sm-4
+          .more-resources.image-bank
+            = image_tag "image-bank.svg", alt: "Image Bank", class: "img-fluid"
+            %h2.text-uppercase image bank
+            %p Download the entire image bank onto your computer here, or access them on Xperience
+            %p.subtitle Note: this is a large file, please do not download on mobile
+            %button.brand-btn-secondary.xaxis-btn-secondary Download
+        .col-sm-4
+          .more-resources.tutorial
+            = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
+            %h2.text-uppercase tutorial
+            %p File size is too big? Learn how to reduce file size by compressing the images here.
+            %button.brand-btn-secondary.xaxis-btn-secondary watch
+        .col-sm-4
+          .more-resources.custom
+            = image_tag "pencil-stencil.svg", alt: "Custom Images", class: "img-fluid"
+            %h2.text-uppercase custom
+            %p Need something else? You can make a request for the images you may need to Xaxis Global Marketing Team below.
+            %button.brand-btn-secondary.xaxis-btn-secondary Email Us
+  %section.bottom-section
+    %h2 Need additional brand assets?
+    =link_to "See All Brand Assets", brand_path(@bring_me_to_xaxis), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"

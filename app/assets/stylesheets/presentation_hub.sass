@@ -1,0 +1,96 @@
+#presentation_hub
+  text-align: center
+  margin-top: -7px
+  section
+    padding-top: 80px
+    padding-bottom: 80px
+    h1
+      font-family: gotham-book
+      color: $xaxis-grey-blue
+      font-size: 26px
+  .top-section
+    background-color: $light-grey-bg
+    .row
+      margin-top: 80px
+      .card
+        border-radius: 5px
+        background-color: $alternate-white
+        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12)
+        padding: 25px 25px
+        min-height: 400px
+        h2
+          font-size: 20px
+          font-family: gotham-book
+          margin-bottom: 20px
+        .card-btn
+          min-width: 120px
+        button:first-of-type
+          margin-bottom: 10px
+        .hr-faker
+          width: 30%
+          margin: 0 auto
+          border-bottom: .5px solid $lightest-grey
+          margin-top: 21px
+          margin-bottom: 19px
+
+      .xaxis-card
+        border-top: 5px solid $xaxis-blue-color
+        h2
+          color: $xaxis-blue-color
+
+      .light-reaction-card
+        border-top: 5px solid $light-reaction-yellow-color
+        h2
+          color: $light-reaction-yellow-color
+
+      .plista-card
+        border-top: 5px solid $plista-green-color
+        h2
+          color: $plista-green-color
+
+      .triad-card
+        border-top: 5px solid $triad-blue-color
+        h2
+          color: $triad-blue-color
+  .middle-section
+    background-color: $alternate-white
+    .more-resources
+      min-height: 470px
+      position: relative
+      img
+        margin: 0 auto
+      h2
+        font-size: 22px
+        font-family: gotham-book
+        margin-top: 20px
+        margin-bottom: 20px
+      button
+        min-width: 120px
+        position: absolute
+        bottom: 10px
+        left: 50%
+        right: 25%
+        margin-left: -60px
+  .bottom-section
+    background-color: $xaxis-blue-color
+    h2
+      color: $white
+      margin-bottom: 35px
+      font-size: 2.2rem
+
+@media (max-width: 991px)
+  #presentation_hub
+    .top-section
+      .container
+        .row
+          .card
+            min-height: 320px
+    .middle-section
+      .container
+        .row
+          .more-resources
+            min-height: 300px
+            button
+              position: static
+              margin-left: inherit
+              margin-bottom: 30px

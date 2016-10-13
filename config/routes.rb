@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'logos/new'
+  get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub
 
-  get 'logos/create'
-
-  get 'logos/delete'
+  # get 'logos/new'
+  #
+  # get 'logos/create'
+  #
+  # get 'logos/delete'
 
   resources :brands, path: :brand_assets, only: [:index, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
