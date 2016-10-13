@@ -5,12 +5,10 @@ ActiveAdmin.register Logo do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
   form :html => { :multipart => true } do |f|
-    f.inputs "New Logo" do
+    f.inputs "Updated ZIP File of Logos" do
       f.input :name
       f.input :brand_id, as: :select, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
-      f.input :file, as: :string, required: false, hint: image_tag(object.file.url(:thumb)).html_safe unless object.file.blank?
       f.input :file
-      f.hidden_field :file_cache
     end
     f.actions
     puts params
@@ -23,11 +21,7 @@ ActiveAdmin.register Logo do
     column :created_at
     column :updated_at
     column :file do |f|
-      if file_is_image?(f.file_identifier)
-        image_tag(f.file.url).html_safe
-      else
-        f.file_identifier
-      end
+      f.file_identifier
     end
     actions
   end
@@ -39,13 +33,18 @@ ActiveAdmin.register Logo do
       row :created_at
       row :updated_at
       row :file do |f|
-        if file_is_image?(f.file_identifier)
-          image_tag(f.file.url).html_safe
-        else
-          f.file_identifier
-        end
+        f.file_identifier
       end
       active_admin_comments
     end
   end
 end
+
+    # Easy setup if we switch back to allowing users to upload images and not .zip
+    # column :file do |f|
+    #   if file_is_image?(f.file_identifier)
+    #     image_tag(f.file.url).html_safe
+    #   else
+    #     f.file_identifier
+    #   end
+    # end
