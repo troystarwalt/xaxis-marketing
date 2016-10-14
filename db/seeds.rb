@@ -25,7 +25,7 @@ puts "posts created"
 AdminUser.destroy_all
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-brands = ["Xaxis", "plista", "Light Reaction", "Carolina"]
+brands = ["Xaxis", "plista", "Light Reaction", "Triad"]
 
 brands.each do |brand_name|
   Brand.create(:name => brand_name)

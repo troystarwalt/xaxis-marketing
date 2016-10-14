@@ -18,23 +18,8 @@ show do
     row :name
     row :created_at
     row :updated_at
-    if brand.logos.empty?
-      panel "Logos" do
-        status_tag "There are no logos associated with this brand."
-      end
-    else
-      panel "Logos" do
-        table_for brand.logos do
-          column :name do |checkit|
-            link_to checkit.name, admin_logo_path(checkit)
-          end
-          column :file_identifier
-          column :created_at
-        end
-      end
     end
     active_admin_comments
-  end
 end
 
   form do |f|
