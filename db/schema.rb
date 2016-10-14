@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014162819) do
+ActiveRecord::Schema.define(version: 20161014183355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,15 +102,6 @@ ActiveRecord::Schema.define(version: 20161014162819) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "logos", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "brand_id"
-    t.string   "file"
-    t.index ["brand_id"], name: "index_logos_on_brand_id", using: :btree
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "text",       null: false
@@ -155,6 +146,5 @@ ActiveRecord::Schema.define(version: 20161014162819) do
   end
 
   add_foreign_key "brand_accessories", "brands"
-  add_foreign_key "logos", "brands"
   add_foreign_key "templates", "brands"
 end
