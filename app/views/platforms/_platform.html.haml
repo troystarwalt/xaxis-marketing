@@ -1,0 +1,20 @@
+.col-md-7.offset-md-1.col-sm-12
+  .platform-assets-container
+    .section#platform-one-sheeter
+      %h1.text-uppercase
+        %i.fa.fa-bomb.fa-lg
+        = @platform.slug
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis au
+      = link_to "download one-sheeter", "###", class: "brand-btn-primary xaxis-btn-primary"
+    %hr
+    .section#platform-videos
+      = render partial: "videos", locals: { platform: @platform }
+    %hr
+    .section#platform-case-study
+      = render partial: "case_studies", locals: { platform: @platform }
+    %hr
+    .section#platform-infographics
+      = render partial: "infographics", locals: { platform: @platform }
+    %hr
+    .section#platform-logo
+      = render partial: "logos", locals: { platform: @platform }

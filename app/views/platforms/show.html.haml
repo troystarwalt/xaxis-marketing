@@ -3,8 +3,8 @@
   .container
     .row
       = render partial: "side_nav_platforms"
-      - if lookup_context.find_all("platforms/_#{@platform.slug}").any? === true
-        = render partial: @platform.slug, brand: @platform
+      - if !@platform.nil?
+        = render partial: "platform", platform: @platform
       - else
         %p.col-lg-7.offset-lg-3.col-md-7.offset-md-3
           Sorry, there isn't anything here with the name,

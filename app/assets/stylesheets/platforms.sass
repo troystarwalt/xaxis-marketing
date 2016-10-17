@@ -16,11 +16,27 @@
           flex: 1 1 auto
           margin-top: 10px
           margin-bottom: 10px
+  .container
+    .row
+      #side-nav
+        margin-top: 25px
 
 @media (max-width: 991px)
+  #platforms
+    #platform_sub_nav
+      .nav-card
+        .flex-container-nav
+          // min-height: 200px
+        img
+          width: 75%
+          margin: 0 auto
+
+@media (max-width: 600px)
   #platforms
     #platform_sub_nav
       flex-direction: column
       .nav-card
         .flex-container-nav
           min-height: 200px
+        img
+          width: inherit
