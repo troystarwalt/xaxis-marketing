@@ -36,11 +36,4 @@ class BrandsController < InheritedResources::Base
     def brand_params
       params.require(:brand).permit(:name)
     end
-
-    def catch_not_found
-      yield
-    rescue ActiveRecord::RecordNotFound
-      redirect_to root_url
-      puts "oh not found"
-    end
 end

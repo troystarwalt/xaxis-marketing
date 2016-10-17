@@ -1,1 +1,15 @@
-%h1 welcome to show template for platform
+#platforms
+  = render partial: "platform_sub_nav"
+  .container
+    .row
+      = render partial: "side_nav_platforms"
+      - if !@platform.nil?
+        = render partial: "platform", platform: @platform
+      - else
+        %p.col-lg-7.offset-lg-3.col-md-7.offset-md-3
+          Sorry, there isn't anything here with the name,
+          %strong #{@platform.name}.
+          Please check your link or click back.
+          %br
+          -# The below only shows during test and development. Just a reminder.
+          = render_developer_note

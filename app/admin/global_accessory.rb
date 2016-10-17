@@ -11,7 +11,7 @@ ActiveAdmin.register GlobalAccessory do
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
-    para "This is for stuff that doesn't belong to juse one brand or platform."
+    para "This is for stuff that doesn't belong to just one brand or platform."
     f.inputs "Create a New Global Accessory" do
       f.input :category, as: :radio, :collection => GlobalAccessory::CATEGORIES
       f.input :name, placeholder: "This is for our use."
