@@ -1,0 +1,15 @@
+.col-md-2.hidden-sm-down
+  #side-nav.hidden-sm-down
+    %ul.nav#platform-asset-links
+      %li.nav-item
+        .text-uppercase= @platform.slug
+      %li.nav-item
+        =link_to "One-Sheeter", "#assets-one-sheeter", class: "side-nav-link smooth-scroll", id: "platform-one-sheeter-link"
+      %li.nav-item
+        =link_to "Videos", "#assets-videos", class: "side-nav-link smooth-scroll", id: "platform-videos-link"
+      %li.nav-item
+        =link_to "Case Study", "#assets-case-study", class: "side-nav-link smooth-scroll", id: "platform-case-study-link"
+      %li.nav-item
+        =link_to "Infographics", "#assets-infographics", class: "side-nav-link smooth-scroll", id: "platform-infographics-link"
+      %li.nav-item
+        =link_to "Logo", "#assets-logo", class: "side-nav-link smooth-scroll", id: "platform-logo-link"

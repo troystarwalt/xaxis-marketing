@@ -30,3 +30,9 @@ brands = ["Xaxis", "plista", "Light Reaction", "Triad"]
 brands.each do |brand_name|
   Brand.create(:name => brand_name)
 end
+
+platforms = ["Turbine", "Spotlight", "Xanadu"]
+
+platforms.each do |platform_name|
+  Platform.create(:name => platform_name)
+end

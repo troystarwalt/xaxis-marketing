@@ -1,0 +1,16 @@
+%nav.text-xs-center#platform_sub_nav
+  .nav-card#spotlight-card
+    =link_to platform_path('/spotlight'), class: "flex-container-nav" do
+      %i.fa.fa-bomb.fa-4x
+      =image_tag "bulb.svg", class: "img-fluid"
+      %h2.text-uppercase spotlight
+  .nav-card#turbine-card
+    =link_to platform_path('/turbine'), class: "flex-container-nav" do
+      %i.fa.fa-bomb.fa-4x
+      =image_tag "pencil.svg", class: "img-fluid"
+      %h2.text-uppercase turbine
+  .nav-card#xanadu-card
+    =link_to platform_path('/xanadu'), class: "flex-container-nav" do
+      %i.fa.fa-bomb.fa-4x
+      =image_tag "beaker.svg", class: "img-fluid"
+      %h2.text-uppercase xanadu

@@ -1,0 +1,26 @@
+#platforms
+  #platform_sub_nav
+    display: flex
+    flex-direction: row
+    .nav-card
+      background: $xaxis-lightest-blue
+      padding-top: 30px
+      padding-bottom: 30px
+      flex: 1 1 0%
+      .flex-container-nav
+        display: flex
+        flex-direction: column
+        min-height: 400px
+        flex: 1 1 0%
+        img
+          flex: 1 1 auto
+          margin-top: 10px
+          margin-bottom: 10px
+
+@media (max-width: 991px)
+  #platforms
+    #platform_sub_nav
+      flex-direction: column
+      .nav-card
+        .flex-container-nav
+          min-height: 200px
