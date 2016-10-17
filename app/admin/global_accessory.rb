@@ -1,14 +1,8 @@
-ActiveAdmin.register BrandAccessory do
-
-  # This is where admmins can add the accessories for each brand. This includes:
-  # ppt_template
-  # word_template
-  # guidlines
-  # capabilities
-  # logos
-  # fonts
-  # color palettes
-  # fast facts
+ActiveAdmin.register GlobalAccessory do
+  # This is where admmins can add global accessories. These do not belong to a specific brand or platform.
+  # Base categories include:
+  # image_bank
+  # generic
 
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
 
@@ -17,14 +11,13 @@ ActiveAdmin.register BrandAccessory do
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs "Create a New Brand Accessory" do
-      f.input :brand_id, as: :radio, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
-      f.input :category, as: :radio, :collection => BrandAccessory::CATEGORIES
-      f.input :name, label: "Name The File"
+    para "This is for stuff that doesn't belong to juse one brand or platform."
+    f.inputs "Create a New Global Accessory" do
+      f.input :category, as: :radio, :collection => GlobalAccessory::CATEGORIES
+      f.input :name, placeholder: "This is for our use."
       f.input :file
     end
     f.actions
-    puts params
   end
 
   index do
@@ -32,9 +25,6 @@ ActiveAdmin.register BrandAccessory do
     id_column
     column :name
     column :category
-    column :brand_id do |f|
-      f.brand.name
-    end
     column :created_at
     column :updated_at
     column :file do |f|
@@ -56,4 +46,5 @@ ActiveAdmin.register BrandAccessory do
       active_admin_comments
     end
   end
+
 end

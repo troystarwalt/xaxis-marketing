@@ -23,8 +23,10 @@ show do
 end
 
   form do |f|
+    para "Ask yourself...do you REALLY want to add a new Brand?"
+    f.semantic_errors *f.object.errors.keys
     f.inputs 'You can add a new Brand here.' do
-      f.input :name, label: 'Brand Name'
+      f.input :name, label: 'Brand Name', :placeholder => "Again...you probably do not want to create a new brand."
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
     end
     f.actions
