@@ -3,6 +3,8 @@
     display: flex
     flex-direction: row
     background: linear-gradient(165deg, rgba(178, 226, 250,1) 0%, rgba(178, 226, 250,1) 48%, rgba(144, 206, 237, 1) 48.2%, rgba(144, 206, 237, 1) 50%, rgba(117, 184, 224, 1), 50.2%, rgba(117, 184, 224, 1) 100%)
+    z-index: 100
+    background-size: 100%
     .nav-card
       padding-top: 30px
       padding-bottom: 30px
@@ -12,8 +14,10 @@
         color: $white
       .card-link
         transition: all .5s
+        z-index: 103
         .card-icon, .card-icon:visited
           color: $xaxis-darkest-blue
+          z-index: 103
           &:link, &:hover, &:active
             color: white
       a:hover .card-icon
@@ -26,38 +30,68 @@
         flex: 1 1 0%
         h2
           font-size: 1.7rem
+          z-index: 103
         img
           flex: 1 1 auto
           margin-top: 10px
           margin-bottom: 10px
           width: 200px
           margin: 0 auto
+          z-index: 103
     #spotlight-card, #turbine-card, #xanadu-card
       transition: background-position .5s
     #spotlight-card
+      position: relative
       // background: linear-gradient(165deg, #457a98 0%, #457a98 66%, #376b8b 65.2%, #376b8b 72%, #2e6280 44.2%, #2e6280 100%)
-      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
-      background-position: 0px -377px
-      background-size: auto 156%
+      &:before
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
+        content: ''
+        opacity: 0
+        z-index: 101
+        position: absolute
+        display:block
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        transition: opacity 1s
       &:hover
-        background-position: center
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+        &:before
+          opacity: 1
     #turbine-card
-      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
-      background-position: 0px -377px
-      background-size: auto 156%
+      position: relative
+      &:before
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
+        content: ''
+        opacity: 0
+        z-index: 101
+        position: absolute
+        display:block
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        transition: opacity 1s
       &:hover
-        background-position: bottom
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+        &:before
+          opacity: 1
     #xanadu-card
-      // background: linear-gradient(165deg, rgba(69,122,152,1) 0%, rgba(69,122,152,1) 38%, rgba(55,107,139,1) 38.2%, rgba(55,107,139,1) 44%, rgba(46,98,128,1) 44.2%, rgba(46,98,128,1) 100%)
-      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
-      background-position: 0px -377px
-      background-size: auto 156%
+      position: relative
+      &:before
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
+        content: ''
+        opacity: 0
+        z-index: 101
+        position: absolute
+        display:block
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        transition: opacity 1s
       &:hover
-        background-position: bottom
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
-
+        &:before
+          opacity: 1
   .container
     .row
       #side-nav
