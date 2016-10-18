@@ -2,20 +2,62 @@
   #platform_sub_nav
     display: flex
     flex-direction: row
+    background: linear-gradient(165deg, rgba(178, 226, 250,1) 0%, rgba(178, 226, 250,1) 48%, rgba(144, 206, 237, 1) 48.2%, rgba(144, 206, 237, 1) 50%, rgba(117, 184, 224, 1), 50.2%, rgba(117, 184, 224, 1) 100%)
     .nav-card
-      background: $xaxis-lightest-blue
       padding-top: 30px
       padding-bottom: 30px
       flex: 1 1 0%
+      height: 586px
+      .card-link:link, .card-link:active
+        color: $white
+      .card-link
+        transition: all .5s
+        .card-icon, .card-icon:visited
+          color: $xaxis-darkest-blue
+          &:link, &:hover, &:active
+            color: white
+      a:hover .card-icon
+        color: $white
+        transition: all .5s
       .flex-container-nav
         display: flex
         flex-direction: column
         min-height: 400px
         flex: 1 1 0%
+        h2
+          font-size: 1.7rem
         img
           flex: 1 1 auto
           margin-top: 10px
           margin-bottom: 10px
+          width: 200px
+          margin: 0 auto
+    #spotlight-card, #turbine-card, #xanadu-card
+      transition: background-position .5s
+    #spotlight-card
+      // background: linear-gradient(165deg, #457a98 0%, #457a98 66%, #376b8b 65.2%, #376b8b 72%, #2e6280 44.2%, #2e6280 100%)
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+      background-position: 0px -377px
+      background-size: auto 156%
+      &:hover
+        background-position: center
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+    #turbine-card
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+      background-position: 0px -377px
+      background-size: auto 156%
+      &:hover
+        background-position: bottom
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+    #xanadu-card
+      // background: linear-gradient(165deg, rgba(69,122,152,1) 0%, rgba(69,122,152,1) 38%, rgba(55,107,139,1) 38.2%, rgba(55,107,139,1) 44%, rgba(46,98,128,1) 44.2%, rgba(46,98,128,1) 100%)
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+      background-position: 0px -377px
+      background-size: auto 156%
+      &:hover
+        background-position: bottom
+        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 70%, rgba(55,107,139,1.0) 70.2%, rgba(55,107,139,1.0) 72%, rgba(46,98,128,1.0) 72.2%, rgba(46,98,128,1.0) 100%)
+
   .container
     .row
       #side-nav
