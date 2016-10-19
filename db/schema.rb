@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017150924) do
+ActiveRecord::Schema.define(version: 20161019164318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,35 @@ ActiveRecord::Schema.define(version: 20161017150924) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "infographics", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "image_preview"
+    t.string   "file"
+    t.integer  "platform_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["platform_id"], name: "index_infographics_on_platform_id", using: :btree
+  end
+
+  create_table "logos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "file"
+    t.integer  "platform_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["platform_id"], name: "index_logos_on_platform_id", using: :btree
+  end
+
+  create_table "one_sheeters", force: :cascade do |t|
+    t.string   "name"
+    t.string   "file"
+    t.integer  "platform_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["platform_id"], name: "index_one_sheeters_on_platform_id", using: :btree
+  end
+
   create_table "platforms", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
@@ -143,16 +172,21 @@ ActiveRecord::Schema.define(version: 20161017150924) do
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
-  create_table "templates", force: :cascade do |t|
+  create_table "videos", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
-    t.string   "file"
-    t.integer  "brand_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_templates_on_brand_id", using: :btree
+    t.string   "description"
+    t.string   "direct_link"
+    t.text     "embed_link"
+    t.string   "image_preview"
+    t.integer  "platform_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["platform_id"], name: "index_videos_on_platform_id", using: :btree
   end
 
   add_foreign_key "brand_accessories", "brands"
-  add_foreign_key "templates", "brands"
+  add_foreign_key "infographics", "platforms"
+  add_foreign_key "logos", "platforms"
+  add_foreign_key "one_sheeters", "platforms"
+  add_foreign_key "videos", "platforms"
 end
