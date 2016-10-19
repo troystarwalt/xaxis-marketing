@@ -1,5 +1,7 @@
 ActiveAdmin.register BrandAccessory do
 
+  menu parent: "Brands"
+
   # This is where admmins can add the accessories for each brand. This includes:
   # ppt_template
   # word_template

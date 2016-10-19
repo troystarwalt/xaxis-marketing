@@ -8,10 +8,6 @@ class Post < ApplicationRecord
     ["Announcement", "News", "Event", "Talent & Culture"]
   end
 
-  def pretty_date
-    created_at.to_date.strftime("%m\/\%d\/\%Y")
-  end
-
   def day_only
     created_at.to_date.strftime("%m")
   end
