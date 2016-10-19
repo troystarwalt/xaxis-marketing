@@ -5,7 +5,7 @@ ActiveAdmin.register GlobalAccessory do
   # generic
 
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
-
+  menu label: "Global", priority: 20
 
   permit_params :name, :category, :file, :brand_id
 
