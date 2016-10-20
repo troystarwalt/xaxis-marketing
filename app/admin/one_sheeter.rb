@@ -14,5 +14,15 @@ permit_params :name, :file, :platform_id
 #   permitted
 # end
 
+  form :html => { :multipart => true } do |f|
+    f.semantic_errors *f.object.errors.keys
+    f.inputs "Create a New One Sheeter" do
+      f.input :platform, as: :radio
+      f.input :name, placeholder: "Name of One-Sheeter"
+      f.input :file, as: :file
+    end
+    f.actions
+  end
+
 
 end

@@ -15,5 +15,16 @@ permit_params :name, :description, :image_preview, :file, :platform_id
 #   permitted
 # end
 
+  form :html => { :multipart => true } do |f|
+    f.semantic_errors *f.object.errors.keys
+    f.inputs "Create a New Inforgraphic Accessory" do
+      f.input :platform, as: :radio
+      f.input :name, placeholder: "Name of Infographic"
+      f.input :description
+      f.input :image_preview, as: :file
+      f.input :file, as: :file
+    end
+    f.actions
+  end
 
 end
