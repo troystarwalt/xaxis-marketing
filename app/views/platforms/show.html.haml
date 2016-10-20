@@ -13,3 +13,7 @@
           %br
           -# The below only shows during test and development. Just a reminder.
           = render_developer_note
+:javascript
+  $(window).scroll(function(){
+      $("#side-nav").css("top",Math.max(375,696-$(this).scrollTop()));
+  });
