@@ -20,7 +20,7 @@ ActiveAdmin.register BrandAccessory do
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Create a New Brand Accessory" do
-      f.input :brand, as: :radio#, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
+      f.input :brand, as: :radio
       f.input :category, as: :radio, :collection => BrandAccessory::CATEGORIES
       f.input :name, label: "Name The File"
       f.input :file

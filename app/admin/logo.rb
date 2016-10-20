@@ -27,5 +27,20 @@ batch_action :destroy, confirm: "Are you sure??"
     f.actions
   end
 
-
+  show do
+    attributes_table do
+      row :name
+      row :file do |f|
+        if f.file.content_type.start_with? 'image'
+          image_tag(f.file.thumb, class: "admin_show_image")
+        else
+          f.file_identifier
+        end
+      end
+      row :platform
+      row :created_at
+      row :updated_at
+    end
+    active_admin_comments
+  end
 end

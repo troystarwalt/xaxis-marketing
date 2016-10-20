@@ -42,7 +42,13 @@ ActiveAdmin.register Platform do
     panel "Logos" do
       table_for platform.logos do
         column :name
-        column :file
+        column :file do |f|
+          if f.file.content_type.start_with? 'image'
+            image_tag(f.file.preview, class: "admin_show_image")
+          else
+            f.file_url
+          end
+        end
         column :link do |f|
           link_to("View", admin_logo_path(f.id))
         end
@@ -52,7 +58,7 @@ ActiveAdmin.register Platform do
       table_for platform.infographics do
         column :name
         column :image_preview do |f|
-          image_tag(f.image_preview, class: "admin_show_image")
+          image_tag(f.image_preview.preview, class: "admin_show_image")
         end
         column :link do |f|
           link_to("View", admin_infographic_path(f.id))
@@ -64,7 +70,7 @@ ActiveAdmin.register Platform do
         column :name
         column :file
         column :image_preview do |f|
-          image_tag(f.image_preview, class: "admin_show_image")
+          image_tag(f.image_preview.preview, class: "admin_show_image")
         end
         column :link do |f|
           link_to("View", admin_video_path(f.id))

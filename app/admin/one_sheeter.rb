@@ -23,6 +23,17 @@ permit_params :name, :file, :platform_id
     end
     f.actions
   end
-
+  show do
+    attributes_table do
+      row :name
+      row :file do |f|
+        f.file_identifier
+      end
+      row :platform
+      row :created_at
+      row :updated_at
+    end
+    active_admin_comments
+  end
 
 end
