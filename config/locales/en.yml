@@ -22,3 +22,7 @@
 en:
   hello: "Hello world"
   news: "News"
+  active_admin:
+    our_welcome:
+      welcome: "Welcome to the dashboard."
+      small_msg: "Here you can create content for the site. This content is dynamically created!"
