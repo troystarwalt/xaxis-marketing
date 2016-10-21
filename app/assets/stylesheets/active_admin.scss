@@ -18,7 +18,6 @@ $panelHeaderBck: #002744;
 @import "active_skin";
 
 
-
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
@@ -33,4 +32,10 @@ h1.site_title {
 .admin_show_image {
   max-width: 100%;
   height: auto;
+}
+
+.subtitle {
+  border: 1px dashed $xaxis-light-green;
+  text-align: center;
+  padding: 2px
 }

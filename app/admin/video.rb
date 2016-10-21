@@ -15,12 +15,27 @@ form :html => { :multipart => true } do |f|
     f.input :name, placeholder: "Video Name"
     f.input :description
     f.input :direct_link
-    # f.input :remote_preview_image_url, as: "hidden", :input_html => { value: woot } do
-    #   woot = VideoThumb::get(params[:direct_link])
-    # end
     f.input :embed_link
   end
   f.actions
+end
+
+show do
+  attributes_table do
+    row :name
+    row :description
+    row :direct_link
+    row :embed_link
+    row :image_preview do |f|
+      if f.image_preview.present?
+        image_tag(f.image_prevew, class: 'admin_show_image')
+      end
+    end
+    row :platform
+    row :created_at
+    row :updated_at
+  end
+  active_admin_comments
 end
 
 end
