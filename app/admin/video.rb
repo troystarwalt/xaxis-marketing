@@ -4,8 +4,7 @@ permit_params :name, :description, :direct_link, :embed_link, :image_preview, :p
 
 before_save do |video|
   get_link = VideoThumb::get(video.direct_link)
-  video.image_preview = get_link
-  byebug
+  video.remote_image_preview_url = get_link
 end
 
 form :html => { :multipart => true } do |f|
@@ -28,7 +27,7 @@ show do
     row :embed_link
     row :image_preview do |f|
       if f.image_preview.present?
-        image_tag(f.image_prevew, class: 'admin_show_image')
+        image_tag(f.image_preview, class: 'admin_show_image')
       end
     end
     row :platform
