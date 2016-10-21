@@ -34,15 +34,9 @@ class PostsController < ApplicationController
   end
 
   def main
-    @posts = Post.includes(:tags).all
-    @news_posts = @posts.tagged_by("News").last(5)
-    @announcement_posts = @posts.tagged_by("Announcement").last(3)
-    @event_posts = @posts.tagged_by("Event").last(5)
-    @event_posts_most_recent = @event_posts[2, 4]
-    @talent_posts = @posts.tagged_by("Talent & Culture").last(3)
-
+    @posts = Post.includes(:tags).last(5)
     @tags = ActsAsTaggableOn::Tag.most_used
-
+    gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}
   end
 
   def post_params
