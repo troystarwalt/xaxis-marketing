@@ -1,8 +1,8 @@
-class FileUploader < CarrierWave::Uploader::Base
+class VideoPreviewUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -15,34 +15,30 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url(*args)
-    # For Rails 3.1+ asset pipeline compatibility:
-    # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    random = ["xaxis", "lr", "turbine", "plista", "triad"]
-    "https://robohash.org/#{random.sample}.png?size=200x200"
-  end
+  # def default_url
+  #   # For Rails 3.1+ asset pipeline compatibility:
+  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+  #
+  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+  # end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
-  # def scale(width, height)
-  #   # do something
-  # end
-
   # Create different versions of your uploaded files:
-    version :thumb, :if => :image? do
-      process resize_to_limit: [100, 100]
-    end
-
-    version :preview, :if => :image? do
-      process resize_to_fit: [600, 600]
-    end
+    # version :thumb do
+    #   process resize_to_limit: [100, 100]
+    # end
+    #
+    # version :preview do
+    #   process resize_to_fit: [600, 600]
+    # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  def extension_whitelist
-    %w(zip pdf ppt pptx doc docx ase png eps jpeg jpg)
-  end
+  # def extension_whitelist
+  #   %w(png jpeg jpg)
+  # end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
@@ -50,10 +46,10 @@ class FileUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  protected
-
-  def image?(new_file)
-    new_file.content_type.start_with? 'image'
-  end
+  # protected
+  #
+  # def image?(new_file)
+  #   new_file.content_type.start_with? 'image'
+  # end
 
 end

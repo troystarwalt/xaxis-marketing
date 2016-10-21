@@ -43,7 +43,9 @@ ActiveAdmin.register Platform do
       table_for platform.logos do
         column :name
         column :file do |f|
-          if f.file.content_type.start_with? 'image'
+          if f.file.content_type.nil?
+            image_tag(f.file_url, class: "admin_show_image")
+          elsif f.file.content_type.start_with? 'image'
             image_tag(f.file.preview, class: "admin_show_image")
           else
             f.file_url
@@ -68,9 +70,8 @@ ActiveAdmin.register Platform do
     panel "Videos" do
       table_for platform.videos do
         column :name
-        column :file
-        column :image_preview do |f|
-          image_tag(f.image_preview.preview, class: "admin_show_image")
+        column :direct_link do |f|
+          link_to(f.direct_link, f.direct_link, target: "_blank")
         end
         column :link do |f|
           link_to("View", admin_video_path(f.id))
