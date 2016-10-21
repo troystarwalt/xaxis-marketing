@@ -25,7 +25,7 @@ gem 'rubyzip'
 gem 'sassc-rails', github: 'sass/sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'video_thumb'  # Magic on vimeo video links
-
+gem 'gon'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

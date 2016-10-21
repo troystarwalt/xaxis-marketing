@@ -1,597 +1,590 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Xaxis Value Calculator</title>
-	<meta name="description" content="{{ content.meta_description }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  	<link rel="stylesheet" href="./value-calculator/style.css" />
-</head>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://www.xaxis.com"><img src="http://cdn2.hubspot.net/hubfs/436935/images/Xaxis_Logo_Pos_Vert_reduced.png" id="navbar-logo" class="nav-image img-responsive" alt="Xaxis Logo"></a>
-    </div>
-  </div>
-</nav>
-<div class='container-fluid section'>
-  <div class='header-image'>
-      <div class='text-left header_text'>
-        <div class='row'>
-            <div class='col-sm-8 col-sm-offset-3'>
-                <h1>
-                  <div class='header_year-text'>2016 Xaxis</div>
-                  <div id='regional_name' class='header_descriptor-text'></div>
-                  <div class='header_descriptor-text'>
-                    Programmatic Media
-                    <br />
-                    Buying Calculator
-                  </div>
-                </h1>
-            </div>
+    <meta name="description" content="{{ content.meta_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./value-calculator/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://www.xaxis.com"><img src="http://cdn2.hubspot.net/hubfs/436935/images/Xaxis_Logo_Pos_Vert_reduced.png" id="navbar-logo" class="nav-image img-responsive" alt="Xaxis Logo"></a>
         </div>
-    </div>
-  </div>
-</div>
-<div class="container section" id="welcome-note">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <p class='gotham-light'>
-        The 2016 Xaxis Programmatic Media Value Calculator is designed to provide insights into the unique Xaxis media business model as well as tangible and measurable value to its customers based on the all-inclusive programmatic media products.
-      </p>
-      <p class='gotham-light'>
-        To discover the value of Xaxis, just input your budget, the spend weighting for your campaign, price of your CPMs, the type of staffing, and any addons you'll need.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id='form_and_table'>
-  <div class='user-form section'>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class='container'>
+      </div>
+    </nav>
+    <div class='container-fluid section'>
+      <div class='header-image'>
+        <div class='text-left header_text'>
           <div class='row'>
-            <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container'>
-                  <p>
-                    1. Which region are you in?
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container'>
-                  <ul class='list-group'>
-                    <li class='list-group-item'>
-                      <select id='query_for_region' name='region'>
-                        <option value=''>
-                          Select your locality
-                        </option>
-                        <option value='us'>
-                          United States
-                        </option>
-                        <option value='uk'>
-                          United Kingdom
-                        </option>
-                        <option value='de'>
-                          Germany
-                        </option>
-                        <option value='it'>
-                          Italy
-                        </option>
-                      </select>
-                    </li>
-                  </ul>
-                </div>
+            <div class='col-sm-8 col-sm-offset-3'>
+              <h1>
+              <div class='header_year-text'>2016 Xaxis</div>
+              <div id='regional_name' class='header_descriptor-text'></div>
+              <div class='header_descriptor-text'>
+                Programmatic Media
+                <br />
+                Buying Calculator
               </div>
-              <!--Question 1-->
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container odd'>
-                  <p>
-                    2. What is your monthly budget?
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container odd'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      <div class="input-group">
-                        <span class="input-group-addon currency_symbol">$</span>
-                        <div class='form-control' style='background-color: transparent;' id='fake_input_total' contenteditable="true"
-                        >
-                        </div>
-                        <input id='input_total' type='number' step='0.01' min='0' class='form-control' style='display:none;'/>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container'>
-                  <p>
-                    3. How will you allocate it?
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      Display
-                      <div class="input-group">
-                        <input id='input_displayBudgetWeighting' type='number' value='50' min='0' max='100' class='form-control'/>
-                        <span class="input-group-addon">%</span>
-                      </div>
-                    </li>
-                    <li class='list-group-item text-left'>
-                      Video
-                      <div class="input-group">
-                        <input id='input_videoBudgetWeighting' type='number' value='50' min='0' max='100' class='form-control'/>
-                        <span class="input-group-addon">%</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container odd'>
-                  <div class='row'>
-                    4. What are you paying per CPM
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container section" id="welcome-note">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <p class='gotham-light'>
+            The 2016 Xaxis Programmatic Media Value Calculator is designed to provide insights into the unique Xaxis media business model as well as tangible and measurable value to its customers based on the all-inclusive programmatic media products.
+          </p>
+          <p class='gotham-light'>
+            To discover the value of Xaxis, just input your budget, the spend weighting for your campaign, price of your CPMs, the type of staffing, and any addons you'll need.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id='form_and_table'>
+      <div class='user-form section'>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class='container'>
+              <div class='row'>
+                <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container'>
+                      <p>
+                        1. Which region are you in?
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container'>
+                      <ul class='list-group'>
+                        <li class='list-group-item'>
+                          <select id='query_for_region' name='region'>
+                            <option value=''>
+                              Select your locality
+                            </option>
+                            <option value='us'>
+                              United States
+                            </option>
+                            <option value='uk'>
+                              United Kingdom
+                            </option>
+                            <option value='de'>
+                              Germany
+                            </option>
+                            <option value='it'>
+                              Italy
+                            </option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <br />
-                  <br />
-                  <div class='row'>
-                    4b. Viewability <div class="slideThree">
-                      <input type="checkbox" value="None" id="check_guaranteed_viewability" name="check_guaranteed_viewability" checked />
-                      <label for="check_guaranteed_viewability"></label>
-                    </div> Guaranteed
-                  </div>
-                </div>
-                <div class='col-sm-6 data-container odd'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      Display
-                      <div class="input-group">
-                        <span class="input-group-addon currency_symbol">$</span>
-                        <input id='input_mediaCpmDisplayDSP' type='number' step='0.01' min='0' class='form-control'/>
-                        <span class="input-group-addon benchmark">
-                          <span id='benchmark_display'>50%</span> VB*
-                        </span>
-                      </div>
-                    </li>
-                    <li class='list-group-item text-left'>
-                      Video
-                      <div class="input-group">
-                        <span class="input-group-addon currency_symbol">$</span>
-                        <input id='input_mediaCpmVideoDSP' type='number' step='0.01' min='0' class='form-control'/>
-                        <span class="input-group-addon benchmark">
-                          <span id='benchmark_video'>30%</span> VB*
-                        </span>
-                      </div>
-                    </li>
-                    <span class='pull-right benchmark'>VB* = Viewability Benchmark</span>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container'>
-                  <p>
-                    5. Which model to compare to?
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      <select id='select_comparisonModel'>
-                        <option value='dsp'>
-                          DSP
-                        </option>
-                        <option value='pbu'>
-                          PBU
-                        </option>
-                      </select>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container'>
-                <div class='col-sm-6 text-container odd'>
-                  <p>
-                    6. Set the % commision to compare
-                    vs. Xaxis' all-inclusive model
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container odd'>
-                  <ul class='list-group'>
-                    <li id='row_PctOfMedia_inputs' class='list-group-item text-left reduce-padding'>
-                      <div class='row'>
-                        <div class='col-xs-12 list-group-item'>
-                          <i>( % of Budget )</i>
+                  <!--Question 1-->
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container odd'>
+                      <p>
+                        2. What is your monthly budget?
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container odd'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
                           <div class="input-group">
-                            <input id='input_pctOfMedia' type='number' min='0' value='0' step='1' class='form-control'/>
+                            <span class="input-group-addon currency_symbol">$</span>
+                            <div class='form-control' style='background-color: transparent;' id='fake_input_total' contenteditable="true"
+                              >
+                            </div>
+                            <input id='input_total' type='number' step='0.01' min='0' class='form-control' style='display:none;'/>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container'>
+                      <p>
+                        3. How will you allocate it?
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
+                          Display
+                          <div class="input-group">
+                            <input id='input_displayBudgetWeighting' type='number' value='50' min='0' max='100' class='form-control'/>
                             <span class="input-group-addon">%</span>
                           </div>
-                        </div>
-                        <div class='col-xs-12 list-group-item'>
+                        </li>
+                        <li class='list-group-item text-left'>
+                          Video
+                          <div class="input-group">
+                            <input id='input_videoBudgetWeighting' type='number' value='50' min='0' max='100' class='form-control'/>
+                            <span class="input-group-addon">%</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container odd'>
+                      <div class='row'>
+                        4. What are you paying per CPM
+                      </div>
+                      <br />
+                      <br />
+                      <div class='row'>
+                        4b. Viewability <div class="slideThree">
+                          <input type="checkbox" value="None" id="check_guaranteed_viewability" name="check_guaranteed_viewability" checked />
+                          <label for="check_guaranteed_viewability"></label>
+                        </div> Guaranteed
+                      </div>
+                    </div>
+                    <div class='col-sm-6 data-container odd'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
+                          Display
+                          <div class="input-group">
+                            <span class="input-group-addon currency_symbol">$</span>
+                            <input id='input_mediaCpmDisplayDSP' type='number' step='0.01' min='0' class='form-control'/>
+                            <span class="input-group-addon benchmark">
+                              <span id='benchmark_display'>50%</span> VB*
+                            </span>
+                          </div>
+                        </li>
+                        <li class='list-group-item text-left'>
+                          Video
+                          <div class="input-group">
+                            <span class="input-group-addon currency_symbol">$</span>
+                            <input id='input_mediaCpmVideoDSP' type='number' step='0.01' min='0' class='form-control'/>
+                            <span class="input-group-addon benchmark">
+                              <span id='benchmark_video'>30%</span> VB*
+                            </span>
+                          </div>
+                        </li>
+                        <span class='pull-right benchmark'>VB* = Viewability Benchmark</span>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container'>
+                      <p>
+                        5. Which model to compare to?
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
+                          <select id='select_comparisonModel'>
+                            <option value='dsp'>
+                              DSP
+                            </option>
+                            <option value='pbu'>
+                              PBU
+                            </option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container'>
+                    <div class='col-sm-6 text-container odd'>
+                      <p>
+                        6. Set the % commision to compare
+                        vs. Xaxis' all-inclusive model
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container odd'>
+                      <ul class='list-group'>
+                        <li id='row_PctOfMedia_inputs' class='list-group-item text-left reduce-padding'>
+                          <div class='row'>
+                            <div class='col-xs-12 list-group-item'>
+                              <i>( % of Budget )</i>
+                              <div class="input-group">
+                                <input id='input_pctOfMedia' type='number' min='0' value='0' step='1' class='form-control'/>
+                                <span class="input-group-addon">%</span>
+                              </div>
+                            </div>
+                            <div class='col-xs-12 list-group-item'>
+                              Xaxis
+                              <i>( All-Inclusive )</i>
+                              <div class="input-group">
+                                <input type='number' value='0' class='form-control' disabled/>
+                                <span class="input-group-addon">%</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container pbu_comparisons'>
+                    <div class='col-sm-6 text-container'>
+                      <p>
+                        7. Platform Tech Fee
+                      </p>
+                    </div>
+                    <div class='col-sm-6 data-container'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
+                          Non-Xaxis
+                          <i>(usually around 9% of total budget)</i>
+                          <div class="input-group">
+                            <input id='platform-tech-fee' type='number' min='0' value='9' class='form-control'/>
+                            <span class="input-group-addon">%</span>
+                          </div>
+                        </li>
+                        <li class='list-group-item text-left'>
                           Xaxis
-                          <i>( All-Inclusive )</i>
+                          <i>( All-inclusive )</i>
                           <div class="input-group">
                             <input type='number' value='0' class='form-control' disabled/>
                             <span class="input-group-addon">%</span>
                           </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container pbu_comparisons'>
-                <div class='col-sm-6 text-container'>
-                  <p>
-                    7. Platform Tech Fee
-                  </p>
-                </div>
-                <div class='col-sm-6 data-container'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      Non-Xaxis
-                      <i>(usually around 9% of total budget)</i>
-                      <div class="input-group">
-                        <input id='platform-tech-fee' type='number' min='0' value='9' class='form-control'/>
-                        <span class="input-group-addon">%</span>
-                      </div>
-                    </li>
-                    <li class='list-group-item text-left'>
-                      Xaxis
-                      <i>( All-inclusive )</i>
-                      <div class="input-group">
-                        <input type='number' value='0' class='form-control' disabled/>
-                        <span class="input-group-addon">%</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class='row form-row question-container'>
-                <div id='toggle-odd' class='col-sm-6 text-container odd'>
-                  <p>
-                    <span class='dsp_comparisons'>7.</span><span class='pbu_comparisons'>8.</span> Do you need Anything Added On?
-                  </p>
-                </div>
-                <div  id='toggle-odd2' class='col-sm-6 data-container odd'>
-                  <ul class='list-group'>
-                    <li class='list-group-item text-left'>
-                      <input class='checkmarkSelector' id='check_DMPAddon' type='checkbox'/>
-                      DMP (Data Segmentation / Storage / Modeling)
-                      <div id='DMPAddon_quantity'>
-                        <p>
-                          Assumes avg cost/month
-                        </p>
-                        <div class="input-group">
-                          <span class="input-group-addon currency_symbol">$</span>
-                          <input id='input_DMPAddon' type=number value='0' min='0' step='1' class='form-control' disabled/>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='row form-row question-container'>
+                    <div id='toggle-odd' class='col-sm-6 text-container odd'>
+                      <p>
+                        <span class='dsp_comparisons'>7.</span><span class='pbu_comparisons'>8.</span> Do you need Anything Added On?
+                      </p>
+                    </div>
+                    <div  id='toggle-odd2' class='col-sm-6 data-container odd'>
+                      <ul class='list-group'>
+                        <li class='list-group-item text-left'>
+                          <input class='checkmarkSelector' id='check_DMPAddon' type='checkbox'/>
+                          DMP (Data Segmentation / Storage / Modeling)
+                          <div id='DMPAddon_quantity'>
+                            <p>
+                              Assumes avg cost/month
+                            </p>
+                            <div class="input-group">
+                              <span class="input-group-addon currency_symbol">$</span>
+                              <input id='input_DMPAddon' type=number value='0' min='0' step='1' class='form-control' disabled/>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class='xaxis-difference section'>
-    <div class='container'>
-      <div class='row'>
-        <div class='col-sm-12'>
-          <h2 class='text-center dark-grey-text big-margin-bottom big-margin-top gotham-xl'>
-            The Xaxis Difference
-          </h2>
-          <h4 class='text-center dark-blue-text gotham-medium medium-margin-bottom'>
-            Xaxis vs <span class='dark-blue-text gotham-medium pbu_comparisons'>PBU</span><span class='dark-blue-text gotham-medium dsp_comparisons'>DSP</span>
-          </h4>
-          <hr class='full-width' />
+      <div class='xaxis-difference section'>
+        <div class='container'>
           <div class='row'>
-            <div class='col-xs-12 col-sm-4 col-md-4 left-column medium-margin-bottom medium-margin-top'>
-              <div class='col-sm-10 col-sm-offset-1 text-center'>
-                <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
-                  More Working Media
-                </h4>
-                <p class='text-center no-margin'>
-                  <span id='pbu_pct_extra_working_media' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
-                  <span id='dsp_pct_extra_working_media' class='boldest-numbers blue-text gotham-medium dsp_comparisons'></span>
-                </p>
-                <p class='gotham-medium'>
-                  Xaxis puts
-                  <span id='pbu_small_pct_extra_working_media' class='blue-text gotham-medium pbu_comparisons'></span>
-                  <span id='dsp_small_pct_extra_working_media' class='blue-text gotham-medium dsp_comparisons'></span>
-                  <span class='blue-text gotham-medium'>more</span> toward working media
-                </p>
-                <br><br>
-
-                  <p class='big-margin-bottom dsp_comparisons'>
-                    <strong><span class='impressionScount blue-text gotham-book' id='dspAddedWorkingMedia'></span></strong>
-                    <br/>
-                    more working media
-                    <br/>
-                  </p>
-                  <p class='pbu_comparisons'>
-                    <strong><span class='impressionScount blue-text gotham-book' id='pbuAddedWorkingMedia'></span></strong>
-                    <br/>
-                    more working media
-                    <br/>
-                  </p>
-
-              </div>
-            </div>
-            <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top dsp_comparisons'>
-              <div class='col-sm-10 col-sm-offset-1 text-center'>
-                <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
-                  More Impressions
-                </h4>
-                <p class='text-center no-margin'>
-                  <span class='boldest-numbers blue-text gotham-medium' id='moreImpressionsDSPPct'></span>
-                </p>
-                <p class='gotham-medium'>
-                  Xaxis serves
-                  <span class='blue-text gotham-medium' id='moreImpressionsDSPPct2'></span>
-                  <span class='blue-text gotham-medium'>more
-                  </span>impressions
-                </p>
-                <br><br>
-                <p>
-                  <strong>
-                    <span class='impressionScount blue-text gotham-book' id='impressionsVsDSP'></span>
-                  </strong>
-                  <br/>
-                  more total impressions
-                  <br/>
-                  <div class='benchmark'>
-                    <hr>
-                    <strong>
-                      <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsDSP'></span>
-                    </strong>
-                    <br/>
-                    more viewable impressions
-                    <br/>
+            <div class='col-sm-12'>
+              <h2 class='text-center dark-grey-text big-margin-bottom big-margin-top gotham-xl'>
+              The Xaxis Difference
+              </h2>
+              <h4 class='text-center dark-blue-text gotham-medium medium-margin-bottom'>
+              Xaxis vs <span class='dark-blue-text gotham-medium pbu_comparisons'>PBU</span><span class='dark-blue-text gotham-medium dsp_comparisons'>DSP</span>
+              </h4>
+              <hr class='full-width' />
+              <div class='row'>
+                <div class='col-xs-12 col-sm-4 col-md-4 left-column medium-margin-bottom medium-margin-top'>
+                  <div class='col-sm-10 col-sm-offset-1 text-center'>
+                    <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
+                    More Working Media
+                    </h4>
+                    <p class='text-center no-margin'>
+                      <span id='pbu_pct_extra_working_media' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
+                      <span id='dsp_pct_extra_working_media' class='boldest-numbers blue-text gotham-medium dsp_comparisons'></span>
+                    </p>
+                    <p class='gotham-medium'>
+                      Xaxis puts
+                      <span id='pbu_small_pct_extra_working_media' class='blue-text gotham-medium pbu_comparisons'></span>
+                      <span id='dsp_small_pct_extra_working_media' class='blue-text gotham-medium dsp_comparisons'></span>
+                      <span class='blue-text gotham-medium'>more</span> toward working media
+                    </p>
+                    <br><br>
+                    <p class='big-margin-bottom dsp_comparisons'>
+                      <strong><span class='impressionScount blue-text gotham-book' id='dspAddedWorkingMedia'></span></strong>
+                      <br/>
+                      more working media
+                      <br/>
+                    </p>
+                    <p class='pbu_comparisons'>
+                      <strong><span class='impressionScount blue-text gotham-book' id='pbuAddedWorkingMedia'></span></strong>
+                      <br/>
+                      more working media
+                      <br/>
+                    </p>
                   </div>
-                </p>
-              </div>
-            </div>
-            <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top pbu_comparisons'>
-              <div class='col-sm-10 col-sm-offset-1 text-center'>
-                <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
-                  More Impressions
-                </h4>
-                <p class='text-center no-margin'>
-                  <span class='blue-text boldest-numbers gotham-medium' id='moreImpressionsPBUPct'></span>
-                </p>
-                <p class='gotham-medium'>
-                  Xaxis serves
-                  <span class='blue-text gotham-medium' id='moreImpressionsPBUPct2'></span>
-                  <span class='blue-text gotham-medium'>more</span> impressions
-                </p>
-                <br><br>
-                <p>
-                  <strong>
-                    <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
-                  </strong><br/>
-                  more total impressions
-                  <br/>
-                  <div class='benchmark'>
-                    <hr>
-                    <strong>
-                      <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsPBU'></span>
-                    </strong><br/>
-                    more viewable impressions<br/>
+                </div>
+                <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top dsp_comparisons'>
+                  <div class='col-sm-10 col-sm-offset-1 text-center'>
+                    <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
+                    More Impressions
+                    </h4>
+                    <p class='text-center no-margin'>
+                      <span class='boldest-numbers blue-text gotham-medium' id='moreImpressionsDSPPct'></span>
+                    </p>
+                    <p class='gotham-medium'>
+                      Xaxis serves
+                      <span class='blue-text gotham-medium' id='moreImpressionsDSPPct2'></span>
+                      <span class='blue-text gotham-medium'>more
+                      </span>impressions
+                    </p>
+                    <br><br>
+                    <p>
+                      <strong>
+                      <span class='impressionScount blue-text gotham-book' id='impressionsVsDSP'></span>
+                      </strong>
+                      <br/>
+                      more total impressions
+                      <br/>
+                      <div class='benchmark'>
+                        <hr>
+                        <strong>
+                        <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsDSP'></span>
+                        </strong>
+                        <br/>
+                        more viewable impressions
+                        <br/>
+                      </div>
+                    </p>
                   </div>
-                </p>
-              </div>
-            </div>
-            <div class='col-xs-12 col-sm-4 col-md-4 right-column medium-margin-bottom medium-margin-top'>
-              <div class='col-sm-10 col-sm-offset-1 text-center'>
-                <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
-                  Cost Needed To Match
-                </h4>
-                <p class='text-center no-margin'>
-                  <span id='pbu_Added_budget_necessary' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
-                  <span id='dsp_Added_budget_necessary' class='boldest-numbers blue-text gotham-medium dsp_comparisons'></span>
-                </p>
-                <p class='gotham-medium'>
-                  Requires
-                  <span id='pbu_small_added_budget_necessary' class='blue-text gotham-medium pbu_comparisons'></span>
-                  <span id='dsp_small_added_budget_necessary' class='blue-text gotham-medium dsp_comparisons'></span>
-                  <span class='blue-text gotham-medium'>additional</span> budget to match
-                </p>
-                <br><br>
-                <p class='big-margin-bottom dsp_comparisons'>
-                  <strong>
-                  <span class='impressionScount blue-text gotham-book' id='costNonXaxisDSPPartner'></span>
-                    <span class='impressionScount blue-text gotham-book ' id='impressionsVsDSP'></span>
-                  </strong><br/>
-                  additional budget
-                  <br/>
-                </p>
-                <p class='pbu_comparisons'>
-                  <strong>
-                    <span class='impressionScount blue-text gotham-book' id='costNonXaxisPartner'></span>
-                    <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
-                  </strong><br/>
-                  additional budget
-                  <br/>
-                </p>
+                </div>
+                <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top pbu_comparisons'>
+                  <div class='col-sm-10 col-sm-offset-1 text-center'>
+                    <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
+                    More Impressions
+                    </h4>
+                    <p class='text-center no-margin'>
+                      <span class='blue-text boldest-numbers gotham-medium' id='moreImpressionsPBUPct'></span>
+                    </p>
+                    <p class='gotham-medium'>
+                      Xaxis serves
+                      <span class='blue-text gotham-medium' id='moreImpressionsPBUPct2'></span>
+                      <span class='blue-text gotham-medium'>more</span> impressions
+                    </p>
+                    <br><br>
+                    <p>
+                      <strong>
+                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
+                      </strong><br/>
+                      more total impressions
+                      <br/>
+                      <div class='benchmark'>
+                        <hr>
+                        <strong>
+                        <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsPBU'></span>
+                        </strong><br/>
+                        more viewable impressions<br/>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+                <div class='col-xs-12 col-sm-4 col-md-4 right-column medium-margin-bottom medium-margin-top'>
+                  <div class='col-sm-10 col-sm-offset-1 text-center'>
+                    <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
+                    Cost Needed To Match
+                    </h4>
+                    <p class='text-center no-margin'>
+                      <span id='pbu_Added_budget_necessary' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
+                      <span id='dsp_Added_budget_necessary' class='boldest-numbers blue-text gotham-medium dsp_comparisons'></span>
+                    </p>
+                    <p class='gotham-medium'>
+                      Requires
+                      <span id='pbu_small_added_budget_necessary' class='blue-text gotham-medium pbu_comparisons'></span>
+                      <span id='dsp_small_added_budget_necessary' class='blue-text gotham-medium dsp_comparisons'></span>
+                      <span class='blue-text gotham-medium'>additional</span> budget to match
+                    </p>
+                    <br><br>
+                    <p class='big-margin-bottom dsp_comparisons'>
+                      <strong>
+                      <span class='impressionScount blue-text gotham-book' id='costNonXaxisDSPPartner'></span>
+                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsDSP'></span>
+                      </strong><br/>
+                      additional budget
+                      <br/>
+                    </p>
+                    <p class='pbu_comparisons'>
+                      <strong>
+                      <span class='impressionScount blue-text gotham-book' id='costNonXaxisPartner'></span>
+                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
+                      </strong><br/>
+                      additional budget
+                      <br/>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class='prove-it'>
-    <div class='container'>
-      <div class='col-xs-12'>
-        <div class='table-responsive outer-table'>
-          <h2 class="text-center dark-grey-text big-margin-bottom gotham-xl">The Raw Data</h2>
-          <table id='testTable' class='table table-striped table-bordered table-hover table-condensed'>
-            <tr>
-              <th></th>
-              <th class='dsp_comparisons'>DSP</th>
-              <th class='pbu_comparisons'>PBU</th>
-              <th>Xaxis</th>
-            </tr>
-            <tr>
-              <td>Total Starting Budget:</td>
-              <td class='dsp_comparisons' id='totalDsp'></td>
-              <td class='pbu_comparisons' id='totalPbu'></td>
-              <td id='totalXaxis'></td>
-            </tr>
-            <tr>
-              <td>Execution Costs</td>
-              <td class='dsp_comparisons' id='executionCostsDsp'></td>
-              <td class='pbu_comparisons' id='executionCostsPbu'></td>
-              <td id='executionCostsXaxis'></td>
-            </tr>
-            <tr>
-              <td class="empty-row" colspan='4'></td>
-            </tr>
-            <tr>
-              <th>Component</th>
-              <th colspan='2'></th>
-            </tr>
-            <tr>
-              <td>Working Media Budget</td>
-              <td class='dsp_comparisons' id='workingMediaBudgetDsp'></td>
-              <td class='pbu_comparisons' id='workingMediaBudgetPbu'></td>
-              <td id='workingMediaBudgetXax'></td>
-            </tr>
-            <tr>
-              <td>Media CPM - Display</td>
-              <td class='dsp_comparisons' id='mediaCpmDisplayDsp'></td>
-              <td class='pbu_comparisons' id='mediaCpmDisplayPBU'></td>
-              <td id='mediaCpmDisplayXaxis'></td>
-            </tr>
-            <tr>
-              <td>Media CPM - Video</td>
-              <td class='dsp_comparisons' id='mediaCpmVideoDsp'></td>
-              <td class='pbu_comparisons' id='mediaCpmVideoPBU'></td>
-              <td id='mediaCpmVideoXaxis'></td>
-            </tr>
-            <tr>
-              <td>Impressions (Total)</td>
-              <td class='dsp_comparisons' id='impressionsTotalDSP'></td>
-              <td class='pbu_comparisons' id='impressionsTotalPBU'></td>
-              <td id='impressionsTotalXaxis'></td>
-            </tr>
-            <tr class='benchmark'>
-              <td>Impressions (Viewable)</td>
-              <td class='dsp_comparisons' id='impressionsViewableDSP'></td>
-              <td class='pbu_comparisons' id='impressionsViewablePBU'></td>
-              <td id='impressionsViewableXaxis'></td>
-            </tr>
-            <tr>
-              <td class='empty-row' colspan="3"></td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Costs</strong>
-              </td>
-              <td colspan='2'></td>
-            </tr>
-            <tr>
-              <td>
-                Misc Fees
-              </td>
-              <td colspan="2"></td>
-            </tr>
-            <tr class='pbu_comparisons'>
-              <td>Tech Cost (Use of trading platform)</td>
-              <td class='dsp_comparisons'>
-                0
-              </td>
-              <td class='pbu_comparisons' id='techCostPbu'></td>
-              <td>
-                N/A
-              </td>
-            </tr>
-            <tr>
-              <td>Data Cost (3rd party data used for buying)</td>
-              <td class='dsp_comparisons'>
-                0
-              </td>
-              <td  class='pbu_comparisons' id='dataCostPbu'>
-                <span id='input_dataCostPBU'>0</span>
-              </td>
-              <td>
-                N/A
-              </td>
-            </tr>
-            <tr>
-              <td>Verification and Adserving</td>
-              <td class='dsp_comparisons'>0</td>
-              <td class='pbu_comparisons' id='verificationAdvertisingPBU'></td>
-              <td>N/A</td>
-            </tr>
-            <tr class='dsp_comparisons'>
-              <td>DSP Spend on Internal Media</td>
-              <td class='dsp_comparisons' id='dspInternalSpend'></td>
-              <td class='pbu_comparisons'>N/A</td>
-              <td>N/A</td>
-            </tr>
-            <tr>
-              <td class='empty-row' colspan="3"></td>
-            </tr>
-            <tr id='row_staffing'>
-              <td>
-                <strong>Staffing</strong>
-              </td>
-              <td class='empty-row' colspan="2"></td>
-            </tr>
-            <tr id='row_PctOfMedia'>
-              <td >% Commission</td>
-              <td class='dsp_comparisons' id='pctOfMediaDSP'></td>
-              <td class='pbu_comparisons' id='pctOfMediaPbu'></td>
-              <td>N/A</td>
-            </tr>
-            <tr>
-              <td class='empty-row' colspan="4"></td>
-            </tr>
-            <tr id='row_addons'>
-              <td>
-                <strong>Add Ons:</strong>
-              </td>
-              <td colspan="3"></td>
-            </tr>
-            <tr id='row_dmp_addon'>
-              <td>DMP (Data Segmentation/Storage/Modeling)</td>
-              <td class='dsp_comparisons' id='dmpAddonDsp'></td>
-              <td class='pbu_comparisons' id='dmpaddonPbu'></td>
-              <td id='dmpaddonXaxis'>N/A</td>
-            </tr>
-          </table>
+      <div class='prove-it'>
+        <div class='container'>
+          <div class='col-xs-12'>
+            <div class='table-responsive outer-table'>
+              <h2 class="text-center dark-grey-text big-margin-bottom gotham-xl">The Raw Data</h2>
+              <table id='testTable' class='table table-striped table-bordered table-hover table-condensed'>
+                <tr>
+                  <th></th>
+                  <th class='dsp_comparisons'>DSP</th>
+                  <th class='pbu_comparisons'>PBU</th>
+                  <th>Xaxis</th>
+                </tr>
+                <tr>
+                  <td>Total Starting Budget:</td>
+                  <td class='dsp_comparisons' id='totalDsp'></td>
+                  <td class='pbu_comparisons' id='totalPbu'></td>
+                  <td id='totalXaxis'></td>
+                </tr>
+                <tr>
+                  <td>Execution Costs</td>
+                  <td class='dsp_comparisons' id='executionCostsDsp'></td>
+                  <td class='pbu_comparisons' id='executionCostsPbu'></td>
+                  <td id='executionCostsXaxis'></td>
+                </tr>
+                <tr>
+                  <td class="empty-row" colspan='4'></td>
+                </tr>
+                <tr>
+                  <th>Component</th>
+                  <th colspan='2'></th>
+                </tr>
+                <tr>
+                  <td>Working Media Budget</td>
+                  <td class='dsp_comparisons' id='workingMediaBudgetDsp'></td>
+                  <td class='pbu_comparisons' id='workingMediaBudgetPbu'></td>
+                  <td id='workingMediaBudgetXax'></td>
+                </tr>
+                <tr>
+                  <td>Media CPM - Display</td>
+                  <td class='dsp_comparisons' id='mediaCpmDisplayDsp'></td>
+                  <td class='pbu_comparisons' id='mediaCpmDisplayPBU'></td>
+                  <td id='mediaCpmDisplayXaxis'></td>
+                </tr>
+                <tr>
+                  <td>Media CPM - Video</td>
+                  <td class='dsp_comparisons' id='mediaCpmVideoDsp'></td>
+                  <td class='pbu_comparisons' id='mediaCpmVideoPBU'></td>
+                  <td id='mediaCpmVideoXaxis'></td>
+                </tr>
+                <tr>
+                  <td>Impressions (Total)</td>
+                  <td class='dsp_comparisons' id='impressionsTotalDSP'></td>
+                  <td class='pbu_comparisons' id='impressionsTotalPBU'></td>
+                  <td id='impressionsTotalXaxis'></td>
+                </tr>
+                <tr class='benchmark'>
+                  <td>Impressions (Viewable)</td>
+                  <td class='dsp_comparisons' id='impressionsViewableDSP'></td>
+                  <td class='pbu_comparisons' id='impressionsViewablePBU'></td>
+                  <td id='impressionsViewableXaxis'></td>
+                </tr>
+                <tr>
+                  <td class='empty-row' colspan="3"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Costs</strong>
+                  </td>
+                  <td colspan='2'></td>
+                </tr>
+                <tr>
+                  <td>
+                    Misc Fees
+                  </td>
+                  <td colspan="2"></td>
+                </tr>
+                <tr class='pbu_comparisons'>
+                  <td>Tech Cost (Use of trading platform)</td>
+                  <td class='dsp_comparisons'>
+                    0
+                  </td>
+                  <td class='pbu_comparisons' id='techCostPbu'></td>
+                  <td>
+                    N/A
+                  </td>
+                </tr>
+                <tr>
+                  <td>Data Cost (3rd party data used for buying)</td>
+                  <td class='dsp_comparisons'>
+                    0
+                  </td>
+                  <td  class='pbu_comparisons' id='dataCostPbu'>
+                    <span id='input_dataCostPBU'>0</span>
+                  </td>
+                  <td>
+                    N/A
+                  </td>
+                </tr>
+                <tr>
+                  <td>Verification and Adserving</td>
+                  <td class='dsp_comparisons'>0</td>
+                  <td class='pbu_comparisons' id='verificationAdvertisingPBU'></td>
+                  <td>N/A</td>
+                </tr>
+                <tr class='dsp_comparisons'>
+                  <td>DSP Spend on Internal Media</td>
+                  <td class='dsp_comparisons' id='dspInternalSpend'></td>
+                  <td class='pbu_comparisons'>N/A</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td class='empty-row' colspan="3"></td>
+                </tr>
+                <tr id='row_staffing'>
+                  <td>
+                    <strong>Staffing</strong>
+                  </td>
+                  <td class='empty-row' colspan="2"></td>
+                </tr>
+                <tr id='row_PctOfMedia'>
+                  <td >% Commission</td>
+                  <td class='dsp_comparisons' id='pctOfMediaDSP'></td>
+                  <td class='pbu_comparisons' id='pctOfMediaPbu'></td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td class='empty-row' colspan="4"></td>
+                </tr>
+                <tr id='row_addons'>
+                  <td>
+                    <strong>Add Ons:</strong>
+                  </td>
+                  <td colspan="3"></td>
+                </tr>
+                <tr id='row_dmp_addon'>
+                  <td>DMP (Data Segmentation/Storage/Modeling)</td>
+                  <td class='dsp_comparisons' id='dmpAddonDsp'></td>
+                  <td class='pbu_comparisons' id='dmpaddonPbu'></td>
+                  <td id='dmpaddonXaxis'>N/A</td>
+                </tr>
+              </table>
+            </div>
+            <button type='button' id='resetToDefaults' class='btn btn-primary pull-right'>Reset Sample Data</button>
+          </div>
         </div>
-        <button type='button' id='resetToDefaults' class='btn btn-primary pull-right'>Reset Sample Data</button>
       </div>
     </div>
-  </div>
-</div>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content text-center">
-      <div class="legal-lang">
-        <p>Confidential and proprietary. Copyright © 2016 Xaxis Incorporation. <br /> All rights reserved. Distribution without permission is prohibited.</p>
+    <footer class="footer">
+      <div class="container">
+        <div class="content text-center">
+          <div class="legal-lang">
+            <p>Confidential and proprietary. Copyright © 2016 Xaxis Incorporation. <br /> All rights reserved. Distribution without permission is prohibited.</p>
+          </div>
+        </div>
       </div>
+    </footer>
+    <div class="bottom-img">
+      <img src="http://cdn2.hubspot.net/hubfs/436935/Google_Partnership/Stripe.png">
     </div>
-  </div>
-</footer>
-<div class="bottom-img">
-  <img src="http://cdn2.hubspot.net/hubfs/436935/Google_Partnership/Stripe.png">
-</div>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="./value-calculator/script.js"></script>
-</body>
+  </body>
 </html>
