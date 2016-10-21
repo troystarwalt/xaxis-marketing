@@ -2,10 +2,11 @@ ActiveAdmin.register Video do
 menu parent: "Platforms"
 permit_params :name, :description, :direct_link, :embed_link, :image_preview, :platform_id
 
-before_save do |video|
-  get_link = VideoThumb::get(video.direct_link)
-  video.remote_image_preview_url = get_link
-end
+# before_save do |video|
+#   get_link = VideoThumb::get(video.direct_link)
+#   video.image_preview = open(get_link)
+#   byebug
+# end
 
 form :html => { :multipart => true } do |f|
   f.semantic_errors *f.object.errors.keys
