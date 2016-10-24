@@ -1,44 +1,27 @@
 #presentation_hub
   %section.top-section
     .container
-      %h1 2016 Xaxis Global Presentation Resource Center
+      %h1 Global Presentation Resource Center
       .row
-        .col-lg-3.col-md-6
-          .card.xaxis-card
-            %h2.text-uppercase Xaxis
-            %p Templates
-            %button.card-btn.brand-btn-primary.xaxis-btn-primary Powerpoint
-            %button.card-btn.brand-btn-primary.xaxis-btn-primary Word Doc
-            .hr-faker
-            %p 2016 Xaxis Global Capabilities Deck
-            %button.card-btn.brand-btn-primary.xaxis-btn-primary Download
-        .col-lg-3.col-md-6
-          .card.light-reaction-card
-            %h2.text-uppercase Light Reaction
-            %p Templates
-            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Powerpoint
-            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Word Doc
-            .hr-faker
-            %p 2016 Light Reaction Global Capabilities Deck
-            %button.card-btn.brand-btn-primary.light-reaction-btn-primary Download
-        .col-lg-3.col-md-6
-          .card.plista-card
-            %h2 plista
-            %p Templates
-            %button.card-btn.brand-btn-primary.plista-btn-primary Powerpoint
-            %button.card-btn.brand-btn-primary.plista-btn-primary Word Doc
-            .hr-faker
-            %p 2016 plista Global Capabilities Deck
-            %button.card-btn.brand-btn-primary.plista-btn-primary Download
-        .col-lg-3.col-md-6
-          .card.triad-card
-            %h2.text-uppercase triad
-            %p Templates
-            %button.card-btn.brand-btn-primary.triad-btn-primary Powerpoint
-            %button.card-btn.brand-btn-primary.triad-btn-primary Word Doc
-            .hr-faker
-            %p 2016 triad Global Capabilities Deck
-            %button.card-btn.brand-btn-primary.triad-btn-primary Download
+        - @brands.each do |brand|
+          .col-lg-3.col-md-6
+            .card{:class => "#{brand.slug}-card"}
+              %h2{:class => ("text-uppercase" unless brand.slug === "plista")  }= brand.name
+              %p Templates
+              - if brand.brand_accessories.has_category("ppt_template").present?
+                =link_to "powerpoint", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+              - if brand.brand_accessories.has_category("word_template").present?
+                =link_to "word doc", brand.brand_accessories.has_category("word_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+              .hr-faker
+              %p 2016 #{brand.name} Global Capabilities Deck
+              - if brand.brand_accessories.has_category("capability").present?
+                =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
   %section.middle-section
     .container
       .row
@@ -48,19 +31,20 @@
             %h2.text-uppercase image bank
             %p Download the entire image bank onto your computer here, or access them on Xperience
             %p.subtitle Note: this is a large file, please do not download on mobile
-            %button.brand-btn-secondary.xaxis-btn-secondary Download
+            - unless @global_accessory.nil?
+              =link_to "download", @global_accessory.file_url, class: "card-btn brand-btn-secondary xaxis-btn-secondary"
         .col-sm-4
           .more-resources.tutorial
             = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
             %h2.text-uppercase tutorial
-            %p File size is too big? Learn how to reduce file size by compressing the images here.
-            %button.brand-btn-secondary.xaxis-btn-secondary watch
+            %p File size is too big? Learn how to reduce file size by compressing the images.
+            =link_to "watch", "https://vimeo.com/xaxis/review/172765382/5e868fcd40", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary"
         .col-sm-4
           .more-resources.custom
             = image_tag "pencil-stencil.svg", alt: "Custom Images", class: "img-fluid"
             %h2.text-uppercase custom
             %p Need something else? You can make a request for the images you may need to Xaxis Global Marketing Team below.
-            %button.brand-btn-secondary.xaxis-btn-secondary Email Us
+            =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary"
   %section.bottom-section
     %h2 Need additional brand assets?
     =link_to "See All Brand Assets", brand_path(@bring_me_to_xaxis), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"

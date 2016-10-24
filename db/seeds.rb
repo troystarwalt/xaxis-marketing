@@ -8,6 +8,7 @@
 
 Post.destroy_all
 Brand.destroy_all
+Platform.destroy_all
 
 50.times do
   tags = Post.valid_tags
@@ -26,13 +27,34 @@ AdminUser.destroy_all
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 brands = ["Xaxis", "plista", "Light Reaction", "Triad"]
+categories = ["ppt_template", "word_template", "font", "guidelines", "logo", "capability", "palette", "facts"]
 
 brands.each do |brand_name|
-  Brand.create(:name => brand_name)
+  brand = Brand.create(:name => brand_name)
+  categories.each do |cat|
+    brand.brand_accessories.create(name: Faker::Superhero.name, file: open("public/seedfiles/pdf-seed.pdf"), category: cat, brand_id: brand.id)
+    puts "created " + cat
+  end
+  puts "---------------"
+  puts "created " + brand_name
 end
 
-platforms = ["Turbine", "Spotlight", "Xanadu"]
+video_embed = '<iframe src="https://player.vimeo.com/video/149429953" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/149429953">The Xaxis Advantage</a> from <a href="https://vimeo.com/xaxis">Xaxis</a> on <a href="https://vimeo.com">Vimeo</a>.</p>'
+video_direct = "https://vimeo.com/149429953"
 
+
+platforms = ["Turbine", "Spotlight", "Xanadu"]
 platforms.each do |platform_name|
-  Platform.create(:name => platform_name)
+  platform = Platform.create(:name => platform_name)
+    platform.logos.create(name: Faker::Hacker.adjective, file: open("public/seedfiles/logo-seed.png"))
+    platform.logos.create(name: Faker::Hacker.adjective, file: open("public/seedfiles/eps-seed.eps"))
+    2.times do
+      platform.infographics.create(name: Faker::Hacker.adjective, description: Faker::Hipster.paragraph, image_preview: open("public/seedfiles/logo-seed.png"), file: open("public/seedfiles/pdf-seed.pdf"))
+    end
+    platform.one_sheeters.create(name: Faker::Hacker.adjective, file: open("public/seedfiles/pdf-seed.pdf"))
+    4.times do
+      platform.videos.create(name: Faker::StarWars.planet, description: Faker::Hipster.paragraph, direct_link: video_direct, embed_link: video_embed)
+    end
+  puts "created " + platform_name
 end

@@ -1,7 +1,9 @@
 !!!
 %html
   = render partial: "html_header"
-  %body
+  %body{class: "#{controller_name} #{action_name}"}
     = render partial: "nav"
     = yield
     = render partial: "footer"
+    = Gon::Base.render_data({})
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

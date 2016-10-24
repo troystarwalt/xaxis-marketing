@@ -24,6 +24,18 @@ class Post < ApplicationRecord
     tags.map{|tag| tag.name}
   end
 
+  def get_main_json
+    {
+      id: self.id,
+      tag_list: self.get_tag_list.to_sentence,
+      date: self.pretty_date,
+      title: self.title,
+      text: self.text,
+      img_url: "http://placehold.it/370x245"
+    }
+  end
+
+
   private
 
   def tag_must_be_approved

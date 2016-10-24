@@ -32,7 +32,9 @@ ActiveAdmin.register Infographic do
     id_column
     column :name
     column :image_preview do |f|
-      if f.image_preview.content_type.starts_with? "image"
+      if !f.image_preview.present?
+        image_tag(f.image_preview_url, class: "admin_show_image")
+      elsif f.image_preview.content_type.start_with? 'image'
         image_tag(f.image_preview.thumb, class: "admin_show_image")
       else
         f.image_preview_url
@@ -49,7 +51,13 @@ ActiveAdmin.register Infographic do
       row :name
       row :description
       row :preview do |f|
-        image_tag(f.image_preview.preview, class: "admin_show_image")
+        if !f.image_preview.present?
+          image_tag(f.image_preview_url, class: "admin_show_image")
+        elsif f.image_preview.content_type.start_with? 'image'
+          image_tag(f.image_preview.preview, class: "admin_show_image")
+        else
+          f.image_preview_url
+        end
       end
       row :file do |f|
         f.file_identifier

@@ -6,18 +6,27 @@
       .col-md-6.col-sm-12.hidden-xs-down
         #currently_selected_event_container
           .icon-info.row
-            .col-md-4
-              %i.fa.fa-car.fa-4x
-            .col-md-8
-              %p.content-text.content-text-sub.text-uppercase
-                = @news_posts.last.get_tag_list
-                %br
-                = @news_posts.last.pretty_date
-          %h1.content-header= @news_posts.last.title
-          %img{src: "http://placehold.it/350x200", class: "img-fluid"}
-          %p.content-text= @news_posts.last.text
+            .col-md-12
+              .circle70
+                .circle_text MKT
+              .content-text.content-text-sub.text-uppercase
+                .content-text-sub_inner_text
+                  %span#single-news_tag_list.tag_list= @posts.last.get_tag_list.to_sentence
+                  |
+                  %span#single-news_date.date= @posts.last.pretty_date
+          .selected-news_content
+            %h1.content-header#single-news_title.news-title= @posts.last.title
+            %img#single-news_image{src: "http://placehold.it/370x245", class: 'img-fluid-width'}
+            %p.content-text#single-news_text.news-text= @posts.last.text
+            %p.readmore= link_to 'Read More', post_path(@posts.last), class: "readmore-link", id: 'single-news_readmore'
       .col-md-6
-        - @news_posts.each do |news|
-          .single-news-container
-            %h1.content-header= news.title
-            %p.content-text= news.text
+        .recent_news_container
+          - @posts.each do |post|
+            .single-news-container{"data-postId" => post.id}
+              .single-news-text
+                %h1.content-header= post.title
+                %p.content-text= post.text
+  .more-updates-button.text-xs-right
+    = link_to posts_path do
+      MORE UPDATES
+      %i.fa.fa-angle-right{'aria-hidden' => "true"}

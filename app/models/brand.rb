@@ -4,4 +4,5 @@ class Brand < ApplicationRecord
   accepts_nested_attributes_for :brand_accessories, :allow_destroy => true
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
+
 end
