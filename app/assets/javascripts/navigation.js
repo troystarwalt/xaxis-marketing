@@ -17,3 +17,12 @@ $(document).ready( function () {
     menuItems.parent().removeClass('active-side-link').end().filter("[href='#"+id+"']").parent().addClass("active-side-link");
   });
 });
+
+// Only run this function if we are on platforms. This helps with the side menu nav.
+window.onload = function() {
+  if (window.location.href.indexOf("platforms/") > -1) {
+    $(window).scroll(function(){
+      $("#side-nav").css("top",Math.max(375,696-$(this).scrollTop()));
+    });
+  }
+}
