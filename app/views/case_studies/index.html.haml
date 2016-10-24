@@ -1,2 +1,77 @@
-%h1 CaseStudies#index
-%p Find me in app/views/case_studies/index.html.haml
+.container.case-studies
+  .row
+    .sub-nav-section
+      .col-md-2.hidden-sm-down
+      .col-md-10.col-sm-12
+        .case-studies-filters.jumbotron
+          = form_for :case_studies_query, url: case_studies_search_path, method: :get do |f|
+            .row.form-row-1
+              .col-sm-4
+                =f.label :industry, class: 'sr-only'
+                - if params[:case_studies_query]
+                  - industry = params[:case_studies_query][:industry]
+                  - region = params[:case_studies_query][:region]
+                  - product = params[:case_studies_query][:product]
+                - else
+                  - industry = nil
+                  - region = nil
+                  - product = nil
+                =f.select :industry, options_for_select(['industry_1', 'industry 2'], industry),
+                  {include_blank: "select an industry"},
+                  {class: 'form-control'}
+              .col-sm-4
+                =f.label :region, class: 'sr-only'
+                =f.select :region, options_for_select(['region 1', 'region 2'], region),
+                  {include_blank: "select a region"}, {class: 'form-control'}
+              .col-sm-4
+                =f.label :product, class: 'sr-only'
+                =f.select :product, options_from_collection_for_select(Platform.all, :slug, :name, product),
+                  {include_blank: "select a product"}, {class: 'form-control'}
+            .row
+              .col-sm-8
+                .form-group
+                  =f.label :keywords, class: 'sr-only'
+                  =f.text_field :keywords, placeholder: "Search by keyword, (E.g. automative, APAC turbine)", class: 'form-control'
+              .col-sm-4
+                .form-group
+                  =f.submit "Search", class: 'brand-btn-secondary xaxis-btn-secondary search-button'
+    .col-md-2.hidden-sm-down
+      #side-nav-2.hidden-sm-down
+        %ul.nav#platform-asset-links
+          %li.nav-item
+            .text-uppercase Case Studies
+          - @platforms.each do |platform|
+            %li.nav-item
+              = link_to platform.name, platform_case_studies_path(platform.slug) , class: "side-nav-link"
+          %li.nav-item
+            = link_to "All", case_studies_path , class: "side-nav-link"
+    .col-md-10.col-sm-12
+      .section-container
+        .section-name
+          %h1.header.text-uppercase
+            = (@platform ? @platform.name : "") + " Case Studies"
+        .section-body
+          -if @case_studies.any?
+            %ul.case_studies_list
+              - @case_studies.each do |case_study|
+                %li.case_studies_list-item
+                  .case-study-subtitle
+                    Case Study
+                    |
+                    =case_study.platform.name
+                    |
+                    =case_study.author
+                    |
+                    =case_study.get_pretty_release_date
+                  .case-study-title
+                    %h3=case_study.title
+                  .case-study-description
+                    =case_study.short_description
+                  .case-study_links
+                    = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary'
+                    = link_to "Download PDF", case_study.pdf_attachment_url, class: 'brand-btn-primary xaxis-btn-primary', download: case_study.title
+          -else
+            No Case Studies Available For This Brand Yet
+
+
+        = render_developer_note
