@@ -16,4 +16,7 @@ $(document).ready( function () {
     var id = cur && cur.length ? cur[0].id: "";
     menuItems.parent().removeClass('active-side-link').end().filter("[href='#"+id+"']").parent().addClass("active-side-link");
   });
+  $(window).scroll(function(){
+      $("#side-nav").css("top",Math.max(375,696-$(this).scrollTop()));
+  });
 });
