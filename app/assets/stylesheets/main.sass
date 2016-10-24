@@ -71,15 +71,35 @@
 .single-news-container, .single-announcement-container
   padding-top: 5%
   padding-bottom: 5%
-  margin-left: 13px
+  margin-right: 13px
+  position: relative
   .single-news-text
     padding: 0 5%
   p
     margin-bottom: 0
   &:hover, &.active
-    border-left: 5px solid $xaxis-blue-color
-    margin-left: 8px
+    border-right: 5px solid $xaxis-blue-color
+    margin-right: 8px
     background-color: $anti-flash-white
+  &.active
+    @media(min-width: 767px)
+      &:after, &:before
+      	right: 100%
+      	top: 50%
+      	border: solid transparent
+      	content: " "
+      	height: 0
+      	width: 0
+      	position: absolute
+      	pointer-events: none
+      &:after
+      	border-right-color: $xaxis-blue-color
+      	border-width: 15px
+      	margin-top: -15px
+      &:before
+      	border-right-color: $xaxis-blue-color
+      	border-width: 15px
+      	margin-top: -15px
   &:not(:last-child)
     border-bottom: .5px solid #DFDFDF
 
