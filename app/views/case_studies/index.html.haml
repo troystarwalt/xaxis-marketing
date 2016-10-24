@@ -49,7 +49,12 @@
       .section-container
         .section-name
           %h1.header.text-uppercase
-            = (@platform ? @platform.name : "") + " Case Studies"
+            -if @platform
+              #{@platform.name} Case Studies
+            -elsif action_name == 'search'
+              Search Results
+            -else
+              Case Studies
         .section-body
           -if @case_studies.any?
             %ul.case_studies_list
