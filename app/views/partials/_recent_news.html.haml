@@ -19,7 +19,7 @@
             %img#single-news_image{src: "http://placehold.it/370x245", class: 'img-fluid-width'}
             %p.content-text#single-news_text.news-text= @posts.last.text
             %p.readmore= link_to 'Read More', post_path(@posts.last), class: "readmore-link", id: 'single-news_readmore'
-      .col-md-6
+      .col-md-6.col-sm-12
         .recent_news_container
           - @posts.each do |post|
             .single-news-container{"data-postId" => post.id}
