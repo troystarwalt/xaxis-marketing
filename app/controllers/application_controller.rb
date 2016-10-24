@@ -1,14 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :set_asset_path, :get_all_brands
+  before_action :set_asset_path
 
   def set_asset_path
     @bring_me_to_xaxis = Brand.find_by(name: :Xaxis).slug
     @bring_me_to_turbine = Platform.find_by(name: :Turbine).slug
-  end
-
-  def get_all_brands
-    @our_brands = Brand.all
   end
 
   def set_our_brands(slug)

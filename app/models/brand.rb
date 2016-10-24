@@ -5,8 +5,4 @@ class Brand < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
-  def self.last_of_a_category(brand, category)
-    this_brand = Brand.find_by_name(brand)
-    this_brand.brand_accessories.where(category: category).last
-  end
 end

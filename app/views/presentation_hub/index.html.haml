@@ -3,45 +3,25 @@
     .container
       %h1 Global Presentation Resource Center
       .row
-        .col-lg-3.col-md-6
-          .card.xaxis-card
-            %h2.text-uppercase Xaxis
-            %p Templates
-            =link_to "powerpoint", @xaxis_ppt.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
-            =link_to "word doc", @xaxis_word.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
-            .hr-faker
-            %p 2016 Xaxis Global Capabilities Deck
-            =link_to "download", @xaxis_capa.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
-        .col-lg-3.col-md-6
-          .card.light-reaction-card
-            %h2.text-uppercase Light Reaction
-            %p Templates
-            =link_to "powerpoint", @lr_ppt.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
-            =link_to "word doc", @lr_word.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
-            .hr-faker
-            %p 2016 Light Reaction Global Capabilities Deck
-            =link_to "download", @lr_capa.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
-        .col-lg-3.col-md-6
-          .card.plista-card
-            %h2 plista
-            %p Templates
-            =link_to "powerpoint", @plista_ppt.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
-            =link_to "word doc", @plista_word.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
-            .hr-faker
-            %p 2016 plista Global Capabilities Deck
-            =link_to "download", @plista_capa.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
-        .col-lg-3.col-md-6
-          .card.triad-card
-            %h2.text-uppercase triad
-            %p Templates
-            - if @triad_ppt.present?
-              =link_to "powerpoint", @triad_ppt.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
-            - if @triad_word.present?
-              =link_to "word doc", @triad_word.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
-            .hr-faker
-            - if @triad_capa.present?
-              %p 2016 triad Global Capabilities Deck
-              =link_to "download", @triad_capa.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
+        - @brands.each do |brand|
+          .col-lg-3.col-md-6
+            .card{:class => "#{brand.slug}-card"}
+              %h2{:class => ("text-uppercase" unless brand.slug === "plista")  }= brand.name
+              %p Templates
+              - if brand.brand_accessories.has_category("ppt_template").present?
+                =link_to "powerpoint", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+              - if brand.brand_accessories.has_category("word_template").present?
+                =link_to "word doc", brand.brand_accessories.has_category("word_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+              .hr-faker
+              %p 2016 #{brand.name} Global Capabilities Deck
+              - if brand.brand_accessories.has_category("capability").present?
+                =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+              -else
+                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
   %section.middle-section
     .container
       .row
@@ -51,7 +31,8 @@
             %h2.text-uppercase image bank
             %p Download the entire image bank onto your computer here, or access them on Xperience
             %p.subtitle Note: this is a large file, please do not download on mobile
-            =link_to "download", @global_accessory.file_url, class: "card-btn brand-btn-secondary xaxis-btn-secondary"
+            - unless @global_accessory.nil?
+              =link_to "download", @global_accessory.file_url, class: "card-btn brand-btn-secondary xaxis-btn-secondary"
         .col-sm-4
           .more-resources.tutorial
             = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
