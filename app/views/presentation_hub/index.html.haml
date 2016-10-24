@@ -7,39 +7,41 @@
           .card.xaxis-card
             %h2.text-uppercase Xaxis
             %p Templates
-            -# %button.card-btn.brand-btn-primary.xaxis-btn-primary Powerpoint
-            =link_to "powerpoint", @xaxis.brand_accessories.where(category: "ppt_template").last.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
-            =link_to "word doc", @xaxis.brand_accessories.where(category: "word_template").last.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
+            =link_to "powerpoint", @xaxis_ppt.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
+            =link_to "word doc", @xaxis_word.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
             .hr-faker
             %p 2016 Xaxis Global Capabilities Deck
-            =link_to "download", @xaxis.brand_accessories.where(category: "capability").last.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
+            =link_to "download", @xaxis_capa.file_url, class: "card-btn brand-btn-primary xaxis-btn-primary"
         .col-lg-3.col-md-6
           .card.light-reaction-card
             %h2.text-uppercase Light Reaction
             %p Templates
-            =link_to "powerpoint", @light_reaction.brand_accessories.where(category: "ppt_template").last.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
-            =link_to "word doc", @light_reaction.brand_accessories.where(category: "word_template").last.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
+            =link_to "powerpoint", @lr_ppt.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
+            =link_to "word doc", @lr_word.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
             .hr-faker
             %p 2016 Light Reaction Global Capabilities Deck
-            =link_to "download", @light_reaction.brand_accessories.where(category: "capability").last.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
+            =link_to "download", @lr_capa.file_url, class: "card-btn brand-btn-primary light-reaction-btn-primary"
         .col-lg-3.col-md-6
           .card.plista-card
             %h2 plista
             %p Templates
-            =link_to "powerpoint", @plista.brand_accessories.where(category: "ppt_template").last.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
-            =link_to "word doc", @plista.brand_accessories.where(category: "word_template").last.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
+            =link_to "powerpoint", @plista_ppt.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
+            =link_to "word doc", @plista_word.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
             .hr-faker
             %p 2016 plista Global Capabilities Deck
-            =link_to "download", @plista.brand_accessories.where(category: "capability").last.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
+            =link_to "download", @plista_capa.file_url, class: "card-btn brand-btn-primary plista-btn-primary"
         .col-lg-3.col-md-6
           .card.triad-card
             %h2.text-uppercase triad
             %p Templates
-            =link_to "powerpoint", @triad.brand_accessories.where(category: "ppt_template").last.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
-            =link_to "word doc", @triad.brand_accessories.where(category: "word_template").last.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
+            - if @triad_ppt.present?
+              =link_to "powerpoint", @triad_ppt.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
+            - if @triad_word.present?
+              =link_to "word doc", @triad_word.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
             .hr-faker
-            %p 2016 triad Global Capabilities Deck
-            =link_to "download", @triad.brand_accessories.where(category: "capability").last.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
+            - if @triad_capa.present?
+              %p 2016 triad Global Capabilities Deck
+              =link_to "download", @triad_capa.file_url, class: "card-btn brand-btn-primary triad-btn-primary"
   %section.middle-section
     .container
       .row
