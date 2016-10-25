@@ -1,131 +1,162 @@
-#platforms
-  #platform_sub_nav
-    display: flex
-    flex-direction: row
-    background: linear-gradient(165deg, rgba(178, 226, 250,1) 0%, rgba(178, 226, 250,1) 48%, rgba(144, 206, 237, 1) 48.2%, rgba(144, 206, 237, 1) 50%, rgba(117, 184, 224, 1), 50.2%, rgba(117, 184, 224, 1) 100%)
-    z-index: 100
-    background-size: 100%
-    .nav-card
-      flex: 1 1 0%
-      height: 586px
-      display: flex
-      align-self: stretch
-      .card-link
-        -webkit-transition: all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
-        transition: all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
-        z-index: 103
-        padding: 60px 0
-        &:link, &:active
-          color: $white
-        &:hover .card-icon
-          color: $white
-        .card-icon, .card-icon:visited
-          color: $xaxis-darkest-blue
-          z-index: 103
-          &:link, &:hover, &:active
-            color: white
-      .flex-container-nav
-        display: flex
-        flex-direction: column
-        flex: 1 1 0%
-        h2
-          font-size: 1.625rem
-          z-index: 103
-          font-family: gotham-book
-          letter-spacing: 4.33px
-          margin-top: -53px
-        img
-          flex: 1 1 auto
-          margin-top: 10px
-          margin-bottom: 10px
-          width: 200px
-          margin: 0 auto
-          z-index: 103
-    #spotlight-card, #turbine-card, #xanadu-card
-      position: relative
-    #spotlight-card
+/******************  Sub Nav for Platforms  ****************************/
+
+#platform_sub_nav
+  display: flex
+  flex-direction: row
+  background: linear-gradient(165deg, rgba(178, 226, 250,1) 0%, rgba(178, 226, 250,1) 48%, rgba(144, 206, 237, 1) 48.2%, rgba(144, 206, 237, 1) 50%, rgba(117, 184, 224, 1), 50.2%, rgba(117, 184, 224, 1) 100%)
+  z-index: 100
+  background-size: 100%
+  #spotlight-card, #turbine-card, #xanadu-card
+    position: relative
+  #spotlight-card
+    &:before
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
+      content: ''
+      opacity: 0
+      z-index: 101
+      position: absolute
+      display:block
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+      -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    &:hover
       &:before
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
-        content: ''
-        opacity: 0
-        z-index: 101
-        position: absolute
-        display:block
-        height: 100%
-        width: 100%
-        top: 0
-        left: 0
-        -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-        transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-      &:hover
-        &:before
-          opacity: 1
-      .active-sub-link
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
-        .card-icon
-          color: $white
-    #turbine-card
+        opacity: 1
+    .active-sub-link
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
+      .card-icon
+        color: $white
+  #turbine-card
+    &:before
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
+      content: ''
+      opacity: 0
+      z-index: 101
+      position: absolute
+      display:block
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+      -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    &:hover
       &:before
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
-        content: ''
-        opacity: 0
-        z-index: 101
-        position: absolute
-        display:block
-        height: 100%
-        width: 100%
-        top: 0
-        left: 0
-        -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-        transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-      &:hover
-        &:before
-          opacity: 1
-      .active-sub-link
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
-        .card-icon
-          color: $white
-    #xanadu-card
+        opacity: 1
+    .active-sub-link
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
+      .card-icon
+        color: $white
+  #xanadu-card
+    &:before
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
+      content: ''
+      opacity: 0
+      z-index: 101
+      position: absolute
+      display:block
+      height: 100%
+      width: 100%
+      top: 0
+      left: 0
+      -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    &:hover
       &:before
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
-        content: ''
-        opacity: 0
-        z-index: 101
-        position: absolute
-        display:block
-        height: 100%
-        width: 100%
-        top: 0
-        left: 0
-        -webkit-transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-        transition: opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-      &:hover
-        &:before
-          opacity: 1
-      .active-sub-link
-        background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
-        .card-icon
-          color: $white
+        opacity: 1
+    .active-sub-link
+      background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
+      .card-icon
+        color: $white
   .container
     .row
       #side-nav
         margin-top: 25px
+.nav-card
+  flex: 1 1 0%
+  height: 586px
+  display: flex
+  align-self: stretch
+  .card-link
+    -webkit-transition: all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    transition: all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    z-index: 103
+    padding: 60px 0
+    &:link, &:active
+      color: $white
+    &:hover .card-icon
+      color: $white
+    .card-icon, .card-icon:visited
+      color: $xaxis-darkest-blue
+      z-index: 103
+      &:link, &:hover, &:active
+        color: white
+  .flex-container-nav
+    display: flex
+    flex-direction: column
+    flex: 1 1 0%
+    h2
+      font-size: 1.625rem
+      z-index: 103
+      font-family: gotham-book
+      letter-spacing: 4.33px
+      margin-top: -53px
+    img
+      flex: 1 1 auto
+      margin-top: 10px
+      margin-bottom: 10px
+      width: 200px
+      margin: 0 auto
+      z-index: 103
+
+/************************  Videos and Overlay ***********************/
+
+.video-card
+  margin-bottom: 40px
+
+.video-image
+  position: relative
+  .card-img-overlay
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: rgba($darkest-gray, .7)
+    .platform-video-link
+      display: inline-block
+      margin: 0
+      border: 3px solid $xaxis-blue-color
+      border-radius: 100px
+      min-width: 80px
+      color: $xaxis-blue-color
+      font-family: gotham-book
+.video-text
+  font-family: gotham-light
+  p
+    margin: 5px 0
+  a
+    color: $xaxis-darkest-blue
+    font-family: gotham-medium
+    font-size: .625em
+    &:hover, &:active
+      color: $xaxis-blue-color
+
 
 @media (max-width: 991px)
-  #platforms
-    #platform_sub_nav
-      .nav-card
-        .flex-container-nav
-        img
-          width: 75%
-          margin: 0 auto
+  .nav-card
+    .flex-container-nav
+    img
+      width: 75%
+      margin: 0 auto
 
 @media (max-width: 600px)
-  #platforms
-    #platform_sub_nav
-      flex-direction: column
-      .nav-card
-        .flex-container-nav
-          min-height: 200px
-        img
-          width: inherit
+  #platform_sub_nav
+    flex-direction: column
+  .nav-card
+    .flex-container-nav
+      min-height: 200px
+    img
+      width: inherit
