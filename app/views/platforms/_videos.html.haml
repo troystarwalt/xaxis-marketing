@@ -1,12 +1,12 @@
 %h3.text-uppercase #{@platform.slug} Videos
 .row
-  - @platform.videos.each do |video|
+  - @platform.videos.each.with_index do |video, index|
     .col-sm-6
       .video-card
         .video-image
           =image_tag video.image_preview_url, class: "card-img-top img-fluid", alt: video.name
           .card-img-overlay.text-xs-center
-            =link_to "Play", video.embed_link, class: "platform-video-link", id: "#{video.name.parameterize}"
+            =link_to "Play", 'javascript:void(0)''', class: "platform-video-link platform-play-video", id: "#{video.name.parameterize}", data: { index: index }
             %br
             =link_to "Share", video.direct_link, class: "platform-video-link", target: "_blank"
         .video-text.text-xs-center
@@ -14,3 +14,13 @@
           =link_to(video.direct_link, class: "text-xs-center text-uppercase", target: "_blank") do
             %i.fa.fa-download
             %span DOWNLOAD
+  .modal.fade(id="videoModal" tabindex="-1" role="dialog")
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          %button(type="button" class="close" data-dismiss="modal" aria-label="Close"
+            span aria-hidden="true") &times;
+        .modal-body
+          #video-embed
+        .modal-footer
+          %button(type="button" class="brand-btn-primary xaxis-btn-primary" data-dismiss="modal") Close

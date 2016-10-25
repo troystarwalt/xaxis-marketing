@@ -8,5 +8,7 @@ class PlatformsController < ApplicationController
 
   def show
     @platform = Platform.friendly.find(params[:id])
+
+    gon.videos = @platform.videos
   end
 end
