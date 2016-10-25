@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'gotham-book';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Book.otf');
+}
+
+@font-face {
+    font-family: 'gotham-thin';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'gotham-light';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'gotham-medium';
+    src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Medium.otf') format('otf');
+}
+
+*{
+    font-family: gotham-book, arial, sans-serif;
+    color: #484848 !important
+}
+
+
+header {
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: 0;
+    left: 0;
+    padding-top: 350px;
+    width: 100%;
+    background-image: url('//placehold.it/1920x420')
+}
+
+header h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 4em;
+}
+
+header img{
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+header img.main-header-image{
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+.top-descript{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'gotham-light';
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.xaxislogo{
+    width: 10%;
+    position: absolute;
+    top: 30px;
+    right: 10%;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.sec-grey {
+    background-color: #f3f4f4;
+    color: #808080;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 150px;
+    margin-bottom: -15px;
+}
+
+#bottom-logo {
+    width: 10%;
+    height: auto;
+    padding-top: 3%;
+}
+
+.legal-lang {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.legal-lang > p {
+    font-size: .7em;
+    text-transform: uppercase;
+}
+
+.bottom-img > img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.sec {
+    position: relative;
+    color: #484848;
+    padding-top: 350px;
+    padding-bottom: 50px;
+}
+
+}
+
+.sec > h3{
+    padding-bottom: 35px;
+    font-family: 'gotham-medium'
+}
+
+.top-img {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.vid-selector:hover{
+    cursor: pointer;
+}
+.vid-selector img{
+    height: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.list-group-item{
+  border: none;
+  position: inherit;
+  background-color: #F8F8F8;
+  margin: 1px;
+  padding: 15px;
+  color: #484848
+}
+
+.list-group-item:nth-child(odd){
+  background-color: #FCFCFC
+}
+
+/*.list-group-item:hover{
+  -webkit-box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
+  -moz-box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
+  box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
+}*/
