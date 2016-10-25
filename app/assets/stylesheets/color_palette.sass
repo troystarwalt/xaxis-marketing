@@ -1,3 +1,9 @@
+.color-category
+  font-size: .875em
+  font-family: gotham-medium
+  &:not(:first-of-type)
+    margin-top: 25px
+
 .color-card
   border: 1px solid $lightest-grey
   border-radius: 5px
@@ -5,12 +11,28 @@
   .color-card-top
     min-height: 130px
   .color-card-bottom
-    padding: 5px
-    h6
-      font-family: gotham-book
-    p
-      font-size: .7em
-      color: $outer-space
+    padding: 12px 0 5px 5px
+
+.color-card-title, .color-card-text
+  line-height: 18px
+
+.color-card-title
+  font-family: gotham-book
+  padding: 0
+  margin: 0
+  font-size: 1em
+  font-weight: bold
+
+.color-card-text
+  font-size: .7em
+  color: $outer-space
+  padding: 0
+  margin: 0
+
+// #assets-color-palette
+//   a
+//     margin-top: 50px
+
 #dark-blue
   background: $xaxis-grey-blue
 
@@ -37,3 +59,8 @@
 
 #light-gray
   background: $light-grey
+
+@media (max-width: 844px)
+  .color-card
+    margin-top: 10px
+    margin-bottom: 10px
