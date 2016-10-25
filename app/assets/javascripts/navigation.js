@@ -22,7 +22,7 @@ $(document).ready( function () {
 window.onload = function() {
   if (window.location.href.indexOf("platforms/") > -1) {
     $(window).scroll(function(){
-      $("#side-nav").css("top",Math.max(375,696-$(this).scrollTop()));
+      $("#side-nav").css("top",Math.max(375,700-$(this).scrollTop()));
     });
   }
 }
