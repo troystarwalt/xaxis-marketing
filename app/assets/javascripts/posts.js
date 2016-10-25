@@ -24,9 +24,6 @@ function swapSelectedUpdate(post){
   $('#single-news_text').text(post.text);
   $('#single-news_tag_list').text(post.tag_list);
   $('#single-news_date').text(post.date);
-  var slug = post.id;
-  if(post.slug != null){
-    slug = post.id;
-  }
+  var slug = post.slug || post.id;
   $('#single-news_readmore').attr('href', "/posts/"+slug);
 }
