@@ -13,22 +13,22 @@
             .col-md-4.col-xs-6.footer-column
               =link_to 'Brand Assets', "#", class: 'footer-main-link'
               %ul.footer-list
-                - Platform.all.each do |platform|
-                  %li= link_to "#{platform.name} Brand Assets", "#"
+                - Brand.all.each do |brand|
+                  %li= link_to "#{brand.name} Brand Assets", brand_path(brand)
             .col-md-4.col-xs-6.footer-column
               =link_to 'Products & Tutorials', "#", class: 'footer-main-link'
               %ul.footer-list
-                %li= link_to 'Turbine', "#"
-                %li= link_to 'Spotlight', "#"
+                -Platform.all.each do |platform|
+                  %li= link_to '#{platform.name}', platform_path(platform)
                 %li= link_to '101 Series', "#"
-                %li= link_to 'All Case Studies', "#"
+                %li= link_to 'All Case Studies', case_studies_path
                 %li= link_to 'All Sell Sheets', "#"
             .col-md-4.col-xs-6.footer-column
               =link_to 'Utilities', "#", class: 'footer-main-link'
               %ul.footer-list
-                %li= link_to 'Calculator', "#"
+                %li= link_to 'Calculator', "/value-calculator"
             .col-md-4.col-xs-6.footer-column
-              =link_to 'Presentation Hub', "#", class: 'footer-main-link'
+              =link_to 'Presentation Hub', presentation_hub_path, class: 'footer-main-link'
     .container
       .row.footer-bottom
         .col-xs-12.text-xs-center
