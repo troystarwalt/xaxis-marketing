@@ -1,0 +1,17 @@
+.row
+  - @headshots.each do |hs|
+    .col-sm-3.col-xs-6
+      .headshot-container
+        = link_to root_path, class: "headshot-image" do
+          = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
+          %span.after-text.text-uppercase View Image
+        .text-xs-center.headshot-info
+          %p.font-weight-bold= hs.full_name
+          %p= hs.title
+          %span.fa.fa-download
+          %span.content-text-sub
+            =link_to "Original", hs.image_url, type: "image/jpeg"
+          %span.content-text-sub
+            |
+          %span.content-text-sub
+            =link_to "1024x768", hs.image_url(:large), type: "image/jpeg"
