@@ -1,2 +1,13 @@
 %h3.text-uppercase #{@platform.slug} Infographics
-%p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
+.row
+  - @platform.infographics.each.with_index do |infographic, index|
+    .col-sm-6
+      .platform-card
+        .platform-preview-image
+          =image_tag infographic.image_preview_url, class: "card-img-top img-fluid", alt: infographic.name
+          .card-img-overlay.text-xs-center
+            =link_to "View PDF", infographic.file_url, class: "platform-overlay-link text-uppercase", id: "#{infographic.name.parameterize}", target: "_blank", data: { index: index }
+            %br
+            =link_to "Download", infographic.file_url, class: "platform-overlay-link text-uppercase", target: "_blank", download: infographic.name
+        .platform-card-text.text-xs-center
+          %p.text-xs-center= infographic.description

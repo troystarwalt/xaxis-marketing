@@ -1,2 +1,9 @@
 %h3.text-uppercase #{@platform.slug} Logos
-%p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
+- @platform.logos.order('content_type DESC').each do |logo|
+  - if logo.is_image?
+    =image_tag logo.file.preview.url, class: "img-fluid"
+.row
+  .col-sm-6
+    =link_to "download png", @platform_logo_png.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_png.name
+  .col-sm-6
+    =link_to "download eps", @platform_logo_eps.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_eps.name

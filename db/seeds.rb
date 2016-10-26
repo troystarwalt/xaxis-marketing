@@ -58,3 +58,16 @@ platforms.each do |platform_name|
     end
   puts "created " + platform_name
 end
+
+platform_ids = Platform.pluck(:id)
+20.times do
+  CaseStudy.create(
+  author: Faker::Book.author,
+  release_date: Faker::Time.backward(20, :morning),
+  short_description: Faker::Hipster.paragraph,
+  pdf_attachment: open("public/seedfiles/pdf-seed.pdf"),
+  title: Faker::Commerce.product_name,
+  platform_id: platform_ids.sample
+  )
+end
+puts "case studies created"
