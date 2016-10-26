@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   validates :title, :text, presence: true
   validate :tag_must_be_approved
+  mount_uploader :image, ImageUploader
   acts_as_taggable
 
   scope :tagged_by, -> (category){where(tags: {name: category})}
@@ -31,10 +32,9 @@ class Post < ApplicationRecord
       date: self.pretty_date,
       title: self.title,
       text: self.text,
-      img_url: "http://placehold.it/370x245"
+      img_url: self.image.url(:thumb)
     }
   end
-
 
   private
 

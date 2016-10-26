@@ -16,13 +16,14 @@
                   %span#single-news_date.date= @posts.last.pretty_date
           .selected-news_content
             %h1.content-header#single-news_title.news-title= @posts.last.title
-            %img#single-news_image{src: "http://placehold.it/370x245", class: 'img-fluid-width'}
+            %img#single-news_image{src: @posts.last.image.url, class: 'img-fluid-width'}
             %p.content-text#single-news_text.news-text= @posts.last.text
             %p.readmore= link_to 'Read More', post_path(@posts.last), class: "readmore-link", id: 'single-news_readmore'
       .col-md-6.col-sm-12
         .recent_news_container
-          - @posts.each do |post|
-            .single-news-container{"data-postId" => post.id}
+          - @posts.each_with_index do |post, index|
+            -
+            .single-news-container{"data-postId" => post.id, class: ('active' if index == 0) }
               .single-news-text
                 %h1.content-header= post.title
                 %p.content-text= post.text
