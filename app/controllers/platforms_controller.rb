@@ -8,7 +8,7 @@ class PlatformsController < ApplicationController
 
   def show
     @platform = Platform.friendly.find(params[:id])
-
+    @case_studies = CaseStudy.where(platform_id: @platform.id)
     gon.videos = @platform.videos
   end
 end

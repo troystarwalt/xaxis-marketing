@@ -12,7 +12,7 @@
       = render partial: "videos", locals: { platform: @platform }
     %hr
     .section#platform-case-study
-      = render partial: "case_studies", locals: { platform: @platform }
+      = render partial: "case_studies", locals: { platform: @platform, casestudy: @case_studies }
     %hr
     .section#platform-infographics
       = render partial: "infographics", locals: { platform: @platform }

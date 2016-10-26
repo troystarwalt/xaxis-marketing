@@ -1,2 +1,23 @@
 %h3.text-uppercase #{@platform.name} Case Studies
-%p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+.section-body
+  -if @case_studies.any?
+    %ul.case_studies_list
+      - @case_studies.each do |case_study|
+        %li.case_studies_list-item
+          .case-study-subtitle
+            Case Study
+            |
+            =case_study.platform.name
+            |
+            =case_study.author
+            |
+            =case_study.get_pretty_release_date
+          .case-study-title
+            %h3=case_study.title
+          .case-study-description
+            =case_study.short_description
+          .case-study_links
+            = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary'
+            = link_to "Download PDF", case_study.pdf_attachment_url, class: 'brand-btn-primary xaxis-btn-primary', download: case_study.title
+  -else
+    No Case Studies Available For #{@platform.name} yet.
