@@ -10,5 +10,7 @@ class PlatformsController < ApplicationController
     @platform = Platform.friendly.find(params[:id])
     @case_studies = CaseStudy.where(platform_id: @platform.id)
     gon.videos = @platform.videos
+    @platform_logo_png = Logo.where(platform_id: @platform.id, content_type: "image/png").last
+    @platform_logo_eps = Logo.where(platform_id: @platform.id, content_type: "application/postscript").last
   end
 end

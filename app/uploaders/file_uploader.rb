@@ -35,7 +35,7 @@ class FileUploader < CarrierWave::Uploader::Base
     end
 
     version :preview, :if => :image? do
-      process resize_to_fit: [600, 600]
+      process resize_to_fit: [400, 400]
     end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -43,6 +43,8 @@ class FileUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     if model == 'CaseStudy'
       %w(pdf)
+    elsif model == 'Logo'
+      %w(png eps)
     else
       %w(zip pdf ppt pptx doc docx ase png eps jpeg jpg dotx)
     end

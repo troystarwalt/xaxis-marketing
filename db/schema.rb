@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024202320) do
+ActiveRecord::Schema.define(version: 20161026194641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,8 +121,10 @@ ActiveRecord::Schema.define(version: 20161024202320) do
     t.string   "name"
     t.string   "file"
     t.integer  "platform_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "content_type"
+    t.integer  "file_size"
     t.index ["platform_id"], name: "index_logos_on_platform_id", using: :btree
   end
 
