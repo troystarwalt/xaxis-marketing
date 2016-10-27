@@ -1,0 +1,29 @@
+nav.pagination
+  width: 100%
+  ul.pagination
+    width: 100%
+  .page-item.active .page-link
+    background: none
+    color: $xaxis-blue-color
+  .page-link
+    text-align: center
+    color: $gray
+    border: none
+    width: 10%
+    font-size: 12px
+    i
+      font-size: 12px
+    a
+      &:hover
+        background: none
+        color: $xaxis-blue-color
+    &:hover
+      background: none
+      color: $xaxis-blue-color
+  .next.page-item, .previous.page-item
+    .page-link
+      color: $xaxis-blue-color
+
+    &.disabled
+      i
+        color: $gray
