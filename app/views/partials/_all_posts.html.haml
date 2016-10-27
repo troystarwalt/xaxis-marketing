@@ -1,9 +1,23 @@
 .container
-  .row
+  .row.container-row
     .col-xs-12
       .col-sm-3.hidden-sm-down
         .sidebar
-
+          .section-container
+            .header.text-uppercase
+              Categories
+            %ul.sidebar-list.categories-list
+              %li.sidebar-list-item.categories-list-item
+                =link_to 'Internal Events', '#'
+              %li.sidebar-list-item.categories-list-item
+                =link_to 'HR Related', '#'
+          .section-container
+            .header.text-uppercase
+              Archives
+            %ul.sidebar-list.archives-list
+              - Array(2008..2017).reverse.each do |year|
+                %li.sidebar-list-item.archives-list-item
+                  =link_to year, "#posts_by_year_x"
       .col-md-9.col-xs-12
         #news-container.section-container
           .section-name#news-section
@@ -24,4 +38,4 @@
                     %h1.news-article-title= post.title
                     %p.news-article-text= post.text
 
-          = will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+          = will_paginate @posts, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}

@@ -427,8 +427,6 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.5)
-    will_paginate-bootstrap4 (0.1.2)
-      will_paginate (~> 3.0, >= 3.0.9)
     xml-simple (1.1.5)
 
 PLATFORMS
@@ -468,7 +466,6 @@ DEPENDENCIES
   video_thumb
   web-console
   will_paginate
-  will_paginate-bootstrap4
 
 RUBY VERSION
    ruby 2.3.1p112
