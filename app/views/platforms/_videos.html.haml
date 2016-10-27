@@ -1,5 +1,6 @@
 %h3.text-uppercase #{@platform.slug} Videos
 .row
+-if @platform_videos.present?
   - @platform.videos.each.with_index do |video, index|
     .col-sm-6
       .platform-card
@@ -24,3 +25,5 @@
           #video-embed
         .modal-footer
           %button(type="button" class="brand-btn-primary xaxis-btn-primary" data-dismiss="modal") Close
+- else
+  %p No Videos Available

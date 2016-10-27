@@ -1,9 +1,12 @@
 %h3.text-uppercase #{@platform.slug} Logos
-- @platform.logos.order('content_type DESC').each do |logo|
-  - if logo.is_image?
-    =image_tag logo.file.preview.url, class: "img-fluid"
-.row
-  .col-sm-6
-    =link_to "download png", @platform_logo_png.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_png.name
-  .col-sm-6
-    =link_to "download eps", @platform_logo_eps.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_eps.name
+-if @platform_logo_png.present? && @platform_logo_eps.present?
+  - @platform.logos.order('content_type DESC').each do |logo|
+    - if logo.is_image?
+      =image_tag logo.file.preview.url, class: "img-fluid"
+  .row
+    .col-sm-6
+      =link_to "download png", @platform_logo_png.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_png.name
+    .col-sm-6
+      =link_to "download eps", @platform_logo_eps.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_eps.name
+- else
+  %p No logos available for download.

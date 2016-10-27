@@ -1,5 +1,6 @@
 %h3.text-uppercase #{@platform.slug} Infographics
 .row
+- if @platform_infos.present?
   - @platform.infographics.each.with_index do |infographic, index|
     .col-sm-6
       .platform-card
@@ -11,3 +12,5 @@
             =link_to "Download", infographic.file_url, class: "platform-overlay-link text-uppercase", target: "_blank", download: infographic.name
         .platform-card-text.text-xs-center
           %p.text-xs-center= infographic.description
+- else
+  %p No infographics available.

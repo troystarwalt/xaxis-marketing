@@ -14,7 +14,11 @@ class BrandsController < InheritedResources::Base
     @brand = Brand.friendly.find(params[:id])
     @brands = Brand.all
     @headshots = Headshot.where(brand_id: @brand.id)
-    @image_bank = GlobalAccessory.where(category: "image_bank").last.file_url
+    image_bank_check = GlobalAccessory.where(category: "image_bank").present?
+    if image_bank_check.present? && !image_bank_check.nil?
+      @image_bank = GlobalAccessory.where(category: "image_bank").last.file_url
+    end
+
     # Makes zip file out of logos. Will need to refactor this as there are multiple
     # Places where we will be collecting zips.
     # respond_to do |format|

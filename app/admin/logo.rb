@@ -31,11 +31,12 @@ batch_action :destroy, confirm: "Are you sure??"
     attributes_table do
       row :name
       row :file do |f|
-        if !f.file.present?
+        if f.file.nil?
           image_tag(f.file_url, class: "admin_show_image")
         elsif f.file.content_type.start_with? 'image'
-          image_tag(f.file.thumb, class: "admin_show_image")
+          image_tag(f.file.preview)
         else
+          byebug
           f.file_url
         end
       end
