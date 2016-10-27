@@ -35,7 +35,7 @@
                     %p.news-article-tags
                       Tags:
                       = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
-                    %h1.news-article-title= post.title
+                    %h1.news-article-title=link_to post.title, post_path(post)
                     %p.news-article-text= post.text
 
           = will_paginate @posts, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
