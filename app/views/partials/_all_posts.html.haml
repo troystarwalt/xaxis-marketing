@@ -1,6 +1,27 @@
-- @posts.each do |post|
-  %h1= post.title
-  %p= post.text
-  %p
-    Tags:
-    = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
+.container
+  .row
+    .col-xs-12
+      .col-sm-3.hidden-sm-down
+        .sidebar
+
+      .col-md-9.col-xs-12
+        #news-container.section-container
+          .section-name#news-section
+            %h1.header.text-uppercase Latest News
+          %ul.list-group.news-articles-list
+            - @posts.each do |post|
+              %li.list-group-item.news-articles-list-item
+                .row
+                  .news-article-date
+                    .news-article-date_day
+                      =post.day_only
+                    .news-article-date_month_year
+                      =post.month_year_only
+                  .news-article-content
+                    %p.news-article-tags
+                      Tags:
+                      = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
+                    %h1.news-article-title= post.title
+                    %p.news-article-text= post.text
+
+          = will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

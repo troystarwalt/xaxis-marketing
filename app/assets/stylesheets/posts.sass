@@ -1,3 +1,67 @@
+.posts.index
+  #news-container.section-container
+    .section-name#news-section
+      .header
+    .news-articles-list
+      list-style: none
+      padding-left: 0
+      .news-articles-list-item
+        height: 100%
+        border-bottom: 1px solid $light-grey
+        margin-bottom: 24px
+        padding: 0
+        border-left: 0
+        border-top: 0
+        border-right: 0
+        .news-article-date
+          float: left
+          width: 20%
+          margin-top: 22px
+          text-align: center
+          .news-article-date_day
+            display: inline-block
+            font-size: 64px
+            font-family: 'Gotham-Thin'
+            color: $xaxis-navy-blue
+            height: 100%
+            width: 100%
+          .news-article-date_month_year
+            display: inline-block
+            font-family: 'Gotham-Light'
+            font-size: 11px
+            color: $xaxis-navy-blue
+            height: 100%
+            width: 100%
+        .news-article-content
+          float: left
+          width: 77%
+          .news-article-tags
+            font-family: 'Gotham-Book'
+            font-size: 9px
+            height: 100%
+            color: $manatee
+            margin-bottom: 4px
+            a
+              font-family: 'Gotham-Book'
+              font-size: 9px
+              height: 100%
+              color: $manatee
+              margin-bottom: 4px
+              &:hover
+                color: $xaxis-blue-color
+              &:active, &:visited
+                color: $manatee
+          .news-article-title
+            color: $xaxis-darkest-blue
+            font-size: 22px
+            font-family: 'Gotham-Medium'
+            margin-bottom: 4px
+          .news-article-text
+            font-family: 'Gotham-LightItalic'
+            font-size: 12px
+            color: $xaxis-darkest-blue
+
+
 .posts.show
   .post-container
     margin-top: 80px
@@ -56,4 +120,4 @@
             color: $gray
 
           &:hover, &:active
-            color: $xaxis-blue-color 
+            color: $xaxis-blue-color
