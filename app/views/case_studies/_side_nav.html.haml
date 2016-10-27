@@ -1,0 +1,9 @@
+#side-nav-2.hidden-sm-down
+  %ul.nav#platform-asset-links
+    %li.nav-item
+      .text-uppercase Case Studies
+    - @platforms.each do |platform|
+      %li.nav-item
+        = link_to platform.name, "\##{platform.name}-case_studies" , class: "side-nav-link smooth-scroll"
+    %li.nav-item
+      = link_to "All", case_studies_path , class: "side-nav-link"

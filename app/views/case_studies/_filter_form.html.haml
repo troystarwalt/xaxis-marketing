@@ -1,0 +1,32 @@
+.case-studies-filters.jumbotron
+  = form_for :case_studies_query, url: case_studies_search_path, method: :get do |f|
+    .row.form-row-1
+      .col-sm-4
+        =f.label :industry, class: 'sr-only'
+        - if params[:case_studies_query]
+          - industry = params[:case_studies_query][:industry]
+          - region = params[:case_studies_query][:region]
+          - product = params[:case_studies_query][:product]
+        - else
+          - industry = nil
+          - region = nil
+          - product = nil
+        =f.select :industry, options_for_select(['industry_1', 'industry 2'], industry),
+          {include_blank: "select an industry"},
+          {class: 'form-control'}
+      .col-sm-4
+        =f.label :region, class: 'sr-only'
+        =f.select :region, options_for_select(['region 1', 'region 2'], region),
+          {include_blank: "select a region"}, {class: 'form-control'}
+      .col-sm-4
+        =f.label :product, class: 'sr-only'
+        =f.select :product, options_from_collection_for_select(Platform.all, :slug, :name, product),
+          {include_blank: "select a product"}, {class: 'form-control'}
+    .row
+      .col-sm-8
+        .form-group
+          =f.label :keywords, class: 'sr-only'
+          =f.text_field :keywords, placeholder: "Search by keyword, (E.g. automative, APAC turbine)", class: 'form-control'
+      .col-sm-4
+        .form-group
+          =f.submit "Search", class: 'brand-btn-secondary xaxis-btn-secondary search-button'
