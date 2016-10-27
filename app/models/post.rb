@@ -3,8 +3,9 @@ class Post < ApplicationRecord
   validate :tag_must_be_approved
   mount_uploader :image, ImageUploader
   acts_as_taggable
-
   scope :tagged_by, -> (category){where(tags: {name: category})}
+  self.per_page = 6
+
   def self.valid_tags
     ["Announcement", "News", "Event", "Talent & Culture"]
   end
