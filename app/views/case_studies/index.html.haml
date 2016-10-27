@@ -12,18 +12,16 @@
           .section-name
             %h1.header.text-uppercase Case Studies
           .section-body.case_study_section_body
-            = render 'case_studies_list'
-            = will_paginate @case_studies, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+            = render partial: 'case_studies_list', locals: {include_pagination: true}
         -elsif action_name == 'search'
           .section-name
             %h1.header.text-uppercase  Search Results
           .section-body.case_study_section_body
-            = render 'case_studies_list'
-            = will_paginate @case_studies, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+            = render partial: 'case_studies_list', locals: {include_pagination: true}
         -else
           - Platform.all.each do |platform|
             .section-name{id: "#{platform.name}-case_studies"}
               %h1.header.text-uppercase= platform.name
             .section-body.case_study_section_body
-              =render 'case_studies_list'
+              =render partial: 'case_studies_list', locals: {include_pagination: false}
               = link_to "More #{platform.name} case studies", platform_case_studies_path(platform), class: 'text-uppercase'
