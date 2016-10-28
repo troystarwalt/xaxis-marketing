@@ -36,7 +36,6 @@ batch_action :destroy, confirm: "Are you sure??"
         elsif f.file.content_type.start_with? 'image'
           image_tag(f.file.preview)
         else
-          byebug
           f.file_url
         end
       end
