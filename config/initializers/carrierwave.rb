@@ -10,7 +10,7 @@ CarrierWave.configure do |config|
   # Use AWS storage if in production
   if Rails.env.production?
     CarrierWave.configure do |config|
-      config.storage = :fog
+      config.fog_provider = 'fog/aws'
       config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
 
         config.fog_credentials = {
