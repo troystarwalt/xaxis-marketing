@@ -19,23 +19,25 @@ class BrandsController < InheritedResources::Base
       @image_bank = GlobalAccessory.where(category: "image_bank").last.file_url
     end
 
-    # Makes zip file out of logos. Will need to refactor this as there are multiple
-    # Places where we will be collecting zips.
-    # respond_to do |format|
-    #   format.html
-    #   format.zip do
-    #     @compressed_filestream = Zip::OutputStream.write_buffer do |zos|
-    #       @logos.each do |logo|
-    #         path = logo.file_identifier
-    #         zos.put_next_entry(path)
-    #         zos.write logo.file.read
-    #       end
-    #     end
-    #     @compressed_filestream.rewind
-    #     send_data @compressed_filestream.read, filename: "logos.zip"
-    #     byebug
-    #   end
-    # end
+    # group = @brand.brand_accessories.where(category: ["guidelines", "logo", "palette", "font"])
+
+    @group = BrandAccessory.where(category: ["guidelines", "logo", "palette", "font"], brand_id: @brand.id)
+
+    respond_to do |format|
+      format.html
+      format.zip do
+        stringio = Zip::OutputStream.write_buffer do |zos|
+          @group.each do |stuff|
+            path = stuff.file_identifier
+            zos.put_next_entry(path)
+            zos.write stuff.file.read
+          end
+          puts stringio
+        end
+        stringio.rewind
+        send_data stringio.read
+      end
+    end
   end
 
   private

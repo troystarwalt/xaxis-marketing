@@ -7,7 +7,6 @@ class FileUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
-
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -50,13 +49,22 @@ class FileUploader < CarrierWave::Uploader::Base
     end
   end
 
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+
+  # We are randomizing the name of the file here to protect against duplication.
+  def filename
+    if model.class.name == "CaseStudy"
+     "#{model.title.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
+    else
+      "#{model.name.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
+    end
+  end
 
   protected
+
+  def secure_token(length=16)
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
+  end
 
   def image?(new_file)
     new_file.content_type.start_with? 'image'
