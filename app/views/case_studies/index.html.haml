@@ -23,5 +23,5 @@
             .section-name{id: "#{platform.name}-case_studies"}
               %h1.header.text-uppercase= platform.name
             .section-body.case_study_section_body
-              =render partial: 'case_studies_list', locals: {include_pagination: false}
+              =render partial: 'case_studies_list', locals: {include_pagination: false, platform: platform }
               = link_to "More #{platform.name} case studies", platform_case_studies_path(platform), class: 'text-uppercase'
