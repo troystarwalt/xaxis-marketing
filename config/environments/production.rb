@@ -4,12 +4,12 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.default_url_options = { :host => 'xaxis-internal.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'xaxis-internal-staging.herokuapp.com' }
 
     config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 25,
-    domain: "xaxis-internal.herokuapp.com",
+    domain: "xaxis-internal-staging.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["SENDGRID_USERNAME"],

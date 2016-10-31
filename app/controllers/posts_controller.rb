@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.paginate(page: params[:page])
     end
+    @all_tags = Post.tag_counts.pluck(:name)
   end
 
   def show

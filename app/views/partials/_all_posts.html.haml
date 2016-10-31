@@ -7,10 +7,9 @@
             .header.text-uppercase
               Categories
             %ul.sidebar-list.categories-list
-              %li.sidebar-list-item.categories-list-item
-                =link_to 'Internal Events', '#'
-              %li.sidebar-list-item.categories-list-item
-                =link_to 'HR Related', '#'
+              - @all_tags.each do |tag|
+                %li.sidebar-list-item.categories-list-item
+                  =link_to tag, tag_path(tag.downcase)
           .section-container
             .header.text-uppercase
               Archives
