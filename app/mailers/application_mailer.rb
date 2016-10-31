@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'xaxis-internal@this.com'
+  default from: 'xaxis-internal@xaxis-internal.herokuapp.com'
   layout 'mailer'
 end
