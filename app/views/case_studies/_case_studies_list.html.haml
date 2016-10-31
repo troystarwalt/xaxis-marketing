@@ -1,66 +1,14 @@
 .row.col-xs-12
   -if @case_studies.any?
     %ul.case_studies_list
-      - if params[:platform_id]
+      - if params[:platform_id] || action_name != 'index'
         - @case_studies.last(10).each do |case_study|
-          %li.case_studies_list-item
-            .case-study-subtitle
-              Case Study
-              |
-              =case_study.platform.name
-              |
-              =case_study.author
-              |
-              =case_study.get_pretty_release_date
-            .case-study-title
-              %h3=case_study.title
-            .case-study-description
-              =case_study.short_description
-            .case-study_links
-              = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary all-gray-btn-secondary'
-              = link_to "Download PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary', download: case_study.title
-      - elsif action_name === 'index'
+          = render partial: 'case_study_item', locals: {case_study: case_study}
+      - else
         - @case_studies.where(platform_id: platform.id).last(3).each do |case_study|
-          %li.case_studies_list-item
-            .case-study-subtitle
-              Case Study
-              |
-              =case_study.platform.name
-              |
-              =case_study.author
-              |
-              =case_study.get_pretty_release_date
-            .case-study-title
-              %h3=case_study.title
-            .case-study-description
-              =case_study.short_description
-            .case-study_links
-              = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary all-gray-btn-secondary'
-              = link_to "Download PDF", case_study.pdf_attachment_url, class: 'brand-btn-primary xaxis-btn-primary', download: case_study.title
-      -else
-        - @case_studies.last(10).each do |case_study|
-          %li.case_studies_list-item
-            .case-study-subtitle
-              Case Study
-              |
-              =case_study.platform.name
-              |
-              =case_study.author
-              |
-              =case_study.get_pretty_release_date
-            .case-study-title
-              %h3=case_study.title
-            .case-study-description
-              =case_study.short_description
-            .case-study_links
-              = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary all-gray-btn-secondary'
-              = link_to "Download PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary', download: case_study.title
-
+          = render partial: 'case_study_item', locals: {case_study: case_study}
   -else
-    -if action_name === 'search'
-      No Case Studies Match This Search Criteria
-    -else
-      No Case Studies Available For This 
+    No Case Studies Available For This #{action_name == 'search' ? "Search Criteria" : "Platform"}.
 -if include_pagination
   .row
     .col-xs-12
