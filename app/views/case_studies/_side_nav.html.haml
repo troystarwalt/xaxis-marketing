@@ -4,7 +4,7 @@
       .text-uppercase Case Studies
     - @platforms.each do |platform|
       %li.nav-item
-        -if params[:platform_id]
+        -if params[:platform_id] || action_name === 'search'
           = link_to platform.name, platform_case_studies_path(platform), class: "side-nav-link"
         - else
           = link_to platform.name, "\##{platform.name}-case_studies" , class: "side-nav-link smooth-scroll"

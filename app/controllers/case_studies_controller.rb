@@ -16,13 +16,18 @@ class CaseStudiesController < ApplicationController
   end
 
   def search
-    if params[:case_studies_query][:product]
-      @case_studies = CaseStudy.joins(:platform)
-                               .where(platforms: {slug: params[:case_studies_query][:product]})
-                               .paginate(page: params[:page])
+    @case_studies = CaseStudy.includes(:platform, :taggings)
 
-      #add region and industry later
+    if params[:case_studies_query][:product].present?
+      @case_studies = @case_studies
+                               .where(platforms: {slug: params[:case_studies_query][:product]})
     end
+
+    if params[:case_studies_query][:industry].present?
+      @case_studies = @case_studies.tagged_with(params[:case_studies_query][:industry])
+    end
+    
+    @case_studies = @case_studies.paginate(page: params[:page])
     @platforms = Platform.all
     render 'index'
   end
