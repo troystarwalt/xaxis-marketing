@@ -1,5 +1,5 @@
 %h3.text-uppercase #{@platform.name} Case Studies
-.section-body
+.section-body.case_study_section_body
   -if @case_studies.any?
     %ul.case_studies_list
       - @case_studies.each do |case_study|
@@ -17,7 +17,9 @@
           .case-study-description
             =case_study.short_description
           .case-study_links
-            = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary case-study-btn'
-            = link_to "Download", case_study.pdf_attachment_url, class: 'brand-btn-primary xaxis-btn-primary case-study-btn', download: case_study.title
+            = link_to "View PDF", case_study.pdf_attachment_url, class: 'brand-btn-secondary all-gray-btn-secondary'
+            = link_to "Download", case_study.pdf_attachment_url, class: 'brand-btn-secondary xaxis-btn-secondary', download: case_study.title
+    =link_to platform_case_studies_path(platform), class: "text-uppercase more-results-link" do
+      more #{@platform.name} case studies
   -else
     No Case Studies Available For #{@platform.name} yet.
