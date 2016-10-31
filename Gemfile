@@ -24,6 +24,7 @@ gem 'puma'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'rubyzip'
 gem 'sassc-rails', github: 'sass/sassc-rails'
+gem 'sendgrid-ruby'
 gem 'uglifier', '>= 1.3.0'
 gem 'video_thumb'  # Magic on vimeo video links
 gem 'gon'
