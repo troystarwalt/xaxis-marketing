@@ -28,10 +28,11 @@
               %ul.footer-list
                 %li= link_to 'Calculator', "/value-calculator"
                 %li= link_to 'Expert Videos', "/expert-video-hub"
+                %li= link_to "Admin Panel", admin_dashboard_path if current_admin_user
+
             .col-md-4.col-xs-6.footer-column
               =link_to 'Presentation Hub', presentation_hub_path, class: 'footer-main-link'
     .container
       .row.footer-bottom
         .col-xs-12.text-xs-center
           © 2016 XAXIS, INC. ALL RIGHTS RESERVED.
-      = link_to "Admin Panel", admin_dashboard_path if current_admin_user
