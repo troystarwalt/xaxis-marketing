@@ -12,10 +12,9 @@ Bootstrap 4
 ```
 git clone git@github.com:Xaxis-Marketing/internal.git  (SSH)
 cd
+bundle install
 rails s
 ```
-
-Site uses Acts-As-Taggable-On for easy tagging.
 
 ## Future To Do
 Setup Language Translations for Active Admin
