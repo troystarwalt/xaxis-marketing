@@ -1,171 +1,249 @@
 @font-face {
-    font-family: 'gotham-book';
+    font-family: 'Gotham-Book';
     src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Book.otf');
 }
 
 @font-face {
-    font-family: 'gotham-thin';
+    font-family: 'Gotham-Thin';
     src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.otf') format('otf');
 }
 
 @font-face {
-    font-family: 'gotham-light';
+    font-family: 'Gotham-Light';
     src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Thin.otf') format('otf');
 }
 
 @font-face {
-    font-family: 'gotham-medium';
+    font-family: 'Gotham-Medium';
     src: url('http://cdn2.hubspot.net/hubfs/436935/xaxis-fonts/Gotham-Medium.otf') format('otf');
 }
 
+html{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 *{
-    font-family: gotham-book, arial, sans-serif;
-    color: #484848 !important
+    font-family: 'Gotham-Book', arial, sans-serif;
+    color: #484848 !important;
+    line-height: 2;
 }
 
-
-header {
-    position: absolute;
-    background-color: black;
-    color: white;
-    top: 0;
-    left: 0;
-    padding-top: 350px;
-    width: 100%;
-    background-image: url('//placehold.it/1920x420')
+body{
+  background-color: #f6f6f6;
 }
 
-header h1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align:center;
-    transform: translateY(-50%) translateX(-50%);
-    font-size: 4em;
+nav img{
+  height: 55px;
 }
-
-header img{
-    position: absolute;
-    top: 35px;
-    right: 35px;
-}
-header img.main-header-image{
-  width: 100%;
-  top: 0;
-  right: 0;
-}
-
-.top-descript{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-family: 'gotham-light';
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.xaxislogo{
-    width: 10%;
-    position: absolute;
-    top: 30px;
-    right: 10%;
-}
-.modal {
-  text-align: center;
-  padding: 0!important;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -4px;
-}
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.sec-grey {
-    background-color: #f3f4f4;
-    color: #808080;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 0;
-    min-height: 150px;
-    margin-bottom: -15px;
-}
-
-#bottom-logo {
-    width: 10%;
-    height: auto;
-    padding-top: 3%;
-}
-
-.legal-lang {
-    width: 75%;
-    margin: 0 auto;
-}
-
-.legal-lang > p {
-    font-size: .7em;
-    text-transform: uppercase;
-}
-
-.bottom-img > img {
-    width: 100%;
-    height: auto;
-    vertical-align: bottom;
-}
-
-.sec {
-    position: relative;
-    color: #484848;
-    padding-top: 350px;
-    padding-bottom: 50px;
-}
-
-}
-
-.sec > h3{
-    padding-bottom: 35px;
-    font-family: 'gotham-medium'
-}
-
-.top-img {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.vid-selector:hover{
-    cursor: pointer;
-}
-.vid-selector img{
-    height: auto;
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-
-.list-group-item{
+.navbar-default{
+  background-color: transparent;
   border: none;
-  position: inherit;
-  background-color: #F8F8F8;
-  margin: 1px;
-  padding: 15px;
-  color: #484848
+}
+.navbar-fixed-top{
+  position: absolute;
+  top: 140px;
+}
+.nav p{
+  margin-top: 23px;
+  font-size: 14px;
+  font-family: 'Gotham-Medium' !important;
+  color: #929292 !important;
+}
+.disclaimer{
+    font-family: 'Gotham-BookItalic';
+    color: #3b6e8f !important;
 }
 
-.list-group-item:nth-child(odd){
-  background-color: #FCFCFC
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('/expert-video-hub/images/background3.jpg');
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+  width: 117vw;
+  z-index: 0;
 }
 
-/*.list-group-item:hover{
-  -webkit-box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
-  -moz-box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
-  box-shadow: 0px 2px 59px -2px rgba(140,140,140,0.78);
-}*/
+.opacity{
+  background-color: #fff;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header .logo{
+  width: 100vw;
+  position: absolute;
+  top: 250px;
+}
+header .logo img{
+  margin: 0 auto;
+  width: 100px;
+}
+
+header .logo h1{
+  font-family: 'Gotham-Medium';
+  color: #00AFEF !important;
+}
+
+
+main{
+  margin-top: 475px;
+}
+
+.img-responsive{
+  width: 100%;
+  max-width: 100%
+}
+
+main .main-video .card{
+  background: white;
+  padding: 0;
+  margin-bottom: 80px;
+  border-radius: 6px;
+
+}
+main .main-video .card .card-body{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+main .main-video .card .card-body .card-text{
+  padding-top: 40px;
+}
+
+.small-card{
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.small-card .small-card-body{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #FFF;
+}
+
+.small-card .contributor, .card .contributor{
+  font-family: 'Gotham-Light';
+  font-size: 14px;
+  color: #808080;
+}
+.small-card .contributor-title, .card .contributor-title{
+  font-family: 'Gotham-Light';
+  font-size: 14px;
+  color: #4A82A0 !important;
+}
+.small-card .contributor-name, .card .contributor-name{
+  font-family: 'Gotham-Medium';
+  font-size: 14px;
+  color: #4A82A0 !important;
+}
+.small-card-image{
+  height: 100%;
+}
+.video{
+  position: relative;
+  height: 100%;
+  padding-bottom: 55.75%
+}
+.video .video-link{
+
+}
+.video .video-link img{
+  position: absolute;
+}
+.video .video-link .video-overlay{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,.2);
+  height: 100%;
+  width: 100%;
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/expert-video-hub/images/play-overlay.png');
+  cursor: pointer;
+}
+
+
+.contributor-text p{
+  padding-bottom: 0;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+.contributor-text {
+  margin-bottom: 40px;
+}
+.small-card .description-header, .card .description-header {
+  font-family: 'Gotham-MediumItalic';
+  font-size: 24px;
+  line-height: 1.5;
+  color: #989898 !important;
+}
+.small-card .description-text, .card .description-text {
+  font-family: 'Gotham-Light';
+  font-size: 14px;
+  color: #1E3646 !important;
+}
+
+footer{
+  background: #FFF;
+  height: 240px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+footer .xaxis-logo img{
+  height: 55px;
+  margin-bottom: 40px;
+}
+
+footer .bottom-img{
+  position: absolute;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+}
+
+footer .legal-area{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  font-family: 'Gotham-Book';
+  color: #808080;
+  font-size: 8px;
+}
+.padding-margin-bottom-none{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+
+
+@media (min-width: 767px){
+  .small-card:nth-child(odd){
+    padding-right: 20px;
+  }
+  .small-card:nth-child(even){
+    padding-left: 20px;
+  }
+  .small-card img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  .small-card .small-card-body{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}

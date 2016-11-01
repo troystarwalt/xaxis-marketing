@@ -1,63 +1,34 @@
-
 $(document).ready(function(){
-  videoList = [];
-  initVideoList();
-  currentlyPlaying = 0;
+  $('#myModal').on('show.bs.modal', function (event) {
+    var a = $(event.relatedTarget);
+    var videoUrl = a.data('video-url');
+    var videoTitle = a.data('title');
 
-    $(document).on('click',"#myModal", function(){
-       $('iframe').attr('src','');
-    }).on('click','.modal-content',function(e) {
-        e.stopPropagation();
-   });
+    var modal = $(this);
+    modal.find('.modal-header .modal-title').text(videoTitle);
+    modal.find('.modal-body iframe').attr("src", videoUrl);
+  });
 
+  $('#myModal').on('hide.bs.modal', function(event){
+    $('iframe').attr('src', '');
+  });
+
+  setHeights('.small-card-body');
+  $(window).on('resize', function(){
+    setHeights('.small-card-body');
+  });
 });
 
-function setBoxHeights(){
-    $('.box').height('auto');
-    var maxheight = 0;
-      $('.box').each(function () {
-          maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight);
-       });
-      $('.box').height(maxheight);
-}
+function setHeights(elems){
+  $(elems).each(function() {
+    $(this).height('');
+  });
+  var maxHeight = -1;
+  $(elems).each(function() {
+    maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+  });
 
-function initVideoList(){
-  var videos = $('.vid-selector');
-  for(var i = 0; i < videos.length; i++){
-    var videoId = $(videos[i]).attr('src');
-    videoList.push({videoId: videoId});
-  }
-}
-
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-
-function stopVideo() {
-  player.stopVideo();
-}
-
-function setVimeoVideo(vidId){
-  var video = videoList[vidId - 1];
-  videoId = video.videoId;
-  var iframe = document.getElementsByTagName('iframe')[0];
-  iframe.setAttribute('src',video.videoId);
-  currentlyPlaying = vidId;
-}
-
-function nextVideo(){
-    if (currentlyPlaying == videoList.length){
-        setVimeoVideo(1);
-    }
-    else{
-        setVimeoVideo(currentlyPlaying+1);
-    }
-}
-
-function previousVideo(){
-    if(currentlyPlaying == 1)
-        setVimeoVideo(videoList.length);
-    else{
-        setVimeoVideo(currentlyPlaying-1);
-    }
+  $(elems).each(function() {
+    $(this).height(maxHeight);
+  });
 }

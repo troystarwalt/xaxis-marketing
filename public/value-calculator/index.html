@@ -1,37 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Xaxis Value Calculator</title>
-    <meta name="description" content="{{ content.meta_description }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./value-calculator/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/value-calculator/style.css">
   </head>
   <body>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="https://www.xaxis.com"><img src="http://cdn2.hubspot.net/hubfs/436935/images/Xaxis_Logo_Pos_Vert_reduced.png" id="navbar-logo" class="nav-image img-responsive" alt="Xaxis Logo"></a>
+          <a class="navbar-brand" href="//www.xaxis.com"><img src="/value-calculator/images/Xaxis_Logo_Pos_Vert_reduced.png" id="navbar-logo" class="nav-image img-responsive" alt="Xaxis Logo"></a>
         </div>
       </div>
     </nav>
     <div class='container-fluid section'>
       <div class='header-image'>
-        <div class='text-left header_text'>
-          <div class='row'>
-            <div class='col-sm-8 col-sm-offset-3'>
-              <h1>
-              <div class='header_year-text'>2016 Xaxis</div>
-              <div id='regional_name' class='header_descriptor-text'></div>
-              <div class='header_descriptor-text'>
-                Programmatic Media
-                <br />
-                Buying Calculator
-              </div>
-              </h1>
+          <div class='text-left header_text'>
+            <div class='row'>
+                <div class='col-sm-8 col-sm-offset-3'>
+                    <h1>
+                      <div class='header_year-text'>2016 Xaxis</div>
+                      <div id='regional_name' class='header_descriptor-text'></div>
+                      <div class='header_descriptor-text'>
+                        Programmatic Media
+                        <br />
+                        Buying Calculator
+                      </div>
+                    </h1>
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -47,6 +46,7 @@
         </div>
       </div>
     </div>
+
     <div id='form_and_table'>
       <div class='user-form section'>
         <div class="row">
@@ -97,7 +97,7 @@
                           <div class="input-group">
                             <span class="input-group-addon currency_symbol">$</span>
                             <div class='form-control' style='background-color: transparent;' id='fake_input_total' contenteditable="true"
-                              >
+                            >
                             </div>
                             <input id='input_total' type='number' step='0.01' min='0' class='form-control' style='display:none;'/>
                           </div>
@@ -191,7 +191,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class='row form-row question-container'>
+                  <div class='row form-row question-container pbu_comparisons'>
                     <div class='col-sm-6 text-container odd'>
                       <p>
                         6. Set the % commision to compare
@@ -252,7 +252,7 @@
                   <div class='row form-row question-container'>
                     <div id='toggle-odd' class='col-sm-6 text-container odd'>
                       <p>
-                        <span class='dsp_comparisons'>7.</span><span class='pbu_comparisons'>8.</span> Do you need Anything Added On?
+                        <span class='dsp_comparisons'>6.</span><span class='pbu_comparisons'>8.</span> Do you need Anything Added On?
                       </p>
                     </div>
                     <div  id='toggle-odd2' class='col-sm-6 data-container odd'>
@@ -284,17 +284,17 @@
           <div class='row'>
             <div class='col-sm-12'>
               <h2 class='text-center dark-grey-text big-margin-bottom big-margin-top gotham-xl'>
-              The Xaxis Difference
+                The Xaxis Difference
               </h2>
               <h4 class='text-center dark-blue-text gotham-medium medium-margin-bottom'>
-              Xaxis vs <span class='dark-blue-text gotham-medium pbu_comparisons'>PBU</span><span class='dark-blue-text gotham-medium dsp_comparisons'>DSP</span>
+                Xaxis vs <span class='dark-blue-text gotham-medium pbu_comparisons'>PBU</span><span class='dark-blue-text gotham-medium dsp_comparisons'>DSP</span>
               </h4>
               <hr class='full-width' />
               <div class='row'>
                 <div class='col-xs-12 col-sm-4 col-md-4 left-column medium-margin-bottom medium-margin-top'>
                   <div class='col-sm-10 col-sm-offset-1 text-center'>
                     <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
-                    More Working Media
+                      More Working Media
                     </h4>
                     <p class='text-center no-margin'>
                       <span id='pbu_pct_extra_working_media' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
@@ -307,24 +307,26 @@
                       <span class='blue-text gotham-medium'>more</span> toward working media
                     </p>
                     <br><br>
-                    <p class='big-margin-bottom dsp_comparisons'>
-                      <strong><span class='impressionScount blue-text gotham-book' id='dspAddedWorkingMedia'></span></strong>
-                      <br/>
-                      more working media
-                      <br/>
-                    </p>
-                    <p class='pbu_comparisons'>
-                      <strong><span class='impressionScount blue-text gotham-book' id='pbuAddedWorkingMedia'></span></strong>
-                      <br/>
-                      more working media
-                      <br/>
-                    </p>
+
+                      <p class='big-margin-bottom dsp_comparisons'>
+                        <strong><span class='impressionScount blue-text gotham-book' id='dspAddedWorkingMedia'></span></strong>
+                        <br/>
+                        more working media
+                        <br/>
+                      </p>
+                      <p class='pbu_comparisons'>
+                        <strong><span class='impressionScount blue-text gotham-book' id='pbuAddedWorkingMedia'></span></strong>
+                        <br/>
+                        more working media
+                        <br/>
+                      </p>
+
                   </div>
                 </div>
                 <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top dsp_comparisons'>
                   <div class='col-sm-10 col-sm-offset-1 text-center'>
                     <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
-                    More Impressions
+                      More Impressions
                     </h4>
                     <p class='text-center no-margin'>
                       <span class='boldest-numbers blue-text gotham-medium' id='moreImpressionsDSPPct'></span>
@@ -338,7 +340,7 @@
                     <br><br>
                     <p>
                       <strong>
-                      <span class='impressionScount blue-text gotham-book' id='impressionsVsDSP'></span>
+                        <span class='impressionScount blue-text gotham-book' id='impressionsVsDSP'></span>
                       </strong>
                       <br/>
                       more total impressions
@@ -346,7 +348,7 @@
                       <div class='benchmark'>
                         <hr>
                         <strong>
-                        <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsDSP'></span>
+                          <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsDSP'></span>
                         </strong>
                         <br/>
                         more viewable impressions
@@ -358,7 +360,7 @@
                 <div class='col-xs-12 col-sm-4 col-md-4 center-column medium-margin-bottom medium-margin-top pbu_comparisons'>
                   <div class='col-sm-10 col-sm-offset-1 text-center'>
                     <h4 class='text-center dark-blue-text gotham-medium big-margin-bottom'>
-                    More Impressions
+                      More Impressions
                     </h4>
                     <p class='text-center no-margin'>
                       <span class='blue-text boldest-numbers gotham-medium' id='moreImpressionsPBUPct'></span>
@@ -371,14 +373,14 @@
                     <br><br>
                     <p>
                       <strong>
-                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
+                        <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
                       </strong><br/>
                       more total impressions
                       <br/>
                       <div class='benchmark'>
                         <hr>
                         <strong>
-                        <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsPBU'></span>
+                          <span class='impressionScount blue-text gotham-book' id='viewableImpressionsVsPBU'></span>
                         </strong><br/>
                         more viewable impressions<br/>
                       </div>
@@ -388,7 +390,7 @@
                 <div class='col-xs-12 col-sm-4 col-md-4 right-column medium-margin-bottom medium-margin-top'>
                   <div class='col-sm-10 col-sm-offset-1 text-center'>
                     <h4 class='dark-blue-text gotham-medium  big-margin-bottom'>
-                    Cost Needed To Match
+                      Cost Needed To Match
                     </h4>
                     <p class='text-center no-margin'>
                       <span id='pbu_Added_budget_necessary' class='boldest-numbers blue-text gotham-medium pbu_comparisons'></span>
@@ -404,15 +406,15 @@
                     <p class='big-margin-bottom dsp_comparisons'>
                       <strong>
                       <span class='impressionScount blue-text gotham-book' id='costNonXaxisDSPPartner'></span>
-                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsDSP'></span>
+                        <span class='impressionScount blue-text gotham-book ' id='impressionsVsDSP'></span>
                       </strong><br/>
                       additional budget
                       <br/>
                     </p>
                     <p class='pbu_comparisons'>
                       <strong>
-                      <span class='impressionScount blue-text gotham-book' id='costNonXaxisPartner'></span>
-                      <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
+                        <span class='impressionScount blue-text gotham-book' id='costNonXaxisPartner'></span>
+                        <span class='impressionScount blue-text gotham-book ' id='impressionsVsPBU'></span>
                       </strong><br/>
                       additional budget
                       <br/>
@@ -424,6 +426,7 @@
           </div>
         </div>
       </div>
+
       <div class='prove-it'>
         <div class='container'>
           <div class='col-xs-12'>
@@ -529,7 +532,7 @@
                   <td>N/A</td>
                 </tr>
                 <tr class='dsp_comparisons'>
-                  <td>DSP Spend on Internal Media</td>
+                  <td>DSP Profits From Spend on Internal Media</td>
                   <td class='dsp_comparisons' id='dspInternalSpend'></td>
                   <td class='pbu_comparisons'>N/A</td>
                   <td>N/A</td>
@@ -537,19 +540,19 @@
                 <tr>
                   <td class='empty-row' colspan="3"></td>
                 </tr>
-                <tr id='row_staffing'>
+                <tr id='row_staffing' class='pbu_comparisons'>
                   <td>
                     <strong>Staffing</strong>
                   </td>
                   <td class='empty-row' colspan="2"></td>
                 </tr>
-                <tr id='row_PctOfMedia'>
+                <tr id='row_PctOfMedia' class='pbu_comparisons'>
                   <td >% Commission</td>
                   <td class='dsp_comparisons' id='pctOfMediaDSP'></td>
                   <td class='pbu_comparisons' id='pctOfMediaPbu'></td>
                   <td>N/A</td>
                 </tr>
-                <tr>
+                <tr  class='pbu_comparisons'>
                   <td class='empty-row' colspan="4"></td>
                 </tr>
                 <tr id='row_addons'>
@@ -571,6 +574,8 @@
         </div>
       </div>
     </div>
+
+
     <footer class="footer">
       <div class="container">
         <div class="content text-center">
@@ -581,10 +586,13 @@
       </div>
     </footer>
     <div class="bottom-img">
-      <img src="http://cdn2.hubspot.net/hubfs/436935/Google_Partnership/Stripe.png">
+      <img src="/value-calculator/images/Stripe.png">
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="./value-calculator/script.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src='/value-calculator/script.js'></script>
+
   </body>
 </html>
