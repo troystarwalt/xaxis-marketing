@@ -2,11 +2,6 @@ ActiveAdmin.register CaseStudy do
 
   permit_params :title, :pdf_attachment, :platform_id, :author, :release_date, :short_description, :industry_list
 
-  before_save do |model|
-    puts "casing"
-    model.industry_list = model.industry_list.map{|industry| industry.capitalize}.join(',')
-  end
-
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Create a New One Sheeter" do
