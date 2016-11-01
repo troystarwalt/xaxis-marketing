@@ -52,11 +52,13 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
 /* Sytling Headshots and Overlay Text */
 .headshot-container
   margin-bottom: 20px
+  margin-top: 20px
 
 .headshot-image
   position: relative
   display: inline-block
   width: 100%
+  margin-top: 0 !important
 
 .headshot-image:after
   content: ''
@@ -98,21 +100,28 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
 
 .headshot-image > img
   margin: 0 auto
+  -webkit-filter: grayscale(75%) /* Safari 6.0 - 9.0 */
+  filter: grayscale(75%)
 
 .headshot-image > img:hover
   cursor: pointer
 
 .headshot-info > p
-  font-size: 11px
+  font-size: 10px
   margin-bottom: 5px
+  line-height: 14px
 
 .headshot-info > p:first-of-type
   font-family: gotham-book
   margin-bottom: 2px
   margin-top: 8px
 
+.headshot-info > p:nth-child(2)
+  min-height: 40px
+
 .headshot-info > span
   font-size: 8px
+
 
 /***********  Media Q's  ***********/
 
@@ -123,3 +132,49 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
       padding-right: 10px
       margin: 0
       text-decoration: none
+
+/*  Tiny  */
+@media (min-width:400px)
+  #assets-headshots
+    .row
+      .col-xs-6:nth-child(2n+1)
+        clear: both
+  .headshot-info > p:nth-child(2)
+    min-height: 20px
+
+/*  Medium Desktop  */
+@media (min-width:544px)
+  #assets-headshots
+    .row
+      .col-xs-6:nth-child(2n+1)
+        clear: none
+      .col-sm-4:nth-child(3n+1)
+        clear: both
+
+
+/*  MD and UP */
+@media (min-width:768px)
+  #assets-headshots
+    .row
+      .col-xs-6:nth-child(2n+1)
+        clear: none
+      .col-sm-4:nth-child(3n+1)
+        clear: none
+      .col-md-4:nth-child(3n+1)
+        clear: both
+  .headshot-info > p:nth-child(2)
+    min-height: 30px
+
+@media (min-width: 992px)
+  #assets-headshots
+    .row
+      .col-xs-6:nth-child(2n+1)
+        clear: none
+      .col-sm-4:nth-child(3n+1)
+        clear: none
+      .col-md-4:nth-child(3n+1)
+        clear: none
+      .col-lg-3:nth-child(4n+1)
+        clear: both
+  .headshot-info > p:nth-child(2)
+    min-height: 40px

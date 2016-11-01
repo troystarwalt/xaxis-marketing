@@ -4,16 +4,17 @@ ActiveAdmin.register Headshot do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :first_name, :last_name, :title, :brand_id, :image
+  permit_params :first_name, :last_name, :title, :brand_id, :image, :priority
   #
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "New Headshot" do
-      para "Adding a new headshot updates the site. So proof your inputs!"
+      para "Adding a new headshot updates the site. So proof your work!"
       f.input :first_name
       f.input :last_name
       f.input :title
       f.input :brand_id, as: :select, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
+      f.input :priority
       f.input :image, as: :string, required: false, hint: image_tag(object.image.url(:thumb)).html_safe unless object.image.blank?
       f.input :image, as: :file
       f.hidden_field :image_cache
@@ -31,6 +32,7 @@ ActiveAdmin.register Headshot do
     column :brand do |f|
       Brand.find_by(id: f.brand_id).name
     end
+    column :priority
     column :created_at
     column :updated_at
     column :image do |f|
