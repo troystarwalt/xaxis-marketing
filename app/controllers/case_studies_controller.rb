@@ -17,7 +17,9 @@ class CaseStudiesController < ApplicationController
 
   def search
     @case_studies = CaseStudy.includes(:platform, :taggings)
-
+    if params[:case_studies_query][:keywords].present?
+      @case_studies = @case_studies.search_for(params[:case_studies_query][:keywords])
+    end
     if params[:case_studies_query][:product].present?
       @case_studies = @case_studies
                                .where(platforms: {slug: params[:case_studies_query][:product]})
@@ -26,7 +28,7 @@ class CaseStudiesController < ApplicationController
     if params[:case_studies_query][:industry].present?
       @case_studies = @case_studies.tagged_with(params[:case_studies_query][:industry])
     end
-    
+
     @case_studies = @case_studies.paginate(page: params[:page])
     @platforms = Platform.all
     render 'index'
