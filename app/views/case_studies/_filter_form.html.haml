@@ -7,6 +7,7 @@
           - industry = params[:case_studies_query][:industry]
           - region = params[:case_studies_query][:region]
           - product = params[:case_studies_query][:product]
+          - keywords =  params[:case_studies_query][:keywords]
         - else
           - industry = nil
           - region = nil
@@ -26,7 +27,7 @@
       .col-sm-8
         .form-group
           =f.label :keywords, class: 'sr-only'
-          =f.text_field :keywords, placeholder: "Search by keyword, (E.g. automative, APAC turbine)", class: 'form-control'
+          =f.text_field :keywords, placeholder: "Search by keyword, (E.g. automative, APAC turbine)", value: keywords, class: 'form-control'
       .col-sm-4
         .form-group
           =f.submit "Search", class: 'brand-btn-secondary xaxis-btn-secondary search-button'
