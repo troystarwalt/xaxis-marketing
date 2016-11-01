@@ -1,5 +1,5 @@
 .row
-  - @headshots.each do |hs|
+  - @headshots.ordered_by_priority.each do |hs|
     .col-sm-3.col-xs-6
       .headshot-container
         = link_to root_path, class: "headshot-image" do

@@ -2,6 +2,7 @@ class Headshot < ApplicationRecord
   belongs_to :brand
   mount_uploader :image, HeadshotsUploader
   validates_presence_of :first_name, :last_name, :title, :image, :brand_id
+  scope :ordered_by_priority, -> {order(priority: :asc, last_name: :asc)}
 
   def full_name
     [first_name, last_name].join(' ')
