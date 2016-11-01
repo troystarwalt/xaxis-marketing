@@ -5,18 +5,18 @@
       %p The #{@brand.name} logo and visual identity system help bring this promise to life. These guidelines will ensure that we successfully implement the #{@brand.name} identity system consistently across all of our communications. This is especially important to establish presence and prominence with our key audiences.
       %p We hope this identity system inspires you to create brilliant materials for the #{@brand.name} brand.
       - if @brand.brand_accessories.has_category("guidelines").present?
-        = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     .section#assets-download-section
       %h1 #{@brand.name} Brand Assets
       %p We have a few guidelines for using our brand resources—please take a moment to familiarize yourself with them. You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
       - if @group.present?
-        = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
     .section#assets-logo
       %h3.text-uppercase #{@brand.name} Logos
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       = image_tag "https://placehold.it/300x400", class: "img-fluid"
       - if @brand.brand_accessories.has_category("logo").present?
-        = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-color-palette
       %h3.text-uppercase #{@brand.name} color palette
@@ -91,7 +91,7 @@
               %p.color-card-text #C7C8CA
               %p.color-card-text rgb (0, 175, 239)
       - if @brand.brand_accessories.has_category("palette").present?
-        = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-fonts
       %h3.text-uppercase #{@brand.name} fonts
@@ -100,13 +100,13 @@
       %br
       =image_tag "https://www.placehold.it/600x400", class: "img-fluid"
       - if @brand.brand_accessories.has_category("font").present?
-        = link_to "download fonts", @brand.brand_accessories.has_category("font").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download fonts", @brand.brand_accessories.has_category("font").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-images
       %h3.text-uppercase images
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
       - if @image_bank.present?
-        = link_to "download image bank", @image_bank, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download image bank", @image_bank, class: "brand-btn-primary #{@brand.slug}-btn-primary"
       - else
         %p No image bank available for download at this time.    .section
       %h3.text-uppercase image usages
@@ -116,7 +116,7 @@
       %h3.text-uppercase #{@brand.name} powerpoint template
       =image_tag "https://www.placehold.it/500x300", class: "img-fluid"
       - if @brand.brand_accessories.has_category("ppt_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-tutorial
       %h3.text-uppercase Tutorial: how to compress image
@@ -127,19 +127,19 @@
       %h3.text-uppercase word template
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
       - if @brand.brand_accessories.has_category("word_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-facts
       %h3.text-uppercase #{@brand.name} fast facts
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
       - if @brand.brand_accessories.has_category("facts").present?
-        = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
       - if @brand.brand_accessories.has_category("capability").present?
-        = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-headshots
       %h3.text-uppercase executive headshots
