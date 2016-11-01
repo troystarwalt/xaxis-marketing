@@ -53,12 +53,23 @@ if Rails.env.development? || Rails.env.test?
 
   brands = ["Xaxis", "plista", "Light Reaction", "Triad"]
   categories = ["ppt_template", "word_template", "font", "guidelines", "logo", "capability", "palette", "facts"]
+  headshot_photo = ["public/seedfiles/female.jpg", "public/seedfiles/male.jpg"]
+
 
   brands.each do |brand_name|
     brand = Brand.create(:name => brand_name)
     categories.each do |cat|
       brand.brand_accessories.create(name: Faker::Superhero.name, file: open("public/seedfiles/pdf-seed.pdf"), category: cat, brand_id: brand.id)
       puts "created " + cat
+    end
+    10.times do
+      Headshot.create!(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        title: Faker::Name.title,
+        brand_id: brand.id,
+        priority: Faker::Number.between(1, 20),
+        image: open(headshot_photo.sample))
     end
     puts "---------------"
     puts "created " + brand_name
