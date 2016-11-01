@@ -3,7 +3,7 @@ class FileUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-
+  after :store, :get_text_from_file
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog
@@ -60,6 +60,16 @@ class FileUploader < CarrierWave::Uploader::Base
     else
       "#{model.name.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
     end
+  end
+
+  def get_text_from_file(file)
+    return true unless model.class.name == 'CaseStudy'
+    reader = PDF::Reader.new(self.file.file)
+    text = ""
+    for page in reader.pages do
+      text << page.text
+    end
+    self.model.update(searchable_pdf_text: text)
   end
 
   protected

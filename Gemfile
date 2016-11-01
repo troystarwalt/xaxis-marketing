@@ -28,6 +28,7 @@ gem 'sendgrid-ruby'
 gem 'uglifier', '>= 1.3.0'
 gem 'video_thumb'  # Magic on vimeo video links
 gem 'gon'
+gem 'pdf-reader'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
