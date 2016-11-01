@@ -16,6 +16,21 @@ ActiveAdmin.register AdminUser do
     actions
   end
 
+  show do
+    attributes_table do
+      row :email
+      row :sign_in_count
+      row :current_sign_in_at
+      row :last_sign_in_at
+      row :current_sign_in_ip
+      row :last_sign_in_ip
+      row :created_at
+      row :updated_at
+      active_admin_comments
+    end
+  end
+
+
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
@@ -24,8 +39,20 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
+      f.input :password
+      f.input :password_confirmation
     end
     f.actions
   end
 
+  controller do
+
+    def update
+      if params[:admin_user][:password].blank?
+        params[:admin_user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+      super
+    end
+  end
 end
