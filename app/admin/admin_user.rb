@@ -50,7 +50,7 @@ ActiveAdmin.register AdminUser do
     def update
       if params[:admin_user][:password].blank?
         params[:admin_user].delete("password")
-        params[:user].delete("password_confirmation")
+        params[:admin_user].delete("password_confirmation")
       end
       super
     end
