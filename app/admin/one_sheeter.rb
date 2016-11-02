@@ -27,7 +27,7 @@ permit_params :name, :file, :platform_id
     attributes_table do
       row :name
       row :file do |f|
-        f.file_identifier
+        link_to f.file_identifier, f.file_url, target: "_blank"
       end
       row :platform
       row :created_at
