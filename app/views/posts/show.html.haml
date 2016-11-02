@@ -1,20 +1,20 @@
+- title @post.title
 .post-container
   .container
     .row
       .col-sm-9.col-xs-12
         .news-article
-          .tag_list= @post.get_tag_list.to_sentence
+          %span.tag_list.text-uppercase= @post.get_tag_list.to_sentence
+          %span.tag_list|
+          %span.tag_list= @post.pretty_date
           %h1.article-title= @post.title
           .social-share-buttons
-            %span.facebook-social
-              fb
-            %span.twitter-social
-              tw
-            %span.youtube-social
-              yt
+            =link_to(post_path(@post), class: "share-btn-link", id: "FBshareBtn", onclick: "window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('#{post_url(@post)}'),'facebook-share-dialog','width=626,height=436'); return false;") do
+              =image_tag "facebook.svg", class: "share-btn share-btn-facebook"
+            =link_to(post_path(@post),  class: "share-btn-link", id: "TWshareBtn", onclick: "javascript:window.open('https://twitter.com/share?text=#{@post.long_teaser}&amp;url=#{post_path(@post)}','Twitter-dialog','width=626,height=436'); return false;") do
+              =image_tag "twitter.svg", class: "share-btn"
           %h6.news-contributor
-            Contributor:
-            = @post.author
+            Contributor: Xaxis Marketing
           %p.news-text= @post.text
           .news-image
             =image_tag @post.image.url(:preview) if @post.image
