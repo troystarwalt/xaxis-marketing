@@ -1,8 +1,14 @@
 .case-studies-filters.jumbotron
-  select
-    visibility: hidden
   padding: 2rem
   background-color: $more-lightest-grey
+  select.select2
+    width: 100% !important
+    overflow: scroll
+    height: 50px
+    margin-bottom: 5px
+    option
+      display: none
+
   .form-row-1
     @media(min-width: 543px)
       margin-bottom: 10px
