@@ -4,16 +4,16 @@
     .row
       .col-sm-9.col-xs-12
         .news-article
-          %span.tag_list= @post.get_tag_list.to_sentence
-          %span|
-          %span= @post.pretty_date
+          %span.tag_list.text-uppercase= @post.get_tag_list.to_sentence
+          %span.tag_list|
+          %span.tag_list= @post.pretty_date
           %h1.article-title= @post.title
           .social-share-buttons
             =link_to(post_path(@post), class: "share-btn-link", id: "FBshareBtn", onclick: "window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('#{post_url(@post)}'),'facebook-share-dialog','width=626,height=436'); return false;") do
               =image_tag "facebook.svg", class: "share-btn share-btn-facebook"
             =link_to(post_path(@post),  class: "share-btn-link", id: "TWshareBtn", onclick: "javascript:window.open('https://twitter.com/share?text=#{@post.long_teaser}&amp;url=#{post_path(@post)}','Twitter-dialog','width=626,height=436'); return false;") do
               =image_tag "twitter.svg", class: "share-btn"
-          %h6.news-contributor.font-italic
+          %h6.news-contributor
             Contributor: Xaxis Marketing
           %p.news-text= @post.text
           .news-image
@@ -36,16 +36,3 @@
               %ul.sidebar-list.archive-year-list
                 - Array(2008..2017).reverse.each do |year|
                   %li.sidebar-list-item.archive-year-list-item= link_to year, "#"
-  -# :javascript
-    document.getElementById('shareBtn').onclick = function() {
-      console.log("clicked");
-      FB.ui({
-        method: 'share',
-        display: 'popup',
-        href: 'https://developers.facebook.com/docs/',
-      }, function(response){});
-    }
-  -# :javascript
-    document.getElementById('shareBtn').onclick = function() {
-    window.open('https://www.facebook.com/sharer/sharer.php?u=('http://localhost:3000/posts/1702')');
-    }
