@@ -16,8 +16,8 @@ $skinActiveColor: $xaxis-blue-color;
 $skinHeaderBck: #002744;
 $panelHeaderBck: #002744;
 @import "active_skin";
-
-
+@import "tagsinput";
+@import "select2";
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
@@ -38,4 +38,23 @@ h1.site_title {
   border: 1px dashed $xaxis-light-green;
   text-align: center;
   padding: 2px
+}
+
+.tagsinput{
+  width: calc(80% - 22px) !important;
+  .tag{
+    background-color: $xaxis-blue-color !important;
+    color: $splashed-white !important;
+    border: 1px solid $xaxis-blue-color !important;
+    a{
+      color: $splashed-white !important;
+    }
+  }
+  input{
+    width: auto !important;
+  }
+}
+
+.select2{
+  width: calc(80% - 22px) !important;
 }

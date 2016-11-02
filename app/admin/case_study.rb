@@ -11,8 +11,8 @@ ActiveAdmin.register CaseStudy do
       f.input :short_description, placeholder: "Short Description for main case studies page"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
       f.input :pdf_attachment, as: :file
-      f.input :industry_list, label: "Industries <i>Separate With Commas</i>".html_safe, input_html: {"data-role" => 'tagsinput'}
-      f.input :region_list, as: :select, input_html: {multiple: true, "data-role" => 'tagsinput'}, collection: CaseStudy.region_list
+      f.input :industry_list, label: "Industries <i>Separate With Commas</i>".html_safe, input_html: {value: f.object.industry_list.join(", "), class: 'tagsinput', "data-role" => 'tagsinput', placeholder: 'add an industry'}
+      f.input :region_list, label: "Regions", as: :select, input_html: {multiple: true, class: 'select2', placeholder: "Select Regions"}, collection: CaseStudy.region_list
     end
     f.actions
   end

@@ -3,6 +3,7 @@ class CaseStudy < ApplicationRecord
   belongs_to :platform
   mount_uploader :pdf_attachment, FileUploader
   self.per_page = 6
+  before_save :capitalize_tags
   acts_as_taggable_on :industries, :regions
   pg_search_scope :search_for, against: %w(title searchable_pdf_text), using: { tsearch: { any_word: true } }
 
@@ -27,9 +28,9 @@ class CaseStudy < ApplicationRecord
     release_date.to_date.strftime("%m\/\%d\/\%Y")
   end
 
-  def normalize_region
-    puts 'regions'
-    puts self.region_list
+  private
+  def capitalize_tags
+    self.industry_list = self.industry_list.map{|industry| industry.capitalize}.join(',')
   end
 
 end
