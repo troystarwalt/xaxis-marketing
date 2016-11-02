@@ -11,7 +11,7 @@
         - else
           - industry = nil
           - region = nil
-          - product = nil
+          - product = @platform ? @platform.slug : nil
         =f.select :industry, options_for_select(CaseStudy.get_industry_tags_for_select, industry),
           {include_blank: false},
           {class: 'select2 form-control', multiple: true, placeholder: "Select Industries"}
