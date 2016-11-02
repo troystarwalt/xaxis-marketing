@@ -22,7 +22,7 @@
       .col-sm-4
         =f.label :product, class: 'sr-only'
         =f.select :product, options_from_collection_for_select(Platform.all, :slug, :name, product),
-          {include_blank: "select a product"}, {class: 'form-control'}
+          {include_blank: "select a product"}, {class: 'select2 form-control', multiple: true, placeholder: "Select Products"}
     .row
       .col-sm-8
         .form-group
