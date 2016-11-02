@@ -10,18 +10,18 @@
       .section-container
         -if @platform
           .section-name
-            %h1.header.text-uppercase Case Studies
+            %h1.header.text-uppercase #{@platform.name} Case Studies
           .section-body.case_study_section_body
             = render partial: 'case_studies_list', locals: {include_pagination: true}
         -elsif action_name == 'search'
           .section-name
-            %h1.header.text-uppercase  Search Results
+            %h1.header.text-uppercase #{@case_studies.count} Search Results
           .section-body.case_study_section_body
             = render partial: 'case_studies_list', locals: {include_pagination: true}
         -else
           - Platform.all.each do |platform|
             .section-name{id: "#{platform.name}-case_studies"}
-              %h1.header.text-uppercase= platform.name
+              %h1.header.text-uppercase #{platform.name} Case Studies
             .section-body.case_study_section_body
               =render partial: 'case_studies_list', locals: {include_pagination: false, platform: platform }
               = link_to "More #{platform.name} case studies", platform_case_studies_path(platform), class: 'text-uppercase more-results-link'
