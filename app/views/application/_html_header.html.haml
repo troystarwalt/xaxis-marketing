@@ -1,7 +1,8 @@
 %head
   %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %meta{:content=> "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
-  %title Internal Site
+  %title
+    Xaxis Internal - #{ content_for?(:title) ? yield(:title) : "Everything You Need"}
   %link{:href => "/favicons/apple-icon-57x57.png", :rel => "apple-touch-icon", :sizes => "57x57"}/
   %link{:href => "/favicons/apple-icon-60x60.png", :rel => "apple-touch-icon", :sizes => "60x60"}/
   %link{:href => "/favicons/apple-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
@@ -19,5 +20,12 @@
   %meta{:content => "#ffffff", :name => "msapplication-TileColor"}/
   %meta{:content => "/favicons/ms-icon-144x144.png", :name => "msapplication-TileImage"}/
   %meta{:content => "#ffffff", :name => "theme-color"}/
+  -# OG for facebook
+  %meta{:content => "https://xaxis-internal.herokuapp.com/", :property => "og:url"}/
+  %meta{:content => "website", :property => "og:type"}/
+  %meta{:content => "Interal Xaxis", :property => "og:title"}/
+  %meta{:content => "A site for Xaxis Employees", :property => "og:description"}/
+  %meta{:content => image_path("Xaxis_Logo_Pos_Vert.png"), :property => "og:image"}/
+
   = csrf_meta_tags
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'

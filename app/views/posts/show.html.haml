@@ -1,3 +1,4 @@
+- title @post.title
 .post-container
   .container
     .row
@@ -6,12 +7,8 @@
           .tag_list= @post.get_tag_list.to_sentence
           %h1.article-title= @post.title
           .social-share-buttons
-            %span.facebook-social
-              fb
-            %span.twitter-social
-              tw
-            %span.youtube-social
-              yt
+            %span.facebook-social.fa.fa-facebook
+            %span.twitter-social.fa.fa-twitter
           %h6.news-contributor
             Contributor:
             = @post.author
