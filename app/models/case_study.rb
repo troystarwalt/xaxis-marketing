@@ -5,7 +5,11 @@ class CaseStudy < ApplicationRecord
   self.per_page = 6
   before_save :capitalize_tags
   acts_as_taggable_on :industries, :regions
-  pg_search_scope :search_for, against: %w(title searchable_pdf_text), using: { tsearch: { any_word: true } }
+  pg_search_scope :search_for,
+                    against: %w(title searchable_pdf_text),
+                    using: {
+                      tsearch: {
+                        any_word: true}}
 
   REGION_LIST = [
     'APAC',
@@ -28,6 +32,10 @@ class CaseStudy < ApplicationRecord
 
   def get_date_picker_release_date
     release_date.to_date.strftime("%Y-%m-%d")
+  end
+
+  def self.by_platforms(platforms)
+    includes(:platform).where(platforms: {slug: platforms})
   end
 
   private

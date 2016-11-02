@@ -39,16 +39,15 @@ class CaseStudiesController < ApplicationController
     end
     if regions.present?
       # to match either search term of a region
-      case_studies = case_studies.tagged_with(regions, any: true)
+      case_studies = case_studies.tagged_with(regions, any: true, on: :regions)
     end
     if industries.present?
       # to match either search term of an industry
-      case_studies = case_studies.tagged_with(industries, any: true)
+      case_studies = case_studies.tagged_with(industries, any: true, on: :industries)
     end
     if platforms.present?
       # to match platforms
-      case_studies = case_studies.includes(:platform)
-                               .where(platforms: {slug: platforms})
+      case_studies = case_studies.by_platforms(platforms)
     end
 
     #paginate results at the end
