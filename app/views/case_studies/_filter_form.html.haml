@@ -13,8 +13,8 @@
           - region = nil
           - product = nil
         =f.select :industry, options_for_select(CaseStudy.get_industry_tags_for_select, industry),
-          {include_blank: "select an industry"},
-          {class: 'form-control'}
+          {},
+          {class: 'select2 form-control', multiple: true, placeholder: "Select Industries"}
       .col-sm-4
         =f.label :region, class: 'sr-only'
         =f.select :region, options_for_select(['region 1', 'region 2'], region),

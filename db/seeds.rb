@@ -96,6 +96,19 @@ if Rails.env.development? || Rails.env.test?
   end
 
   platform_ids = Platform.pluck(:id)
+
+  POSSIBLE_TAGS = [
+    "Advertisting",
+    "Automotive",
+    "Business",
+    "Pleasure",
+    "Film",
+    "Digital",
+    "Computer",
+    "Direct",
+    "Outcomes"
+  ].freeze
+
   20.times do
     CaseStudy.create(
     author: Faker::Book.author,
@@ -103,7 +116,8 @@ if Rails.env.development? || Rails.env.test?
     short_description: Faker::Hipster.paragraph,
     pdf_attachment: open("public/seedfiles/pdf-seed.pdf"),
     title: Faker::Commerce.product_name,
-    platform_id: platform_ids.sample
+    platform_id: platform_ids.sample,
+    industry_list: POSSIBLE_TAGS.shuffle.take(3)
     )
   end
   puts "case studies created"

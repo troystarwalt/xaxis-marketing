@@ -30,6 +30,7 @@ gem 'video_thumb'  # Magic on vimeo video links
 gem 'gon'
 gem 'pdf-reader'
 gem 'pg_search'
+gem "select2-rails"
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

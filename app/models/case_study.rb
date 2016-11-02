@@ -7,7 +7,7 @@ class CaseStudy < ApplicationRecord
   before_save :capitalize_tags
   pg_search_scope :search_for, against: %w(title searchable_pdf_text), using: { tsearch: { any_word: true } }
   def self.get_industry_tags_for_select
-    ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: {taggable_type: "CaseStudy"}).map{|tag| tag.name}
+    ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: {taggable_type: "CaseStudy"}).map{|tag| tag.name}.try(:sort).try(:uniq)
   end
 
   def get_pretty_release_date
