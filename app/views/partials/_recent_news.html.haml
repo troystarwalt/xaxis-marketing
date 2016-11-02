@@ -11,14 +11,14 @@
                 .circle_text MKT
               .content-text.content-text-sub.text-uppercase
                 .content-text-sub_inner_text
-                  %span#single-news_tag_list.tag_list= @posts.last.get_tag_list.to_sentence
+                  %span#single-news_tag_list.tag_list= @posts.first.get_tag_list.to_sentence
                   |
-                  %span#single-news_date.date= @posts.last.pretty_date
+                  %span#single-news_date.date= @posts.first.pretty_date
           .selected-news_content
-            %h1.content-header#single-news_title.news-title= @posts.last.title
-            %img#single-news_image{src: @posts.last.image.url, class: 'img-fluid-width'}
-            %p.content-text#single-news_text.news-text= @posts.last.text
-            %p.readmore= link_to 'Read More', post_path(@posts.last), class: "readmore-link", id: 'single-news_readmore'
+            %h1.content-header#single-news_title.news-title= @posts.first.title
+            %img#single-news_image{src: @posts.first.image.url, class: 'img-fluid-width'}
+            %p.content-text#single-news_text.news-text= @posts.first.text
+            %p.readmore= link_to 'Read More', post_path(@posts.first), class: "readmore-link", id: 'single-news_readmore'
       .col-md-6.col-sm-12
         .recent_news_container
           - @posts.each_with_index do |post, index|
