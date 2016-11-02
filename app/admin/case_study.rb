@@ -7,11 +7,17 @@ ActiveAdmin.register CaseStudy do
     f.inputs "Create a New One Sheeter" do
       f.input :platform, as: :radio
       f.input :title, placeholder: "Name of Case Study"
-      f.input :release_date, as: :datepicker
+      f.input :release_date, as: :datepicker, input_html: { value: (f.object.release_date ? f.object.get_date_picker_release_date : Date.today) }
       f.input :short_description, placeholder: "Short Description for main case studies page"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
-      f.input :pdf_attachment, as: :file
-      f.input :industry_list, label: "Industries <i>Separate With Commas</i>".html_safe, input_html: {value: f.object.industry_list.join(", "), class: 'tagsinput', "data-role" => 'tagsinput', placeholder: 'add an industry'}
+      if f.object.pdf_attachment?
+        f.input :current_pdf_attachment, input_html: { value: f.object.pdf_attachment_identifier, disabled: true}
+        file_label = 'Replace PDF Attachment'
+      end
+      f.input :pdf_attachment, as: :file, label: file_label || "Upload PDF Attachment", input_html: {
+        title: (f.object.pdf_attachment? ? "Replace File" : "Upload File")
+      }
+      f.input :industry_list, label: "Industries <i>Separate With Commas</i>".html_safe, input_html: {value: f.object.industry_list.join(", "), class: 'tagsinput', "data-role" => 'tagsinput', placeholder: 'Add Industries'}
       f.input :region_list, label: "Regions", as: :select, input_html: {multiple: true, class: 'select2', placeholder: "Select Regions"}, collection: CaseStudy.region_list
     end
     f.actions

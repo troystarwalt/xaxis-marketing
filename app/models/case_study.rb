@@ -28,6 +28,10 @@ class CaseStudy < ApplicationRecord
     release_date.to_date.strftime("%m\/\%d\/\%Y")
   end
 
+  def get_date_picker_release_date
+    release_date.to_date.strftime("%Y-%m-%d")
+  end
+
   private
   def capitalize_tags
     self.industry_list = self.industry_list.map{|industry| industry.capitalize}.join(',')
