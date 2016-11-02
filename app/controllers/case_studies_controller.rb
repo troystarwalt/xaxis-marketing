@@ -20,13 +20,18 @@ class CaseStudiesController < ApplicationController
     if params[:case_studies_query][:keywords].present?
       @case_studies = @case_studies.search_for(params[:case_studies_query][:keywords])
     end
-    if params[:case_studies_query][:product].present?
+
+    if params[:case_studies_query][:product].present? &&
       @case_studies = @case_studies
                                .where(platforms: {slug: params[:case_studies_query][:product]})
     end
 
-    if params[:case_studies_query][:industry].present?
+    if params[:case_studies_query][:industry].present? && params[:case_studies_query][:industry] != [""]
       @case_studies = @case_studies.tagged_with(params[:case_studies_query][:industry])
+    end
+
+    if params[:case_studies_query][:region].present? && params[:case_studies_query][:region] != [""]
+      @case_studies = @case_studies.tagged_with(params[:case_studies_query][:region])
     end
 
     @case_studies = @case_studies.paginate(page: params[:page])

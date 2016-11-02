@@ -109,6 +109,13 @@ if Rails.env.development? || Rails.env.test?
     "Outcomes"
   ].freeze
 
+  REGIONS = [
+    'APAC',
+    'EMEA',
+    'Latam',
+    'North America'
+  ].freeze
+
   20.times do
     CaseStudy.create(
     author: Faker::Book.author,
@@ -117,7 +124,8 @@ if Rails.env.development? || Rails.env.test?
     pdf_attachment: open("public/seedfiles/pdf-seed.pdf"),
     title: Faker::Commerce.product_name,
     platform_id: platform_ids.sample,
-    industry_list: POSSIBLE_TAGS.shuffle.take(3)
+    industry_list: POSSIBLE_TAGS.shuffle.take(rand(1..4)),
+    region_list: REGIONS.shuffle.take(rand(1..4))
     )
   end
   puts "case studies created"

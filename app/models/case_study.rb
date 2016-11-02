@@ -3,11 +3,15 @@ class CaseStudy < ApplicationRecord
   belongs_to :platform
   mount_uploader :pdf_attachment, FileUploader
   self.per_page = 6
-  acts_as_taggable_on :industries
+  acts_as_taggable_on :industries, :regions
   before_save :capitalize_tags
   pg_search_scope :search_for, against: %w(title searchable_pdf_text), using: { tsearch: { any_word: true } }
   def self.get_industry_tags_for_select
-    ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: {taggable_type: "CaseStudy"}).map{|tag| tag.name}.try(:sort).try(:uniq)
+    all.map{|case_study| case_study.industries.map{|industry| industry.name }}.flatten.sort.uniq
+  end
+
+  def self.get_region_tags_for_select
+    all.map{|case_study| case_study.regions.map{|region| region.name }}.flatten.sort.uniq
   end
 
   def get_pretty_release_date
