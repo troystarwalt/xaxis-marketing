@@ -10,6 +10,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if Rails.env.development?
+      puts "the facebook link will error out in development"
+    end
   end
 
   def new

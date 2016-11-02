@@ -21,133 +21,142 @@
                 color: $gray
               &:active
                 color: $gray
-    #news-container.section-container
-      .section-name#news-section
-        .header
-      .news-articles-list
-        list-style: none
-        padding-left: 0
-        .news-articles-list-item
-          height: 100%
-          border-bottom: 1px solid $light-grey
-          margin-bottom: 24px
-          padding: 0
-          border-left: 0
-          border-top: 0
-          border-right: 0
-          .news-article-date
-            float: left
-            width: 20%
-            margin-top: 22px
-            text-align: center
-            .news-article-date_day
-              display: inline-block
-              font-size: 64px
-              font-family: 'Gotham-Thin'
-              color: $xaxis-navy-blue
-              height: 100%
-              width: 100%
-            .news-article-date_month_year
-              display: inline-block
-              font-family: 'Gotham-Light'
-              font-size: 11px
-              color: $xaxis-navy-blue
-              height: 100%
-              width: 100%
-          .news-article-content
-            float: left
-            width: 77%
-            .news-article-tags
-              font-family: 'Gotham-Book'
-              font-size: 9px
-              height: 100%
-              color: $manatee
-              margin-bottom: 4px
-              a
-                font-family: 'Gotham-Book'
-                font-size: 9px
-                height: 100%
-                color: $manatee
-                margin-bottom: 4px
-                &:hover
-                  color: $xaxis-blue-color
-                &:active, &:visited
-                  color: $manatee
-            .news-article-title
-              margin-bottom: 4px
-              font-size: 22px
-              a
-                padding:
-                color: $xaxis-darkest-blue
-                font-family: 'Gotham-Medium'
-                &:hover
-                  color: $xaxis-blue-color
-                &:active
-                  color: $xaxis-blue-color
-                &:visited
-                  color: $xaxis-darkest-blue
-            .news-article-text
-              font-family: 'Gotham-LightItalic'
-              font-size: 12px
-              color: $xaxis-darkest-blue
-
-
-  .posts.show
-    .post-container
-      margin-top: 80px
-      .news-article
-        margin-bottom: 80px
-        .tag_list
-          font-family: 'Gotham-Book'
-          font-size: 9px
-          color: $manatee
-          margin-bottom: 15px
-        .article-title
-          font-family: 'Gotham-Medium'
-          font-size: 24px
-          color: $xaxis-darkest-blue
-          margin-bottom: 15px
-        .social-share-buttons
-          .facebook-social
-
-          .twitter-social
-
-          .youtube-social
-
-        .news-contributor
-          font-family: 'Gotham-BookItalic'
-          font-size: 10px
-          color: $redishblack
-        .news-text
-          font-family: 'Gotham-Light'
-          font-size: 14px
-          color: $xaxis-darkest-blue
-        .news-image
-          width: 100%
-    .related-news
-    .news-sidebar
-      .sidebar-header
-        border-bottom: 2px solid $xaxis-blue-color
-        .sidebar-header-title
-          text-align: center
-          min-width: 50%
-          margin-bottom: 0
-          background: $xaxis-blue-color
+#news-container.section-container
+  .section-name#news-section
+    .header
+  .news-articles-list
+    list-style: none
+    padding-left: 0
+    .news-articles-list-item
+      height: 100%
+      border-bottom: 1px solid $light-grey
+      margin-bottom: 24px
+      padding: 0
+      border-left: 0
+      border-top: 0
+      border-right: 0
+      .news-article-date
+        float: left
+        width: 20%
+        margin-top: 22px
+        text-align: center
+        .news-article-date_day
           display: inline-block
-          padding: 8px 12px 3px 12px
-          color: $white
-          font-family: 'Gotham-Medium'
-          font-size: 14px
-      .sidebar-list
-        padding-left: 0
-        list-style-type: none
-        .sidebar-list-item
+          font-size: 64px
+          font-family: 'Gotham-Thin'
+          color: $xaxis-navy-blue
+          height: 100%
+          width: 100%
+        .news-article-date_month_year
+          display: inline-block
           font-family: 'Gotham-Light'
           font-size: 11px
-          a
-            color: $gray
-            &:visited
-              color: $gray
+          color: $xaxis-navy-blue
+          height: 100%
+          width: 100%
+  .news-article-content
+    float: left
+    width: 77%
+    .news-article-tags
+      font-family: 'Gotham-Book'
+      font-size: 9px
+      height: 100%
+      color: $manatee
+      margin-bottom: 4px
+      a
+        font-family: 'Gotham-Book'
+        font-size: 9px
+        height: 100%
+        color: $manatee
+        margin-bottom: 4px
+        &:hover
+          color: $xaxis-blue-color
+        &:active, &:visited
+          color: $manatee
+    .news-article-title
+      margin-bottom: 4px
+      font-size: 22px
+      a
+        padding:
+        color: $xaxis-darkest-blue
+        font-family: 'Gotham-Medium'
+        &:hover
+          color: $xaxis-blue-color
+        &:active
+          color: $xaxis-blue-color
+        &:visited
+          color: $xaxis-darkest-blue
+    .news-article-text
+      font-family: 'Gotham-LightItalic'
+      font-size: 12px
+      color: $xaxis-darkest-blue
 
-            &:hover, &:active
-              color: $xaxis-blue-color
+
+.posts.show
+  .post-container
+    margin-top: 80px
+    .news-article
+      margin-bottom: 80px
+      .tag_list
+        font-family: 'Gotham-Book'
+        font-size: 9px
+        color: $manatee
+        margin-bottom: 15px
+      .article-title
+        font-family: 'Gotham-Medium'
+        font-size: 24px
+        color: $xaxis-darkest-blue
+        margin-bottom: 15px
+      .news-contributor
+        font-family: 'Gotham-BookItalic'
+        font-size: 10px
+        color: $redishblack
+        margin: 20px 0
+      .news-text
+        font-family: 'Gotham-Light'
+        font-size: 14px
+        color: $xaxis-darkest-blue
+      .news-image
+        width: 100%
+  .related-news
+.news-sidebar
+  .sidebar-header
+    border-bottom: 2px solid $xaxis-blue-color
+    .sidebar-header-title
+      text-align: center
+      min-width: 50%
+      margin-bottom: 0
+      background: $xaxis-blue-color
+      display: inline-block
+      padding: 8px 12px 3px 12px
+      color: $white
+      font-family: 'Gotham-Medium'
+      font-size: 14px
+  .sidebar-list
+    padding-left: 0
+    list-style-type: none
+    .sidebar-list-item
+      font-family: 'Gotham-Light'
+      font-size: 11px
+      a
+        color: $gray
+        &:visited
+          color: $gray
+
+        &:hover, &:active
+          color: $xaxis-blue-color
+
+.share-btn
+  background: $dim-gray
+  color: $white
+  border-radius: 100px
+  margin-right: 10px
+  -webkit-clip-path: circle(34% at 50% 50%)
+  clip-path: circle(34% at 50% 50%)
+  width: 49px
+  height: auto
+  padding: 13px
+
+.share-btn-facebook
+  width: 43px
+  padding: 15px

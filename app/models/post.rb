@@ -22,6 +22,10 @@ class Post < ApplicationRecord
       text.truncate_words(15)
   end
 
+  def long_teaser
+    text.truncate_words(120)
+  end
+
   def get_tag_list
     tags.map{|tag| tag.name}
   end

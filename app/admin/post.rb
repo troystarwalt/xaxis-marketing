@@ -12,6 +12,9 @@ ActiveAdmin.register Post do
       column :text
       column :author
       column :tag_list
+      column :image do |f|
+        image_tag(f.image.url(:thumb)).html_safe
+      end
       column :created_at
       column :updated_at
       actions
@@ -28,6 +31,7 @@ ActiveAdmin.register Post do
       f.input :title
       f.input :text
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
+      f.input :image, as: :file, label: "Main Image"
       f.input :tag_list,
         as: :select,
         multiple: :true,

@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
+  # This allows us to highlight active links.
   def cp(path)
     "active-sub-link" if request.url.include?(path)
   end
