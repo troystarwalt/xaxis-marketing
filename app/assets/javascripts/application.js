@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require readyselector
+//= require select2
 //= require tether
 //= require bootstrap-sprockets
 //= require owl.carousel.min
+//= require tagsinput.min
 //= require_tree .
