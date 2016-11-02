@@ -52,7 +52,7 @@ ActiveAdmin.register BrandAccessory do
       row :created_at
       row :updated_at
       row :file do |f|
-        f.file_identifier
+        link_to f.file_identifier, f.file_url, target: "_blank"
       end
       active_admin_comments
     end
