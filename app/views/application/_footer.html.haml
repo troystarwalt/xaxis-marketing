@@ -26,8 +26,8 @@
             .col-md-4.col-xs-6.footer-column
               =link_to 'Utilities', "#", class: 'footer-main-link'
               %ul.footer-list
-                %li= link_to 'Calculator', "/value-calculator"
-                %li= link_to 'Expert Videos', "/expert-video-hub"
+                %li= link_to 'Calculator', value_calculator_path
+                %li= link_to 'Expert Videos', expert_interview_hub_path
                 %li= link_to "Admin Panel", admin_dashboard_path if current_admin_user
 
             .col-md-4.col-xs-6.footer-column

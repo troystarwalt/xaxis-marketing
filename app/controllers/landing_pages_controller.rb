@@ -9,8 +9,8 @@ class LandingPagesController < ApplicationController
 
   def expert_interview_hub
     @title = "Xaxis | Expert Interview Hub"
-    @javascript_file_overwrite_name = ''
-    @css_files_overwrite = ['expert_interview_hub']
+    @javascript_file_overwrite_name = 'landing_pages/expert_interview_hub.js'
+    @css_files_overwrite = 'landing_pages/expert_interview_hub'
   end
 
 end
