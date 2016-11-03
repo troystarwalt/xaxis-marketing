@@ -1,12 +1,11 @@
 class BrandsController < InheritedResources::Base
   require 'zip'
   actions :index, :show   # This tells InheritedResources to only use index and show.
-  around_filter :catch_not_found
 
   def index
     # Not using index for anything at this time.
     @brands = Brand.all
-    brand = Brand.find_by(:name => "Xaxis")
+    brand = Brand.find_by!(:name => "Xaxis")
     redirect_to brand_path(brand.id)
   end
 
