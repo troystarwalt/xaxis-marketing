@@ -28,4 +28,7 @@
   %meta{:content => image_path("Xaxis_Logo_Pos_Vert.png"), :property => "og:image"}/
 
   = csrf_meta_tags
+
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  -if @css_files_overwrite
+    = stylesheet_link_tag @css_files_overwrite, media: 'all', 'data-turbolinks-track': 'reload'

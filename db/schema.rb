@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101160407) do
+ActiveRecord::Schema.define(version: 20161103170938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 20161101160407) do
     t.datetime "updated_at",          null: false
     t.text     "searchable_pdf_text"
     t.index ["platform_id"], name: "index_case_studies_on_platform_id", using: :btree
+  end
+
+  create_table "expert_interviews", force: :cascade do |t|
+    t.string   "vimeo_url"
+    t.string   "image"
+    t.string   "contributor_name"
+    t.string   "contributor_title"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

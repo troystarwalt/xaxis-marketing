@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'value-calculator' => "landing_pages#value_calculator", as: :value_calculator
+  get 'expert-interview-hub' => "landing_pages#expert_interview_hub", as: :expert_interview_hub
+
+
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub
   get "case-studies/search" => "case_studies#search", as: :case_studies_search
   resources :case_studies, path: :'case-studies', only: [:index, :show]
