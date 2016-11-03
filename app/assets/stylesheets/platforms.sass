@@ -6,6 +6,9 @@
   background: linear-gradient(165deg, rgba(178, 226, 250,1) 0%, rgba(178, 226, 250,1) 48%, rgba(144, 206, 237, 1) 48.2%, rgba(144, 206, 237, 1) 50%, rgba(117, 184, 224, 1), 50.2%, rgba(117, 184, 224, 1) 100%)
   z-index: 100
   background-size: 100%
+  justify-content: space-between
+  min-height: 586px
+  align-items: center
   #spotlight-card, #turbine-card, #xanadu-card
     position: relative
   #spotlight-card
@@ -76,9 +79,9 @@
       #side-nav
         margin-top: 25px
 .nav-card
-  flex: 1 1 0%
-  height: 586px
-  display: flex
+  flex: 1 0 0
+  width: 100%
+  min-height: 100%
   align-self: stretch
   .card-link
     -webkit-transition: all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
@@ -96,8 +99,10 @@
         color: white
   .flex-container-nav
     display: flex
-    flex-direction: column
-    flex: 1 1 0%
+    flex-flow: column nowrap
+    min-height: 100%
+    justify-content: space-around
+    height: 586px
     h2
       font-size: 1.625rem
       z-index: 103
@@ -167,18 +172,27 @@
     width: 100%
 
 
-@media (max-width: 991px)
+@media only screen and (max-width: 991px)
   .nav-card
     .flex-container-nav
     img
       width: 75%
       margin: 0 auto
 
-@media (max-width: 600px)
+@media only screen and (max-width: 729px)
   #platform_sub_nav
+    background: $xaxis-lightest-blue
     flex-direction: column
   .nav-card
+    height: 200px
+    .card-link
+      padding: 0
+      height: 100%
     .flex-container-nav
-      min-height: 200px
     img
-      width: inherit
+      display: none
+    h2
+      margin-top: 0
+  .nav-card:nth-child(2)
+    border-bottom: 1px solid $white
+    border-top: 1px solid $white

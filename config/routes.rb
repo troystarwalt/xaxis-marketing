@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "case-studies/search" => "case_studies#search", as: :case_studies_search
   resources :case_studies, path: :'case-studies', only: [:index, :show]
   resources :brands, path: :brand_assets, only: [:index, :show]
-  resources :platforms, only: [:index, :show] do
+  resources :platforms, only: [:show] do
     resources :case_studies, path: :'case-studies', only: [:index]
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
