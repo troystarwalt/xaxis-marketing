@@ -1,14 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_asset_path
+  before_action :get_our_platforms
+  before_action :get_our_brands
+  rescue_from ActionController::RoutingError,
+              ActionController::UnknownController,
+              ::AbstractController::ActionNotFound,
+              ActiveRecord::RecordNotFound,
+              with: :catch_not_found
 
   def set_asset_path
-    @bring_me_to_xaxis = Brand.find_by(name: :Xaxis).slug
-    @bring_me_to_turbine = Platform.find_by(name: :Turbine).slug
+    @bring_me_to_xaxis = Brand.find_by!(name: :Xaxis).slug
+    @bring_me_to_turbine = Platform.find_by!(name: :Turbine).slug
   end
 
   def set_our_brands(slug)
-    Brand.find_by(slug: slug)
+    Brand.find_by!(slug: slug)
   end
 
   def get_our_brands
@@ -19,14 +26,11 @@ class ApplicationController < ActionController::Base
   end
 
   def catch_not_found
-    yield
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_url
-    puts "oh not found"
+    render 'errors/four_oh_four', status: 404
   end
 
   def set_our_platforms(slug)
-    Platform.find_by(slug: slug)
+    Platform.find_by!(slug: slug)
   end
 
   def get_our_platforms
