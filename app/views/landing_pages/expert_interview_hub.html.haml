@@ -10,8 +10,8 @@
         .col-sm-10.offset-sm-1.col-xs-12.card-body
           .card-image
             .video
-              %a.video-link{"data-target" => "#myModal", "data-title" => "Making Data Smart: What It Means And Why It Matters", "data-toggle" => "modal", "data-video-url" => "//player.vimeo.com/video/187838940?autoplay=1&api=1"}
-                %img.img-responsive{:src => asset_path("landing_pages/expert_interview_hub/video_thumbs/smart-data.png")}/
+              %a.video-link{"data-target" => "#myModal", "data-title" => @main_video.title, "data-toggle" => "modal", "data-video-url" => @main_video.vimeo_url}
+                =image_tag @main_video.image.url, class: 'img-responsive'
                 .video-overlay
           .row
             .col-xs-12.col-sm-10.offset-sm-1.card-text
@@ -19,16 +19,15 @@
                 %p.contributor
                   Contributor:
                 %p.contributor-name
-                  Nicole Pangis
+                  =@main_video.contributor_name
                 %p.contributor-title
-                  Global COO, Xaxis
+                  =@main_video.contributor_title
               .col-sm-8.col-xs-12
                 .about-text
                   %p.description-header
-                    Making Data Smart: What It Means And Why It Matters
+                    =@main_video.title
                   %p.description-text
-                    Have you ever asked, what makes data smart? Global COO, Nicolle Pangis has the answer for you! Between the differences and initiatives from big data to smart data, to how smart data impacts and benefits client campaigns, and the future of data
-                    becoming smarter in our industry, this video will provide you with all you need to know on smart data as we move toward revolutionizing data use.
+                    =@main_video.description
     %section
       - @rest_of_videos.each do |video|
         .col-sm-6.col-xs-12.small-card
