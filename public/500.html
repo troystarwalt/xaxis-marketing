@@ -1,66 +1,195 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <head>
+    <title>We're sorry, but something went wrong (500)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/css/tether.min.css" />
+    <style>
+    main{
+      min-height: 100vh;
+      margin-top: 120px;
+    }
+    nav.navbar {
+    	background: #F7F7F7;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    #navbar-logo {
+    	margin-right: 2em;
+    	padding-top: .8em;
+    	padding-bottom: .6em;
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .nav .nav-link {
+    	text-transform: uppercase;
+    	padding: 40px 15px 19px 15px;
+    	color: #0F0F0F !important;
+    	font-size: .7rem;
+    	letter-spacing: 1px;
+    }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .nav .nav-link .fa-search {
+    	color: #C0C0C0;
+    	font-size: 1rem;
+    }
+    .container-fluid.footer-container {
+    	padding: 0;
+    	font-size: .785em;
+    	position: absolute;
+    	bottom: -600px;
+    	width: 100%;
+    }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+    .container-fluid.footer-container footer {
+    	background-color: #F8F8F8;
+    }
 
-<body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+    .container-fluid.footer-container footer .footer-nav {
+    	padding: 50px 0;
+    	border-bottom: 1px solid #F8F8F8;
+    }
+
+    .container-fluid.footer-container footer .footer-nav a {
+    	color: #000;
+    }
+
+    .container-fluid.footer-container footer .footer-nav a:hover {
+    	color: #00AFEF;
+    }
+
+    .container-fluid.footer-container footer .footer-nav .footer-column {
+    	line-height: 3;
+    }
+
+    .container-fluid.footer-container footer .footer-nav .footer-column a {
+    	color: #000 !important;
+    }
+
+    .container-fluid.footer-container footer .footer-nav .footer-column a:hover {
+    	color: #00AFEF !important;
+    }
+
+    .container-fluid.footer-container footer .footer-nav .footer-column .footer-main-link {
+    	font-family: 'Gotham-Bold';
+    }
+
+    .container-fluid.footer-container footer .footer-nav .footer-column .footer-list {
+    	font-family: 'Gotham-Book';
+    	list-style: none;
+    	padding-left: 0;
+    }
+
+    .container-fluid.footer-container footer .footer-bottom {
+    	margin: 25px 0;
+    }
+    .main-error-container{
+      height: calc(100vh - 100px);
+    }
+    .main-error-container .error-container{
+      height: 100%;
+      position: relative;
+    }
+    .main-error-container .error-container .error-message{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+      <div class="container">
+        <button aria-controls="collapse-this-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler hidden-md-up" data-target="#collapse-this-navbar" data-toggle="collapse" type="button">
+          ☰
+        </button>
+        <a class="navbar-brand pull-xs-left" href="/"><img id="navbar-logo" src="/assets/Xaxis_Logo_Pos_Vert-a289ef473b57909564b8d7b52e450b20500b8667cbce912b5e62828ac30bb9a0.png" alt="Xaxis logo pos vert">
+        </a>
+        <div class="collapse navbar-toggleable-sm" id="collapse-this-navbar">
+          <div class="nav navbar-nav">
+            <a class="nav-item nav-link" href="/brand_assets/xaxis">Brand Assets</a>
+            <a class="nav-item nav-link" href="/presentation_hub">Presentation Hub</a>
+            <a class="nav-item nav-link" href="/platforms/turbine">Platforms</a>
+            <a id="search-button" class="nav-item nav-link pull-md-right" href="###"><span class="fa fa-search"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main div class='container'>
+      <div class='row main-error-container'>
+        <div class='col-xs-12 text-xs-center error-container'>
+          <div class='error-message'>
+            <h1>500 Internal Server Error</h1>
+            <h3>Welp, this is embarassing</h3>
+            <p>
+              We kind of messed up somewhere, use the nav to get back to where you might want to be
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class='container-fluid footer-container'>
+      <footer>
+        <div class="container">
+          <div class="row footer-nav">
+            <div class="col-sm-8 offset-sm-2">
+              <div class="row footer-nav-row">
+                <div class="col-md-4 col-xs-6 footer-column">
+                  <a class="footer-main-link" href="#">Home</a>
+                  <ul class="footer-list">
+                    <li><a href="/">Xaxis Internal</a></li>
+                    <li><a href="//xaxis.com">xaxis.com</a></li>
+                    <li><a href="/posts">News/Updates</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-xs-6 footer-column">
+                  <a class="footer-main-link" href="#">Brand Assets</a>
+                  <ul class="footer-list">
+                    <li><a href="/brand_assets/xaxis">Xaxis Brand Assets</a></li>
+                    <li><a href="/brand_assets/plista">plista Brand Assets</a></li>
+                    <li><a href="/brand_assets/light-reaction">Light Reaction Brand Assets</a></li>
+                    <li><a href="/brand_assets/triad">Triad Brand Assets</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-xs-6 footer-column">
+                  <a class="footer-main-link" href="#">Products &amp; Tutorials</a>
+                  <ul class="footer-list">
+                    <li><a href="/platforms/turbine">Turbine</a></li>
+                    <li><a href="/platforms/spotlight">Spotlight</a></li>
+                    <li><a href="/platforms/xanadu">Xanadu</a></li>
+                    <li><a href="#">101 Series</a></li>
+                    <li><a href="/case-studies">All Case Studies</a></li>
+                    <li><a href="#">All Sell Sheets</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-xs-6 footer-column">
+                  <a class="footer-main-link" href="#">Utilities</a>
+                  <ul class="footer-list">
+                    <li><a href="/value-calculator">Calculator</a></li>
+                    <li><a href="/expert-interview-hub">Expert Videos</a></li>
+                    <li><a href="/admin/dashboard">Admin Panel</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-xs-6 footer-column">
+                  <a class="footer-main-link" href="/presentation_hub">Presentation Hub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row footer-bottom">
+            <div class="col-xs-12 text-xs-center">
+              CONFIDENTIAL AND PROPRIETARY
+              <br>
+                © 2016 XAXIS, INC. ALL RIGHTS RESERVED.
+              <br>
+              Distribution without permission is prohibited.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  </body>
 </html>
