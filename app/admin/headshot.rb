@@ -30,7 +30,7 @@ ActiveAdmin.register Headshot do
     column :last_name
     column :title
     column :brand do |f|
-      Brand.find_by(id: f.brand_id).name
+      Brand.find_by!(id: f.brand_id).name
     end
     column :priority
     column :created_at

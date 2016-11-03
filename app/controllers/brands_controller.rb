@@ -6,7 +6,7 @@ class BrandsController < InheritedResources::Base
   def index
     # Not using index for anything at this time.
     @brands = Brand.all
-    brand = Brand.find_by(:name => "Xaxis")
+    brand = Brand.find_by!(:name => "Xaxis")
     redirect_to brand_path(brand.id)
   end
 
