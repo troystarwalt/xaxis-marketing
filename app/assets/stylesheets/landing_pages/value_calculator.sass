@@ -1,0 +1,414 @@
+@import "../vars"
+@import "../bootstrap.v3.min.css"
+@import "../fonts"
+@import "../footer"
+/****************************************
+/* Set Font Defaults
+/****************************************
+
+*
+  font-family: 'Gotham-Book', arial, sans-serif
+
+.gotham-medium
+  font-family: 'Gotham-Medium', arial, sans-serif
+
+.gotham-light
+  font-family: 'Gotham-Light', arial, sans-serif
+
+.gotham-xl
+  font-family: 'Gotham-XLight', arial, sans-serif
+  font-size: 45px
+
+/****************************************
+/* Body Elements
+/****************************************
+
+html
+  width: 100%
+
+body
+  width: 100%
+  letter-spacing: 1px
+  color: #484848 !important
+  background: #FFFFFF
+
+select option
+  font-size: 14px
+
+.text-xs-left
+  text-align: left !important
+
+.text-xs-right
+  text-align: right !important
+
+.text-xs-center
+  text-align: center !important
+
+.text-xs-justify
+  text-align: justify !important
+
+@media (min-width: 768px)
+  .text-sm-left
+    text-align: left !important
+  .text-sm-right
+    text-align: right !important
+  .text-sm-center
+    text-align: center !important
+  .text-sm-justify
+    text-align: justify !important
+
+@media (min-width: 992px)
+  .text-md-left
+    text-align: left !important
+  .text-md-right
+    text-align: right !important
+  .text-md-center
+    text-align: center !important
+  .text-md-justify
+    text-align: justify !important
+
+@media (min-width: 1200px)
+  .text-lg-left
+    text-align: left !important
+  .text-lg-right
+    text-align: right !important
+  .text-lg-center
+    text-align: center !important
+  .text-lg-justify
+    text-align: justify !important
+
+.boldest-numbers
+  font-size: 72px
+
+.bold-numbers
+  font-size: 2.5rem
+  font-weight: lighter
+
+.blue-text
+  color: #00AFEF
+
+.dark-blue-text
+  height: 55px
+  font-size: 24px
+  color: #3B6E8F
+
+.dark-grey-text
+  color: #8c8c8c
+
+hr
+  border-top: 2px solid #F6F6F6
+  width: 30%
+  &.full-width
+    border-top: 2px solid #F6F6F6
+    width: 66%
+    margin-bottom: 50px
+    margin-top: -15px
+
+.btn-primary
+  background-color: #00AFEF
+
+/********************************************
+/* Sectional Background Colors and Styling
+/********************************************
+
+.container-fluid
+  padding: 0 !important
+
+.section
+  position: relative
+
+input
+  &:enabled
+    background-color: transparent
+  &[type="number"]
+    &:disabled
+      background-color: transparent
+    -moz-appearance: textfield
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      -webkit-appearance: none
+      margin: 0
+
+select
+  background-color: #FCFCFC
+  border: 1px solid #D8D8D8
+  font-size: inherit
+  margin-top: 20px
+  overflow: hidden
+  padding: 5px 10px
+  text-overflow: ellipsis
+  white-space: nowrap
+  height: 34px
+  width: 100%
+
+.row
+  margin-left: 0
+  margin-right: 0
+
+.big-margin-bottom
+  margin-bottom: 50px
+
+.big-margin-top
+  margin-top: 50px
+
+.big-margin-bottom
+  margin-bottom: 30px
+
+.big-margin-top
+  margin-top: 30px
+
+.no-margin
+  margin: 0
+
+.impressionScount
+  font-size: 26px
+
+.header-image
+  background: url(asset_path('landing_pages/value_calculator/calculator_header.jpg'))
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  height: 490px
+
+.header_text
+  top: 50%
+  position: relative
+  transform: translateY(-50%)
+  text-shadow: 0px 1px 30px rgba(0, 0, 0, 1)
+
+.header_year-text
+  color: #a1d0f3
+  font-size: 26px
+  font-family: 'Gotham-Medium'
+
+.header_descriptor-text
+  font-size: 48px
+  color: #fff
+
+/********************************************
+/* form-rows
+/********************************************
+
+.top-description
+  background-color: #00AFEF
+  color: white
+
+.site_title > h1
+  font-family: gotham-thin
+  font-size: 48px
+  padding-top: 24px
+  padding-bottom: 18px
+  > span
+    font-weight: bold
+
+#welcome-note
+  margin-top: 60px
+  margin-bottom: 60px
+
+/*
+ *.top-description:after {
+ *    z-index: 2;
+ *    position: absolute;
+ *    bottom: -20px;
+ *    left: 50%;
+ *    transform: translateX(-50%);
+ *    content:'';
+ *    border-top: solid 25px #006298;
+ *    border-left: solid 25px transparent;
+ *    border-right: solid 25px transparent;
+ *}
+
+.user-form
+  padding: 0 0 60px 0
+  border-radius: 10px
+
+/*
+ *.user-form:after {
+ *    z-index: 2;
+ *    position: absolute;
+ *    bottom: -20px;
+ *    left: 50%;
+ *    transform: translateX(-50%);
+ *    content:'';
+ *    border-top: solid 25px #00AFEF;
+ *    border-left: solid 25px transparent;
+ *    border-right: solid 25px transparent;
+ *}
+
+.xaxis-difference
+  padding: 60px 0
+  background: #FCFCFC
+
+/*
+ *
+ *.xaxis-difference:after {
+ *    z-index: 2;
+ *    position: absolute;
+ *    bottom: -20px;
+ *    left: 50%;
+ *    transform: translateX(-50%);
+ *    content:'';
+ *    border-top: solid 25px #8CD2F4;
+ *    border-left: solid 25px transparent;
+ *    border-right: solid 25px transparent;
+ *}
+
+.prove-it
+  padding: 60px 0
+
+/*.form-row:not(:last-of-type){
+ *  border-bottom: 2px solid #00AFEF
+ *}
+
+.list-group
+  &:not(:last-child)
+    margin-bottom: 0px !important
+    text-align: left !important
+  .list-group-item
+    border: none
+    background-color: transparent
+  > h2
+    text-align: center
+
+.reduce-padding
+  padding-left: 0
+  padding-right: 0
+
+.difference-group
+  border-top: 4px solid #00AFEF
+  padding: 10px
+  background: #FFF !important
+  > div
+    background: #FFF !important
+    padding: 10px 10px 10px 30px
+
+.question-container
+  display: flex
+
+.text-container
+  background: #FCFCFC
+  padding: 30px
+  align-items: stretch
+
+.data-container
+  background: #FCFCFC
+  padding: 20px
+  align-items: stretch
+
+.odd
+  background: #F8F8F8
+
+.input-group-addon
+  background: #00AFEF
+  color: #FFF
+  border: none
+  font-family: gotham-light
+
+.container > a
+  border-radius: 100px
+  background: #00AFEF
+  border: 1px solid transparent
+  font-size: 12px
+
+td.empty-row
+  height: 3vh
+
+
+/****************************************
+/* Media Query
+/****************************************
+
+.slideThree
+  display: inline-block
+  width: 80px
+  height: 20px
+  background: #D8D8D8
+  margin: 0 auto
+  position: relative
+  border-radius: 50px
+  &:after
+    content: 'Isn\'t'
+    color: #181818
+    position: absolute
+    right: 10px
+    z-index: 0
+    font: 12px/22px 'Gotham-Light', sans-serif
+    font-weight: bold
+  &:before
+    content: 'Is'
+    color: #181818
+    position: absolute
+    left: 10px
+    z-index: 0
+    font: 12px/22px 'Gotham-Light', sans-serif
+    font-weight: bold
+  label
+    display: block
+    width: 34px
+    height: 14px
+    cursor: pointer
+    position: absolute
+    top: 3px
+    left: 3px
+    z-index: 1
+    background: #00afef
+    border-radius: 50px
+    transition: all 0.4s ease
+  input
+    visibility: hidden
+    &:checked + label
+      left: 38px
+      width: 38px
+
+/****************************************
+/* Media Query
+/****************************************
+
+.left-column
+  border-bottom: none
+
+.right-column
+  border-top: none
+
+.center-column
+  border-left: 2px solid #F6F6F6
+  border-right: 2px solid #F6F6F6
+
+@media (max-width: 767px)
+  .question-container
+    display: block
+  ul.navbar-nav
+    margin-top: -12px
+    margin-left: 110px
+    display: inline-block
+    li
+      display: inline-block
+  .left-column
+    border-bottom: 2px solid #F6F6F6
+    padding-bottom: 35px
+  .right-column
+    padding-top: 35px
+    padding-bottom: 35px
+    border-top: 2px solid #F6F6F6
+  .center-column
+    padding-top: 35px
+    border-left: none
+    border-right: none
+    padding-bottom: 35px
+
+@media (min-width: 767px) and (max-width: 992px)
+  .dark-blue-text
+    font-size: 3vw
+    height: 100px
+  .boldest-numbers
+    font-size: 7vw
+  .impressionScount
+    font-size: 2vw
+
+.btn-primary
+  background-color: #00AFEF
+
+@media (max-width: 590px)
+  .header_descriptor-text
+    font-size: 40px
+.navbar-brand
+  background-color: transparent! important

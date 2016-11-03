@@ -7,6 +7,8 @@
     = render partial: "footer"
     = Gon::Base.render_data({})
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -if @javascript_file_overwrite_name
+      = javascript_include_tag @javascript_file_overwrite_name
     - if controller_name == "posts" && action_name == "show"
       :javascript
         $(document).on('ready page:change', function() {

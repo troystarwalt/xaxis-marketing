@@ -1,0 +1,400 @@
+.container-fluid.section
+  .header-image
+    .text-left.header_text
+      .row
+        .col-sm-8.offset-sm-3
+          %h1
+            .header_year-text 2016 Xaxis
+            #regional_name.header_descriptor-text
+            .header_descriptor-text
+              Programmatic Media
+              %br/
+              Buying Calculator
+#welcome-note.container.section
+  .row
+    .col-sm-6.offset-sm-3
+      %p.gotham-light
+        The 2016 Xaxis Programmatic Media Value Calculator is designed to provide insights into the unique Xaxis media business model as well as tangible and measurable value to its customers based on the all-inclusive programmatic media products.
+      %p.gotham-light
+        To discover the value of Xaxis, just input your budget, the spend weighting for your campaign, price of your CPMs, the type of staffing, and any addons you'll need.
+#form_and_table
+  .user-form.section
+    .row
+      .col-lg-12
+        .container
+          .row
+            .col-md-8.offset-md-2.col-sm-10.offset-sm-1
+              .row.form-row.question-container
+                .col-sm-6.text-container
+                  %p
+                    1. Which region are you in?
+                .col-sm-6.data-container
+                  %ul.list-group
+                    %li.list-group-item
+                      %select#query_for_region{:name => "region"}
+                        %option{:value => ""}
+                          Select your locality
+                        %option{:value => "us"}
+                          United States
+                        %option{:value => "uk"}
+                          United Kingdom
+                        %option{:value => "de"}
+                          Germany
+                        %option{:value => "it"}
+                          Italy
+              / Question 1
+              .row.form-row.question-container
+                .col-sm-6.text-container.odd
+                  %p
+                    2. What is your monthly budget?
+                .col-sm-6.data-container.odd
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      .input-group
+                        %span.input-group-addon.currency_symbol $
+                        #fake_input_total.form-control{:contenteditable => "true", :style => "background-color: transparent;"}
+                        %input#input_total.form-control{:min => "0", :step => "0.01", :style => "display:none;", :type => "number"}/
+              .row.form-row.question-container
+                .col-sm-6.text-container
+                  %p
+                    3. How will you allocate it?
+                .col-sm-6.data-container
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      Display
+                      .input-group
+                        %input#input_displayBudgetWeighting.form-control{:max => "100", :min => "0", :type => "number", :value => "50"}/
+                        %span.input-group-addon %
+                    %li.list-group-item.text-left
+                      Video
+                      .input-group
+                        %input#input_videoBudgetWeighting.form-control{:max => "100", :min => "0", :type => "number", :value => "50"}/
+                        %span.input-group-addon %
+              .row.form-row.question-container
+                .col-sm-6.text-container.odd
+                  .row
+                    4. What are you paying per CPM
+                  %br/
+                  %br/
+                  .row
+                    4b. Viewability
+                    .slideThree
+                      %input#check_guaranteed_viewability{:checked => "checked", :name => "check_guaranteed_viewability", :type => "checkbox", :value => "None"}/
+                      %label{:for => "check_guaranteed_viewability"}
+                    Guaranteed
+                .col-sm-6.data-container.odd
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      Display
+                      .input-group
+                        %span.input-group-addon.currency_symbol $
+                        %input#input_mediaCpmDisplayDSP.form-control{:min => "0", :step => "0.01", :type => "number"}/
+                        %span.input-group-addon.benchmark
+                          %span#benchmark_display 50%
+                          VB*
+                    %li.list-group-item.text-left
+                      Video
+                      .input-group
+                        %span.input-group-addon.currency_symbol $
+                        %input#input_mediaCpmVideoDSP.form-control{:min => "0", :step => "0.01", :type => "number"}/
+                        %span.input-group-addon.benchmark
+                          %span#benchmark_video 30%
+                          VB*
+                    %span.pull-right.benchmark VB* = Viewability Benchmark
+              .row.form-row.question-container
+                .col-sm-6.text-container
+                  %p
+                    5. Which model to compare to?
+                .col-sm-6.data-container
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      %select#select_comparisonModel
+                        %option{:value => "dsp"}
+                          DSP
+                        %option{:value => "pbu"}
+                          PBU
+              .row.form-row.question-container.pbu_comparisons
+                .col-sm-6.text-container.odd
+                  %p
+                    6. Set the % commision to compare
+                    vs. Xaxis' all-inclusive model
+                .col-sm-6.data-container.odd
+                  %ul.list-group
+                    %li#row_PctOfMedia_inputs.list-group-item.text-left.reduce-padding
+                      .row
+                        .col-xs-12.list-group-item
+                          %i ( % of Budget )
+                          .input-group
+                            %input#input_pctOfMedia.form-control{:min => "0", :step => "1", :type => "number", :value => "0"}/
+                            %span.input-group-addon %
+                        .col-xs-12.list-group-item
+                          Xaxis
+                          %i ( All-Inclusive )
+                          .input-group
+                            %input.form-control{:disabled => "disabled", :type => "number", :value => "0"}/
+                            %span.input-group-addon %
+              .row.form-row.question-container.pbu_comparisons
+                .col-sm-6.text-container
+                  %p
+                    7. Platform Tech Fee
+                .col-sm-6.data-container
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      Non-Xaxis
+                      %i (usually around 9% of total budget)
+                      .input-group
+                        %input#platform-tech-fee.form-control{:min => "0", :type => "number", :value => "9"}/
+                        %span.input-group-addon %
+                    %li.list-group-item.text-left
+                      Xaxis
+                      %i ( All-inclusive )
+                      .input-group
+                        %input.form-control{:disabled => "disabled", :type => "number", :value => "0"}/
+                        %span.input-group-addon %
+              .row.form-row.question-container
+                #toggle-odd.col-sm-6.text-container.odd
+                  %p
+                    %span.dsp_comparisons 6.
+                    %span.pbu_comparisons 8.
+                    Do you need Anything Added On?
+                #toggle-odd2.col-sm-6.data-container.odd
+                  %ul.list-group
+                    %li.list-group-item.text-left
+                      %input#check_DMPAddon.checkmarkSelector{:type => "checkbox"}/
+                      DMP (Data Segmentation / Storage / Modeling)
+                      #DMPAddon_quantity
+                        %p
+                          Assumes avg cost/month
+                        .input-group
+                          %span.input-group-addon.currency_symbol $
+                          %input#input_DMPAddon.form-control{:disabled => "disabled", :min => "0", :step => "1", :type => "number", :value => "0"}/
+  .xaxis-difference.section
+    .container
+      .row
+        .col-sm-12
+          %h2.text-xs-center.dark-grey-text.big-margin-bottom.big-margin-top.gotham-xl
+            The Xaxis Difference
+          %h4.text-xs-center.dark-blue-text.gotham-medium.medium-margin-bottom
+            Xaxis vs
+            %span.dark-blue-text.gotham-medium.pbu_comparisons PBU
+            %span.dark-blue-text.gotham-medium.dsp_comparisons DSP
+          %hr.full-width/
+          .row
+            .col-xs-12.col-sm-4.col-md-4.left-column.medium-margin-bottom.medium-margin-top
+              .col-sm-10.offset-sm-1.text-xs-center
+                %h4.dark-blue-text.gotham-medium.big-margin-bottom
+                  More Working Media
+                %p.text-xs-center.no-margin
+                  %span#pbu_pct_extra_working_media.boldest-numbers.blue-text.gotham-medium.pbu_comparisons
+                  %span#dsp_pct_extra_working_media.boldest-numbers.blue-text.gotham-medium.dsp_comparisons
+                %p.gotham-medium
+                  Xaxis puts
+                  %span#pbu_small_pct_extra_working_media.blue-text.gotham-medium.pbu_comparisons
+                  %span#dsp_small_pct_extra_working_media.blue-text.gotham-medium.dsp_comparisons
+                  %span.blue-text.gotham-medium more
+                  toward working media
+                %br/
+                %br/
+                %p.big-margin-bottom.dsp_comparisons
+                  %strong
+                    %span#dspAddedWorkingMedia.impressionScount.blue-text.gotham-book
+                  %br/
+                  more working media
+                  %br/
+                %p.pbu_comparisons
+                  %strong
+                    %span#pbuAddedWorkingMedia.impressionScount.blue-text.gotham-book
+                  %br/
+                  more working media
+                  %br/
+            .col-xs-12.col-sm-4.col-md-4.center-column.medium-margin-bottom.medium-margin-top.dsp_comparisons
+              .col-sm-10.offset-sm-1.text-xs-center
+                %h4.text-xs-center.dark-blue-text.gotham-medium.big-margin-bottom
+                  More Impressions
+                %p.text-xs-center.no-margin
+                  %span#moreImpressionsDSPPct.boldest-numbers.blue-text.gotham-medium
+                %p.gotham-medium
+                  Xaxis serves
+                  %span#moreImpressionsDSPPct2.blue-text.gotham-medium
+                  = succeed "impressions" do
+                    %span.blue-text.gotham-medium
+                      more
+                %br/
+                %br/
+                %p
+                  %strong
+                    %span#impressionsVsDSP.impressionScount.blue-text.gotham-book
+                  %br/
+                  more total impressions
+                  %br/
+                .benchmark
+                  %hr/
+                  %strong
+                    %span#viewableImpressionsVsDSP.impressionScount.blue-text.gotham-book
+                  %br/
+                  more viewable impressions
+                  %br/
+            .col-xs-12.col-sm-4.col-md-4.center-column.medium-margin-bottom.medium-margin-top.pbu_comparisons
+              .col-sm-10.offset-sm-1.text-xs-center
+                %h4.text-xs-center.dark-blue-text.gotham-medium.big-margin-bottom
+                  More Impressions
+                %p.text-xs-center.no-margin
+                  %span#moreImpressionsPBUPct.blue-text.boldest-numbers.gotham-medium
+                %p.gotham-medium
+                  Xaxis serves
+                  %span#moreImpressionsPBUPct2.blue-text.gotham-medium
+                  %span.blue-text.gotham-medium more
+                  impressions
+                %br/
+                %br/
+                %p
+                  %strong
+                    %span#impressionsVsPBU.impressionScount.blue-text.gotham-book
+                  %br/
+                  more total impressions
+                  %br/
+                .benchmark
+                  %hr/
+                  %strong
+                    %span#viewableImpressionsVsPBU.impressionScount.blue-text.gotham-book
+                  %br/
+                  more viewable impressions
+                  %br/
+            .col-xs-12.col-sm-4.col-md-4.right-column.medium-margin-bottom.medium-margin-top
+              .col-sm-10.offset-sm-1.text-xs-center
+                %h4.dark-blue-text.gotham-medium.big-margin-bottom
+                  Cost Needed To Match
+                %p.text-xs-center.no-margin
+                  %span#pbu_Added_budget_necessary.boldest-numbers.blue-text.gotham-medium.pbu_comparisons
+                  %span#dsp_Added_budget_necessary.boldest-numbers.blue-text.gotham-medium.dsp_comparisons
+                %p.gotham-medium
+                  Requires
+                  %span#pbu_small_added_budget_necessary.blue-text.gotham-medium.pbu_comparisons
+                  %span#dsp_small_added_budget_necessary.blue-text.gotham-medium.dsp_comparisons
+                  %span.blue-text.gotham-medium additional
+                  budget to match
+                %br/
+                %br/
+                %p.big-margin-bottom.dsp_comparisons
+                  %strong
+                    %span#costNonXaxisDSPPartner.impressionScount.blue-text.gotham-book
+                    %span#impressionsVsDSP.impressionScount.blue-text.gotham-book
+                  %br/
+                  additional budget
+                  %br/
+                %p.pbu_comparisons
+                  %strong
+                    %span#costNonXaxisPartner.impressionScount.blue-text.gotham-book
+                    %span#impressionsVsPBU.impressionScount.blue-text.gotham-book
+                  %br/
+                  additional budget
+                  %br/
+  .prove-it
+    .container
+      .col-xs-12
+        .table-responsive.outer-table
+          %h2.text-xs-center.dark-grey-text.big-margin-bottom.gotham-xl The Raw Data
+          %table#testTable.table.table-striped.table-bordered.table-hover.table-condensed
+            %tr
+              %th
+              %th.dsp_comparisons DSP
+              %th.pbu_comparisons PBU
+              %th Xaxis
+            %tr
+              %td Total Starting Budget:
+              %td#totalDsp.dsp_comparisons
+              %td#totalPbu.pbu_comparisons
+              %td#totalXaxis
+            %tr
+              %td Execution Costs
+              %td#executionCostsDsp.dsp_comparisons
+              %td#executionCostsPbu.pbu_comparisons
+              %td#executionCostsXaxis
+            %tr
+              %td.empty-row{:colspan => "4"}
+            %tr
+              %th Component
+              %th{:colspan => "2"}
+            %tr
+              %td Working Media Budget
+              %td#workingMediaBudgetDsp.dsp_comparisons
+              %td#workingMediaBudgetPbu.pbu_comparisons
+              %td#workingMediaBudgetXax
+            %tr
+              %td Media CPM - Display
+              %td#mediaCpmDisplayDsp.dsp_comparisons
+              %td#mediaCpmDisplayPBU.pbu_comparisons
+              %td#mediaCpmDisplayXaxis
+            %tr
+              %td Media CPM - Video
+              %td#mediaCpmVideoDsp.dsp_comparisons
+              %td#mediaCpmVideoPBU.pbu_comparisons
+              %td#mediaCpmVideoXaxis
+            %tr
+              %td Impressions (Total)
+              %td#impressionsTotalDSP.dsp_comparisons
+              %td#impressionsTotalPBU.pbu_comparisons
+              %td#impressionsTotalXaxis
+            %tr.benchmark
+              %td Impressions (Viewable)
+              %td#impressionsViewableDSP.dsp_comparisons
+              %td#impressionsViewablePBU.pbu_comparisons
+              %td#impressionsViewableXaxis
+            %tr
+              %td.empty-row{:colspan => "3"}
+            %tr
+              %td
+                %strong Costs
+              %td{:colspan => "2"}
+            %tr
+              %td
+                Misc Fees
+              %td{:colspan => "2"}
+            %tr.pbu_comparisons
+              %td Tech Cost (Use of trading platform)
+              %td.dsp_comparisons
+                0
+              %td#techCostPbu.pbu_comparisons
+              %td
+                N/A
+            %tr
+              %td Data Cost (3rd party data used for buying)
+              %td.dsp_comparisons
+                0
+              %td#dataCostPbu.pbu_comparisons
+                %span#input_dataCostPBU 0
+              %td
+                N/A
+            %tr
+              %td Verification and Adserving
+              %td.dsp_comparisons 0
+              %td#verificationAdvertisingPBU.pbu_comparisons
+              %td N/A
+            %tr.dsp_comparisons
+              %td DSP Profits From Spend on Internal Media
+              %td#dspInternalSpend.dsp_comparisons
+              %td.pbu_comparisons N/A
+              %td N/A
+            %tr
+              %td.empty-row{:colspan => "3"}
+            %tr#row_staffing.pbu_comparisons
+              %td
+                %strong Staffing
+              %td.empty-row{:colspan => "2"}
+            %tr#row_PctOfMedia.pbu_comparisons
+              %td % Commission
+              %td#pctOfMediaDSP.dsp_comparisons
+              %td#pctOfMediaPbu.pbu_comparisons
+              %td N/A
+            %tr.pbu_comparisons
+              %td.empty-row{:colspan => "4"}
+            %tr#row_addons
+              %td
+                %strong Add Ons:
+              %td{:colspan => "3"}
+            %tr#row_dmp_addon
+              %td DMP (Data Segmentation/Storage/Modeling)
+              %td#dmpAddonDsp.dsp_comparisons
+              %td#dmpaddonPbu.pbu_comparisons
+              %td#dmpaddonXaxis N/A
+        %button#resetToDefaults.btn.btn-primary.pull-right{:type => "button"} Reset Sample Data
