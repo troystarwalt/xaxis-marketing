@@ -1,6 +1,6 @@
 $(document).ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()+400
+  sideMenuHeight = sideMenu.outerHeight()+400;
   menuItems = sideMenu.find("a"),
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
@@ -12,17 +12,17 @@ $(document).ready( function () {
       if ($(this).offset().top<fromTop)
       return this;
     });
-    cur = cur[cur.length-1]
+    cur = cur[cur.length-1];
     var id = cur && cur.length ? cur[0].id: "";
     menuItems.parent().removeClass('active-side-link').end().filter("[href='#"+id+"']").parent().addClass("active-side-link");
   });
 });
 
 // Only run this function if we are on platforms. This helps with the side menu nav.
-window.onload = function() {
+$('.platforms').ready(function() {
   if (window.location.href.indexOf("platforms/") > -1) {
     $(window).scroll(function(){
       $("#side-nav").css("top",Math.max(375,700-$(this).scrollTop()));
     });
   }
-}
+});

@@ -1,7 +1,7 @@
 class CaseStudy < ApplicationRecord
   include PgSearch
   belongs_to :platform
-  mount_uploader :pdf_attachment, FileUploader
+  mount_uploader :pdf_attachment, CaseStudyFileUploader
   self.per_page = 6
   before_save :capitalize_tags
   acts_as_taggable_on :industries, :regions

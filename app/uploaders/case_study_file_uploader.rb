@@ -1,9 +1,9 @@
-class FileUploader < CarrierWave::Uploader::Base
+class CaseStudyFileUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-
+  after :store, :get_text_from_file
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog
@@ -32,28 +32,28 @@ class FileUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-    version :thumb, :if => :image? do
-      process resize_to_limit: [100, 100]
-    end
 
-    version :preview, :if => :image? do
-      process resize_to_fit: [400, 400]
-    end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    if model == 'Logo'
-      %w(png eps)
-    else
-      %w(zip pdf ppt pptx doc docx ase png eps jpeg jpg dotx)
-    end
+    %w(pdf)
   end
 
 
   # We are randomizing the name of the file here to protect against duplication.
   def filename
-    "#{model.name.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
+     "#{model.title.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
+  end
+
+  def get_text_from_file(file)
+    return true unless model.class.name == 'CaseStudy'
+    reader = PDF::Reader.new(self.file.file)
+    text = ""
+    for page in reader.pages do
+      text << page.text
+    end
+    self.model.update(searchable_pdf_text: text)
   end
 
   protected

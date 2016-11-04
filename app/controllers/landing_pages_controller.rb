@@ -4,7 +4,6 @@ class LandingPagesController < ApplicationController
     @title = "Xaxis | Value Calculator"
     @javascript_file_overwrite_name = 'landing_pages/value_calculator.js'
     @css_files_overwrite = 'landing_pages/value_calculator'
-
   end
 
   def expert_interview_hub
