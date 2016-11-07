@@ -1,6 +1,6 @@
 class Logo < ApplicationRecord
   belongs_to :platform
-  mount_uploader :file, FileUploader
+  mount_uploader :file, LogoUploader
 
   before_save :update_file_attributes
 
