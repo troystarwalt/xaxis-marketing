@@ -11,7 +11,6 @@ class CaseStudyFileUploader < BaseUploader
   end
 
   def get_text_from_file(file)
-    return true unless model.class.name == 'CaseStudy'
     reader = PDF::Reader.new(self.file.file)
     text = ""
     for page in reader.pages do
