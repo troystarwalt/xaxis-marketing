@@ -2,20 +2,20 @@
   %footer
     .container
       .row.footer-nav
-        .col-sm-8.offset-sm-2
+        .col-xs-12
           .row.footer-nav-row
-            .col-md-4.col-xs-6.footer-column
+            .col-md-3.col-sm-4.col-xs-6.footer-column
               =link_to 'Home', "#", class: 'footer-main-link'
               %ul.footer-list
                 %li= link_to 'Xaxis Internal', root_path
                 %li= link_to 'xaxis.com', "//xaxis.com"
                 %li= link_to 'News/Updates', posts_path
-            .col-md-4.col-xs-6.footer-column
+            .col-md-3.col-sm-4.col-xs-6.footer-column
               =link_to 'Brand Assets', "#", class: 'footer-main-link'
               %ul.footer-list
                 - Brand.all.each do |brand|
                   %li= link_to "#{brand.name} Brand Assets", brand_path(brand)
-            .col-md-4.col-xs-6.footer-column
+            .col-md-3.col-sm-4.col-xs-6.footer-column
               =link_to 'Products & Tutorials', "#", class: 'footer-main-link'
               %ul.footer-list
                 -Platform.all.each do |platform|
@@ -23,14 +23,14 @@
                 %li= link_to '101 Series', "#"
                 %li= link_to 'All Case Studies', case_studies_path
                 %li= link_to 'All Sell Sheets', "#"
-            .col-md-4.col-xs-6.footer-column
+            .col-md-3.col-sm-4.col-xs-6.footer-column
               =link_to 'Utilities', "#", class: 'footer-main-link'
               %ul.footer-list
                 %li= link_to 'Calculator', value_calculator_path
                 %li= link_to 'Expert Videos', expert_interview_hub_path
                 %li= link_to "Admin Panel", admin_dashboard_path if current_admin_user
 
-            .col-md-4.col-xs-6.footer-column
+            .col-md-3.col-sm-4.col-xs-6.footer-column
               =link_to 'Presentation Hub', presentation_hub_path, class: 'footer-main-link'
     .container
       .row.footer-bottom
