@@ -9,9 +9,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     if Rails.env.development?
       puts "the facebook link will error out in development"
+    end
+    if request.path != post_path(@post)
+      return redirect_to @post, :status => :moved_permanently
     end
   end
 
@@ -38,6 +41,7 @@ class PostsController < ApplicationController
 
   def main
     @posts = Post.includes(:tags).last(5)
+    @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}
   end
