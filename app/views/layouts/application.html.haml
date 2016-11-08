@@ -10,16 +10,3 @@
       = javascript_include_tag @javascript_file_overwrite_name
     -else
       = javascript_include_tag 'application'
-    -if @javascript_file_overwrite_name
-      = javascript_include_tag @javascript_file_overwrite_name
-    - if controller_name == "posts" && action_name == "show"
-      :javascript
-        $(document).on('ready page:change', function() {
-          $("meta[name='twitter\\:title']").attr("content", "<%= #{@post}.title %>");
-          $("meta[name='twitter\\:description']").attr("content", "<%= @article.description %>");
-          $("meta[name='twitter\\:image']").attr("content", "<%= @article.image.url(:medium) %>");
-          $("meta[property='og\\:title']").attr("content", "#{@post.title}");
-          $("meta[property='og\\:description']").attr("content", "#{@post.text}");
-          $("meta[property='og\\:url']").attr("content", "#{post_url(@post)}");
-          $("meta[property='og\\:image']").attr("content", "#{@post.image.url}");
-          });

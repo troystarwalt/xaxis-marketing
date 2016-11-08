@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// ******************************************
+// JavaScript files for the value calculator and the expert video landing page are not
+// integrated into this manifest, they are instead housed and served from lib/assets
+// ******************************************
+//
 //= require jquery
 //= require jquery_ujs
 //= require readyselector

@@ -11,7 +11,12 @@ class BaseUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-      "#{model.title.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
+    model_name = if model.try(:title)
+                   model.title
+                 else
+                   model.name
+                 end
+    "#{model_name.parameterize}-#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end
 
 

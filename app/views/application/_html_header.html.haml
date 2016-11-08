@@ -26,8 +26,15 @@
   %meta{:content => "Interal Xaxis", :property => "og:title"}/
   %meta{:content => "A site for Xaxis Employees", :property => "og:description"}/
   %meta{:content => image_path("Xaxis_Logo_Pos_Vert.png"), :property => "og:image"}/
-
   = csrf_meta_tags
+  -if @post
+    %meta{ name: 'twitter:title', content: @post.title }
+    %meta{ name: 'twitter:description', content: @post.text }
+    %meta{ name: 'twitter:image', content: @post.image_url }
+    %meta{ property: 'og:title', content: @post.title }
+    %meta{ property: 'og:description', content: @post.text }
+    %meta{ property: 'og:url', content: post_url(@post) }
+    %meta{ property: 'og:image', content: @post.image.url }
 
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   -if @css_files_overwrite

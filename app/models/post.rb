@@ -5,6 +5,14 @@ class Post < ApplicationRecord
   acts_as_taggable
   scope :tagged_by, -> (category){where(tags: {name: category})}
   self.per_page = 6
+  extend FriendlyId
+  friendly_id :slug_candidates, use: [:slugged, :finders, :history]
+  def slug_candidates
+    [
+      :title,
+      [:title, :id],
+    ]
+  end
 
   def self.valid_tags
     ["Announcement", "News", "Event", "Talent & Culture"]
@@ -37,7 +45,8 @@ class Post < ApplicationRecord
       date: self.pretty_date,
       title: self.title,
       text: self.text,
-      img_url: self.image.url(:thumb)
+      img_url: self.image.url(:thumb),
+      slug: self.slug
     }
   end
 

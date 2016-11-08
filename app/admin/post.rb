@@ -5,6 +5,12 @@ ActiveAdmin.register Post do
 
   permit_params :title, :text, :author, :tag_list => []
 
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
+
     index do
       selectable_column
       id_column
