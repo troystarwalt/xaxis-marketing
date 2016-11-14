@@ -3,7 +3,7 @@
     %h1.header.text-uppercase Latest News
   .content-container#latest-news
     .row
-      .col-md-6.col-sm-12.hidden-xs-down
+      .col-md-6.col-sm-12.hidden-xs-down#preview-container
         #currently_selected_event_container
           .icon-info.row
             .col-md-12
@@ -16,10 +16,10 @@
                   %span#single-news_date.date= @initial_post.pretty_date
           .selected-news_content
             %h1.content-header#single-news_title.news-title= @initial_post.title
-            %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid-width'}
+            %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
             %p.content-text.news-text
               %span#single-news_text= get_post_text(@initial_post)
-            %p.readmore= link_to 'Read More', post_path(@initial_post), class: "readmore-link", id: 'single-news_readmore'
+            %p.readmore.font-italic= link_to 'Read More', post_path(@initial_post), class: "readmore-link pull-right", id: 'single-news_readmore'
       .col-md-6.col-sm-12
         .recent_news_container
           - @posts.each_with_index do |post, index|
