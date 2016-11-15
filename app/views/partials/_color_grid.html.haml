@@ -1,6 +1,6 @@
 .flex-container
   .flex-column
-    .flex-sm-item.left-top
+    .flex-sm-item.left-top#grid-box-1
       .grid-content-container
         .row
           .col-lg-12
@@ -18,92 +18,95 @@
               = image_tag "clapper.svg", alt: "Director", class: "svg-img  hidden-sm-down"
       .link-container
         =link_to "all platform assets", root_path, class: "text-uppercase btn color-grid-btn"
-    .flex-lg-item.left-bottom
+    .flex-lg-item.left-bottom#grid-box-2
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
-        %span events
+        %span Utilities
         %span.vertical-bar|
-        %span xaxis events
+        %span Calculator
         %span.vertical-bar|
-        %span 10/01/2016
-      %h1.larger-content-header.color-grid-text Cannes: The In's and Out's of Programmatic
+        %span 11/14/2016
+      %h1.larger-content-header.color-grid-text 2016 U.S. Programmatic Media Buying Calculator
       = image_tag "bulb.svg", alt: "Light Bulb", class: "svg-img  hidden-sm-down"
+      .link-container
+        =link_to "value calculator", value_calculator_path, class: "text-uppercase btn color-grid-btn"
   .flex-column
-    .flex-sm-item.center-top
+    .flex-sm-item.center-top#grid-box-3
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span platform
+              %span Utilities
               %span.vertical-bar|
-              %span spotlight
+              %span Hub
               %span.vertical-bar|
-              %span 10/01/2016
+              %span 11/14/2016
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Turbine: New Sell Sheet Updated
+            %h1.content-header.color-grid-text 2016 Presentation Hub
           .col-sm-4
             .grid-img
               = image_tag "boxy.svg", alt: "Box in Box", class: "svg-img  hidden-sm-down"
-    .flex-sm-item.center-middle
+      .link-container
+        =link_to "Presentation Hub", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.center-middle#grid-box-4
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
               %span platform
               %span.vertical-bar|
-              %span spotlight
+              %span Turbine
               %span.vertical-bar|
-              %span 10/01/2016
+              %span 11/14/2017
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Spotlight: New Features and Tutorial
+            %h1.content-header.color-grid-text Turbine: Latest Infographics and Case Studies
           .col-sm-4
             .grid-img
               = image_tag "pencil.svg", alt: "Pencil", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "all platform assets", root_path, class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.center-bottom
+        =link_to "turbine assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.center-bottom#grid-box-5
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span platform
+              %span platforms
               %span.vertical-bar|
-              %span spotlight
+              %span all
               %span.vertical-bar|
               %span 10/01/2016
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Spotlight: New Features and Tutorial
+            %h1.content-header.color-grid-text Need a case study, a logo or an infographic?
           .col-sm-4
             .grid-img
               = image_tag "beaker.svg", alt: "Beaker", class: "svg-img  hidden-sm-down"
+      .link-container
+        =link_to "Platfrom Assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
   .flex-column
-    .flex-lg-item.right-top
+    .flex-lg-item.right-top#grid-box-6
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
-        %span brand assets
+        %span Utilities
         %span.vertical-bar|
-        %span light reaction
+        %span 101
         %span.vertical-bar|
         %span 10/01/2016
-      %h1.larger-content-header.color-grid-text Light Reaction Powerpoint Template Updated
+      %h1.larger-content-header.color-grid-text Programmatic 101 Series
       = image_tag "arrow.svg", alt: "Updated Template", class: "svg-img  hidden-sm-down"
       .link-container
-        - if @bring_me_to_xaxis.present?
-          =link_to "all brand assets", brand_path(@bring_me_to_xaxis), class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.right-bottom
+        =link_to "101 Series", "https://xaxis.hs-sites.com/101-series", target: "_blank", class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.right-bottom#grid-box-7
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span news
-              %span.vertical-bar|
-              %span anncouncements
-              %span.vertical-bar|
-              %span 10/01/2016
+              %span Latest Xaxis News
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Xaxis Launched plista for Native Content
+            %h1.content-header.color-grid-text Get all of your Xaxis.com news here.
           .col-sm-4
             .grid-img
               = image_tag "touch_screen.svg", alt: "Touch Screen", class: "svg-img  hidden-sm-down"
+      .link-container
+        =link_to "Latest Xaxis News", "https://www.xaxis.com/news", target: "_blank", class: "text-uppercase btn color-grid-btn"

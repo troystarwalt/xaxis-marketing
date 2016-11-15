@@ -46,6 +46,7 @@ class PostsController < ApplicationController
     gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}
   end
 
+  private
   def post_params
     params.require(:post).permit(:title, :text, :tag_list, :author)
   end
