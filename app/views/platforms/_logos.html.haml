@@ -1,4 +1,4 @@
-%h3.text-uppercase #{@platform.slug} Logos
+%h3.text-uppercase.section-title #{@platform.slug} Logos
 -if @platform_logo_png.present? && @platform_logo_eps.present?
   - @platform.logos.order('content_type DESC').each do |logo|
     - if logo.is_image?
