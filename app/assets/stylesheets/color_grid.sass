@@ -33,14 +33,20 @@
     border: 2px solid $white
     border-radius: 100px
     letter-spacing: 2px
-    font-size: 10px
+    font-size: .8em
     font-family: gotham-medium
+    min-width: 200px
+    margin: 0 auto
 
 .color-grid-text, .color-grid-text > span, .link-container > a
   color: $white
 
+.color-grid-text
+  span
+    letter-spacing: 2px
+
 .left-top
-  background: $xaxis-lightest-blue
+  background: $xaxis-light-yellow
 .left-bottom
   background: $xaxis-blue-color
 .center-top
@@ -50,9 +56,19 @@
 .center-bottom
   background: $xaxis-light-green
 .right-top
-  background: $xaxis-light-yellow
+  background: $xaxis-lightest-blue
 .right-bottom
   background: $xaxis-deep-green
+
+.left-top, .right-top
+  .color-grid-text
+    color: $black
+    span
+      color: $black
+  .link-container
+    .color-grid-btn
+      color: $black
+      border-color: $black
 
 @media (max-width: 999px)
   .flex-container

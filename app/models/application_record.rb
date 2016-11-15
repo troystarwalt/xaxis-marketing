@@ -4,4 +4,5 @@ class ApplicationRecord < ActiveRecord::Base
   def pretty_date
     created_at.to_date.strftime("%m\/\%d\/\%Y")
   end
+
 end
