@@ -1,23 +1,7 @@
 .flex-container
   .flex-column
     .flex-sm-item.left-top#grid-box-1
-      .grid-content-container
-        .row
-          .col-lg-12
-            %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span platform
-              %span.vertical-bar|
-              %span spotlight
-              %span.vertical-bar|
-              %span 10/01/2016
-        .row
-          .col-sm-8
-            %h1.content-header.color-grid-text Spotlight: New Features and Tutorial
-          .col-sm-4
-            .grid-img
-              = image_tag "clapper.svg", alt: "Director", class: "svg-img  hidden-sm-down"
-      .link-container
-        =link_to "all platform assets", root_path, class: "text-uppercase btn color-grid-btn"
+      = render partial: "partials/top_left/#{@view_this_box}"
     .flex-lg-item.left-bottom#grid-box-2
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
         %span Utilities

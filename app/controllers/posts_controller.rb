@@ -40,6 +40,15 @@ class PostsController < ApplicationController
   end
 
   def main
+    views = {BrandAccessory.name => "box_brandaccessory",
+            CaseStudy.name => "box_casestudy",
+            Logo.name => "box_logo",
+            Infographic.name => "box_infographic",
+            Video.name => "box_video"}
+    latest_model = collect_resources
+
+    @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
+    @most_recent_update = latest_model
     @posts = Post.includes(:tags).last(5)
     @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
@@ -49,5 +58,12 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :text, :tag_list, :author)
+  end
+
+  def collect_resources
+    models = [BrandAccessory, CaseStudy, Logo, Infographic, Video]
+    latest_models = models.map { |x| x.order("created_at").last }
+    sorted_models = latest_models.sort_by{ |x| x.created_at }
+    sorted_models.last
   end
 end
