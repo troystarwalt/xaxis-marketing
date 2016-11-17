@@ -2,7 +2,9 @@
 class Logo < ApplicationRecord
   belongs_to :platform
   mount_uploader :file, LogoUploader
-
+  validates_presence_of :platform, presence: true
+  validates_presence_of :name, presence: true
+  validates_presence_of :file, presence: true
   before_save :update_file_attributes
 
   def is_image?

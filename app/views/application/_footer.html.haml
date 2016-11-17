@@ -19,11 +19,11 @@
               %ul.footer-list
                 -Platform.all.each do |platform|
                   %li= link_to "#{platform.name}", platform_path(platform)
-                %li= link_to '101 Series', "#"
+                %li= link_to '101 Series', "https://xaxis.hs-sites.com/101-series", target: "_blank"
                 %li= link_to 'All Case Studies', case_studies_path
                 -# %li= link_to 'All Sell Sheets', "#"
             .col-md-3.col-sm-4.col-xs-6.footer-column
-              =link_to 'Utilities', "#", class: 'footer-main-link'
+              =link_to 'Utilities', value_calculator_path, class: 'footer-main-link'
               %ul.footer-list
                 %li= link_to 'Value Calculator', value_calculator_path
                 %li= link_to 'Expert Videos', expert_interview_hub_path

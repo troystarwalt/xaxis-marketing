@@ -1,8 +1,6 @@
 %h3.text-uppercase.section-title #{@platform.slug} Logos
 -if @platform_logo_png.present? && @platform_logo_eps.present?
-  - @platform.logos.order('content_type DESC').each do |logo|
-    - if logo.is_image?
-      =image_tag logo.file.preview.url, class: "img-fluid"
+  =image_tag @platform_logo_png.file.preview.url, class: "img-fluid"
   .row
     .col-sm-6
       =link_to "download png", @platform_logo_png.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn", download: @platform_logo_png.name

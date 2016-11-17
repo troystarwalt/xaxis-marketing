@@ -45,7 +45,7 @@ ActiveAdmin.register Post do
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
       f.input :image, as: :file, label: "Main Image"
       f.input :tag_list,
-        as: :select,
+        as: :radio,
         multiple: :true,
         collection: Post.valid_tags
     end
