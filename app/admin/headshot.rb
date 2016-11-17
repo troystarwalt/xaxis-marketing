@@ -29,9 +29,7 @@ ActiveAdmin.register Headshot do
     column :first_name
     column :last_name
     column :title
-    column :brand do |f|
-      Brand.find_by!(id: f.brand_id).name
-    end
+    column :brand, sortable: 'brands.name'
     column :priority
     column :created_at
     column :updated_at
@@ -56,6 +54,12 @@ ActiveAdmin.register Headshot do
         image_tag(f.image.url(:large)).html_safe
       end
       active_admin_comments
+    end
+  end
+
+  controller do
+    def scoped_collection
+      end_of_association_chain.includes(:brand).references(:brand)
     end
   end
 

@@ -16,6 +16,7 @@ ActiveAdmin.register Brand do
         scoped_collection.find(params[:id])
       end
     end
+
   end
 
 

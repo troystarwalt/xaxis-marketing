@@ -13,7 +13,15 @@ Bootstrap 4
 git clone git@github.com:Xaxis-Marketing/internal.git  (SSH)
 cd
 bundle install
+--migrate if you haven't yet
 rails s
+```
+
+## Add Ons
+We have a couple of tools to monitor performance for the app.
+```
+Bullet # This keeps our N+1 queries to a minimum. You can view the logs in log/bullet.log
+NewRelic # The dashboard is at /newrelic This is an all around tool to monitor performance of page loads and database calls. We are on a free app from Troy's account.
 ```
 
 ## Future To Do

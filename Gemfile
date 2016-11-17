@@ -32,6 +32,7 @@ gem 'gon'
 gem 'pdf-reader'
 gem 'pg_search'
 gem "select2-rails"
+gem 'newrelic_rpm'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
@@ -50,4 +51,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
   gem 'pry-rails'
+  gem 'bullet'
 end

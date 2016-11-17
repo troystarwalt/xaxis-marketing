@@ -97,5 +97,10 @@ ActiveAdmin.register CaseStudy do
     column :updated_at
     actions
   end
+  controller do
+    def scoped_collection
+      super.includes :taggings, :platform # prevents N+1 queries to your database
+    end
+  end
 
 end

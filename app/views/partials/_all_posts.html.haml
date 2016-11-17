@@ -23,7 +23,7 @@
           .section-name#news-section
             %h1.header.text-uppercase Latest News
           %ul.list-group.news-articles-list
-            - @posts.each do |post|
+            - @posts.includes(:tags).each do |post|
               %li.list-group-item.news-articles-list-item
                 .row
                   .news-article-date

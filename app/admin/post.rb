@@ -9,6 +9,11 @@ ActiveAdmin.register Post do
     def find_resource
       scoped_collection.friendly.find(params[:id])
     end
+
+    def scoped_collection
+      super.includes :taggings # prevents N+1 queries to your database
+    end
+
   end
 
     index do
