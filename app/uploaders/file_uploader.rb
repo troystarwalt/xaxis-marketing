@@ -15,7 +15,11 @@ class FileUploader < BaseUploader
   end
 
   def extension_whitelist
-    %w(zip pdf ppt pptx doc docx ase png eps jpeg jpg dotx)
+    if model.class.name == "OneSheeter"
+      %w(pdf)
+    else
+      %w(zip pdf ppt pptx doc docx ase png eps jpeg jpg dotx)
+    end
   end
 
 end

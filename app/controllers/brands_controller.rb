@@ -7,7 +7,7 @@ class BrandsController < InheritedResources::Base
     # Not using index for anything at this time.
     @brands = Brand.all
     brand = Brand.find_by!(:name => 'Xaxis')
-    redirect_to brand_path(brand.id)
+    redirect_to brand_path(brand.slug)
   end
 
   def show
