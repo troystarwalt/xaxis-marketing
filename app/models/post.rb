@@ -7,6 +7,14 @@ class Post < ApplicationRecord
   self.per_page = 6
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders, :history]
+
+  # best_result = ActiveRecord::Base.connection.execute("SELECT id, name, created_at, platform_id, file FROM logos
+  #                                                     UNION SELECT id, name, created_at, platform_id, description FROM videos
+  #                                                     UNION SELECT id, name, created_at, platform_id, description FROM infographics
+  #                                                     UNION SELECT id, title, created_at, platform_id, author FROM case_studies
+  #                                                     UNION SELECT id, name, created_at, brand_id, category  FROM brand_accessories
+  #                                                     ORDER BY created_at DESC LIMIT 1")
+
   def slug_candidates
     [
       :title,
