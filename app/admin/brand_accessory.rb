@@ -57,4 +57,10 @@ ActiveAdmin.register BrandAccessory do
       active_admin_comments
     end
   end
+
+  controller do
+    def scoped_collection
+      super.includes :brand # prevents N+1 queries to your database
+    end
+  end
 end

@@ -68,4 +68,10 @@ ActiveAdmin.register Infographic do
     end
   end
 
+  controller do
+    def scoped_collection
+      super.includes :platform # prevents N+1 queries to your database
+    end
+  end
+
 end

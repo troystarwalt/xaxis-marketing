@@ -12,12 +12,12 @@
           - industry = nil
           - region = nil
           - product = @platform ? @platform.slug : nil
-        =f.select :industry, options_for_select(CaseStudy.get_industry_tags_for_select, industry),
+        =f.select :industry, options_for_select(CaseStudy.includes(:industries).get_industry_tags_for_select, industry),
           {include_blank: false},
           {class: 'select2 form-control', multiple: true, placeholder: "Select Industries"}
       .col-sm-4
         =f.label :region, class: 'sr-only'
-        =f.select :region, options_for_select(CaseStudy.get_region_tags_for_select, region),
+        =f.select :region, options_for_select(CaseStudy.includes(:regions).get_region_tags_for_select, region),
           {include_blank: false}, {class: 'select2 form-control', placeholder: "Select Regions", multiple: true}
       .col-sm-4
         =f.label :product, class: 'sr-only'
