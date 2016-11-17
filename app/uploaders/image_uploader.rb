@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ImageUploader < BaseUploader
 
   def default_url(*args)

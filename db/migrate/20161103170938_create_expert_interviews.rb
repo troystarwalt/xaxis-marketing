@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CreateExpertInterviews < ActiveRecord::Migration[5.0]
   def change
     create_table :expert_interviews do |t|

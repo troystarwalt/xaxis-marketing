@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class PostsController < ApplicationController
   def index
     if params[:tag]

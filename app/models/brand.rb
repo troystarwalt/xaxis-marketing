@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Brand < ApplicationRecord
   has_many :brand_accessories, :dependent => :destroy
   has_many :headshots, :dependent => :destroy

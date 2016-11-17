@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register Video do
   menu parent: "Platforms"
   permit_params :name, :description, :direct_link, :embed_link, :image_preview, :platform_id

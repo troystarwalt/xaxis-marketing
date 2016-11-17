@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CaseStudiesController < ApplicationController
   def index
     if params[:platform_id]

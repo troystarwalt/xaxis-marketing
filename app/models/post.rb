@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Post < ApplicationRecord
   validates :title, :text, presence: true
   validate :tag_must_be_approved

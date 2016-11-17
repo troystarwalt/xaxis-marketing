@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BaseUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   if Rails.env.production?

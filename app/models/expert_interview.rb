@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ExpertInterview < ApplicationRecord
   mount_uploader :image, ExpertInterviewImageUploader
   self.per_page = 8

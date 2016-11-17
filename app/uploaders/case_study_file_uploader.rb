@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CaseStudyFileUploader < BaseUploader
   after :store, :get_text_from_file
 

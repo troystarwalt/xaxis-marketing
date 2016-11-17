@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 CarrierWave.configure do |config|
 
   # Use local storage if in development or test

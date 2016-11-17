@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BrandsController < InheritedResources::Base
   require 'zip'
   actions :index, :show   # This tells InheritedResources to only use index and show.

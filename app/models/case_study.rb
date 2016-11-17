@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CaseStudy < ApplicationRecord
   include PgSearch
   belongs_to :platform
