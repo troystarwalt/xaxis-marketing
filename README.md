@@ -22,6 +22,7 @@ We have a couple of tools to monitor performance for the app.
 ```
 Bullet # This keeps our N+1 queries to a minimum. You can view the logs in log/bullet.log
 NewRelic # The dashboard is at /newrelic This is an all around tool to monitor performance of page loads and database calls. We are on a free app from Troy's account.
+Rubocop # Looks at code and checks for style and errors.
 ```
 
 ## Future To Do

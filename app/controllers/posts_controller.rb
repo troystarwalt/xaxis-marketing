@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.friendly.find(params[:id])
     if Rails.env.development?
-      puts "the facebook link will error out in development"
+      puts 'the facebook link will error out in development'
     end
     if request.path != post_path(@post)
       return redirect_to @post, :status => :moved_permanently
@@ -42,11 +42,11 @@ class PostsController < ApplicationController
 
   def main
   # There is a SQL query in post.rb that is more effecient...
-    views = {BrandAccessory.name => "box_brandaccessory",
-            CaseStudy.name => "box_casestudy",
-            Logo.name => "box_logo",
-            Infographic.name => "box_infographic",
-            Video.name => "box_video"}
+    views = {BrandAccessory.name => 'box_brandaccessory',
+            CaseStudy.name => 'box_casestudy',
+            Logo.name => 'box_logo',
+            Infographic.name => 'box_infographic',
+            Video.name => 'box_video'}
     latest_model = collect_resources
 
     @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
@@ -58,6 +58,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :text, :tag_list, :author)
   end
@@ -70,8 +71,7 @@ class PostsController < ApplicationController
     # Map over each of the models and put those that have data into the clean array.
     models.map { |q| if q.any? then models_with_data << q end }
     # Take those models_with_data and order them all by created_at.
-    latest_models = models_with_data.map { |x| x.order("created_at").last  }
-
+    latest_models = models_with_data.map { |x| x.order('created_at').last  }
     sorted_models = latest_models.sort_by{ |x| x.created_at }
     sorted_models.last
   end

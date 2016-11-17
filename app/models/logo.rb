@@ -18,5 +18,4 @@ class Logo < ApplicationRecord
     end
   end
 
-
 end

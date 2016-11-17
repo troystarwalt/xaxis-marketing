@@ -20,10 +20,10 @@ class ApplicationController < ActionController::Base
   end
 
   def get_our_brands
-    @xaxis = set_our_brands("xaxis")
-    @light_reaction = set_our_brands("light-reaction")
-    @plista = set_our_brands("plista")
-    @triad = set_our_brands("triad")
+    @xaxis = set_our_brands('xaxis')
+    @light_reaction = set_our_brands('light-reaction')
+    @plista = set_our_brands('plista')
+    @triad = set_our_brands('triad')
   end
 
   def catch_not_found
@@ -35,9 +35,9 @@ class ApplicationController < ActionController::Base
   end
 
   def get_our_platforms
-    @spotlight = set_our_platforms("spotlight")
-    @turbine = set_our_platforms("turbine")
-    @xanadu = set_our_platforms("xanadu")
+    @spotlight = set_our_platforms('spotlight')
+    @turbine = set_our_platforms('turbine')
+    @xanadu = set_our_platforms('xanadu')
   end
 
 end

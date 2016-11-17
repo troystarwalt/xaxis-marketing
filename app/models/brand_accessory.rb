@@ -6,5 +6,4 @@ class BrandAccessory < ApplicationRecord
   CATEGORIES = %w[ppt_template word_template font guidelines logo capability palette facts]
   validates :category, inclusion: { in: CATEGORIES }
   scope :has_category, -> (category) { where(category: category)}
-
 end

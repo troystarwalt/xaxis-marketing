@@ -6,7 +6,6 @@ class CaseStudiesController < ApplicationController
       @platform = Platform.friendly.find(params[:platform_id])
     else
       @case_studies = CaseStudy.includes(:platform).paginate(page: params[:page])
-
     end
     @platforms = Platform.all
   end

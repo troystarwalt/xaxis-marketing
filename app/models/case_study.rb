@@ -40,6 +40,7 @@ class CaseStudy < ApplicationRecord
   end
 
   private
+  
   def capitalize_tags
     self.industry_list = self.industry_list.map{|industry| industry.capitalize}.join(',')
   end

@@ -7,7 +7,7 @@ module ApplicationHelper
 
   # This allows us to highlight active links.
   def cp(path)
-    "active-sub-link" if request.url.include?(path)
+    'active-sub-link' if request.url.include?(path)
   end
 
   def render_developer_note
