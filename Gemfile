@@ -40,6 +40,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rubocop', '~> 0.45.0', require: false
 end
 
 group :development do

@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   end
 
   def main
+  # There is a SQL query in post.rb that is more effecient...
     views = {BrandAccessory.name => "box_brandaccessory",
             CaseStudy.name => "box_casestudy",
             Logo.name => "box_logo",
@@ -69,7 +70,7 @@ class PostsController < ApplicationController
     models.map { |q| if q.any? then models_with_data << q end }
     # Take those models_with_data and order them all by created_at.
     latest_models = models_with_data.map { |x| x.order("created_at").last  }
-  
+
     sorted_models = latest_models.sort_by{ |x| x.created_at }
     sorted_models.last
   end
