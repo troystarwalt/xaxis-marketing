@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 class LogoUploader < BaseUploader
 
   def default_url(*args)
-    random = ["xaxis", "lr", "turbine", "plista", "triad"]
+    random = ['xaxis', 'lr', 'turbine', 'plista', 'triad']
     "https://robohash.org/#{random.sample}.png?size=200x200"
   end
 
@@ -17,5 +18,5 @@ class LogoUploader < BaseUploader
   def extension_whitelist
     %w(png eps)
   end
-  
+
 end

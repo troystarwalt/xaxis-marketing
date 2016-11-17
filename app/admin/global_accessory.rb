@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register GlobalAccessory do
   # This is where admmins can add global accessories. These do not belong to a specific brand or platform.
   # Base categories include:

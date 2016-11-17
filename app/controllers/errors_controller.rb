@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ErrorsController < ApplicationController
   def four_oh_four
   end

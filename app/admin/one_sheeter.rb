@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register OneSheeter do
 menu parent: "Platforms"
 permit_params :name, :file, :platform_id

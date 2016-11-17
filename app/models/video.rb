@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Video < ApplicationRecord
   # include ActiveAdmin::Callbacks
   # define_active_admin_callbacks :save

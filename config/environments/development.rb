@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -36,14 +37,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
+    address: 'smtp.sendgrid.net',
     port: 587,
-    domain: "jesus.com",
-    # domain: "xaxis-internal.herokuapp.com",
-    authentication: "plain",
+    domain: 'jesus.com',
+    # domain: 'xaxis-internal.herokuapp.com',
+    authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV["SENDGRID_USERNAME"],
-    password: ENV["SENDGRID_PASSWORD"]
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD']
   }
 
   config.i18n.fallbacks = [:en]
@@ -73,7 +74,5 @@ Rails.application.configure do
   Bullet.enable = true
   Bullet.bullet_logger = true
   Bullet.add_footer = true
-end
-
-
+  end
 end

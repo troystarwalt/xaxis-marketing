@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BrandsController < InheritedResources::Base
   require 'zip'
   actions :index, :show   # This tells InheritedResources to only use index and show.
@@ -5,7 +6,7 @@ class BrandsController < InheritedResources::Base
   def index
     # Not using index for anything at this time.
     @brands = Brand.all
-    brand = Brand.find_by!(:name => "Xaxis")
+    brand = Brand.find_by!(:name => 'Xaxis')
     redirect_to brand_path(brand.id)
   end
 
@@ -13,14 +14,12 @@ class BrandsController < InheritedResources::Base
     @brand = Brand.friendly.find(params[:id])
     @brands = Brand.all
     @headshots = Headshot.where(brand_id: @brand.id)
-    image_bank_check = GlobalAccessory.where(category: "image_bank").present?
+    image_bank_check = GlobalAccessory.where(category: 'image_bank').present?
     if image_bank_check.present? && !image_bank_check.nil?
-      @image_bank = GlobalAccessory.where(category: "image_bank").last.file_url
+      @image_bank = GlobalAccessory.where(category: 'image_bank').last.file_url
     end
 
-    # group = @brand.brand_accessories.where(category: ["guidelines", "logo", "palette", "font"])
-
-    @group = BrandAccessory.where(category: ["guidelines", "logo", "palette", "font"], brand_id: @brand.id)
+    @group = BrandAccessory.where(category: ['guidelines', 'logo', 'palette', 'font'], brand_id: @brand.id)
 
     respond_to do |format|
       format.html
@@ -40,6 +39,7 @@ class BrandsController < InheritedResources::Base
   end
 
   private
+
     def brand_params
       params.require(:brand).permit(:name)
     end

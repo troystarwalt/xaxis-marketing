@@ -2,7 +2,7 @@ class CaseStudyFileUploader < BaseUploader
   after :store, :get_text_from_file
 
   def default_url(*args)
-    random = ["xaxis", "lr", "turbine", "plista", "triad"]
+    random = ['xaxis', 'lr', 'turbine', 'plista', 'triad']
     "https://robohash.org/#{random.sample}.png?size=200x200"
   end
 
@@ -18,6 +18,5 @@ class CaseStudyFileUploader < BaseUploader
     end
     self.model.update(searchable_pdf_text: text)
   end
-
 
 end

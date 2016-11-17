@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Platform < ApplicationRecord
   has_many :logos, dependent: :destroy
   has_many :videos, dependent: :destroy

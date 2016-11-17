@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BaseUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   if Rails.env.production?
@@ -21,6 +22,7 @@ class BaseUploader < CarrierWave::Uploader::Base
 
 
   protected
+  
     def secure_token(length=16)
       var = :"@#{mounted_as}_secure_token"
       model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))

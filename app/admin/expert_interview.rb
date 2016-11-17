@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register ExpertInterview do
   menu label:  "Interview Hub"
   permit_params :name, :category, :file, :brand_id

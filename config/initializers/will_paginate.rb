@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'will_paginate/view_helpers/action_view'
 
 module WillPaginate

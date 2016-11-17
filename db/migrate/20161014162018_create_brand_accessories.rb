@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CreateBrandAccessories < ActiveRecord::Migration[5.0]
   def change
     create_table :brand_accessories do |t|

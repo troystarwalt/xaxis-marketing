@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Headshot < ApplicationRecord
   belongs_to :brand
   mount_uploader :image, HeadshotsUploader

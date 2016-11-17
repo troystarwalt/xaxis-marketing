@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Logo < ApplicationRecord
   belongs_to :platform
   mount_uploader :file, LogoUploader
@@ -16,6 +17,5 @@ class Logo < ApplicationRecord
       self.file_size = file.file.size
     end
   end
-
 
 end

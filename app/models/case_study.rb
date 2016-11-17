@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CaseStudy < ApplicationRecord
   include PgSearch
   belongs_to :platform
@@ -39,6 +40,7 @@ class CaseStudy < ApplicationRecord
   end
 
   private
+  
   def capitalize_tags
     self.industry_list = self.industry_list.map{|industry| industry.capitalize}.join(',')
   end
