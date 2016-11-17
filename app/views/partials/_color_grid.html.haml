@@ -1,7 +1,10 @@
 .flex-container
   .flex-column
     .flex-sm-item.left-top#grid-box-1
-      = render partial: "partials/top_left/#{@view_this_box}"
+      - if @view_this_box.nil? && @most_recent_update.nil?
+        = render partial: "partials/top_left/box_no_updates"
+      - else
+        = render partial: "partials/top_left/#{@view_this_box}"
     .flex-lg-item.left-bottom#grid-box-2
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
         %span Utilities

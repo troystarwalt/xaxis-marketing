@@ -61,8 +61,15 @@ class PostsController < ApplicationController
   end
 
   def collect_resources
+    # Set which models we want to feature.
     models = [BrandAccessory, CaseStudy, Logo, Infographic, Video]
-    latest_models = models.map { |x| x.order("created_at").last }
+    # Create an empty array to store the models that have records.
+    models_with_data = []
+    # Map over each of the models and put those that have data into the clean array.
+    models.map { |q| if q.any? then models_with_data << q end }
+    # Take those models_with_data and order them all by created_at.
+    latest_models = models_with_data.map { |x| x.order("created_at").last  }
+  
     sorted_models = latest_models.sort_by{ |x| x.created_at }
     sorted_models.last
   end
