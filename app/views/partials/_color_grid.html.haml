@@ -1,99 +1,80 @@
 .flex-container
   .flex-column
     .flex-sm-item.left-top#grid-box-1
-      - if @view_this_box.nil? && @most_recent_update.nil?
-        = render partial: "partials/top_left/box_no_updates"
-      - else
-        = render partial: "partials/top_left/#{@view_this_box}"
-    .flex-lg-item.left-bottom#grid-box-2
+      %h1.larger-content-header.color-grid-text Welcome to the Xaxis Marketing Hub
+      %p This internal site houses all your marketing needs such as brand assets and gudielines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
+    .flex-lg-item.left-bottom#grid-box-4
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
-        %span Utilities
+        %span Platform
         %span.vertical-bar|
-        %span Calculator
-        %span.vertical-bar|
-        %span 11/14/2016
-      %h1.larger-content-header.color-grid-text 2016 U.S. Programmatic Media Buying Calculator
+        %span Assets
+      %h1.larger-content-header.color-grid-text Need a case study, a logo or an infographic?
       = image_tag "bulb.svg", alt: "Light Bulb", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "value calculator", value_calculator_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "platform assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
   .flex-column
-    .flex-sm-item.center-top#grid-box-3
+    .flex-sm-item.center-top#grid-box-2
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
               %span Utilities
               %span.vertical-bar|
-              %span Hub
-              %span.vertical-bar|
-              %span 11/14/2016
+              %span Calculator
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text 2016 Presentation Hub
+            %h1.content-header.color-grid-text 2016 U.S. Programmatic Media Buying Calculator
           .col-sm-4
             .grid-img
               = image_tag "boxy.svg", alt: "Box in Box", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "Presentation Hub", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.center-middle#grid-box-4
+        =link_to "value calculator", value_calculator_path, class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.center-middle#grid-box-5
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
               %span platform
               %span.vertical-bar|
-              %span Turbine
-              %span.vertical-bar|
-              %span 11/14/2017
+              %span Case Studies
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Turbine: Latest Infographics and Case Studies
+            %h1.content-header.color-grid-text Latest Case Studies
           .col-sm-4
             .grid-img
               = image_tag "pencil.svg", alt: "Pencil", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "turbine assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.center-bottom#grid-box-5
+        =link_to "case studies", case_studies_path, class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.center-bottom#grid-box-6
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span platforms
+              %span Utilities
               %span.vertical-bar|
-              %span all
+              %span 101 Series
               %span.vertical-bar|
               %span 10/01/2016
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Need a case study, a logo or an infographic?
+            %h1.content-header.color-grid-text Programmatic 101 Series
           .col-sm-4
             .grid-img
               = image_tag "beaker.svg", alt: "Beaker", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "Platfrom Assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
+        =link_to "101 Series", "https://xaxis.hs-sites.com/101-series", class: "text-uppercase btn color-grid-btn"
   .flex-column
-    .flex-lg-item.right-top#grid-box-6
+    .flex-lg-item.right-top#grid-box-3
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
         %span Utilities
         %span.vertical-bar|
-        %span 101
-        %span.vertical-bar|
-        %span 10/01/2016
-      %h1.larger-content-header.color-grid-text Programmatic 101 Series
+        %span Presentation Hub
+      %p.color-grid-text The Xaxis Presentation Hub is home to all your presentation needs. This section includes up to date presentation tempaltes as well as capabiltiy decks for Xaxis, Light Reaction, plista, and Triad!
       = image_tag "arrow.svg", alt: "Updated Template", class: "svg-img  hidden-sm-down"
       .link-container
-        =link_to "101 Series", "https://xaxis.hs-sites.com/101-series", target: "_blank", class: "text-uppercase btn color-grid-btn"
+        =link_to "Presentation Hub", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
     .flex-sm-item.right-bottom#grid-box-7
-      .grid-content-container
-        .row
-          .col-lg-12
-            %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span Latest Xaxis News
-        .row
-          .col-sm-8
-            %h1.content-header.color-grid-text Get all of your Xaxis.com news here.
-          .col-sm-4
-            .grid-img
-              = image_tag "touch_screen.svg", alt: "Touch Screen", class: "svg-img  hidden-sm-down"
-      .link-container
-        =link_to "Latest Xaxis News", "https://www.xaxis.com/news", target: "_blank", class: "text-uppercase btn color-grid-btn"
+      - if @view_this_box.nil? && @most_recent_update.nil?
+        = render partial: "partials/bottom_left/box_no_updates"
+      - else
+        = render partial: "partials/bottom_left/#{@view_this_box}"

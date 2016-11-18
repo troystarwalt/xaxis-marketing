@@ -43,6 +43,7 @@ group :development, :test do
   # get a debugger console
   gem 'byebug', platform: :mri
   gem 'rubocop', '~> 0.45.0', require: false
+  gem 'traceroute'
 end
 
 group :development do

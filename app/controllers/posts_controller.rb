@@ -19,27 +19,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    @post = Post.new
-  end
-
-  def create
-    @post = Post.new(post_params)
-    respond_to do |format|
-      if @post.save
-        format.js { render 'posts/create' }
-        format.html { redirect_to root_path }
-      else
-        format.js { render 'posts/new' }
-        format.html { render 'posts/new' }
-        puts @post.errors.messages
-      end
-    end
-  end
-
-  def destroy
-  end
-
   def main
   # There is a SQL query in post.rb that is more effecient...
     views = {BrandAccessory.name => 'box_brandaccessory',
