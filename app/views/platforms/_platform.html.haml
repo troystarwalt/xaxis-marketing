@@ -4,7 +4,7 @@
       %h1.text-uppercase
         %i.fa.fa-bomb.fa-lg
         = @platform.slug
-      %p#learn-more Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis au
+      %p#learn-more= platform_description.html_safe
       - if @platform.one_sheeters.present?
         = link_to "download one-sheeter", @platform.one_sheeters.last.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn"
       - else
