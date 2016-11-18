@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :posts
+  resources :posts, only: [:show, :index, :main]
   get 'tags/:tag', to: 'posts#index', as: :tag
   root :to => 'posts#main'
 
