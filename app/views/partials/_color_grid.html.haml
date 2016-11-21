@@ -2,7 +2,9 @@
   .flex-column
     .flex-sm-item.left-top#grid-box-1
       %h1.larger-content-header.color-grid-text Welcome to the Xaxis Marketing Hub
-      %p This internal site houses all your marketing needs such as brand assets and gudielines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
+      %p This internal site houses all your marketing needs such as brand assets and gudielines, up to date presentation templates, sales collateral and much more. Don't see what you need? Click below.
+      .link-container
+        =link_to "project request", "https://goo.gl/forms/Yq45BuNDKQJxAxiK2", class: "text-uppercase btn color-grid-btn"
     .flex-lg-item.left-bottom#grid-box-4
       %p.text-uppercase.content-text.content-text-sub.color-grid-text
         %span Platform
