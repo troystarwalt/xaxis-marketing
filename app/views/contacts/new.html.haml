@@ -1,0 +1,11 @@
+#feedback-form
+  .container
+    %h1 Feedback
+    %p Have something to say? Let us know below.
+    = simple_form_for @contact, html: { class: 'form-horizontal'}, wrapper: :vertical_form, wrapper_mappings: { radio_buttons: :vertical_radio_and_checkboxes} do |f|
+      = f.error_notification
+      = f.input :name, placeholder: 'Bruce Campbell', required: false
+      = f.input :email, placeholder: 'you@xaxis.com (if you want us to contact you)', required: false
+      = f.input :message, placeholder: "Provide feedback here.", required: true
+      = f.input :rating, collection: 1..5, hint: "<i>Rate the site! (5 being awesome)</i>".html_safe, as: :radio_buttons, wrapper_html: { class: "radio-area" }, required: true
+      = f.button :submit, "Send Feedback", class: "brand-btn-primary xaxis-btn-primary feedback-btn"

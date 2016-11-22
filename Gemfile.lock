@@ -430,6 +430,9 @@ GEM
     sendgrid-ruby (4.0.6)
       ruby_http_client (~> 3.0.0)
     sexp_processor (4.7.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
@@ -510,6 +513,7 @@ DEPENDENCIES
   sassc-rails!
   select2-rails
   sendgrid-ruby
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   traceroute

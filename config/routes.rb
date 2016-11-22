@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
 
+  resources :contacts, only: [:new, :create]
+
   get 'value-calculator' => "landing_pages#value_calculator", as: :value_calculator
   get 'expert-interview-hub' => "landing_pages#expert_interview_hub", as: :expert_interview_hub
 
