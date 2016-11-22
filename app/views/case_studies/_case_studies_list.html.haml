@@ -2,7 +2,7 @@
   -if @case_studies.any?
     %ul.case_studies_list
       - if params[:platform_id] || action_name != 'index'
-        - @case_studies.last(10).each do |case_study|
+        - @case_studies.order(created_at: :desc).last(10).each do |case_study|
           = render partial: 'case_study_item', locals: {case_study: case_study}
       - else
         - @case_studies.where(platform_id: platform.id).last(3).each do |case_study|
