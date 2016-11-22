@@ -77,6 +77,6 @@
         =link_to "Presentation Hub", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
     .flex-sm-item.right-bottom#grid-box-7
       - if @view_this_box.nil? && @most_recent_update.nil?
-        = render partial: "partials/bottom_left/box_no_updates"
+        = render partial: "partials/bottom_right/box_no_updates"
       - else
-        = render partial: "partials/bottom_left/#{@view_this_box}"
+        = render partial: "partials/bottom_right/#{@view_this_box}"
