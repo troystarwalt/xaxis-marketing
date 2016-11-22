@@ -22,6 +22,7 @@
 en:
   hello: "Hello world"
   news: "News"
+  feedback: "Feedback"
   active_admin:
     our_welcome:
       welcome: "Welcome to the dashboard."

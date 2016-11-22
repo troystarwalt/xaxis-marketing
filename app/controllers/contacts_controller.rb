@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         puts "saved"
+        FeedbackNotifierMailer.send_feedback_form(@contact).deliver
         format.html { redirect_to(root_path, notice: 'Feedback sent!')}
         format.json { render json: @contact, status: :creatd, location: @contact}
       else

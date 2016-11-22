@@ -1,0 +1,9 @@
+%h1 We just received a feedback form.
+%p You can see this form under the admin panel on the site.
+- byebug
+=link_to "Admin Panel", admin_contact_url(@contact)
+%ul#email_response
+  %li= @contact.name
+  %li= @contact.email
+  %li= @contact.message
+  %li= @contact.rating
