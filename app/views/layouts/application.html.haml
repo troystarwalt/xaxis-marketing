@@ -3,6 +3,8 @@
   = render partial: "html_header"
   %body{class: "#{controller_name} #{action_name}"}
     = render partial: "nav"
+    .container
+      = flash_messages
     = yield
     = render partial: "footer"
     = Gon::Base.render_data({})
