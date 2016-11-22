@@ -9,15 +9,15 @@
         = link_to "download one-sheeter", @platform.one_sheeters.last.file_url, class: "brand-btn-primary xaxis-btn-primary main-download-btn"
       - else
         %p Sorry, no one-sheeter available for download.
-    %hr
-    .section#platform-videos
+    %hr.platform-asset-hr
+    .section#platform-videos.clearfix
       = render partial: "videos", locals: { platform: @platform }
-    %hr
-    .section#platform-case-study
+    %hr.platform-asset-hr.reduce-hr-top
+    .section#platform-case-study.clearfix
       = render partial: "case_studies", locals: { platform: @platform, casestudy: @case_studies }
-    %hr
-    .section#platform-infographics
+    %hr.platform-asset-hr
+    .section#platform-infographics.clearfix
       = render partial: "infographics", locals: { platform: @platform }
-    %hr
+    %hr.platform-asset-hr.reduce-hr-top
     .section#platform-logo
       = render partial: "logos", locals: { platform: @platform }

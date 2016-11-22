@@ -22,7 +22,7 @@ $(document).ready( function () {
 $('.platforms').ready(function() {
   if (window.location.href.indexOf("platforms/") > -1) {
     $(window).scroll(function(){
-      $("#side-nav").css("top",Math.max(375,980-$(this).scrollTop()));
+      $("#side-nav").css("top",Math.max(375,1175-$(this).scrollTop()));
     });
   }
 });
