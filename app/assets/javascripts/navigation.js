@@ -25,6 +25,16 @@ $('.platforms').ready(function() {
       $("#side-nav").css("top",Math.max(375,1175-$(this).scrollTop()));
     });
   }
+  if (document.referrer.includes("platforms") && window.scrollY === 0) {
+    goToScroll('learn-more');
+  }
 });
 
 // used to be 375, 700 with the smaller cards
+
+function goToScroll(id) {
+  id = id.replace("link", "");
+  $('html, body').animate({
+    scrollTop: $("#"+id).offset().top-170}, 'slow');
+    console.log($("#"+id).offset().top);
+}
