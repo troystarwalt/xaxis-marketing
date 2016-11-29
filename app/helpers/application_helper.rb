@@ -4,10 +4,11 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
-  # This allows us to highlight active links.
-  def cp(path)
-    'active-sub-link' if request.url.include?(path)
-  end
+  # This allows us to highlight active links. IE cp = current path
+  # def cp(path)
+  #   'active-sub-link' if request.url.include?("/" + path)
+  #   byebug
+  # end
 
   def render_developer_note
     return '' unless !Rails.env.production?

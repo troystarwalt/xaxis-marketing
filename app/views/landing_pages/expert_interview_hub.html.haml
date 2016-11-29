@@ -11,54 +11,57 @@
     %img.logo-img{:src => asset_path("landing_pages/expert_interview_hub/play-arrow.png")}/
     %h1.text-xs-center Expert Interview Hub
 .container
-  %main
-    %section.main-video
-      .col-xs-12.card
-        .col-sm-10.offset-sm-1.col-xs-12.card-body
-          .card-image
-            .video
-              %a.video-link{"data-target" => "#myModal", "data-title" => @main_video.title, "data-toggle" => "modal", "data-video-url" => @main_video.vimeo_url}
-                =image_tag @main_video.image.url, class: 'img-responsive'
-                .video-overlay
-          .row
-            .col-xs-12.col-sm-10.offset-sm-1.card-text
-              .col-sm-4.col-xs-12.contributor-text
-                %p.contributor
-                  Contributor:
-                %p.contributor-name
-                  =@main_video.contributor_name
-                %p.contributor-title
-                  =@main_video.contributor_title
-              .col-sm-8.col-xs-12
-                .about-text
-                  %p.description-header
-                    =@main_video.title
-                  %p.description-text
-                    =@main_video.description
-    %section
-      - @rest_of_videos.each do |video|
-        .col-sm-6.col-xs-12.small-card
-          .small-card-image
-            .video
-              %a.video-link{"data-target" => "#myModal", "data-title" => video.title, "data-toggle" => "modal", "data-video-url" => video.vimeo_url}
-                =image_tag video.image.url, class: 'img-responsive'
-                .video-overlay
-          .small-card-body
+  - if !@main_video.nil? && !@rest_of_videos.nil?
+    %main
+      %section.main-video
+        .col-xs-12.card
+          .col-sm-10.offset-sm-1.col-xs-12.card-body
+            .card-image
+              .video
+                %a.video-link{"data-target" => "#myModal", "data-title" => @main_video.title, "data-toggle" => "modal", "data-video-url" => @main_video.vimeo_url}
+                  =image_tag @main_video.image.url, class: 'img-responsive'
+                  .video-overlay
             .row
-              .col-xs-10.offset-xs-1
-                .contributor-text
+              .col-xs-12.col-sm-10.offset-sm-1.card-text
+                .col-sm-4.col-xs-12.contributor-text
                   %p.contributor
                     Contributor:
                   %p.contributor-name
-                    =video.contributor_name
+                    =@main_video.contributor_name
                   %p.contributor-title
-                    =video.contributor_title
-                .about-text
-                  %p.description-header
-                    =video.title
-                  %p.description-text
-                    =video.description
-  = will_paginate @rest_of_videos, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+                    =@main_video.contributor_title
+                .col-sm-8.col-xs-12
+                  .about-text
+                    %p.description-header
+                      =@main_video.title
+                    %p.description-text
+                      =@main_video.description
+      %section
+        - @rest_of_videos.each do |video|
+          .col-sm-6.col-xs-12.small-card
+            .small-card-image
+              .video
+                %a.video-link{"data-target" => "#myModal", "data-title" => video.title, "data-toggle" => "modal", "data-video-url" => video.vimeo_url}
+                  =image_tag video.image.url, class: 'img-responsive'
+                  .video-overlay
+            .small-card-body
+              .row
+                .col-xs-10.offset-xs-1
+                  .contributor-text
+                    %p.contributor
+                      Contributor:
+                    %p.contributor-name
+                      =video.contributor_name
+                    %p.contributor-title
+                      =video.contributor_title
+                  .about-text
+                    %p.description-header
+                      =video.title
+                    %p.description-text
+                      =video.description
+    = will_paginate @rest_of_videos, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+  - else
+    %p.not-yet No Videos Yet!
 #myModal.modal.fade{:role => "dialog", :tabindex => "-1"}
   .modal-dialog.modal-lg{:role => "document"}
     .modal-content

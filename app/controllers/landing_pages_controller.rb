@@ -9,8 +9,9 @@ class LandingPagesController < ApplicationController
   def expert_interview_hub
     @javascript_file_overwrite_name = 'landing_pages/expert_interview_hub.js'
     @css_files_overwrite = 'landing_pages/expert_interview_hub'
-    @main_video = ExpertInterview.last
-    @rest_of_videos = ExpertInterview.where.not(id: @main_video.id).reverse.paginate(page: params[:page])
+    if ExpertInterview.any?
+      @main_video = ExpertInterview.last
+      @rest_of_videos = ExpertInterview.where.not(id: @main_video.id).reverse.paginate(page: params[:page])
+    end
   end
-
 end
