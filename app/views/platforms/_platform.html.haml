@@ -1,7 +1,7 @@
 .col-md-7.offset-md-1.col-sm-12
   .platform-assets-container
     .section#platform-one-sheeter
-      %h1.text-uppercase
+      %h1.text-uppercase{id: "#{@platform.slug}"}
         %i.fa.fa-bomb.fa-lg
         = @platform.slug
       %p#learn-more= platform_description.html_safe
