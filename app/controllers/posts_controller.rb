@@ -21,9 +21,8 @@ class PostsController < ApplicationController
 
   def main
   # There is a SQL query in post.rb that is more effecient...
-    views = {BrandAccessory.name => 'box_brandaccessory',
+    views = {OneSheeter.name => 'box_onesheeter',
             CaseStudy.name => 'box_casestudy',
-            Logo.name => 'box_logo',
             Infographic.name => 'box_infographic',
             Video.name => 'box_video'}
     latest_model = collect_resources
@@ -44,7 +43,7 @@ class PostsController < ApplicationController
 
   def collect_resources
     # Set which models we want to feature.
-    models = [BrandAccessory, CaseStudy, Logo, Infographic, Video]
+    models = [OneSheeter, CaseStudy, Infographic, Video]
     # Create an empty array to store the models that have records.
     models_with_data = []
     # Map over each of the models and put those that have data into the clean array.

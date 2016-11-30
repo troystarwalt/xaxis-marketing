@@ -36,5 +36,4 @@ function goToScroll(id) {
   id = id.replace("link", "");
   $('html, body').delay(2000).animate({
     scrollTop: $("#"+id).offset().top-170}, 'slow');
-    console.log($("#"+id).offset().top);
 }
