@@ -20,7 +20,7 @@ $('.posts.main').ready(function(){
       setClickedElementStyles(this);
       setTimeout(function(){
         cycle_posts = true;
-      }, 10000);
+      }, 20000);
     });
   }
 

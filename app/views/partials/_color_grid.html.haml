@@ -13,12 +13,23 @@
       %h1.larger-content-header.color-grid-text Xaxis Platforms
       %dl.color-grid-text#quick-links
         %dd Quick Links:
-        %dt
-          Turbine Case Study
-          %span New
-        %dt Tubine Videos
+        - @four_most_recent_updates.each do |q|
+          - classname = q.class.name
+          - case classname
+          - when 'CaseStudy'
+            =link_to platform_case_studies_path(q.platform.slug) do
+              %dt
+                = q.platform.name
+                = q.class.name
+          - when 'OneSheeter', 'Infographic', 'Video'
+            =link_to platform_path(q.platform.slug, anchor: "platform_#{q.class.name.downcase}") do
+              %dt
+                = q.platform.name
+                = q.class.name
+          - else
+            %dt
       .large-grid-icon-container
-        = image_tag "platforms_icon.png", alt: "Light Bulb", class: "grid-icon img-fluid hidden-sm-down"
+        = image_tag "platforms_icon.png", alt: "Platform Icon", class: "grid-icon img-fluid hidden-sm-down"
       .link-container
         =link_to "enter", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
   .flex-column
@@ -78,10 +89,9 @@
               %span latest update
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text= @latest_post.title
-            %p.color-grid-text= @latest_post.text.truncate_words(10)
+            =link_to post_path(@latest_post) do
+              %h1.content-header.color-grid-text= @latest_post.title
+              %p.color-grid-text= @latest_post.text.truncate_words(10)
           .col-sm-4
             .grid-icon-container
               = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid hidden-sm-down"
-      .link-container
-        =link_to "enter", post_path(@latest_post), class: "text-uppercase btn color-grid-btn"

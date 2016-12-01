@@ -1,6 +1,6 @@
 .col-md-7.offset-md-1.col-sm-12
   .platform-assets-container
-    .section#platform-one-sheeter
+    .section#platform_onesheeter
       %h1.text-uppercase{id: "#{@platform.slug}"}
         %i.fa.fa-bomb.fa-lg
         = @platform.slug
@@ -10,14 +10,14 @@
       - else
         %p Sorry, no one-sheeter available for download.
     %hr.platform-asset-hr
-    .section#platform-videos.clearfix
+    .section#platform_video.clearfix
       = render partial: "videos", locals: { platform: @platform }
     %hr.platform-asset-hr.reduce-hr-top
-    .section#platform-case-study.clearfix
+    .section#platform_casestudy.clearfix
       = render partial: "case_studies", locals: { platform: @platform, casestudy: @case_studies }
     %hr.platform-asset-hr
-    .section#platform-infographics.clearfix
+    .section#platform_infographic.clearfix
       = render partial: "infographics", locals: { platform: @platform }
     %hr.platform-asset-hr.reduce-hr-top
-    .section#platform-logo
+    .section#platform_logo
       = render partial: "logos", locals: { platform: @platform }
