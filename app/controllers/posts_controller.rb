@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
     @most_recent_update = latest_model
     @posts = Post.includes(:tags).last(5)
+    @latest_post = Post.last
     @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}

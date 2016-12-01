@@ -75,14 +75,13 @@
         .row
           .col-lg-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span platform
-              %span.vertical-bar|
-              %span Case Studies
+              %span latest update
         .row
           .col-sm-8
-            %h1.content-header.color-grid-text Latest Case Studies
+            %h1.content-header.color-grid-text= @latest_post.title
+            %p.color-grid-text= @latest_post.text.truncate_words(10)
           .col-sm-4
             .grid-icon-container
-              = image_tag "updates_icon.png", alt: "Pencil", class: "grid-icon img-fluid hidden-sm-down"
+              = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid hidden-sm-down"
       .link-container
-        =link_to "enter", case_studies_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "enter", post_path(@latest_post), class: "text-uppercase btn color-grid-btn"
