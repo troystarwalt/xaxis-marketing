@@ -10,18 +10,18 @@
       height: 33.33%
       padding: 40px
       position: relative
-      .grid-content-container
-        .svg-img
-          max-width: 120%
-          display: block
-          height: auto
     .flex-lg-item
       height: 66.66%
       padding: 40px
       position: relative
-      img
-        margin: 0 auto
-        display: block
+
+.grid-icon-container
+  .grid-icon
+
+.large-grid-icon-container
+  width: 75%
+  margin: 0 auto
+  margin-top: 40px
 
 .link-container
   width: 100%
@@ -41,9 +41,13 @@
 .color-grid-text, .color-grid-text > span, .link-container > a
   color: $white
 
-.color-grid-text
-  span
-    letter-spacing: 2px
+.color-grid-category-text
+  font-size: .7em
+  letter-spacing: 2px
+  font-family: gotham-book
+
+  #quick-links
+    margin-top: 20px
 
 .left-top
   background: $xaxis-light-yellow
@@ -91,6 +95,9 @@
     .flex-column
       width: 100%
       min-height: 450px
+  .large-grid-icon-container
+    width: 50%
+    margin-bottom: 40px
 
 @media (max-width: 767px)
   .flex-container
