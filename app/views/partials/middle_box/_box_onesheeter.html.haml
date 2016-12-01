@@ -1,0 +1,16 @@
+.grid-content-container
+  .row
+    .col-lg-12
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span= @most_recent_update.platform.name
+        %span.vertical-bar|
+        %span= @most_recent_update.class.name
+        %span.vertical-bar|
+        %span= @most_recent_update.pretty_date
+  .row
+    .col-sm-5
+      .grid-icon-container
+        = image_tag "leadership_icon.png", alt: "Eka", class: "grid-icon img-fluid hidden-sm-down"
+    .col-sm-7
+      =link_to platform_path(@most_recent_update.platform.slug, anchor: "platform_onesheeter") do
+        %h1.content-header.color-grid-text= @most_recent_update.name.titleize

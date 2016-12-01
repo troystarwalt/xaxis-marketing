@@ -1,6 +1,6 @@
 .row.col-xs-12
   -if @case_studies.any?
-    %ul.case_studies_list
+    %ul.case_studies_list#case_study_ul
       - if params[:platform_id] || action_name != 'index'
         - @case_studies.order(created_at: :desc).last(10).each do |case_study|
           = render partial: 'case_study_item', locals: {case_study: case_study}

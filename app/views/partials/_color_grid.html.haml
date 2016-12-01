@@ -2,81 +2,96 @@
   .flex-column
     .flex-sm-item.left-top#grid-box-1
       %h1.larger-content-header.color-grid-text Welcome to the Xaxis Marketing Hub
-      %p This internal site houses all your marketing needs such as brand assets and gudielines, up to date presentation templates, sales collateral and much more. Don't see what you need? Click below.
-      .link-container
-        =link_to "project request", "https://goo.gl/forms/Yq45BuNDKQJxAxiK2", class: "text-uppercase btn color-grid-btn"
+      %p Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
     .flex-lg-item.left-bottom#grid-box-4
-      %p.text-uppercase.content-text.content-text-sub.color-grid-text
-        %span Platform
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span turbine
         %span.vertical-bar|
-        %span Assets
-      %h1.larger-content-header.color-grid-text Need a case study, a logo or an infographic?
-      = image_tag "bulb.svg", alt: "Light Bulb", class: "svg-img  hidden-sm-down"
+        %span spotlight
+        %span.vertical-bar|
+        %span xanadu
+      %h1.larger-content-header.color-grid-text Xaxis Platforms
+      %dl.color-grid-text#quick-links
+        %dd Quick Links:
+        - @four_most_recent_updates.each do |q|
+          - classname = q.class.name
+          - case classname
+          - when 'CaseStudy'
+            =link_to platform_case_studies_path(q.platform.slug) do
+              %dt
+                = q.platform.name
+                = q.class.name
+          - when 'OneSheeter', 'Infographic', 'Video'
+            =link_to platform_path(q.platform.slug, anchor: "platform_#{q.class.name.downcase}") do
+              %dt
+                = q.platform.name
+                = q.class.name
+          - else
+            %dt
+      .large-grid-icon-container
+        = image_tag "platforms_icon.png", alt: "Platform Icon", class: "grid-icon img-fluid hidden-sm-down"
       .link-container
-        =link_to "platform assets", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
+        =link_to "enter", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
   .flex-column
     .flex-sm-item.center-top#grid-box-2
       .grid-content-container
         .row
           .col-lg-12
-            %p.text-uppercase.content-text.content-text-sub.color-grid-text
+            %p.text-uppercase.color-grid-category-text.color-grid-text
               %span Utilities
               %span.vertical-bar|
-              %span Calculator
+              %span Value Calculator
         .row
-          .col-sm-8
-            %h1.content-header.color-grid-text 2016 U.S. Programmatic Media Buying Calculator
-          .col-sm-4
-            .grid-img
-              = image_tag "boxy.svg", alt: "Box in Box", class: "svg-img  hidden-sm-down"
+          .col-sm-7
+            %h1.content-header.color-grid-text 2016 Xaxis Media Buying Calculator
+          .col-sm-5
+            .grid-icon-container
+              = image_tag "values_calc_icon.png", alt: "Box in Box", class: "grid-icon img-fluid hidden-sm-down"
       .link-container
-        =link_to "value calculator", value_calculator_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "enter", value_calculator_path, class: "text-uppercase btn color-grid-btn"
     .flex-sm-item.center-middle#grid-box-5
-      .grid-content-container
-        .row
-          .col-lg-12
-            %p.text-uppercase.content-text.content-text-sub.color-grid-text
-              %span platform
-              %span.vertical-bar|
-              %span Case Studies
-        .row
-          .col-sm-8
-            %h1.content-header.color-grid-text Latest Case Studies
-          .col-sm-4
-            .grid-img
-              = image_tag "pencil.svg", alt: "Pencil", class: "svg-img  hidden-sm-down"
-      .link-container
-        =link_to "case studies", case_studies_path, class: "text-uppercase btn color-grid-btn"
+      - if @view_this_box.nil? && @most_recent_update.nil?
+        = render partial: "partials/middle_box/box_no_updates"
+      - else
+        = render partial: "partials/middle_box/#{@view_this_box}"
     .flex-sm-item.center-bottom#grid-box-6
       .grid-content-container
         .row
           .col-lg-12
-            %p.text-uppercase.content-text.content-text-sub.color-grid-text
+            %p.text-uppercase.color-grid-category-text.color-grid-text
               %span Utilities
               %span.vertical-bar|
               %span 101 Series
-              %span.vertical-bar|
-              %span 10/01/2016
         .row
-          .col-sm-8
-            %h1.content-header.color-grid-text Programmatic 101 Series
-          .col-sm-4
-            .grid-img
-              = image_tag "beaker.svg", alt: "Beaker", class: "svg-img  hidden-sm-down"
+          .col-sm-7
+            %h1.content-header.color-grid-text 101 Series
+          .col-sm-5
+            .grid-icon-container
+              = image_tag "101_icon.png", alt: "Beaker", class: "grid-icon img-fluid  hidden-sm-down"
       .link-container
-        =link_to "101 Series", "https://xaxis.hs-sites.com/101-series", class: "text-uppercase btn color-grid-btn", target: "_blank"
+        =link_to "enter", "https://xaxis.hs-sites.com/101-series", class: "text-uppercase btn color-grid-btn", target: "_blank"
   .flex-column
     .flex-lg-item.right-top#grid-box-3
-      %p.text-uppercase.content-text.content-text-sub.color-grid-text
+      %p.text-uppercase.color-grid-category-text.color-grid-text
         %span Utilities
         %span.vertical-bar|
         %span Presentation Hub
       %p.color-grid-text The Xaxis Presentation Hub is home to all your presentation needs. This section includes up to date presentation tempaltes as well as capabiltiy decks for Xaxis, Light Reaction, plista, and Triad!
-      = image_tag "arrow.svg", alt: "Updated Template", class: "svg-img  hidden-sm-down"
+      .large-grid-icon-container
+        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid hidden-sm-down"
       .link-container
-        =link_to "Presentation Hub", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "enter", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
     .flex-sm-item.right-bottom#grid-box-7
-      - if @view_this_box.nil? && @most_recent_update.nil?
-        = render partial: "partials/bottom_right/box_no_updates"
-      - else
-        = render partial: "partials/bottom_right/#{@view_this_box}"
+      .grid-content-container
+        .row
+          .col-lg-12
+            %p.text-uppercase.color-grid-category-text.color-grid-text
+              %span latest update
+        .row
+          .col-sm-8
+            =link_to post_path(@latest_post) do
+              %h1.content-header.color-grid-text= @latest_post.title
+              %p.color-grid-text= @latest_post.text.truncate_words(10)
+          .col-sm-4
+            .grid-icon-container
+              = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid hidden-sm-down"

@@ -5,7 +5,7 @@
     .col-sm-6
       .platform-card
         .platform-preview-image
-          =image_tag video.image_preview_url, class: "card-img-top img-fluid", alt: video.name
+          =image_tag video.image_preview_url, class: "card-img-top img-fluid", alt: video.name if !video.image_preview.file.nil?
           .card-img-overlay.text-xs-center
             =link_to "Play", 'javascript:void(0)''', class: "platform-overlay-link platform-play-video text-uppercase", id: "#{video.name.parameterize}", data: { index: index }
             %br
