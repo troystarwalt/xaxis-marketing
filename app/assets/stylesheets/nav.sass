@@ -5,17 +5,30 @@ nav.navbar
   margin-right: 2em
   padding-top: .8em
   padding-bottom: .6em
-
+//
 .nav
   .nav-link
     text-transform: uppercase
-    padding: 40px 15px 19px 15px
+    padding: 20px 15px 19px 15px
     color: $nav-black !important
     font-size: .7rem
     letter-spacing: 1px
     .fa-search
       color: #C0C0C0
       font-size: 1rem
+
+.dropdown-toggle::after
+  font-family: FontAwesome
+  content: "\f078"
+  border: none
+  vertical-align: baseline
+
+.dropdown.open
+  .dropdown-toggle::after
+    font-family: FontAwesome
+    content: "\f077"
+    border: none
+    vertical-align: baseline
 
 @media (max-width: 767px)
   nav
