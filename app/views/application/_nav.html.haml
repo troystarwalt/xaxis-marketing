@@ -1,13 +1,32 @@
-%nav.navbar.navbar-fixed-top.navbar-light.bg-faded
+%nav.navbar.navbar-fixed-top.navbar-light
   .container
     %button.navbar-toggler.hidden-md-up.pull-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
       ☰
     =link_to root_path, class: "navbar-brand" do
       =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), id: "navbar-logo"
     #collapse-this-navbar.collapse.navbar-toggleable-sm
-      .nav.navbar-nav
-        - if @bring_me_to_xaxis.present?
-          =link_to "Brand Assets", brand_path(@bring_me_to_xaxis), class: "nav-item nav-link"
-        =link_to "Presentation Hub", presentation_hub_path, class: "nav-item nav-link"
-        - if @bring_me_to_turbine.present?
-          =link_to "Platforms", platform_path(@bring_me_to_turbine), class: "nav-item nav-link"
+      %ul.nav.navbar-nav
+        %li.nav-item.nav-link.dropdown
+          =link_to "Brand Assets", brand_path(@bring_me_to_xaxis), class: "nav-item nav-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Xaxis", brand_path(@xaxis), class: "dropdown-item"
+            =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
+            =link_to "plista", brand_path(@plista), class: "dropdown-item"
+            =link_to "Triad", brand_path(@triad), class: "dropdown-item"
+        %li.nav-item.nav-link.dropdown
+          =link_to "Platform Assets", platform_path(@bring_me_to_turbine), class: "nav-item nav-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Turbine", platform_path(@turbine), class: "dropdown-item"
+            =link_to "Spotlight", platform_path(@spotlight), class: "dropdown-item"
+            =link_to "Xanadu", platform_path(@xanadu), class: "dropdown-item"
+            =link_to "Case Studies", case_studies_path, class: "dropdown-item"
+        %li.nav-item.nav-link.dropdown
+          =link_to "Learning", expert_interview_hub_url, class: "nav-item nav-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
+            =link_to "101 Series", "https://xaxis.hs-sites.com/101-series", class: "dropdown-item"
+        %li.nav-item.nav-link.dropdown
+          =link_to "Landing Pages", "http://xaxis.hs-sites.com/", class: "nav-item nav-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Presentation Hub", presentation_hub_url, class: "dropdown-item"
+            =link_to "Values Calculator", value_calculator_url, class: "dropdown-item"
