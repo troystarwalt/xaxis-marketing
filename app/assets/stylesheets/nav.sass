@@ -5,17 +5,21 @@ nav.navbar
   margin-right: 2em
   padding-top: .8em
   padding-bottom: .6em
-//
-.nav
-  .nav-link
-    text-transform: uppercase
-    padding: 20px 15px 19px 15px
-    color: $nav-black !important
-    font-size: .7rem
-    letter-spacing: 1px
-    .fa-search
-      color: #C0C0C0
-      font-size: 1rem
+
+#collapse-this-navbar
+  .nav
+    .nav-item
+      padding: 29px 0
+      margin-right: 50px
+      font-family: gotham-book
+      .nav-link
+        text-transform: uppercase
+        color: $nav-black !important
+        font-size: .7rem
+        letter-spacing: 1px
+        .fa-search
+          color: #C0C0C0
+          font-size: 1rem
 
 .dropdown-toggle::after
   font-family: FontAwesome
@@ -30,6 +34,20 @@ nav.navbar
     border: none
     vertical-align: baseline
 
+.dropdown-menu
+  text-transform: capitalize
+  background: $white
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12)
+  border: 1px solid $lightest-grey
+  border-top: 3px solid $xaxis-blue-color
+  top: 63%
+  .dropdown-item
+    &:hover
+      color: $xaxis-blue-color
+      font-family: gotham-medium
+      background-color: $white
+      border-bottom: 1px dashed $xaxis-deep-green
+
 @media (max-width: 767px)
   nav
     .container
@@ -40,5 +58,33 @@ nav.navbar
     text-align: center
     .nav
       padding-top: 107px
-      .nav-link
-        padding: 10px
+      .nav-item
+        padding: 29px 0
+        margin-right: 0
+        .nav-link
+          padding: 0
+  .dropdown-menu
+    position: static
+    float: none
+    text-align: center
+
+// Before the menu collapses and after the screen is too small for wide buttons
+@media (min-width: 768px) and (max-width: 992px)
+  #collapse-this-navbar
+    .nav
+      .nav-item
+        margin-right: 50px
+        .nav-link
+          text-transform: uppercase
+          color: $nav-black !important
+          font-size: .7rem
+          letter-spacing: 1px
+
+  #collapse-this-navbar
+    ul
+      li:last-child
+        margin-right: 0 !important
+
+@media (min-width: 768px) and (max-width: 885px)
+  .dropdown-menu.last-menu-child
+    left: -20px
