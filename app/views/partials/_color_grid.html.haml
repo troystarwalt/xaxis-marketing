@@ -1,7 +1,7 @@
 .flex-container
   .flex-column
     .flex-sm-item.left-top#grid-box-1
-      %h1.larger-content-header.color-grid-text Welcome to the Xaxis Marketing Hub
+      %h1.lg-item-header.color-grid-text Welcome to the Xaxis Marketing Hub
       %p Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
     .flex-lg-item.left-bottom#grid-box-4
       %p.text-uppercase.color-grid-category-text.color-grid-text
@@ -10,7 +10,7 @@
         %span spotlight
         %span.vertical-bar|
         %span xanadu
-      %h1.larger-content-header.color-grid-text Xaxis Platforms
+      %h1.lg-item-header.color-grid-text Xaxis Platforms
       %dl.color-grid-text#quick-links
         %dd Quick Links:
         - @four_most_recent_updates.each do |q|
@@ -43,7 +43,7 @@
               %span Value Calculator
         .row
           .col-sm-7
-            %h1.content-header.color-grid-text 2016 Xaxis Media Buying Calculator
+            %h1.sm-item-header.color-grid-text 2016 Xaxis Media Buying Calculator
           .col-sm-5
             .grid-icon-container
               = image_tag "values_calc_icon.png", alt: "Box in Box", class: "grid-icon img-fluid hidden-sm-down"
@@ -64,7 +64,7 @@
               %span 101 Series
         .row
           .col-sm-7
-            %h1.content-header.color-grid-text 101 Series
+            %h1.sm-item-header.color-grid-text 101 Series
           .col-sm-5
             .grid-icon-container
               = image_tag "101_icon.png", alt: "Beaker", class: "grid-icon img-fluid  hidden-sm-down"
@@ -76,7 +76,7 @@
         %span Brand Assets
         %span.vertical-bar|
         %span Templates
-      %h1.content-header.color-grid-text The Presentation Hub
+      %h1.lg-item-header.color-grid-text The Presentation Hub
       %p.color-grid-text Download brand templates for powerpoint, word and more.
       .large-grid-icon-container
         = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid hidden-sm-down"
@@ -91,7 +91,7 @@
         .row
           .col-sm-8
             =link_to post_path(@latest_post) do
-              %h1.content-header.color-grid-text= @latest_post.title
+              %h1.sm-item-header.color-grid-text= @latest_post.title
               %p.color-grid-text= @latest_post.text.truncate_words(10)
           .col-sm-4
             .grid-icon-container
