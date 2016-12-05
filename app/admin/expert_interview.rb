@@ -5,7 +5,7 @@ ActiveAdmin.register ExpertInterview do
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs "Create a New Brand Accessory" do
+    f.inputs "Create a Expert Interview" do
       f.input :vimeo_url
       f.input :contributor_name
       f.input :contributor_title

@@ -34,6 +34,6 @@ $('.platforms').ready(function() {
 
 function goToScroll(id) {
   id = id.replace("link", "");
-  $('html, body').delay(2000).animate({
-    scrollTop: $("#"+id).offset().top-170}, 'slow');
+  $('html, body').animate({
+    scrollTop: $("#"+id).offset().top-170}, 'fast');
 }
