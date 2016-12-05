@@ -2,12 +2,27 @@
 ActiveAdmin.register Brand do
   permit_params :name
 
+  config.filters = false
+
   sidebar :brand, only: :show do
     ul do
       li brand.name
-      li 'Created on #{brand.pretty_date}'
+      li "Created on #{brand.pretty_date}"
     end
   end
+
+  index do
+    selectable_column
+    column :name
+    column :created_at
+    column :updated_at
+    actions
+  end
+  #
+  # index as: :grid do |brand|
+  #   link_to brand.name, admin_brand_path(brand)
+  # end
+
 
   controller do
     def find_resource
@@ -58,7 +73,7 @@ ActiveAdmin.register Brand do
       end
     end
 
-    panel 'Logo' do
+    panel 'All Logos' do
       table_for brand.brand_accessories.where(category: 'logo') do
         column :name
         column :file, &:file_url

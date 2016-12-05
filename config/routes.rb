@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'value-calculator' => "landing_pages#value_calculator", as: :value_calculator
   get 'expert-interview-hub' => "landing_pages#expert_interview_hub", as: :expert_interview_hub
+  get '101-series' => "landing_pages#one_oh_one_series", as: :one_oh_one_series
 
 
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub

@@ -11,5 +11,4 @@ class ExpertInterviewImageUploader < BaseUploader
   def extension_whitelist
     %w(png jpeg jpg)
   end
-
 end

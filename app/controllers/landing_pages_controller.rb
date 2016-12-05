@@ -14,4 +14,10 @@ class LandingPagesController < ApplicationController
       @rest_of_videos = ExpertInterview.where.not(id: @main_video.id).reverse.paginate(page: params[:page])
     end
   end
+
+  def one_oh_one_series
+    if OneOhOne.any?
+      @one_oh_ones = OneOhOne.all
+    end
+  end
 end

@@ -3,6 +3,10 @@ ActiveAdmin.register BrandAccessory do
 
   menu parent: "Brands"
 
+  filter :brand
+  filter :category, as: :select
+  filter :name
+
   # This is where admmins can add the accessories for each brand. This includes:
   # ppt_template
   # word_template
@@ -14,7 +18,6 @@ ActiveAdmin.register BrandAccessory do
   # fast facts
 
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
-
 
   permit_params :name, :category, :file, :brand_id
 
@@ -31,7 +34,6 @@ ActiveAdmin.register BrandAccessory do
 
   index do
     selectable_column
-    id_column
     column :name
     column :category
     column :brand_id do |f|
@@ -47,7 +49,9 @@ ActiveAdmin.register BrandAccessory do
 
   show do
     attributes_table do
-      row :id
+      row :brand do |f|
+        f.brand.name
+      end
       row :name
       row :category
       row :created_at
