@@ -47,7 +47,7 @@
           .col-sm-5
             .grid-icon-container
               = image_tag "values_calc_icon.png", alt: "Box in Box", class: "grid-icon img-fluid hidden-sm-down"
-      .link-container
+      .link-container.link-container-left
         =link_to "enter", value_calculator_path, class: "text-uppercase btn color-grid-btn"
     .flex-sm-item.center-middle#grid-box-5
       - if @view_this_box.nil? && @most_recent_update.nil?
@@ -68,15 +68,16 @@
           .col-sm-5
             .grid-icon-container
               = image_tag "101_icon.png", alt: "Beaker", class: "grid-icon img-fluid  hidden-sm-down"
-      .link-container
+      .link-container.link-container-left
         =link_to "enter", "https://xaxis.hs-sites.com/101-series", class: "text-uppercase btn color-grid-btn", target: "_blank"
   .flex-column
     .flex-lg-item.right-top#grid-box-3
       %p.text-uppercase.color-grid-category-text.color-grid-text
-        %span Utilities
+        %span Brand Assets
         %span.vertical-bar|
-        %span Presentation Hub
-      %p.color-grid-text The Xaxis Presentation Hub is home to all your presentation needs. This section includes up to date presentation tempaltes as well as capabiltiy decks for Xaxis, Light Reaction, plista, and Triad!
+        %span Templates
+      %h1.content-header.color-grid-text The Presentation Hub
+      %p.color-grid-text Download brand templates for powerpoint, word and more.
       .large-grid-icon-container
         = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid hidden-sm-down"
       .link-container

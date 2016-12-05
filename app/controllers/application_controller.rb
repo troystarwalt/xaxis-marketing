@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :set_asset_path
+  # before_action :set_asset_path
   before_action :get_our_platforms
   before_action :get_our_brands
   rescue_from ActionController::RoutingError,
@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
               ActiveRecord::RecordNotFound,
               with: :catch_not_found
 
-  def set_asset_path
-    @bring_me_to_xaxis = Brand.find_by!(name: :Xaxis).slug
-    @bring_me_to_turbine = Platform.find_by!(name: :Turbine).slug
-  end
+  # def set_asset_path
+  #   @bring_me_to_xaxis = Brand.find_by!(name: :Xaxis).slug
+  #   @bring_me_to_turbine = Platform.find_by!(name: :Turbine).slug
+  # end
 
   def set_our_brands(slug)
     Brand.find_by!(slug: slug)
