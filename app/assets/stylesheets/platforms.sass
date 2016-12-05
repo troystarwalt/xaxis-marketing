@@ -7,7 +7,8 @@
   z-index: 100
   background-size: 100%
   justify-content: space-between
-  min-height: 90vh
+  height: 85vh
+  min-height: 300px
   align-items: center
   position: relative
   #spotlight-card, #turbine-card, #xanadu-card
@@ -29,6 +30,7 @@
     &:hover
       &:before
         opacity: 1
+        background: linear-gradient(165deg, rgba(95,148,178, 1.0) 0%, rgba(95,148,178,1.0) 74%, rgba(81, 133, 165, 1.0) 74.2%, rgba(81, 133, 165,1.0) 76%, rgba(72, 124, 154, 1.0) 76.2%, rgba(72, 124, 154,1.0) 100%)
     .active-sub-link
       background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 74%, rgba(55,107,139,1.0) 74.2%, rgba(55,107,139,1.0) 76%, rgba(46,98,128,1.0) 76.2%, rgba(46,98,128,1.0) 100%)
       .card-icon
@@ -50,6 +52,7 @@
     &:hover
       &:before
         opacity: 1
+        background: linear-gradient(165deg, rgba(95,148,178, 1.0) 0%, rgba(95,148,178,1.0) 60%, rgba(81, 133, 165, 1.0) 60.2%, rgba(81, 133, 165,1.0) 62%, rgba(72, 124, 154, 1.0) 62.2%, rgba(72, 124, 154,1.0) 100%)
     .active-sub-link
       background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 60%, rgba(55,107,139,1.0) 60.2%, rgba(55,107,139,1.0) 62%, rgba(46,98,128,1.0) 62.2%, rgba(46,98,128,1.0) 100%)
       .card-icon
@@ -71,6 +74,7 @@
     &:hover
       &:before
         opacity: 1
+        background: linear-gradient(165deg, rgba(95,148,178, 1.0) 0%, rgba(95,148,178,1.0) 46%, rgba(81, 133, 165, 1.0) 46.2%, rgba(81, 133, 165,1.0) 48%, rgba(72, 124, 154, 1.0) 48.2%, rgba(72, 124, 154,1.0) 100%)
     .active-sub-link
       background: linear-gradient(165deg, rgba(69,122,152, 1.0) 0%, rgba(69,122,152,1.0) 46%, rgba(55,107,139,1.0) 46.2%, rgba(55,107,139,1.0) 48%, rgba(46,98,128,1.0) 48.2%, rgba(46,98,128,1.0) 100%)
       .card-icon
@@ -103,7 +107,7 @@
     flex-flow: column nowrap
     min-height: 100%
     justify-content: space-around
-    height: 586px
+    // height: 586px
     h2
       font-size: 1.625rem
       z-index: 103
