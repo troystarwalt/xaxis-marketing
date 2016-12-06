@@ -7,7 +7,7 @@
   .row
     = render partial: "side_nav_brands"
     - if lookup_context.find_all("brands/_#{@brand.slug}").any?
-      = render partial: @brand.slug, brand: @brand
+      = render partial: "brand", brand: @brand
     - else
       %p.col-lg-7.offset-lg-3.col-md-7.offset-md-3
         Sorry, there isn't anything here with the name,
