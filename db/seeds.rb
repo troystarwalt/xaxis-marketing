@@ -25,7 +25,8 @@ if Rails.env.development? || Rails.env.test?
     Post.create!(
       title: Faker::Book.title,
       text: Faker::Lorem.paragraph(2),
-      author: Faker::GameOfThrones.character
+      author: Faker::GameOfThrones.character,
+      image: open('publi/seedfiles/tree.jpg')
     ).tap do |post|
       post.tag_list.add Post.valid_tags.sample
       post.save

@@ -54,7 +54,7 @@ class Post < ApplicationRecord
       date: self.pretty_date,
       title: self.title,
       text: self.text,
-      img_url: self.image.url(:thumb),
+      img_url: self.image.url(:preview),
       slug: self.slug
     }
   end
