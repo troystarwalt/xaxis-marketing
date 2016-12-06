@@ -14,6 +14,10 @@ class ImageUploader < BaseUploader
     process resize_to_fit: [600, 600]
   end
 
+  version :medium, :if => :image? do
+    process resize_to_fit: [800, 800]
+  end
+
   def extension_whitelist
     %w(png jpeg jpg)
   end

@@ -2,7 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_action :set_asset_path
-  before_action :get_our_platforms
+  # before_action :get_our_platforms           ### hiding platforms
   before_action :get_our_brands
   rescue_from ActionController::RoutingError,
               ActionController::UnknownController,
@@ -30,14 +30,15 @@ class ApplicationController < ActionController::Base
     render 'errors/four_oh_four', status: 404
   end
 
-  def set_our_platforms(slug)
-    Platform.find_by!(slug: slug)
-  end
-
-  def get_our_platforms
-    @spotlight = set_our_platforms('spotlight')
-    @turbine = set_our_platforms('turbine')
-    @xanadu = set_our_platforms('xanadu')
-  end
+  # hiding platform for now
+  # def set_our_platforms(slug)
+  #   Platform.find_by!(slug: slug)
+  # end
+  #
+  # def get_our_platforms
+  #   @spotlight = set_our_platforms('spotlight')
+  #   @turbine = set_our_platforms('turbine')
+  #   @xanadu = set_our_platforms('xanadu')
+  # end
 
 end

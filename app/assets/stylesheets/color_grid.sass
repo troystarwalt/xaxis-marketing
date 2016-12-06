@@ -100,11 +100,15 @@
   #grid-box-7
     .grid-icon-container
       width: 70%
+  .large-grid-icon-container
+    width: 50%
 
 @media (min-width: 1400px) and (max-width: 1899px)
   #grid-box-7
     .grid-icon-container
       width: 75%
+  .large-grid-icon-container
+    width: 60%
 
 @media (min-width: 1200px)
   .flex-container
@@ -131,7 +135,7 @@
       width: 100%
       min-height: 450px
   .large-grid-icon-container
-    width: 50%
+    width: calc(75%/2)
     margin-bottom: 40px
 
   .grid-icon-container
@@ -150,8 +154,16 @@
           position: absolute
           bottom: 0
           left: 0
+          text-align: center
       .flex-lg-item
         min-height: 50%
         position: relative
       .content-text-sub
         height: auto
+  .right-top
+    height: 250px !important
+  .link-container
+    .color-grid-btn
+      width: 50%
+  .link-container-left
+    padding-left: 0

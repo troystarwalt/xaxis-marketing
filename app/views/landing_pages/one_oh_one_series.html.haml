@@ -19,3 +19,4 @@
             %p.text-xs-center.buttons-101
               = link_to "View as PDF", one.pdf_file.url, target: "_blank", role: "button", class: "brand-btn-primary xaxis-btn-primary button-101"
               = link_to "Download PPT", one.ppt_file.url, download: one.name, role: "button", class: "brand-btn-primary xaxis-btn-primary button-101"
+    = will_paginate @one_oh_ones, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}

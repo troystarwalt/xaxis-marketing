@@ -25,7 +25,8 @@ if Rails.env.development? || Rails.env.test?
     Post.create!(
       title: Faker::Book.title,
       text: Faker::Lorem.paragraph(2),
-      author: Faker::GameOfThrones.character
+      author: Faker::GameOfThrones.character,
+      image: open('publi/seedfiles/tree.jpg')
     ).tap do |post|
       post.tag_list.add Post.valid_tags.sample
       post.save
@@ -166,4 +167,13 @@ if Rails.env.development? || Rails.env.test?
 
   puts 'Expert Interviews Created'
   puts '<<<<<<<<<<------------ Development Database Seeded With Amazing Data ----------->>>>>>>>>>>>>'
+end
+
+if ENV["series"]
+  20.times do
+    OneOhOne.create!(name: Faker::Book.title,
+                      ppt_file: open('public/seedfiles/ppt-seed.pptx'),
+                      pdf_file: open('public/seedfiles/pdf-seed.pdf'),
+                      image_preview: open('public/seedfiles/img-seed.png'))
+  end
 end

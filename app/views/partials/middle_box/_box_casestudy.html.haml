@@ -8,9 +8,9 @@
         %span.vertical-bar|
         %span= @most_recent_update.pretty_date
   .row
-    .col-sm-5
+    .col-md-5
       .grid-icon-container
         = image_tag "leadership_icon.png", alt: "Director", class: "grid-icon img-fluid hidden-sm-down"
-    .col-sm-7
+    .col-md-7
       =link_to platform_case_studies_path(@most_recent_update.platform.slug) do
         %h1.sm-item-header.color-grid-text= @most_recent_update.title
