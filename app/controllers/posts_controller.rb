@@ -20,18 +20,21 @@ class PostsController < ApplicationController
   end
 
   def main
+
+    # The commented out lines below is for Platforms. Until we know what are doing with it, I'm
+    # commenting out the code with hope to reuse the content.
   # There is a SQL query in post.rb that is more effecient...
-    views = {OneSheeter.name => 'box_onesheeter',
-            CaseStudy.name => 'box_casestudy',
-            Infographic.name => 'box_infographic',
-            Video.name => 'box_video'}
-    latest_model = collect_latest_resource
-    four_latest_models = collect_last_four_resources
-
-    @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
-    @most_recent_update = latest_model
-
-    @four_most_recent_updates = four_latest_models
+    # views = {OneSheeter.name => 'box_onesheeter',
+    #         CaseStudy.name => 'box_casestudy',
+    #         Infographic.name => 'box_infographic',
+    #         Video.name => 'box_video'}
+    # latest_model = collect_latest_resource
+    # four_latest_models = collect_last_four_resources
+    #
+    # @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
+    # @most_recent_update = latest_model
+    #
+    # @four_most_recent_updates = four_latest_models
 
     @posts = Post.includes(:tags).last(5)
     @latest_post = Post.last
@@ -46,30 +49,30 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :tag_list, :author)
   end
+  # Unused methods as the deal with Platforms.
+  # def collect_latest_resource
+  #   # Set which models we want to feature.
+  #   models = [OneSheeter, CaseStudy, Infographic, Video]
+  #   # Create an empty array to store the models that have records.
+  #   models_with_data = []
+  #   # Map over each of the models and put those that have data into the clean array.
+  #   models.map { |q| if q.any? then models_with_data << q end }
+  #   # Take those models_with_data and order them all by created_at.
+  #   latest_models = models_with_data.map { |x| x.order('created_at').last  }
+  #   sorted_models = latest_models.sort_by{ |x| x.created_at }
+  #   sorted_models.last
+  # end
 
-  def collect_latest_resource
-    # Set which models we want to feature.
-    models = [OneSheeter, CaseStudy, Infographic, Video]
-    # Create an empty array to store the models that have records.
-    models_with_data = []
-    # Map over each of the models and put those that have data into the clean array.
-    models.map { |q| if q.any? then models_with_data << q end }
-    # Take those models_with_data and order them all by created_at.
-    latest_models = models_with_data.map { |x| x.order('created_at').last  }
-    sorted_models = latest_models.sort_by{ |x| x.created_at }
-    sorted_models.last
-  end
-
-  def collect_last_four_resources
-    # Set which models we want to feature.
-    models = [OneSheeter, CaseStudy, Infographic, Video]
-    # Create an empty array to store the models that have records.
-    models_with_data = []
-    # Map over each of the models and put those that have data into the clean array.
-    models.map { |q| if q.any? then models_with_data << q end }
-    # Take those models_with_data and order them all by created_at.
-    latest_models = models_with_data.map { |x| x.order('created_at').last  }
-    sorted_models = latest_models.sort_by{ |x| x.created_at }
-    sorted_models.last(4)
-  end
+  # def collect_last_four_resources
+  #   # Set which models we want to feature.
+  #   models = [OneSheeter, CaseStudy, Infographic, Video]
+  #   # Create an empty array to store the models that have records.
+  #   models_with_data = []
+  #   # Map over each of the models and put those that have data into the clean array.
+  #   models.map { |q| if q.any? then models_with_data << q end }
+  #   # Take those models_with_data and order them all by created_at.
+  #   latest_models = models_with_data.map { |x| x.order('created_at').last  }
+  #   sorted_models = latest_models.sort_by{ |x| x.created_at }
+  #   sorted_models.last(4)
+  # end
 end
