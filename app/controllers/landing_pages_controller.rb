@@ -17,7 +17,7 @@ class LandingPagesController < ApplicationController
 
   def one_oh_one_series
     if OneOhOne.any?
-      @one_oh_ones = OneOhOne.all
+      @one_oh_ones = OneOhOne.page(params[:page]).order('created_at ASC')
     end
   end
 end
