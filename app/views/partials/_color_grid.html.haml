@@ -12,26 +12,30 @@
         %span xanadu
       %h1.lg-item-header.color-grid-text Xaxis Platforms
       %dl.color-grid-text#quick-links
-        %dd Quick Links:
-        - @four_most_recent_updates.each do |q|
-          - classname = q.class.name
-          - case classname
-          - when 'CaseStudy'
-            =link_to platform_case_studies_path(q.platform.slug) do
-              %dt
-                = q.platform.name
-                = q.class.name
-          - when 'OneSheeter', 'Infographic', 'Video'
-            =link_to platform_path(q.platform.slug, anchor: "platform_#{q.class.name.downcase}") do
-              %dt
-                = q.platform.name
-                = q.class.name
-          - else
-            %dt
+        %dd
+          Quick Links:
+          %dt On Hold
+          %dt Until
+          %dt We know what we are doing
+        -# - @four_most_recent_updates.each do |q|
+        -#   - classname = q.class.name
+        -#   - case classname
+        -#   - when 'CaseStudy'
+        -#     =link_to platform_case_studies_path(q.platform.slug) do
+        -#       %dt
+        -#         = q.platform.name
+        -#         = q.class.name
+        -#   - when 'OneSheeter', 'Infographic', 'Video'
+        -#     =link_to platform_path(q.platform.slug, anchor: "platform_#{q.class.name.downcase}") do
+        -#       %dt
+        -#         = q.platform.name
+        -#         = q.class.name
+        -#   - else
+        -#     %dt
       .large-grid-icon-container.hidden-sm-down
         = image_tag "platforms_icon.png", alt: "Platform Icon", class: "grid-icon img-fluid"
       .link-container
-        =link_to "enter", platform_path(@turbine), class: "text-uppercase btn color-grid-btn"
+        =link_to "enter", "###", class: "text-uppercase btn color-grid-btn"
   .flex-column
     .flex-sm-item.center-top#grid-box-2
       .grid-content-container
@@ -52,6 +56,7 @@
     .flex-sm-item.center-middle#grid-box-5
       - if @view_this_box.nil? && @most_recent_update.nil?
         = render partial: "partials/middle_box/box_no_updates"
+        -# The below is for the platforms. Won't be used for now.
       - else
         = render partial: "partials/middle_box/#{@view_this_box}"
     .flex-sm-item.center-bottom#grid-box-6
