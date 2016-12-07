@@ -13,7 +13,7 @@
       - if @group.present?
         = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
     .section#assets-logo
-      %h3.text-uppercase #{@brand.name} Logos
+      %h3.text-uppercase Logos
       %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       = image_tag "brand-logos/#{@brand.slug}-logo.png", class: "img-fluid brand-assets-logo"
       - if @brand.brand_accessories.has_category("logo").present?
@@ -23,7 +23,7 @@
       = render partial: "brands/palettes/#{@brand.slug}-p"
     %hr
     .section#assets-fonts
-      %h3.text-uppercase #{@brand.name} fonts
+      %h3.text-uppercase fonts
       .row{class: "#{@brand.slug}-top" }
         .col-sm-3
           %p.font-name= get_font_name(@brand.slug, "a")
@@ -49,7 +49,7 @@
         %p No image bank available for download at this time.
     %hr
     .section#assets-ppt
-      %h3.text-uppercase #{@brand.name} powerpoint template
+      %h3.text-uppercase powerpoint template
       =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
       - if @brand.brand_accessories.has_category("ppt_template").present?
         = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
@@ -60,7 +60,7 @@
         = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
     .section#assets-facts
-      %h3.text-uppercase #{@brand.name} fast facts
+      %h3.text-uppercase fast facts
       - if @brand.brand_accessories.has_category("facts").present?
         = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
     %hr
@@ -75,3 +75,12 @@
         = render partial: "headshots", brand: @brand
       - if @headshots.blank?
         %h4 No headshots available at this time.
+-# lightbox aka modal
+.modal.fade(id="hsModal" tabindex="-1" role="dialog")
+  .modal-dialog(role="document")
+    .modal-content
+      .modal-header
+        %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
+          %span(aria-hidden="true") &times;
+      .modal-body
+        %image.hs-img{src: ''}

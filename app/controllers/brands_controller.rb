@@ -13,7 +13,8 @@ class BrandsController < InheritedResources::Base
   def show
     @brand = Brand.friendly.find(params[:id])
     @brands = Brand.all
-    @headshots = Headshot.where(brand_id: @brand.id)
+    @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority
+    gon.headshots = @headshots
     image_bank_check = GlobalAccessory.where(category: 'image_bank').present?
     if image_bank_check.present? && !image_bank_check.nil?
       @image_bank = GlobalAccessory.where(category: 'image_bank').last.file_url
