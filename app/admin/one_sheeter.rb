@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register OneSheeter do
-menu parent: "Platforms"
+menu false
 permit_params :name, :file, :platform_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

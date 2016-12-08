@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register Infographic do
-  menu parent: "Platforms"
+  menu false
   permit_params :name, :description, :image_preview, :file, :platform_id
 
   # See permitted parameters documentation:

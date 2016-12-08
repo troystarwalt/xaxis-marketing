@@ -27,7 +27,7 @@
               .single-news-text
                 %h1.content-header= post.title
                 %p.content-text
-                  = post.text
+                  = post.teaser
                 %p.readmore.hidden-sm-up= link_to 'Read More', post_path(post), class: "readmore-link"
   .more-updates-button.text-xs-right
     = link_to posts_path do

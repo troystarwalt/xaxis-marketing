@@ -36,7 +36,11 @@ class Post < ApplicationRecord
   end
 
   def teaser
-      text.truncate_words(15)
+    text.truncate_words(15)
+  end
+
+  def medium_teaser
+    text.truncate_words(40)
   end
 
   def long_teaser
