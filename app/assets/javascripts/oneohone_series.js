@@ -1,5 +1,5 @@
 // Check for page load and ready.
-$(document).ready(function () {
+$('.one_oh_one_series').ready(function () {
   setMinHeight();
   // Check for window resize and set the minHeight
   $(window).resize(function () {

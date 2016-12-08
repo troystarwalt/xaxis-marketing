@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register CaseStudy do
-
+menu false
   permit_params :title, :pdf_attachment, :platform_id, :author, :release_date, :short_description, :industry_list, region_list: []
 
   form :html => { :multipart => true } do |f|

@@ -41,7 +41,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs "New Post" do
       f.input :title
-      f.input :text
+      f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link."
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
       f.input :image, as: :file, label: "Main Image"
       f.input :tag_list,

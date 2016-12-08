@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register Logo do
-  menu parent: 'Platforms'
+  menu false
   permit_params :name, :file, :platform_id
   batch_action :destroy, confirm: 'Are you sure??'
 

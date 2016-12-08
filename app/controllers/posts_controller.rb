@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
+  helper_method :sort_button, :sort_direction
+
   def index
     if params[:tag]
       @posts =  Post.tagged_with(params[:tag]).paginate(page: params[:page])
     else
-      @posts = Post.paginate(page: params[:page])
+      @posts = Post.paginate(page: params[:page]).order(sort_button + ' ' + sort_direction)
     end
     @all_tags = Post.tag_counts.pluck(:name)
   end
@@ -75,4 +77,14 @@ class PostsController < ApplicationController
   #   sorted_models = latest_models.sort_by{ |x| x.created_at }
   #   sorted_models.last(4)
   # end
+
+  private
+
+  def sort_button
+    Post.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : "desc"
+  end
 end
