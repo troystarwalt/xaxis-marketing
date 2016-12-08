@@ -1,41 +1,49 @@
 #one_oh_one_series
-  margin: 80px 0 50px 0
+  background: $xaxis-light-green
+  padding: 60px 0
+  margin-bottom: 80px
+
+#one_oh_one_title
+  margin-bottom: 30px
+  text-align: center
+  color: $more-lightest-grey
+  font-family: gotham-thin
 
 .one-oh-one-series-intro
-  margin-bottom: 60px
-
-.boxer
-  margin-bottom: 20px
+  padding: 0 60px
 
 .image-preview-101
   margin-bottom: 10px
+  &:hover
+    -webkit-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5);
+    -moz-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5);
+    box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
 
 .single-101-container
-  padding-bottom: 100%
-  margin-bottom: -100%
+  // min-height: 300px
+  position: relative
+  margin-bottom: 60px
 
 .buttons-101
-  // position: absolute
-  // bottom: 0
-  // left: 50%
-  // transform: translateX(-50%)
-  // width: 100%
-  // display: inline-block
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  width: 100%
 
-.button-101
-  min-width: 148px
-
-
+.keep-centered
+  a:last-child
+    margin-left: 10px
 
 @media (min-width: 544px) and (max-width: 1199px)
   .buttons-101 > a:last-child
     margin-top: 10px
 
-@media (min-width: 768px)
+@media (min-width: 992px)
   .one-oh-one-series-row > div:nth-child(3n+1)
     clear: left
 
-@media (min-width:544px) and (max-width: 767px)
+@media (min-width:544px) and (max-width: 991px)
   .one-oh-one-series-row > div:nth-child(2n+3)
     clear: left
 

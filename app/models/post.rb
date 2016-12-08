@@ -28,7 +28,7 @@ class Post < ApplicationRecord
   end
 
   def day_only
-    created_at.to_date.strftime("%m")
+    created_at.to_date.strftime("%d")
   end
 
   def month_year_only
