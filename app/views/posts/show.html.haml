@@ -17,7 +17,7 @@
             Contributor: Xaxis Marketing
           %p.news-text= @post.text
           .news-image
-            =image_tag(@post.image.medium.file.exists? ? @post.image.url(:medium) : @post.image.url(:preview), class: "img-fluid")
+            =image_tag(@post.image.url(:preview), class: "img-fluid")
       .col-sm-3.hidden-xs-down
         .news-sidebar
           .categories-sidebar-box
