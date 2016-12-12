@@ -1,13 +1,29 @@
 $('.color-card-top').on('click', function () {
   var background_color = $(this).css('background-color');
-  const $og_bg_c = $('#assets-color-palette').css('background-color');
-  console.log("clicked card");
-  $('#assets-color-palette').css('background-color', background_color);
-  delayColor($og_bg_c);
+  var white = "#FFF"
+  $('.color-change-content').css('background-color', background_color);
+  $('#color_change').css('display', 'block');
+  countDown();
 })
 
-function delayColor(cv) {
-    window.setTimeout(function(){
-      $('#assets-color-palette').css('background-color', cv);},
-      2000);
+function countDown() {
+  var timer = setInterval(function() {
+    var count = parseInt($('.color-counter').html());
+    if (count !==0) {
+      $('.color-counter').html(count -1);
+    }
+    else {
+      clearInterval(timer);
+      clearColor();
+      $('.color-counter').text(4);
+    }
+  }, 1000);
+}
+
+function clearColor() {
+  $('#color_change').css('display', 'none');
 };
+
+$('.color-close').on('click', function() {
+  $('#color_change').css('display', 'none');
+});
