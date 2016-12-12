@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.friendly.find(params[:id])
+    @all_tags = Post.tag_counts.pluck(:name)
     if Rails.env.development?
       puts 'the facebook link will error out in development'
     end

@@ -18,7 +18,7 @@
           %p.news-text= @post.text.html_safe
           .news-image
             =image_tag(@post.image.url(:preview), class: "img-fluid")
-        = link_to :back do
+        = link_to :back, class: "btn-back" do
           %i.fa.fa-arrow-left
           Back
       .col-sm-3.hidden-xs-down
@@ -28,8 +28,8 @@
               .categories-header.sidebar-header-title
                 Categories
             %ul.sidebar-list.category-list
-              -Platform.all.each do |platform|
-                %li.sidebar-list-item.category-list-item=link_to platform.name, "#"
+              -@all_tags.each do |tag|
+                %li.sidebar-list-item.category-list-item=link_to tag, tag_path(tag.downcase)
           .news-archives-sidebar
             .archives-container
               .sidebar-header.archives-header-box

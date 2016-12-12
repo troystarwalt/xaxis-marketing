@@ -15,11 +15,9 @@ function setMinHeight() {
     function(el) {
       return el.clientHeight;
     });
-    console.log(elementHeights);
 
     var maxHeight = Math.max.apply(null, elementHeights)
     Array.prototype.forEach.call(changeHeight, function(el) {
-      el.style.minHeight = (maxHeight + 30) + "px";
+      el.style.minHeight = (maxHeight + 35) + "px";
     });
-    console.log("resized");
 }

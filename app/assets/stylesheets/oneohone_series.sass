@@ -14,10 +14,22 @@
 
 .image-preview-101
   margin-bottom: 10px
+  -webkit-transition: all .5s
+  -moz-transition: all .5s
+  -o-transition: all .5s
+  transition: all .5s
   &:hover
-    -webkit-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5);
-    -moz-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5);
-    box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
+    -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
+    -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
+    -moz-transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+    transform: scale(1.05)
+    //
+    // -webkit-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
+    // -moz-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
+    // box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
+
 
 .single-101-container
   // min-height: 300px

@@ -96,7 +96,7 @@
         .row
           .col-sm-8
             =link_to post_path(@latest_post) do
-              %h1.sm-item-header.color-grid-text= @latest_post.title
+              %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(10)
               %p.color-grid-text= @latest_post.text.truncate_words(10)
           .col-sm-4
             .grid-icon-container.hidden-sm-down

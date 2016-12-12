@@ -120,8 +120,6 @@
   margin-left: .6em
   opacity: .5
 
-
-
 .posts.show
   .post-container
     margin-top: 80px
@@ -136,16 +134,18 @@
         font-family: 'Gotham-Medium'
         font-size: 24px
         color: $xaxis-darkest-blue
-        margin-bottom: 15px
+        margin-bottom: 10px
+        margin-top: 20px
       .news-contributor
         font-family: 'Gotham-BookItalic'
         font-size: 10px
         color: $redishblack
-        margin: 20px 0
+        margin: 10px 0 20px 0
       .news-text
         font-family: 'Gotham-Light'
         font-size: 14px
         color: $xaxis-darkest-blue
+        line-height: 22px
       .news-image
         width: 100%
   .related-news
@@ -162,12 +162,14 @@
       color: $white
       font-family: 'Gotham-Medium'
       font-size: 14px
+      text-transform: uppercase
   .sidebar-list
     padding-left: 0
     list-style-type: none
     .sidebar-list-item
       font-family: 'Gotham-Light'
       font-size: 11px
+      margin-top: 5px
       a
         color: $gray
         &:visited
@@ -186,10 +188,13 @@
   width: 49px
   height: auto
   padding: 13px
+  &:hover
+    background: $xaxis-blue-color
 
 .share-btn-facebook
   width: 43px
   padding: 15px
+
 
 @media (max-width: 767px)
   #news-container.section-container
