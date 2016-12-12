@@ -31,9 +31,43 @@ $('.platforms').ready(function() {
 });
 
 // used to be 375, 700 with the smaller cards
+$('#brands').ready(function() {
 
-function goToScroll(id) {
-  id = id.replace("link", "");
-  $('html, body').animate({
-    scrollTop: $("#"+id).offset().top-170}, 'fast');
-}
+  function goToScroll(id) {
+    id = id.replace("link", "");
+    $('html, body').animate({
+      scrollTop: $("#"+id).offset().top-170}, 'fast');
+    }
+    $(function() {
+      $.fn.scrollBottom = function() {
+        return $(document).height() - this.scrollTop() - this.height();
+      };
+
+      var $el = $('#side-nav');
+      var $window = $(window);
+      var top = $el.parent().position().top;
+
+      $window.bind("scroll resize", function() {
+        var gap = $window.height() - $el.height() - 180;
+        var visibleFoot = 360 - $window.scrollBottom();
+        var scrollTop = $window.scrollTop()
+
+        if (scrollTop < top - 30) {
+          $el.css({
+            top: (top - scrollTop) + "px",
+            bottom: "auto"
+          });
+        } else if (visibleFoot > gap) {
+          $el.css({
+            top: "auto",
+            bottom: visibleFoot + "px"
+          });
+        } else {
+          $el.css({
+            top: 190,
+            bottom: "auto"
+          });
+        }
+      }).scroll();
+    });
+  });
