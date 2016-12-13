@@ -1,7 +1,3 @@
-// $('.headshot-image').on("click", function() {
-//   $('#hs_lightbox_window').toggleClass('closed');
-//   e.preventDefault();
-// })
 $(document).ready(function(){
   $('.headshot-image').on('click', function (e){
     var index = $(this).data('index');
