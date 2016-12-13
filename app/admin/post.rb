@@ -2,7 +2,7 @@
 ActiveAdmin.register Post do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  menu priority: 2, label: proc { I18n.t "news"}
+  menu priority: 2, label: proc { I18n.t "post"}
 
   permit_params :title, :text, :author, :image, :tag_list
 
@@ -21,7 +21,9 @@ ActiveAdmin.register Post do
       selectable_column
       id_column
       column :title
-      column :text
+      column :text do |f|
+        f.medium_teaser
+      end
       column :author
       column :tag_list
       column :image do |f|
@@ -40,13 +42,15 @@ ActiveAdmin.register Post do
 
   form do |f|
     f.inputs "New Post" do
-      f.input :title
-      f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link."
+      f.input :title, label: "Title of Post", placeholder: "Ex: Xaxis Christmas Party is at 10 AM on July 8th."
+      f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link.", hint: "Example: <a href='www.google.com'>Google</a>"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
-      f.input :image, as: :file, label: "Main Image"
+      f.input :image, as: :file, label: "Image", input_html: {data: {type: 'png'}}, hint: "Maximum 5mb"
       f.input :tag_list,
         as: :radio,
-        multiple: :true,
+        label: "Tag",
+        multiple: :false,
+        hint: "Choose 1",
         collection: Post.valid_tags
     end
     f.actions

@@ -27,8 +27,9 @@ ActiveAdmin.register BrandAccessory do
       f.input :brand, as: :radio
       f.input :category, as: :radio, :collection => BrandAccessory::CATEGORIES
       f.input :name, label: "Name The File"
-      f.input :file
+      f.input :file, input_html: {data: {type: 'ppt'}}, hint: "Max size is 100mb."
     end
+    para "Max upload, as noted is 100mb, but that's mainly for PPT's. Don't get greedy!"
     f.actions
   end
 

@@ -4,4 +4,8 @@ class GlobalAccessory < ApplicationRecord
     mount_uploader :file, FileUploader
     CATEGORIES = %w[image_bank generic]
     validates :category, inclusion: { in: CATEGORIES }
+    validates :file,
+      :file_size => {
+        :maximum => 300.megabytes.to_i
+      }
 end

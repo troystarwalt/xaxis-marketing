@@ -1,7 +1,12 @@
 # frozen_string_literal: true
+# require 'file_size_validator'
 class Post < ApplicationRecord
   validates :title, :text, presence: true
   validate :tag_must_be_approved
+  validates :image,
+    :file_size => {
+      :maximum => 5.megabytes.to_i
+    }
   mount_uploader :image, ImageUploader
   acts_as_taggable
   scope :tagged_by, -> (category){where(tags: {name: category})}
