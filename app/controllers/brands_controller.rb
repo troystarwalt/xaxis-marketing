@@ -12,6 +12,7 @@ class BrandsController < InheritedResources::Base
 
   def show
     @brand = Brand.friendly.find(params[:id])
+    @brand_for_content = @brand.slug.gsub('-','').to_sym
     @brands = Brand.all
     @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority
     gon.headshots = @headshots
