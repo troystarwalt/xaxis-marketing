@@ -10,9 +10,9 @@ form :html => { :multipart => true } do |f|
   f.semantic_errors *f.object.errors.keys
   f.inputs "Create New 101 Series" do
     f.input :name, label: "101 Series Name", placeholder: "ex: Programmatic 101"
-    f.input :ppt_file, as: :file
-    f.input :pdf_file, as: :file
-    f.input :image_preview, as: :file
+    f.input :ppt_file, as: :file, input_html: {data: {type: 'ppt'}}, hint: "Max size of 100mb."
+    f.input :pdf_file, as: :file, input_html: {data: {type: 'pdf'}}, hint: "Max size of 5mb."
+    f.input :image_preview, as: :file, input_html: {data: {type: 'png'}}, hint: "Max size of 5mb."
   end
   f.actions
 end

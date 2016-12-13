@@ -12,11 +12,11 @@ ActiveAdmin.register GlobalAccessory do
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
-    para "This is for stuff that doesn't belong to just one brand or platform."
+    para "This is for assets that doesn't belong to just one brand or platform."
     f.inputs "Create a New Global Accessory" do
       f.input :category, as: :radio, :collection => GlobalAccessory::CATEGORIES
       f.input :name, placeholder: "This is for our use."
-      f.input :file
+      f.input :file, input_html: {data: {type: 'bank'}}, hint: "Maximum Size 300mb"
     end
     f.actions
   end

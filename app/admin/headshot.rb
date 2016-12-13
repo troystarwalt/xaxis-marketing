@@ -10,16 +10,16 @@ ActiveAdmin.register Headshot do
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "New Headshot" do
-      para "Adding a new headshot updates the site. So proof your work!"
-      f.input :first_name
-      f.input :last_name
-      f.input :title
-      f.input :brand_id, as: :select, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
-      f.input :priority
+      f.input :first_name, placeholder: "John"
+      f.input :last_name, placeholder: "Smith"
+      f.input :title, placeholder: "CFO"
+      f.input :brand_id, as: :radio, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
+      f.input :priority, as: :select, :collection => Array(1..20), hint: "A person with Priority of 1 will be listed 1st"
       f.input :image, as: :string, required: false, hint: image_tag(object.image.url(:thumb)).html_safe unless object.image.blank?
-      f.input :image, as: :file
+      f.input :image, as: :file, input_html: {data: {type: 'large_png'}}, hint: "Maximum size 10mb"
       f.hidden_field :image_cache
     end
+      para "Adding a new headshot updates the site. So proof your work!"
     f.actions
     puts params
   end
