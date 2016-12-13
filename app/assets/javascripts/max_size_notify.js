@@ -23,7 +23,7 @@ $('.admin_namespace').ready(function() {
 
   function addTextInput(file_id, megabyteLimit) {
     var size_is_good = "All Good",
-        size_is_big = `Way too big. Try again. Max ${megabyteLimit}mb`,
+        size_is_big = "Way too big. Try again. Max " + megabyteLimit + "MBs",
         maxSize = (megabyteLimit * (1024 * 1024)),
         file_size_alert = $(file_id).next('.inline-hints');
     if (file_id[0].files[0].size > maxSize){
