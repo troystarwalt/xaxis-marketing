@@ -3,4 +3,4 @@
 //= require select2
 //= require multiselect
 //= require tagsinputter
-//= require max_size_notify.js
+//= require max_size_notify
