@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 module PostsHelper
-  def get_post_text(post)
-    truncate(post.text, length: 200)
-  end
+  # def get_post_text(post)
+  #   truncate(post.text, length: 200)
+  # end
 
   # def quick_links(most_recent)
   #   most_recent.each do |q|

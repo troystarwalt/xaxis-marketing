@@ -18,7 +18,7 @@
             %h1.content-header#single-news_title.news-title= @initial_post.title
             %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
             %p.content-text.news-text
-              %span#single-news_text= get_post_text(@initial_post)
+              %span#single-news_text= @initial_post.medium_teaser
             %p.readmore.font-italic= link_to 'Read More', post_path(@initial_post), class: "readmore-link pull-right", id: 'single-news_readmore'
       .col-md-6.col-sm-12
         .recent_news_container
