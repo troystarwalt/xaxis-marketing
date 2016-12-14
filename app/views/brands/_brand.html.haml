@@ -4,18 +4,18 @@
       = image_tag "brand-logos/#{@brand.slug}-logo.png", class: "img-fluid brand-assets-top-logo"
       = content_for_brands[@brand_for_content][:welcome].html_safe
       - if @brand.brand_accessories.has_category("guidelines").present?
-        = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
       %h1 #{@brand.name} Brand Assets
       %p You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
       - if @group.present?
-        = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary #{@brand.slug}-btn-secondary"
+        = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
     .section#assets-logo
       %h3.text-uppercase Logos
       = content_for_brands[@brand_for_content][:logo].html_safe
       = image_tag "brand-logos/#{@brand.slug}-logo.png", class: "img-fluid brand-assets-logo"
       - if @brand.brand_accessories.has_category("logo").present?
-        = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-color-palette
       = render partial: "brands/palettes/#{@brand.slug}-p"
@@ -37,13 +37,13 @@
         .col-sm-9
           %p.list-of-chars= raw get_chars
       - if @brand.brand_accessories.has_category("font").present?
-        = link_to "download fonts", @brand.brand_accessories.has_category("font").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download fonts", @brand.brand_accessories.has_category("font").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-images
       %h3.text-uppercase images
       = content_for_brands[@brand_for_content][:images].html_safe
       - if @image_bank.present?
-        = link_to "download image bank", @image_bank, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download image bank", @image_bank, class: "brand-btn-primary xaxis-btn-primary"
       - else
         %p No image bank available for download at this time.
     %hr
@@ -52,25 +52,25 @@
       = content_for_brands[@brand_for_content][:ppt].html_safe
       =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
       - if @brand.brand_accessories.has_category("ppt_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-word
       %h3.text-uppercase word template
       = content_for_brands[@brand_for_content][:word].html_safe
       - if @brand.brand_accessories.has_category("word_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-facts
       %h3.text-uppercase fast facts
       = content_for_brands[@brand_for_content][:facts].html_safe
       - if @brand.brand_accessories.has_category("facts").present?
-        = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
       = content_for_brands[@brand_for_content][:capa].html_safe
       - if @brand.brand_accessories.has_category("capability").present?
-        = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+        = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-headshots
       %h3.text-uppercase executive headshots
