@@ -1,0 +1,81 @@
+// @mixin fontFace($family,$src,$style,$weight)
+// 	@font-face
+// 		font-family: $family
+// 		src: font-url('#{$src}.eot') // IE9 compat
+// 		src: asset_url('#{$src}.eot?#iefix') format('embedded-opentype'),	asset_url('#{$src}.woff2') format('woff2'), asset_url('#{$src}.otf') format('otf'), asset_url('#{$src}.ttf') format('truetype')
+// 		font-style: $style
+// 		font-weight: $weight
+
+//
+@mixin font-face($font-family, $file-path, $font-weight, $font-style)
+  @font-face
+    font-family: $font-family
+    src: font-url('#{$file-path}.eot')
+    src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff2') format('woff2'), font-url('#{$file-path}.ttf') format('truetype'), font-url('#{$file-path}.otf') format('otf')
+    font-weight: $font-weight
+    font-style: $font-style
+
+@mixin Calibri
+  font-family: 'Calibri', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Lato
+  font-family: 'Lato', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Univers
+  font-family: 'Univers', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Gotham-Bold
+  font-family: 'Gotham-Book', arial, sans-serif
+  font-weight: bold
+  font-style: normal
+
+@mixin Gotham-Bold-Italic
+  font-family: 'Gotham-Book', arial, sans-serif
+  font-weight: bold
+  font-style: italic
+
+@mixin Gotham-Book
+  font-family: 'Gotham-Book', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Gotham-Book-Italic
+  font-family: 'Gotham-Book', arial, sans-serif
+  font-weight: normal
+  font-style: italic
+
+@mixin Gotham-Light
+  font-family: 'Gotham-Light', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Gotham-Light-Italic
+  font-family: 'Gotham-Light', arial, sans-serif
+  font-weight: normal
+  font-style: italic
+
+@mixin Gotham-Medium
+  font-family: 'Gotham-Medium', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Gotham-Medium-Italic
+  font-family: 'Gotham-Medium', arial, sans-serif
+  font-weight: normal
+  font-style: italic
+
+@mixin Gotham-Thin
+  font-family: 'Gotham-Thin', arial, sans-serif
+  font-weight: normal
+  font-style: normal
+
+@mixin Gotham-Thin-Italic
+  font-family: 'Gotham-Thin', arial, sans-serif
+  font-weight: normal
+  font-style: italic

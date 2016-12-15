@@ -34,6 +34,7 @@ ActiveAdmin.register BrandAccessory do
   end
 
   index do
+    para "Note - as of 12/15/16, Fonts aren't going to be available to download."
     selectable_column
     column :name
     column :category

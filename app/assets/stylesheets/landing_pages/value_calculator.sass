@@ -7,16 +7,16 @@
 /****************************************
 
 *
-  font-family: 'Gotham-Book', arial, sans-serif
+  @include Gotham-Book
 
 .gotham-medium
-  font-family: 'Gotham-Medium', arial, sans-serif
+  @include Gotham-Medium
 
 .gotham-light
-  font-family: 'Gotham-Light', arial, sans-serif
+  @include Gotham-Light
 
 .gotham-xl
-  font-family: 'Gotham-XLight', arial, sans-serif
+  @include Gotham-Thin
   font-size: 45px
 
 /****************************************
@@ -178,7 +178,7 @@ select
 .header_year-text
   color: #a1d0f3
   font-size: 26px
-  font-family: 'Gotham-Medium'
+  @include Gotham-Medium
 
 .header_descriptor-text
   font-size: 48px
@@ -193,7 +193,7 @@ select
   color: white
 
 .site_title > h1
-  font-family: gotham-thin
+  @include Gotham-Thin
   font-size: 48px
   padding-top: 24px
   padding-bottom: 18px
@@ -203,61 +203,60 @@ select
 #welcome-note
   margin-top: 60px
   margin-bottom: 60px
-
-/*
- *.top-description:after {
- *    z-index: 2;
- *    position: absolute;
- *    bottom: -20px;
- *    left: 50%;
- *    transform: translateX(-50%);
- *    content:'';
- *    border-top: solid 25px #006298;
- *    border-left: solid 25px transparent;
- *    border-right: solid 25px transparent;
- *}
+//
+// /*
+//  *.top-description:after {
+//  *    z-index: 2
+//  *    position: absolute
+//  *    bottom: -20px
+//  *    left: 50%
+//  *    transform: translateX(-50%)
+//  *    content:''
+//  *    border-top: solid 25px #006298
+//  *    border-left: solid 25px transparent
+//  *    border-right: solid 25px transparent
+//  *}
 
 .user-form
   padding: 0 0 60px 0
   border-radius: 10px
 
-/*
- *.user-form:after {
- *    z-index: 2;
- *    position: absolute;
- *    bottom: -20px;
- *    left: 50%;
- *    transform: translateX(-50%);
- *    content:'';
- *    border-top: solid 25px #00AFEF;
- *    border-left: solid 25px transparent;
- *    border-right: solid 25px transparent;
- *}
+// /*
+//  *.user-form:after {
+//  *    z-index: 2
+//  *    position: absolute
+//  *    bottom: -20px
+//  *    left: 50%
+//  *    transform: translateX(-50%)
+//  *    content:''
+//  *    border-top: solid 25px #00AFEF
+//  *    border-left: solid 25px transparent
+//  *    border-right: solid 25px transparent
+//  *}
 
 .xaxis-difference
   padding: 60px 0
   background: #FCFCFC
 
-/*
- *
- *.xaxis-difference:after {
- *    z-index: 2;
- *    position: absolute;
- *    bottom: -20px;
- *    left: 50%;
- *    transform: translateX(-50%);
- *    content:'';
- *    border-top: solid 25px #8CD2F4;
- *    border-left: solid 25px transparent;
- *    border-right: solid 25px transparent;
- *}
+
+
+// .xaxis-difference:after
+//   z-index: 2
+//   position: absolute
+//   bottom: -20px
+//   left: 50%
+//   transform: translateX(-50%)
+//   content: ''
+//   border-top: solid 25px #8CD2F4
+//   border-left: solid 25px transparent
+//   border-right: solid 25px transparent
 
 .prove-it
   padding: 60px 0
 
-/*.form-row:not(:last-of-type){
- *  border-bottom: 2px solid #00AFEF
- *}
+// /*.form-row:not(:last-of-type){
+//  *  border-bottom: 2px solid #00AFEF
+//  *}
 
 .list-group
   &:not(:last-child)
@@ -301,7 +300,7 @@ select
   background: #00AFEF
   color: #FFF
   border: none
-  font-family: gotham-light
+  @include Gotham-Light
 
 .container > a
   border-radius: 100px

@@ -23,7 +23,7 @@
     .section#assets-fonts
       %h3.text-uppercase fonts
       = content_for_brands[@brand_for_content][:font].html_safe
-      .row{class: "#{@brand.slug}-top" }
+      .row{class: "font-top #{@brand.slug}-top" }
         .col-sm-3
           %p.font-name= get_font_name(@brand.slug, "a")
           %p.font-italic.font-use For Powerpoint and Word Use
@@ -33,11 +33,21 @@
       .row{class: "#{@brand.slug}-bottom" }
         .col-sm-3
           %p.font-name= get_font_name(@brand.slug, "b")
-          %p.font-italic.font-use For web and print use
+          %p.font-italic.font-use
+            - if @brand.slug === "plista"
+              For web use
+            - else
+              For web and print use
         .col-sm-9
           %p.list-of-chars= raw get_chars
-      - if @brand.brand_accessories.has_category("font").present?
-        = link_to "download fonts", @brand.brand_accessories.has_category("font").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      - if @brand.slug === "plista"
+        %br
+        .row{class: "#{@brand.slug}-extra-bottom" }
+          .col-sm-3
+            %p.font-name= get_font_name(@brand.slug, "q")
+            %p.font-italic.font-use For print use
+          .col-sm-9
+            %p.list-of-chars= raw get_chars
     %hr
     .section#assets-images
       %h3.text-uppercase images

@@ -16,15 +16,12 @@
     display: inline-block
     padding: 8px 12px 4px 12px
     color: $white
-    font-family: gotham-book
+    @include Gotham-Book
     font-size: 1em
-
-.content-header, .content-text
-  font-family: gotham-book !important
 
 .content-header
   font-size: 1em
-  font-weight: bold
+  @include Gotham-Medium
   letter-spacing: 1px
 
 .larger-content-header
@@ -34,6 +31,7 @@
 
 .content-text
   font-size: .8em
+  @include Gotham-Book
 
 .content-text-sub
   height: 70px
@@ -45,7 +43,7 @@
     top: 50%
     transform: translateY(-50%)
     margin-left: 30px
-    color: 'gotham-book'
+    color: $grey
 
 /***********  Section Specific  ***********/
 
@@ -64,7 +62,7 @@
     position: relative
     top: 50%
     transform: translateY(-50%)
-    font-family: 'gotham-medium'
+    @include Gotham-Medium
     font-size: 20px
     text-transform: capitalize
     text-align: center
@@ -109,14 +107,15 @@
   .news-title
     color: $xaxis-darkest-blue
     font-size: 20px
-    font-family: 'gotham-medium'
+    @include Gotham-Medium
     margin-bottom: 20px
   .news-text
     color: $xaxis-darkest-blue
     margin: 20px auto
     font-size: 12px
     height: 90px
-    font-family: 'gotham-LightItalic' !important
+    font-family: 'gotham-light' !important
+    font-style: italic
     position: relative
     text-align: left
     span
@@ -143,7 +142,7 @@
   a
     color: $xaxis-darkest-blue
     font-size: 12px
-    font-family: 'gotham-book'
+    @include Gotham-Book
 
 @media screen and (max-width: 845px)
   #preview-container

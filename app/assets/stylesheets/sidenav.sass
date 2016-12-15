@@ -3,7 +3,7 @@
   transition: all .5s ease
   #brand-template-links > li > div, #brand-asset-links > li > div, #platform-asset-links > li > div
     font-size: 11px
-    font-family: gotham-medium
+    @include Gotham-Medium
     letter-spacing: 2px
     color: $dark-grey
 
@@ -21,7 +21,7 @@
     .active-side-link
       a
         color: $xaxis-blue-color !important
-        font-family: Gotham-Medium
+        @include Gotham-Medium
 
 #platforms
   #side-nav

@@ -6,13 +6,4 @@
         = link_to brand.name, brand_path(brand.slug), class: "nav-item sub-links #{is_at_end_path(brand.slug.to_s)}"
   .row
     = render partial: "side_nav_brands"
-    - if lookup_context.find_all("brands/_#{@brand.slug}").any?
-      = render partial: "brand", brand: @brand
-    - else
-      %p.col-lg-7.offset-lg-3.col-md-7.offset-md-3
-        Sorry, there isn't anything here with the name,
-        %strong #{@brand.name}.
-        Please check your link or click back.
-        %br
-        -# The below only shows during test and development. Just a reminder.
-        = render_developer_note
+    = render partial: "brand", brand: @brand

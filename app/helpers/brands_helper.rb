@@ -9,16 +9,6 @@ module BrandsHelper
     chars.split.join(" ")
   end
 
-  # def get_font_name(font_family)
-  #   if font_family === "Arial"
-  #     "Arial"
-  #   elsif font_family === "Gotham"
-  #     "Gotham"
-  #   else
-  #     "Times"
-  #   end
-  # end
-
   def get_font_name(brand_slug, font_var)
     if brand_slug === "xaxis"
       if font_var === "a"
