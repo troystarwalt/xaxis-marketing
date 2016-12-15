@@ -111,7 +111,7 @@
     h2
       font-size: 1.625rem
       z-index: 103
-      font-family: gotham-book
+      @include Gotham-Book
       letter-spacing: 4.33px
       margin-top: -53px
     img
@@ -134,7 +134,7 @@
       font-size: 2.25em
 .section-title
   font-size: 2em
-  font-family: gotham-book
+  @include Gotham-Book
   margin-bottom: 30px
 
 .platform-asset-hr
@@ -168,15 +168,15 @@
       border-radius: 100px
       min-width: 110px
       color: $xaxis-blue-color
-      font-family: gotham-book
+      @include Gotham-Book
       padding: 5px 10px
 .platform-card-text
-  font-family: gotham-light
+  @include Gotham-Light
   p
     margin: 5px 0
   a
     color: $silver
-    font-family: gotham-medium
+    @include Gotham-Medium
     font-size: .625em
     &:hover, &:active
       color: $xaxis-blue-color

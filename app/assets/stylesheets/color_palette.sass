@@ -1,6 +1,6 @@
 .color-category
   font-size: .875em
-  font-family: gotham-medium
+  @include Gotham-Medium
   &:not(:first-of-type)
     margin-top: 25px
 
@@ -15,13 +15,18 @@
 
 .color-card-title, .color-card-text
   line-height: 18px
+  text-transform: uppercase
+
 
 .color-card-title
-  font-family: gotham-book
+  @include Gotham-Medium
   padding: 0
   margin: 0
-  font-size: 1em
-  font-weight: bold
+  font-size: .9em
+  margin-bottom: 5px
+  letter-spacing: 1.75px
+  span
+    text-transform: lowercase
 
 .color-card-text
   font-size: .7em
@@ -60,7 +65,25 @@
 #light-gray
   background: $light-grey
 
+@media (min-width: 845px)
+  .top-margin-md
+    margin-top: 10px
+
+
 @media (max-width: 844px)
   .color-card
     margin-top: 10px
     margin-bottom: 10px
+
+@media (min-width: 768px) and (max-width: 1199px)
+  .too-long
+    font-size: .7em
+    font-size: 1vw
+
+  .way-too-long
+    font-size: .6em
+    font-size: .9vw
+@media (min-width: 1200px)
+  .way-too-long
+    font-size: .7em
+    // font-size: .9vw

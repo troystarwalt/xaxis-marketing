@@ -17,7 +17,7 @@
             Contributor: Xaxis Marketing
           %p.news-text= @post.text.html_safe
           .news-image
-            =image_tag(@post.image.url(:preview), class: "img-fluid")
+            =image_tag(@post.image.url(:preview), class: "img-fluid") if !@post.image.file.nil?
         = link_to :back, class: "btn-back" do
           %i.fa.fa-arrow-left
           Back

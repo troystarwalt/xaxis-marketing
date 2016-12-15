@@ -4,7 +4,7 @@
     .sidebar
       .section-container
         .header
-          font-family: 'Gotham-Medium'
+          @include Gotham-Medium
           color: $gray
           font-size: 13px
   .sidebar-list
@@ -12,7 +12,7 @@
     padding-left: 0
     .sidebar-list-item
       a
-        font-family: 'Gotham-Light'
+        @include Gotham-Light
         color: $gray
         font-size: 11px
         &:hover
@@ -46,13 +46,13 @@
           .news-article-date_day
             display: inline-block
             font-size: 4.5em
-            font-family: 'Gotham-Thin'
+            @include Gotham-Thin
             color: $xaxis-navy-blue
             height: 100%
             width: 100%
           .news-article-date_month_year
             display: inline-block
-            font-family: 'Gotham-Light'
+            @include Gotham-Light
             font-size: 11px
             color: $xaxis-navy-blue
             height: 100%
@@ -62,13 +62,13 @@
     width: 77%
     margin-left: 8px
     .news-article-tags
-      font-family: 'Gotham-Book'
+      @include Gotham-Book
       font-size: 9px
       height: 100%
       color: $manatee
       margin-bottom: 4px
       a
-        font-family: 'Gotham-Book'
+        @include Gotham-Book
         font-size: 9px
         height: 100%
         color: $manatee
@@ -83,7 +83,7 @@
       a
         padding:
         color: $xaxis-darkest-blue
-        font-family: 'Gotham-Medium'
+        @include Gotham-Medium
         &:hover
           color: $xaxis-blue-color
         &:active
@@ -91,14 +91,14 @@
         &:visited
           color: $xaxis-darkest-blue
     .news-article-text
-      font-family: 'Gotham-LightItalic'
+      @include Gotham-Light-Italic
       font-size: 12px
       color: $xaxis-darkest-blue
 
 #news-section
   a
     margin-left: -5px
-    font-family: gotham-book
+    @include Gotham-Book
     color: $xaxis-blue-color
     padding: 6px
     border-right: 2px solid $xaxis-blue-color
@@ -126,23 +126,23 @@
     .news-article
       margin-bottom: 80px
       .tag_list
-        font-family: 'Gotham-Book'
+        @include Gotham-Book
         font-size: 9px
         color: $manatee
         margin-bottom: 15px
       .article-title
-        font-family: 'Gotham-Medium'
+        @include Gotham-Medium
         font-size: 24px
         color: $xaxis-darkest-blue
         margin-bottom: 10px
         margin-top: 20px
       .news-contributor
-        font-family: 'Gotham-BookItalic'
+        @include Gotham-Book-Italic
         font-size: 10px
         color: $redishblack
         margin: 10px 0 20px 0
       .news-text
-        font-family: 'Gotham-Light'
+        @include Gotham-Light
         font-size: 14px
         color: $xaxis-darkest-blue
         line-height: 22px
@@ -160,14 +160,14 @@
       display: inline-block
       padding: 8px 12px 3px 12px
       color: $white
-      font-family: 'Gotham-Medium'
+      @include Gotham-Medium
       font-size: 14px
       text-transform: uppercase
   .sidebar-list
     padding-left: 0
     list-style-type: none
     .sidebar-list-item
-      font-family: 'Gotham-Light'
+      @include Gotham-Light
       font-size: 11px
       margin-top: 5px
       a

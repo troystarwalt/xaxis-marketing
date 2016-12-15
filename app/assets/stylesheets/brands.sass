@@ -7,7 +7,7 @@
 
 #sub-nav
   .sub-links
-    font-family: gotham-book
+    @include Gotham-Book
     color: $light-grey
     padding-left: 5px
     padding-right: 5px
@@ -31,7 +31,7 @@
       font-size: 2.25em
     h3
       font-size: 1.125em
-      font-family: gotham-book
+      @include Gotham-Medium
       letter-spacing: 2px
 
 .brand-assets-top-logo
@@ -48,10 +48,6 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
     li:not(:first-child)
       margin-top: 8px
 
-.bold-accent
-  font-family: gotham-book
-  font-weight: bold
-
 /* Putting Font Variables for the Brand Pages */
 
 // For all
@@ -59,22 +55,54 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
   color: $outer-space
 
 .font-name
-  font-family: gotham-medium
+  @include Gotham-Medium
   margin-bottom: .4rem
 
 .font-use
-  font-family: gotham-light
+  @include Gotham-Light-Italic
   font-size: 10px
 
 .list-of-chars
   letter-spacing: 1px
   line-height: 32px
 
+.font-top
+  margin-top: 50px
+
+// Xaxis
+
 .xaxis-top
-  font-family: Arial
+  font-family: arial, sans-serif
 
 .xaxis-bottom
-  font-family: gotham-book
+  @include Gotham-Book
+
+// Light Reaction
+
+.light-reaction-top
+  font-family: arial, sans-serif
+
+.light-reaction-bottom
+  @include Univers
+
+// Triad
+
+.triad-top
+  font-family: Tahoma, sans-serif
+
+.triad-bottom
+  @include Lato
+
+// Plista
+
+.plista-top
+  @include Calibri
+
+.plista-bottom
+  @include Lato
+
+.plista-extra-bottom
+  font-family: "myriad-pro", arial, sans-serif
 
 /* Sytling Headshots and Overlay Text */
 .headshot-container
@@ -139,7 +167,7 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
   line-height: 14px
 
 .headshot-info > p:first-of-type
-  font-family: gotham-book
+  @include Gotham-Book
   margin-bottom: 2px
   margin-top: 8px
 
@@ -168,20 +196,6 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
 
 .modal-body
   text-align: center
-
-// .close > span:hover
-//   display: inline-block
-//   min-width: 1em
-//   border-radius: 50%
-//   vertical-align: middle
-//   border: 2px solid blue
-//   padding-top: 0
-//
-//   &::before
-//     content: ''
-//     float: left
-//     width: auto
-//     padding-bottom: 100%
 
 /***********  Color Div  ***********/
 #color_change

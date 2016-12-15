@@ -21,7 +21,7 @@ class BrandsController < InheritedResources::Base
       @image_bank = GlobalAccessory.where(category: 'image_bank').last.file_url
     end
 
-    @group = BrandAccessory.where(category: ['guidelines', 'logo', 'palette', 'font'], brand_id: @brand.id)
+    @group = BrandAccessory.where(category: ['guidelines', 'logo', 'palette'], brand_id: @brand.id)
 
     respond_to do |format|
       format.html

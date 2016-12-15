@@ -8,7 +8,7 @@ html
   overflow-x: hidden
 
 *
-  font-family: 'Gotham-Book', arial, sans-serif
+  @include Gotham-Book
   color: #484848 !important
   line-height: 2
 
@@ -17,7 +17,7 @@ body
 
 
 .disclaimer
-  font-family: 'Gotham-BookItalic'
+  @include Gotham-Book-Italic
   color: #3b6e8f !important
 
 .disclaimer.top-disclaimer
@@ -57,7 +57,7 @@ header .logo
     margin: 0 auto
     width: 100px
   h1
-    font-family: 'Gotham-Medium'
+    @include Gotham-Medium
     color: #00AFEF !important
 
 main
@@ -86,22 +86,22 @@ main .main-video .card
     padding-bottom: 40px
     background-color: #FFF
   .contributor
-    font-family: 'Gotham-Light'
+    @include Gotham-Light
     font-size: 14px
     color: #808080
 
 .card .contributor
-  font-family: 'Gotham-Light'
+  @include Gotham-Light
   font-size: 14px
   color: #808080
 
 .small-card .contributor-title, .card .contributor-title
-  font-family: 'Gotham-Light'
+  @include Gotham-Light
   font-size: 14px
   color: #4A82A0 !important
 
 .small-card .contributor-name, .card .contributor-name
-  font-family: 'Gotham-Medium'
+  @include Gotham-Medium
   font-size: 14px
   color: #4A82A0 !important
 
@@ -136,13 +136,13 @@ main .main-video .card
   margin-bottom: 40px
 
 .small-card .description-header, .card .description-header
-  font-family: 'Gotham-MediumItalic'
+  @include Gotham-Medium-Italic
   font-size: 24px
   line-height: 1.5
   color: #989898 !important
 
 .small-card .description-text, .card .description-text
-  font-family: 'Gotham-Light'
+  @include Gotham-Light
   font-size: 14px
   color: #1E3646 !important
 

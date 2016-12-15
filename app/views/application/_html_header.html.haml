@@ -27,6 +27,8 @@
   %meta{:content => "Internal Xaxis", :property => "og:title"}/
   %meta{:content => "A site for Xaxis Employees", :property => "og:description"}/
   %meta{:content => image_path("Xaxis_Logo_Pos_Vert.png"), :property => "og:image"}/
+  %script{src: "https://use.typekit.net/ehp4uxd.js"}
+  %script try{Typekit.load({ async: true });}catch(e){}
   = csrf_meta_tags
   -if @post
     %meta{ name: 'twitter:title', content: @post.title }

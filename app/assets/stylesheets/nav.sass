@@ -11,7 +11,7 @@ nav.navbar
     .nav-item
       padding: 29px 0
       margin-right: 50px
-      font-family: gotham-book
+      @include Gotham-Book
       .nav-link
         text-transform: uppercase
         color: $dim-gray !important
@@ -50,13 +50,13 @@ nav.navbar
   top: 63%
   color: $dim-gray
   font-size: .7rem
-  font-family: gotham-book
+  @include Gotham-Book
   left: -20px
   letter-spacing: 1.5px
   .dropdown-item
     &:hover
       color: $xaxis-blue-color
-      font-family: gotham-medium
+      @include Gotham-Medium
       background-color: $white
       font-weight: bold
 

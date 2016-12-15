@@ -1,76 +1,97 @@
 %h3.text-uppercase #{@brand.name} color palette
 %p The Light Reaction color palette is formed by three groups of colors with different roles in the visual system.
 %p The Bright Palette is what makes the brand recognizable and brings in the light aspect of Light Reaction. The Bright Palette is formed by the Light Reaction Yellow, used in the logo, and three other warm colors.
-%p The Grays group is made up of three different shades of gray, bringing a powerful contrast when combined with the Bright Palette.
+%p The Greys group is made up of three different shades of gray, bringing a powerful contrast when combined with the Bright Palette.
 %p The Blue Accent group brings three different shades of blue to the palette. It should be used in small proportions in layouts or as an additional color in charts and graphs.
-%h4.color-category Primary Colors
+%h4.color-category Bright Palette
 .row
   .col-md-4
     .color-card
-      .color-card-top#dark-blue
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title lr yellow
+        %p.color-card-text.color-hex  #FFD600
+        %p.color-card-text RGB (255, 214, 0)
+        %p.color-card-text CMYK (0, 14, 100, 0)
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title dark yellow
+        %p.color-card-text.color-hex  #FCB813
+        %p.color-card-text RGB (252, 184, 19)
+        %p.color-card-text CMYK (0, 30, 100, 0)
+  .col-md-4
+.row
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title orange
+        %p.color-card-text.color-hex  #F37920
+        %p.color-card-text rgb (243, 121, 32)
+        %p.color-card-text CMYK (0, 65, 100, 0)
+
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title red
+        %p.color-card-text.color-hex  #E72C2A
+        %p.color-card-text rgb (231, 44, 42)
+        %p.color-card-text CMYK (0, 96, 93, 2)
+  .col-md-4
+%h4.color-category Greys
+.row
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Dark Grey
+        %p.color-card-text.color-hex  #4D4d4f
+        %p.color-card-text rgb (77, 77, 79)
+        %p.color-card-text CMYK (0, 0, 0, 85)
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Grey
+        %p.color-card-text.color-hex  #808184
+        %p.color-card-text rgb (128, 129, 132)
+        %p.color-card-text CMYK (0, 0, 0, 60)
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Light Grey
+        %p.color-card-text.color-hex  #a6a8ab
+        %p.color-card-text rgb (166, 168, 171)
+        %p.color-card-text CMYK (0, 0, 0, 40)
+%h4.color-category Blue Accent
+.row
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Light Blue
+        %p.color-card-text.color-hex  #62B5E5
+        %p.color-card-text rgb (98, 181, 229)
+        %p.color-card-text CMYK (0, 0, 0, 75)
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Blue
+        %p.color-card-text.color-hex  #0090DA
+        %p.color-card-text rgb (0, 144, 218)
+        %p.color-card-text CMYK (0, 0, 0, 50)
+  .col-md-4
+    .color-card
+      .color-card-top
       .color-card-bottom
         %h6.color-card-title Dark Blue
-        %p.color-card-text #3B6E8F
-        %p.color-card-text rgb (59, 110, 143)
-  .col-md-4
-    .color-card
-      .color-card-top#xaxis-blue
-      .color-card-bottom
-        %h6.color-card-title Xaxis Blue
-        %p.color-card-text #00AFEF
-        %p.color-card-text rgb (0, 175, 239)
-  .col-md-4
-    .color-card
-      .color-card-top#baby-blue
-      .color-card-bottom
-        %h6.color-card-title Baby Blue
-        %p.color-card-text #8CD2F4
-        %p.color-card-text rgb (140, 210, 244))
-%h4.color-category Secondary Colors
-.row
-  .col-md-4
-    .color-card
-      .color-card-top#dark-green
-      .color-card-bottom
-        %h6.color-card-title Dark Green
-        %p.color-card-text #00A77E
-        %p.color-card-text rgb (0, 167, 126)
-  .col-md-4
-    .color-card
-      .color-card-top#light-green
-      .color-card-bottom
-        %h6.color-card-title Light Green
-        %p.color-card-text #99CA3C
-        %p.color-card-text rgb (153, 202, 60)
-  .col-md-4
-    .color-card
-      .color-card-top#xaxis-orange
-      .color-card-bottom
-        %h6.color-card-title Orange
-        %p.color-card-text #F6891F
-        %p.color-card-text rgb (246, 137, 31)
-%h4.color-category Neutral Colors
-.row
-  .col-md-4
-    .color-card
-      .color-card-top#dark-gray
-      .color-card-bottom
-        %h6.color-card-title Dark Gray
-        %p.color-card-text #636466
-        %p.color-card-text rgb (99, 100, 102)
-  .col-md-4
-    .color-card
-      .color-card-top#reg-gray
-      .color-card-bottom
-        %h6.color-card-title Gray
-        %p.color-card-text #939598
-        %p.color-card-text rgb (0, 175, 239)
-  .col-md-4
-    .color-card
-      .color-card-top#light-gray
-      .color-card-bottom
-        %h6.color-card-title Light Gray
-        %p.color-card-text #C7C8CA
-        %p.color-card-text rgb (0, 175, 239)
+        %p.color-card-text.color-hex  #006298
+        %p.color-card-text rgb (0, 98, 152)
+        %p.color-card-text CMYK (0, 0, 0, 25)
 - if @brand.brand_accessories.has_category("palette").present?
-  = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+  = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary xaxis-btn-primary"

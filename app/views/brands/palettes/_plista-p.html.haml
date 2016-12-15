@@ -1,73 +1,93 @@
 %h3.text-uppercase #{@brand.name} color palette
 %p The plista brand colors are inspired directly from the plista logo.
-%h4.color-category Primary Colors
+%h4.color-category Logo Color
 .row
   .col-md-4
     .color-card
-      .color-card-top#dark-blue
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Dark Blue
-        %p.color-card-text #3B6E8F
-        %p.color-card-text rgb (59, 110, 143)
+        %h6.color-card-title
+          %span plista
+          Green
+        %p.color-card-text.color-hex #37AA32
+        %p.color-card-text rgb (55, 170, 50)
+        %p.color-card-text CMYK (75, 0, 0, 0)
   .col-md-4
     .color-card
-      .color-card-top#xaxis-blue
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Xaxis Blue
-        %p.color-card-text #00AFEF
-        %p.color-card-text rgb (0, 175, 239)
+        %h6.color-card-title dark grey
+        %p.color-card-text.color-hex #484847
+        %p.color-card-text rgb (72, 72, 71)
+        %p.color-card-text CMYK (0, 0, 0, 85)
   .col-md-4
     .color-card
-      .color-card-top#baby-blue
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Baby Blue
-        %p.color-card-text #8CD2F4
-        %p.color-card-text rgb (140, 210, 244))
+        %h6.color-card-title Light grey
+        %p.color-card-text.color-hex #9C9C9C
+        %p.color-card-text rgb (156, 156, 156)
+        %p.color-card-text CMYK (0, 0, 0, 50)
 %h4.color-category Secondary Colors
 .row
   .col-md-4
     .color-card
-      .color-card-top#dark-green
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Dark Green
-        %p.color-card-text #00A77E
-        %p.color-card-text rgb (0, 167, 126)
+        %h6.color-card-title blue
+        %p.color-card-text.color-hex #43ADDE
+        %p.color-card-text rgb (67, 173, 122)
+        %p.color-card-text CMYK (65, 10, 0, 5)
   .col-md-4
     .color-card
-      .color-card-top#light-green
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Light Green
-        %p.color-card-text #99CA3C
-        %p.color-card-text rgb (153, 202, 60)
+        %h6.color-card-title red
+        %p.color-card-text.color-hex #E51218
+        %p.color-card-text rgb (229, 18, 24)
+        %p.color-card-text CMYK (0, 96, 93, 0)
   .col-md-4
     .color-card
-      .color-card-top#xaxis-orange
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Orange
-        %p.color-card-text #F6891F
-        %p.color-card-text rgb (246, 137, 31)
-%h4.color-category Neutral Colors
+        %h6.color-card-title yellow
+        %p.color-card-text.color-hex #FDC91F
+        %p.color-card-text rgb (229, 18, 24)
+        %p.color-card-text CMYK (0, 22, 90, 0)
+%h4.color-category additional Colors
 .row
   .col-md-4
     .color-card
-      .color-card-top#dark-gray
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Dark Gray
-        %p.color-card-text #636466
-        %p.color-card-text rgb (99, 100, 102)
+        %h6.color-card-title Dark Green
+        %p.color-card-text.color-hex #006443
+        %p.color-card-text rgb (0, 101, 67)
+        %p.color-card-text CMYK (93, 10, 75, 43)
   .col-md-4
     .color-card
-      .color-card-top#reg-gray
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Gray
-        %p.color-card-text #939598
-        %p.color-card-text rgb (0, 175, 239)
+        %h6.color-card-title Dark Blue
+        %p.color-card-text.color-hex #004F88
+        %p.color-card-text rgb (0, 79, 137)
+        %p.color-card-text CMYK (94, 54, 5, 27)
+.row
   .col-md-4
     .color-card
-      .color-card-top#light-gray
+      .color-card-top
       .color-card-bottom
-        %h6.color-card-title Light Gray
-        %p.color-card-text #C7C8CA
-        %p.color-card-text rgb (0, 175, 239)
+        %h6.color-card-title Cool Grey
+        %p.color-card-text.color-hex #696B70
+        %p.color-card-text rgb (105, 108, 112)
+        %p.color-card-text CMYK (8, 5, 7, 16)
+  .col-md-4
+    .color-card
+      .color-card-top
+      .color-card-bottom
+        %h6.color-card-title Cool Grey 2
+        %p.color-card-text.color-hex #D2D3D1
+        %p.color-card-text rgb (210, 211, 210)
+        %p.color-card-text CMYK (8, 5, 7, 16)
 - if @brand.brand_accessories.has_category("palette").present?
-  = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary #{@brand.slug}-btn-primary"
+  = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
