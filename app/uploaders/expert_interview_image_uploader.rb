@@ -6,7 +6,9 @@ class ExpertInterviewImageUploader < BaseUploader
     "https://robohash.org/#{random.sample}.png?size=200x200"
   end
 
-  process resize_to_fit: [500, 900]
+  version :fitting do
+    process resize_to_fill: [900, 500]
+  end
 
   def extension_whitelist
     %w(png jpeg jpg)

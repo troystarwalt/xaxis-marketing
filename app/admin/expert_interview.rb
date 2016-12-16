@@ -9,7 +9,7 @@ ActiveAdmin.register ExpertInterview do
       f.input :vimeo_url, hint: "The link should look like this: 'https://player.vimeo.com/video/175274585' Note the 'player' part of the url.", placeholder: "Ex: https://player.vimeo.com/video/175274585"
       f.input :contributor_name, placeholder: "John Smith"
       f.input :contributor_title, placeholder: "CFO"
-      f.input :title, placeholder: "Light feafReaction "
+      f.input :title, placeholder: "Light Reaction "
       f.input :description
       if f.object.image?
         panel :current_image, label: "Current Image" do
@@ -19,7 +19,7 @@ ActiveAdmin.register ExpertInterview do
       end
       f.input :image, as: :file, id: "preview_shit",
                                 label: file_label || "Upload Preview Image",
-                                hint: "Max size is 5mb",
+                                hint: "Image dimensions should be 900x500. Max size is 5mb",
                                 input_html: {
                                   title: (f.object.image? ?
                                           "Replace File" :

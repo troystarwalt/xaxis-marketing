@@ -12,7 +12,7 @@ form :html => { :multipart => true } do |f|
     f.input :name, label: "101 Series Name", placeholder: "ex: Programmatic 101"
     f.input :ppt_file, as: :file, input_html: {data: {type: 'ppt'}}, hint: "Max size of 100mb."
     f.input :pdf_file, as: :file, input_html: {data: {type: 'pdf'}}, hint: "Max size of 5mb."
-    f.input :image_preview, as: :file, input_html: {data: {type: 'png'}}, hint: "Max size of 5mb."
+    f.input :image_preview, as: :file, input_html: {data: {type: 'png'}}, hint: "Use the image from the first slide. Max size of 5mb."
   end
   f.actions
 end
