@@ -3,13 +3,18 @@ ActiveAdmin.register ExpertInterview do
   menu label:  "Interview Hub"
   permit_params :vimeo_url, :contributor_name, :contributor_title, :title, :description, :image
 
+  # Adds a custom New action on the show page.
+  action_item :new, only: [:show] do
+    link_to 'New', new_admin_expert_interview_path
+  end
+
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Create an Expert Interview" do
       f.input :vimeo_url, hint: "The link should look like this: 'https://player.vimeo.com/video/175274585' Note the 'player' part of the url.", placeholder: "Ex: https://player.vimeo.com/video/175274585"
       f.input :contributor_name, placeholder: "John Smith"
       f.input :contributor_title, placeholder: "CFO"
-      f.input :title, placeholder: "Light Reaction "
+      f.input :title, placeholder: "Making Data Smart: What It Means And Why It Matters"
       f.input :description
       if f.object.image?
         panel :current_image, label: "Current Image" do
@@ -39,8 +44,8 @@ ActiveAdmin.register ExpertInterview do
     column :vimeo_url do |f|
       link_to f.vimeo_url, f.vimeo_url, target: "_blank"
     end
-    column :created_at
     column :updated_at
+    actions
   end
 
   show do
@@ -53,7 +58,7 @@ ActiveAdmin.register ExpertInterview do
         link_to f.vimeo_url, f.vimeo_url, target: "_blank"
       end
       row :image do |f|
-        image_tag f.image.url
+        image_tag f.image.fitting.url
       end
       row :created_at
       row :updated_at
