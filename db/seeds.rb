@@ -57,7 +57,13 @@ if Rails.env.production?
   ].freeze
 
   EXPERT_INTERVIEWS.each do |ei|
-    ExpertInterview.create(ei)
+    ExpertInterview.find_or_create_by(title: ei[:title]) do |iv|
+      iv.vimeo_url = ei[:vimeo_url],
+      iv.image = ei[:image],
+      iv.contributor_name = ei[:contributor_name],
+      iv.contributor_title = ei[:contributor_title],
+      iv.description = ei[:description]
+    end
   end
 
   puts 'Expert Interviews Created'
@@ -69,7 +75,6 @@ if Rails.env.development? || Rails.env.test?
   Post.destroy_all
   Brand.destroy_all
   Platform.destroy_all
-  ExpertInterview.destroy_all
 
   50.times do
     Post.create!(
@@ -212,7 +217,13 @@ if Rails.env.development? || Rails.env.test?
   ].freeze
 
   EXPERT_INTERVIEWS.each do |ei|
-    ExpertInterview.create(ei)
+    ExpertInterview.find_or_create_by(title: ei[:title]) do |iv|
+      iv.vimeo_url = ei[:vimeo_url],
+      iv.image = ei[:image],
+      iv.contributor_name = ei[:contributor_name],
+      iv.contributor_title = ei[:contributor_title],
+      iv.description = ei[:description]
+    end
   end
 
   puts 'Expert Interviews Created'
