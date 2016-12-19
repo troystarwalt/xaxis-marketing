@@ -42,7 +42,7 @@
             .small-card-image
               .video
                 %a.video-link{"data-target" => "#myModal", "data-title" => video.title, "data-toggle" => "modal", "data-video-url" => video.vimeo_url}
-                  =image_tag video.image.url, class: 'img-responsive'
+                  =image_tag video.image.fitting.url, class: 'img-responsive'
                   .video-overlay
             .small-card-body
               .row
