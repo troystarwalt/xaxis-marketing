@@ -1,7 +1,7 @@
 .col-md-7.offset-md-1.col-sm-12
   .brand-assets-container
     .section#assets-welcome
-      = image_tag "brand-logos/#{@brand.slug}-logo.png", class: "img-fluid brand-assets-top-logo"
+      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
       = content_for_brands[@brand_for_content][:welcome].html_safe
       - if @brand.brand_accessories.has_category("guidelines").present?
         = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
@@ -13,7 +13,7 @@
     .section#assets-logo
       %h3.text-uppercase Logos
       = content_for_brands[@brand_for_content][:logo].html_safe
-      = image_tag "brand-logos/#{@brand.slug}-logo.png", class: "img-fluid brand-assets-logo"
+      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-logo"
       - if @brand.brand_accessories.has_category("logo").present?
         = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
@@ -56,25 +56,27 @@
         = link_to "download image bank", @image_bank, class: "brand-btn-primary xaxis-btn-primary"
       - else
         %p No image bank available for download at this time.
-    %hr
-    .section#assets-ppt
-      %h3.text-uppercase powerpoint template
-      = content_for_brands[@brand_for_content][:ppt].html_safe
-      =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
-      - if @brand.brand_accessories.has_category("ppt_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
-    %hr
-    .section#assets-word
-      %h3.text-uppercase word template
-      = content_for_brands[@brand_for_content][:word].html_safe
-      - if @brand.brand_accessories.has_category("word_template").present?
-        = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
-    %hr
-    .section#assets-facts
-      %h3.text-uppercase fast facts
-      = content_for_brands[@brand_for_content][:facts].html_safe
-      - if @brand.brand_accessories.has_category("facts").present?
-        = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+    -# Hiding this section for Triad as we do not have these files yet.
+    - if @brand.slug != "triad"
+      %hr
+      .section#assets-ppt
+        %h3.text-uppercase powerpoint template
+        = content_for_brands[@brand_for_content][:ppt].html_safe
+        =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
+        - if @brand.brand_accessories.has_category("ppt_template").present?
+          = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      %hr
+      .section#assets-word
+        %h3.text-uppercase word template
+        = content_for_brands[@brand_for_content][:word].html_safe
+        - if @brand.brand_accessories.has_category("word_template").present?
+          = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      %hr
+      .section#assets-facts
+        %h3.text-uppercase fast facts
+        = content_for_brands[@brand_for_content][:facts].html_safe
+        - if @brand.brand_accessories.has_category("facts").present?
+          = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
