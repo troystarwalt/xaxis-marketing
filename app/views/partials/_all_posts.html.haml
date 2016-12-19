@@ -10,13 +10,6 @@
             - @all_tags.each do |tag|
               %li.sidebar-list-item.categories-list-item
                 =link_to tag, tag_path(tag.downcase)
-        .section-container
-          .header.text-uppercase
-            Archives
-          %ul.sidebar-list.archives-list
-            - Array(2008..2017).reverse.each do |year|
-              %li.sidebar-list-item.archives-list-item
-                =link_to year, "#posts_by_year_x"
     .col-md-9.col-xs-12
       #news-container.section-container
         .section-name#news-section

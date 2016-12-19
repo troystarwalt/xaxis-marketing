@@ -30,11 +30,3 @@
             %ul.sidebar-list.category-list
               -@all_tags.each do |tag|
                 %li.sidebar-list-item.category-list-item=link_to tag, tag_path(tag.downcase)
-          .news-archives-sidebar
-            .archives-container
-              .sidebar-header.archives-header-box
-                .archives-header.sidebar-header-title
-                  Archives
-              %ul.sidebar-list.archive-year-list
-                - Array(2008..2017).reverse.each do |year|
-                  %li.sidebar-list-item.archive-year-list-item= link_to year, "#"
