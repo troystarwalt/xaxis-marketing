@@ -3,6 +3,6 @@ class FeedbackNotifierMailer < ApplicationMailer
 
   def send_feedback_form(contact)
     @contact = contact
-    mail( :to => 'troyst83@gmail.com', :subject => 'New Feedback From Xaxis Internal')
+    mail( :to => 'troy.starwalt@xaxis.com', :subject => 'New Feedback From Xaxis Internal')
   end
 end
