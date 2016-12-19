@@ -14,7 +14,7 @@
       #news-container.section-container
         .section-name#news-section
           %h1.header.text-uppercase
-            Latest News
+            Latest
           = sortable "updated_at", "Sort"
         %ul.list-group.news-articles-list
           - @posts.includes(:tags).each do |post|

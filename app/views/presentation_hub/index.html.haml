@@ -20,7 +20,11 @@
               .hr-faker
               %p 2016 #{brand.name} Global Capabilities Deck
               - if brand.brand_accessories.has_category("capability").present?
-                =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                -if brand.slug == "plista"
+                  - brand.brand_accessories.has_category("capability").each do |plista|
+                    =link_to plista.name.truncate(8), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                -else
+                  =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
               -else
                 %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
   %section.middle-section
