@@ -20,3 +20,6 @@ class OneOhOne < ApplicationRecord
 
 
 end
+
+
+#   scope :tagged_by, -> (category){where(tags: {name: category})}
