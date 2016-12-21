@@ -109,7 +109,7 @@ end
 if Rails.env.development? || Rails.env.test?
   # Post.destroy_all
   # Platform.destroy_all
-  # BrandAccessory.destroy_all
+  BrandAccessory.destroy_all
   ExpertInterview.destroy_all
 
   # 50.times do
@@ -128,7 +128,7 @@ if Rails.env.development? || Rails.env.test?
   # AdminUser.destroy_all
   # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-  categories = %w(ppt_template word_template guidelines logo capability palette facts)
+  categories = %w(ppt_template word_template guidelines logo capability facts)
   headshot_photo = ['public/seedfiles/female.jpg', 'public/seedfiles/male.jpg']
 
   brands = ['Xaxis', 'plista', 'Light Reaction', 'Triad']
@@ -149,8 +149,6 @@ if Rails.env.development? || Rails.env.test?
             new_file = brand_name + "_logos.zip"
           when "capability"
             new_file = brand_name + "_capability.pptx"
-          when "palette"
-            new_file = brand_name + "_palette.ase"
           when "facts"
             new_file = brand_name + "_facts.pdf"
         end
