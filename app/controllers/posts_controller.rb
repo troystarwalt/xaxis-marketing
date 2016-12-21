@@ -45,6 +45,9 @@ class PostsController < ApplicationController
     @tags = ActsAsTaggableOn::Tag.most_used
     gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}
 
+    @last_two_101 = OneOhOne.last(2)
+
+    @last_expert = ExpertInterview.last
   end
 
   private

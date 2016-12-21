@@ -1,45 +1,45 @@
 .flex-container
   display: flex
   // The height is required for proper rendering in Safari.
-  height: 800px
+  height: 600px
   flex-direction: row
   .flex-column
     width: calc(100%/3)
     height: inherit
     .flex-sm-item
-      height: 33.33%
+      height: 50%
       padding: 40px
       position: relative
     .flex-lg-item
-      height: 66.66%
+      height: 100%
       padding: 40px
       position: relative
 
 .grid-icon-container
+  margin: 0 auto
   .grid-icon
+    max-width: 250px
+    max-height: 200px
 
 .large-grid-icon-container
   width: 75%
   margin: 0 auto
   margin-top: 40px
-
-.link-container
-  width: 100%
-  text-align: center
-  margin-bottom: 20px
   position: absolute
   bottom: 0
-  left: 0
-  .color-grid-btn
-    border: 1px solid $white
-    border-radius: 100px
-    letter-spacing: 2px
-    font-size: .8em
-    @include Gotham-Medium
-    margin: 0 auto
+  left: 50%
+  transform: translateX(-50%)
+
+.color-grid-btn
+  border: 1px solid $xaxis-darkest-blue
+  border-radius: 100px
+  letter-spacing: 2px
+  font-size: .8em
+  @include Gotham-Medium
+  margin: 0 auto
 
 .color-grid-text, .color-grid-text > span, .link-container > a
-  color: $white
+  color: $xaxis-darkest-blue
 
 .color-grid-category-text
   font-size: .7em
@@ -58,53 +58,57 @@
       color: $primary-color
 
 .sm-item-header
-  font-size: 1.2em
-  font-weight: bold
-  letter-spacing: 1px
-
-.lg-item-header
   font-size: 1.5em
   font-weight: bold
   letter-spacing: 1px
 
-.link-container-left
-  text-align: left
-  padding-left: 40px
+.lg-item-header
+  font-size: 2.5em
+  letter-spacing: 1px
+  @include Gotham-Bold
+
+.new_alert
+  color: $xaxis-dark-yellow
+  font-size: .8em
 
 .left-top
-  background: $xaxis-light-yellow
-.left-bottom
-  background: $xaxis-blue-color
-.center-top
-  background: $xaxis-orange
-.center-middle
   background: $xaxis-grey-blue
+.left-bottom
+  background: $xaxis-deep-green
+.center-top
+  background: $xaxis-blue-color
 .center-bottom
-  background: $xaxis-light-green
+  background: $footer-border-color
 .right-top
   background: $xaxis-lightest-blue
-.right-bottom
-  background: $xaxis-deep-green
 
-.left-top, .right-top
+#grid-box-3
+  background: url('calculator.jpg') no-repeat
+  background-size: cover
+
+#grid-box-2
+  background-size: cover !important
+  background-repeat: no-repeat
+
+.left-top, .center-top, .left-bottom
   .color-grid-text
-    color: $black
+    color: $white
     span
-      color: $black
+      color: $white
   .link-container
     .color-grid-btn
-      color: $black
-      border-color: $black
+      color: $white
+      border-color: $white
 
 @media (min-width: 1900px)
-  #grid-box-7
+  #grid-box-4
     .grid-icon-container
       width: 70%
   .large-grid-icon-container
     width: 50%
 
 @media (min-width: 1400px) and (max-width: 1899px)
-  #grid-box-7
+  #grid-box-4
     .grid-icon-container
       width: 75%
   .large-grid-icon-container
@@ -124,46 +128,32 @@
         padding-top: 40px
         padding-bottom: 40px
 
-  .link-container-left
-    padding-left: 70px
-
 @media (max-width: 999px)
   .flex-container
     flex-direction: column
     height: auto
     .flex-column
       width: 100%
-      min-height: 450px
   .large-grid-icon-container
     width: calc(75%/2)
     margin-bottom: 40px
 
-  .grid-icon-container
-    width: 75%
+  .grid-icon-container, .large-grid-icon-container
+    display: none
 
 @media (max-width: 767px)
   .flex-container
     .flex-column
       .flex-sm-item
         min-height: 50%
-        height: 250px
         position: relative
         .grid-content-container
           margin-bottom: 2%
-        .link-container
-          position: absolute
-          bottom: 0
-          left: 0
-          text-align: center
       .flex-lg-item
         min-height: 50%
         position: relative
       .content-text-sub
         height: auto
-  .right-top
-    height: 250px !important
   .link-container
     .color-grid-btn
       width: 50%
-  .link-container-left
-    padding-left: 0

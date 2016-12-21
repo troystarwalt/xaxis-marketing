@@ -1,103 +1,64 @@
 .flex-container
   .flex-column
     .flex-sm-item.left-top#grid-box-1
-      %h1.lg-item-header.color-grid-text Welcome to the Xaxis Marketing Hub
-      %p Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
-    .flex-lg-item.left-bottom#grid-box-4
       %p.text-uppercase.color-grid-category-text.color-grid-text
-        %span turbine
-        %span.vertical-bar|
-        %span spotlight
-        %span.vertical-bar|
-        %span xanadu
-      %h1.lg-item-header.color-grid-text Xaxis Platforms
-      %dl.color-grid-text#quick-links
-        %dd
-          Quick Links:
-          %dt On Hold
-          %dt Until
-          %dt We know what we are doing
-        -# - @four_most_recent_updates.each do |q|
-        -#   - classname = q.class.name
-        -#   - case classname
-        -#   - when 'CaseStudy'
-        -#     =link_to platform_case_studies_path(q.platform.slug) do
-        -#       %dt
-        -#         = q.platform.name
-        -#         = q.class.name
-        -#   - when 'OneSheeter', 'Infographic', 'Video'
-        -#     =link_to platform_path(q.platform.slug, anchor: "platform_#{q.class.name.downcase}") do
-        -#       %dt
-        -#         = q.platform.name
-        -#         = q.class.name
-        -#   - else
-        -#     %dt
-      .large-grid-icon-container.hidden-sm-down
-        = image_tag "platforms_icon.png", alt: "Platform Icon", class: "grid-icon img-fluid"
-      .link-container
-        =link_to "enter", "###", class: "text-uppercase btn color-grid-btn"
-  .flex-column
-    .flex-sm-item.center-top#grid-box-2
+        %span oh, hi!
+      %h1.lg-item-header.color-grid-text Welcome!
+      %p.color-grid-text Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
+    .flex-sm-item.left-bottom#grid-box-2{style: "background: url(#{@latest_post.image.preview})"}
       .grid-content-container
         .row
-          .col-lg-12
+          .col-sm-12
+            %p.text-uppercase.color-grid-category-text.color-grid-text
+              %span updates
+        .row
+          .col-sm-12
+            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(10)
+            %p.color-grid-text= @latest_post.text.truncate_words(10)
+        .link-container
+          =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn", target: "_blank"
+  .flex-column
+    .flex-sm-item.center-top#grid-box-3
+      .grid-content-container
+        .row
+          .col-sm-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
               %span Utilities
-              %span.vertical-bar|
-              %span Value Calculator
         .row
-          .col-sm-7
-            %h1.sm-item-header.color-grid-text 2016 Xaxis Media Buying Calculator
-          .col-sm-5
-            .grid-icon-container.hidden-sm-down
-              = image_tag "values_calc_icon.png", alt: "Box in Box", class: "grid-icon img-fluid"
-      .link-container.link-container-left
-        =link_to "enter", value_calculator_path, class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.center-middle#grid-box-5
-      - if @view_this_box.nil? && @most_recent_update.nil?
-        = render partial: "partials/middle_box/box_no_updates"
-        -# The below is for the platforms. Won't be used for now.
-      - else
-        = render partial: "partials/middle_box/#{@view_this_box}"
-    .flex-sm-item.center-bottom#grid-box-6
-      .grid-content-container
-        .row
-          .col-lg-12
-            %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span Utilities
-              %span.vertical-bar|
-              %span 101 Series
-        .row
-          .col-sm-7
-            %h1.sm-item-header.color-grid-text 101 Series
-          .col-sm-5
-            .grid-icon-container.hidden-sm-down
-              = image_tag "101_icon.png", alt: "Beaker", class: "grid-icon img-fluid "
-      .link-container.link-container-left
-        =link_to "enter", one_oh_one_series_path, class: "text-uppercase btn color-grid-btn", target: "_blank"
-  .flex-column
-    .flex-lg-item.right-top#grid-box-3
-      %p.text-uppercase.color-grid-category-text.color-grid-text
-        %span Brand Assets
-        %span.vertical-bar|
-        %span Templates
-      %h1.lg-item-header.color-grid-text The Presentation Hub
-      %p.color-grid-text Download brand templates for powerpoint, word and more.
-      .large-grid-icon-container.hidden-sm-down
-        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+          .col-sm-12
+            %h1.sm-item-header.color-grid-text Xaxis Value Calculator
+            %p.color-grid-text The 2016 Xaxis Programmatic Media Value Calculator is designed to help you calculate Xaxis’ tangible values to your customers.
       .link-container
-        =link_to "enter", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
-    .flex-sm-item.right-bottom#grid-box-7
+        =link_to "try it", value_calculator_path, class: "text-uppercase btn color-grid-btn"
+    .flex-sm-item.center-bottom#grid-box-4
       .grid-content-container
         .row
           .col-lg-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span latest update
+              %span get smart
         .row
-          .col-sm-8
-            =link_to post_path(@latest_post) do
-              %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(10)
-              %p.color-grid-text= @latest_post.text.truncate_words(10)
-          .col-sm-4
+          .col-sm-7
+            %h1.lg-item-header.color-grid-text Learning
+            %dl
+              %dd
+                - @last_two_101.each do |series|
+                  %dt
+                    = series.name.truncate(15)
+                    - if series.is_recent
+                      %span.new_alert NEW
+                %dt= @last_expert.title.truncate(15)
+            .link-container
+              =link_to "learn", expert_interview_hub_path, class: "text-uppercase btn color-grid-btn", target: "_blank"
+          .col-sm-5
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid"
+  .flex-column
+    .flex-lg-item.right-top#grid-box-5
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span Templates
+      %h1.lg-item-header.color-grid-text The Presentation Hub
+      %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
+      .link-container
+        =link_to "go", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
+      .large-grid-icon-container.hidden-md-down
+        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
