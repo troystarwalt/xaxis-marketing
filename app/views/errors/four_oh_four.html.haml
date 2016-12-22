@@ -1,4 +1,16 @@
 .container
   .row
-    .col-xs-12
-      =image_tag 'http://404-error.com/wp-content/uploads/2013/03/404-error.jpg', class: 'img-fluid'
+    .col-xs-12#error_container
+      .error-img
+        =image_tag '/images/page_404.png', class: 'img-fluid'
+      .error-links
+        %ul.error-list
+          %li Maybe try these links:
+          %li.error-item
+            =link_to "Home", root_path, class: "error-link"
+          %li.error-item
+            =link_to "Brand Assets",brand_path(@xaxis), class: "error-link"
+          %li.error-item
+            =link_to "Learning Hub", expert_interview_hub_url, class: "error-link"
+          %li.error-item
+            =link_to "Presentations", presentation_hub_url, class: "error-link"
