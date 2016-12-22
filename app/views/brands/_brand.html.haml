@@ -82,7 +82,11 @@
       %h3.text-uppercase global capability deck
       = content_for_brands[@brand_for_content][:capa].html_safe
       - if @brand.brand_accessories.has_category("capability").present?
-        = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        -if @brand.slug == "plista"
+          - @brand.brand_accessories.has_category("capability").each do |plista|
+            = link_to plista.name.truncate(15), plista.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        -else
+          = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-headshots
       %h3.text-uppercase executive headshots
