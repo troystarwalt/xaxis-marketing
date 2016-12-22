@@ -1,11 +1,6 @@
 class CaseStudyFileUploader < BaseUploader
   after :store, :get_text_from_file
 
-  def default_url(*args)
-    random = ['xaxis', 'lr', 'turbine', 'plista', 'triad']
-    "https://robohash.org/#{random.sample}.png?size=200x200"
-  end
-
   def extension_whitelist
     %w(pdf)
   end
