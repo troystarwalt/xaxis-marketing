@@ -6,13 +6,13 @@ class FileUploader < BaseUploader
     "https://robohash.org/#{random.sample}.png?size=200x200"
   end
 
-  version :thumb, :if => :image? do
-    process resize_to_limit: [100, 100]
-  end
-
-  version :preview, :if => :image? do
-    process resize_to_fit: [400, 400]
-  end
+  # version :thumb, :if => :image? do
+  #   process resize_to_limit: [100, 100]
+  # end
+  #
+  # version :preview, :if => :image? do
+  #   process resize_to_fit: [400, 400]
+  # end
 
   def extension_whitelist
     if model.class.name == "OneSheeter"
