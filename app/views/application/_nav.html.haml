@@ -13,19 +13,15 @@
             =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
             =link_to "plista", brand_path(@plista), class: "dropdown-item"
             =link_to "Triad", brand_path(@triad), class: "dropdown-item"
-        -# %li.nav-item.dropdown
-        -#   =link_to "Platform Assets", platform_path(@turbine), class: "nav-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false", "role" => "button"
-        -#   .dropdown-menu
-        -#     =link_to "Turbine", platform_path(@turbine), class: "dropdown-item"
-        -#     =link_to "Spotlight", platform_path(@spotlight), class: "dropdown-item"
-        -#     =link_to "Xanadu", platform_path(@xanadu), class: "dropdown-item"
-        -#     =link_to "Case Studies", case_studies_path, class: "dropdown-item"
         %li.nav-item.dropdown
           =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
           .dropdown-menu
             =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
             =link_to "101 Series", one_oh_one_series_url, class: "dropdown-item"
+        %li.nav-item.dropdown
+          =link_to "Landing Pages", presentation_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
+            =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
         %li.nav-item
-          =link_to "Presentation Hub", presentation_hub_url, class: "nav-link main-link "
-        %li.nav-item
-          =link_to "Updates", posts_path, class: "nav-link main-link "
+          =link_to "Feedback", new_contact_path, class: "nav-link main-link "
