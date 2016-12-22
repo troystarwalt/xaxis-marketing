@@ -13,18 +13,29 @@ a:link, a:active, a:hover
 // 404 Style
 
 #error_container
-  position: relative
+  background: $xaxis-blue-color
+  color: $white
+  padding-top: 40px
+  padding-bottom: 40px
+  line-height: normal
+  letter-spacing: 3px
+
+.error-img
+  margin-top: 40px
+  margin-bottom: 40px
+
+.error-code
+  font-size: 2em
+  @include Gotham-Thin
 
 .error-links
-  position: absolute
-  left: 9.5%
-  bottom: 11%
-  color: $white
   @include Gotham-Book
   font-size: 1.2em
+  margin-top: 140px
 
 .error-list
-  list-style: none
+  list-style-type: none
+  padding: 0
 
 .error-item
   margin-top: 8px
@@ -34,6 +45,10 @@ a:link, a:active, a:hover
     color: $white
   &:hover
     color: $grey
+
+.balloon
+  max-height: 800px
+  float: right
 
 
 @media (max-width: 991px)
@@ -46,17 +61,12 @@ a:link, a:active, a:hover
     bottom: 2%
 
 
-@media (max-width: 533px)
+@media (max-width: 543px)
   .error-links
-    position: static
-    color: $xaxis-blue-color
+    margin-top: 60px
+    margin-bottom: 60px
 
-  .error-list
-    margin-left: -39px
-    margin-top: 30px
-
-  .error-link
-    &:active, &:link, &:visited
-      color: $xaxis-blue-color
-    &:hover
-      color: $grey
+  .balloon
+    clear: right
+    float: none
+    margin: 0 auto
