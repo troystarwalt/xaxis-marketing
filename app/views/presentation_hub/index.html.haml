@@ -22,7 +22,7 @@
               - if brand.brand_accessories.has_category("capability").present?
                 -if brand.slug == "plista"
                   - brand.brand_accessories.has_category("capability").each do |plista|
-                    =link_to plista.name.truncate(8), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                    =link_to plista.name.truncate(15), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
                 -else
                   =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
               -else
