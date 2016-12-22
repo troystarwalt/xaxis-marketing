@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 class ImageUploader < BaseUploader
 
-  def default_url(*args)
-    random = ['xaxis', 'lr', 'turbine', 'plista', 'triad']
-    "https://robohash.org/#{random.sample}.png?size=200x200"
-  end
 
   version :thumb, :if => :image? do
     process resize_to_limit: [100, 100]

@@ -11,6 +11,10 @@ class BaseUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default_robot.jpg"].compact.join('_'))
+  end
+
   def filename
     model_name = if model.try(:title)
                    model.title
@@ -22,7 +26,7 @@ class BaseUploader < CarrierWave::Uploader::Base
 
 
   protected
-  
+
     def secure_token(length=16)
       var = :"@#{mounted_as}_secure_token"
       model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
