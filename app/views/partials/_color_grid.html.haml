@@ -5,7 +5,7 @@
         %span oh, hi!
       %h1.lg-item-header.color-grid-text Welcome!
       %p.color-grid-text Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
-    .flex-sm-item.left-bottom#grid-box-2{style: "background: #{ @latest_post.image.file.nil? ? '' : url(@latest_post.image.preview)}"}
+    .flex-sm-item.left-bottom#grid-box-2{style: "background-image: url(#{ @latest_post.image.file.nil? ? '' : @latest_post.image.preview.url});"}
       .grid-content-container
         .row
           .col-sm-12
