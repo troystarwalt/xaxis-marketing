@@ -18,12 +18,14 @@ function countDown() {
       $('.color-counter').text(4);
     }
   }, 1000);
+
+  $('.color-close').on('click', function() {
+    $('#color_change').css('display', 'none');
+    clearInterval(timer);
+    $('.color-counter').text(4);
+  });
 }
 
 function clearColor() {
   $('#color_change').css('display', 'none');
 };
-
-$('.color-close').on('click', function() {
-  $('#color_change').css('display', 'none');
-});
