@@ -94,14 +94,4 @@
         = render partial: "headshots", brand: @brand
       - if @headshots.blank?
         %h4 No headshots available at this time.
--# lightbox aka modal
-.modal.fade(id="hsModal" tabindex="-1" role="dialog")
-  .modal-dialog(role="document")
-    .modal-content
-      .modal-header
-        %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
-          %span(aria-hidden="true") &times;
-      .modal-body
-        %image.hs-img{src: ''}
-
 = render partial: "brands/palettes/color_change"
