@@ -10,7 +10,7 @@ class OneOhOne < ApplicationRecord
   }
   validates :pdf_file,
   :file_size => {
-    :maximum => 5.megabytes.to_i
+    :maximum => 10.megabytes.to_i
   }
 
   validates :image_preview,

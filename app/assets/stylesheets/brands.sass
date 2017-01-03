@@ -165,21 +165,34 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
 .headshot-image > img:hover
   cursor: pointer
 
-.headshot-info > p
-  font-size: 10px
-  margin-bottom: 5px
+.headshot-info
   line-height: 14px
+  margin-bottom: 5px
 
-.headshot-info > p:first-of-type
-  @include Gotham-Book
+.headshot-name
+  @include Gotham-Medium
   margin-bottom: 2px
   margin-top: 8px
+  font-size: .92857em
 
-.headshot-info > p:nth-child(2)
+.headshot-title
   min-height: 40px
+  font-size: .714285em
+  margin-bottom: 5px
 
-.headshot-info > span
-  font-size: 8px
+.headshot-bio
+  margin-bottom: 5px
+
+.headshot-download-icons
+  color: $silver
+  font-size: .714285em
+
+.headshot-download-links
+  font-size: .714285em
+  &:link
+    color: $main-body-font-color
+    @include Gotham-Medium
+
 
 /***********  lightbox Window  ***********/
 
