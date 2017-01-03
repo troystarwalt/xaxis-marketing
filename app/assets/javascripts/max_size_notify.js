@@ -11,7 +11,7 @@ $('.admin_namespace').ready(function() {
       var specificFileInput = $('#' + id);
       var get_data_type = specificFileInput.data("type");
       var data_types = {ppt: 100,
-                        pdf: 5,
+                        pdf: 10,
                         png: 5,
                         large_png: 10,
                         bank: 300
