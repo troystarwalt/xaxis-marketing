@@ -44,4 +44,8 @@ module ApplicationHelper
     link_to title, {sort: button, direction: direction, role: "button"}, {class: css_class}
   end
 
+  def current_year
+    DateTime.now.year
+  end
+
 end
