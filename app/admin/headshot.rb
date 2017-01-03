@@ -5,7 +5,7 @@ ActiveAdmin.register Headshot do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :first_name, :last_name, :title, :brand_id, :image, :priority
+  permit_params :first_name, :last_name, :title, :brand_id, :image, :priority, :bio
   #
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
@@ -18,26 +18,18 @@ ActiveAdmin.register Headshot do
       f.input :image, as: :string, required: false, hint: image_tag(object.image.url(:thumb)).html_safe unless object.image.blank?
       f.input :image, as: :file, input_html: {data: {type: 'large_png'}}, hint: "Maximum size 10mb"
       f.hidden_field :image_cache
+      f.input :bio, hint: "Need paragraphs? You can add a <br /> tag."
     end
       para "Adding a new headshot updates the site. So proof your work!"
     f.actions
     puts params
   end
 
-  index do
-    selectable_column
-    id_column
-    column :first_name
-    column :last_name
-    column :title
-    column :brand, sortable: 'brands.name'
-    column :priority
-    column :created_at
-    column :updated_at
-    column :image do |f|
-      image_tag(f.image.url(:thumb)).html_safe
+  index as: :grid do |headshot|
+    div do
+      link_to image_tag(headshot.image.thumb), admin_headshot_path(headshot)
     end
-    actions
+    a truncate(headshot.full_name), :href => admin_headshot_path(headshot)
   end
 
   show do
@@ -54,6 +46,7 @@ ActiveAdmin.register Headshot do
       row :Large_Version do |f|
         image_tag(f.image.url(:large)).html_safe
       end
+      row :bio
       active_admin_comments
     end
   end

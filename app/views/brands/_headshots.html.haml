@@ -4,15 +4,41 @@
       .headshot-container
         = link_to '###', class: "headshot-image", id: "#{hs.full_name.parameterize}", data: { index: index } do
           = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
-          - puts hs.image.url(:thumb)
           %span.after-text.text-uppercase View Image
         .text-xs-center.headshot-info
-          %p.font-weight-bold= hs.full_name
-          %p= hs.title
-          %span.fa.fa-download
+          %p.font-weight-bold.headshot-name= hs.full_name
+          %p.headshot-title= hs.title
+          %p.headshot-bio{data: { index: index }}
+            %span.fa.fa-file.headshot-download-icons
+            =link_to "View Bio", "###", type: "text", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links"
+          %span.fa.fa-download.headshot-download-icons
           %span
-            =link_to "Original", hs.image_url, type: "image/jpeg", download: hs.full_name
+            =link_to "Original", hs.image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
           %span
             |
           %span
-            =link_to "1024x768", hs.image_url(:large), type: "image/jpeg", download: hs.full_name
+            =link_to "1024x768", hs.image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+-# Modal for Headshots
+.modal.fade(id="hsModal" tabindex="-1" role="dialog")
+  .modal-dialog(role="document")
+    .modal-content
+      .modal-header
+        %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
+          %span(aria-hidden="true") &times;
+      .modal-body
+        %image.hs-img{src: ''}
+-# Modal for bios
+.modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
+  .modal-dialog(role="document")
+    .modal-content
+      .modal-header
+        %button(type="button" class="close hs-bio-close" data-dismiss="modal" aria-label="Close")
+          %span.fa.fa-times-circle(aria-hidden="true")
+      .modal-body
+        .row.headshot-header-info
+          .col-sm-3
+            %image.hs-bio-img.img-fluid{src: ''}
+          .col-sm-9.title-and-name
+            %h2.hs-name
+            %p.hs-title
+        %p.hs-bio
