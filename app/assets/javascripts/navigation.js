@@ -1,6 +1,7 @@
+// Side menu highlighting
 $(document).ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()+400;
+  sideMenuHeight = sideMenu.outerHeight()+100;
   menuItems = sideMenu.find("a"),
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
