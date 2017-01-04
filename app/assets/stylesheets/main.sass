@@ -44,14 +44,13 @@
     transform: translateY(-50%)
     margin-left: 30px
     color: $grey
+    letter-spacing: 2px
 
 /***********  Section Specific  ***********/
 
 .icon-info
   margin-bottom: 20px
 
-#latest-news
-  border-bottom: 1px solid $lightest-grey
 .circle70
   display: inline-block
   border-radius: 100%
@@ -71,7 +70,7 @@
 .single-news-container, .single-announcement-container
   padding-top: 5%
   padding-bottom: 5%
-  margin-right: 13px
+  // margin-right: 13px
   position: relative
   .single-news-text
     padding: 0 5%
@@ -79,7 +78,7 @@
     margin-bottom: 0
   &:hover, &.active
     border-right: 5px solid $xaxis-blue-color
-    margin-right: 8px
+    // margin-right: 8px
     background-color: $anti-flash-white
   &.active
     @media(min-width: 767px)
@@ -139,10 +138,22 @@
           min-width: 23px
           background-color: $xaxis-yellow
 .more-updates-button,.readmore-link
+  margin-top: 30px
   a
     color: $xaxis-darkest-blue
     font-size: 12px
+    letter-spacing: 1.71px
     @include Gotham-Book
+a
+  .fa-lg.fa-angle-right
+    vertical-align: -3%
+    color: $silver
+
+.single-news_button
+  color: $xaxis-darkest-blue
+  font-size: 12px
+  letter-spacing: 1.71px
+  @include Gotham-Book
 
 @media screen and (max-width: 845px)
   #preview-container
