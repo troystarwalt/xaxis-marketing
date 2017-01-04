@@ -17,12 +17,13 @@
         background-color: $alternate-white
         box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12)
         padding: 25px 25px
-        min-height: 400px
+        min-height: 440px
         h2
           font-size: 1.29em
           @include Gotham-Book
           margin-bottom: 20px
           letter-spacing: 2px
+          min-height: 32px
         .card-btn
           min-width: 120px
           width: 100%
@@ -64,17 +65,6 @@
       @include Gotham-Thin
       letter-spacing: 2px
 
-.triad-card-lower-text
-  font-size: 1.1em
-
-.plista-card-lower-text
-  margin-bottom: 23px
-
-.restrict-plista
-  display: inline
-  font-size: 9px
-  padding: 14px 10px
-
 .xaxis-card
   border-top: 5px solid $xaxis-blue-color
   h2
@@ -99,25 +89,35 @@
   .container-fluid.footer-container
     bottom: inherit
 
-// @media (min-width: 992px and max-width: 1199px)
+@media (min-width: 992px) and (max-width: 1199px)
+  #presentation_hub
+    section
+      h1
+    .top-section
+      .row
+        .card
+          min-height: 460px
+          h2
+            min-height: 38px
 
-
+@media (min-width: 768px) and (max-width: 991px)
+  #presentation_hub
+    section
+      h1
+    .top-section
+      .row
+        .card
+          min-height: 431px
 
 @media (max-width: 991px)
-  #presentation_hub
-    .top-section
-      .container
-        .row
-          .card
-            min-height: 320px
-    .middle-section
-      .container
-        .row
-          .more-resources
-            button
-              position: static
-              margin-left: inherit
-              margin-bottom: 30px
+  .middle-section
+    .container
+      .row
+        .more-resources
+          button
+            position: static
+            margin-left: inherit
+            margin-bottom: 30px
 
 @media (max-width: 767px)
   .plista-card-lower-text
