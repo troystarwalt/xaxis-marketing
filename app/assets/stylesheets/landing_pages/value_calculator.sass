@@ -1,6 +1,7 @@
 @import "../vars"
 @import "../bootstrap.v3.min.css"
 @import "../fonts"
+@import "../nav"
 @import "../footer"
 /****************************************
 /* Set Font Defaults
@@ -302,11 +303,11 @@ select
   border: none
   @include Gotham-Light
 
-.container > a
-  border-radius: 100px
-  background: #00AFEF
-  border: 1px solid transparent
-  font-size: 12px
+// .container > a
+//   border-radius: 100px
+//   background: #00AFEF
+//   border: 1px solid transparent
+//   font-size: 12px
 
 td.empty-row
   height: 3vh
@@ -375,12 +376,6 @@ td.empty-row
 @media (max-width: 767px)
   .question-container
     display: block
-  ul.navbar-nav
-    margin-top: -12px
-    margin-left: 110px
-    display: inline-block
-    li
-      display: inline-block
   .left-column
     border-bottom: 2px solid #F6F6F6
     padding-bottom: 35px

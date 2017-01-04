@@ -1,6 +1,6 @@
 #news-container.section-container
   .section-name#news-section
-    %h1.header.text-uppercase Latest
+    %h1.header.text-uppercase Latest Updates
   .content-container#latest-news
     .row
       .col-md-6.col-sm-12.hidden-xs-down#preview-container
@@ -15,12 +15,16 @@
                   |
                   %span#single-news_date.date= @initial_post.pretty_date
           .selected-news_content
-            %h1.content-header#single-news_title.news-title= @initial_post.title.truncate_words(10)
+            =link_to post_path(@initial_post), id: "single-news_title_link" do
+              %h1.content-header#single-news_title.news-title= @initial_post.title.truncate_words(10)
             %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
             %p.content-text.news-text
-              %span#single-news_text= @initial_post.medium_teaser
-            %p.readmore.font-italic= link_to 'Read More', post_path(@initial_post), class: "readmore-link pull-right", id: 'single-news_readmore'
-      .col-md-6.col-sm-12
+              %span#single-news_text
+                = @initial_post.medium_teaser
+            = link_to post_path(@initial_post), id: 'single-news_readmore', class: "single-news_button text-uppercase" do
+              Read More
+              %i.fa.fa-angle-right.fa-lg
+      .col-md-5.offset-md-1.col-sm-12
         .recent_news_container
           - @posts.each_with_index do |post, index|
             .single-news-container{"data-postId" => post.id, class: ('active' if index == 0) }
@@ -28,7 +32,7 @@
                 %h1.content-header= post.title.truncate_words(10)
                 %p.content-text= post.short_teaser
                 %p.readmore.hidden-sm-up= link_to 'Read More', post_path(post), class: "readmore-link"
-  .more-updates-button.text-xs-right
-    = link_to posts_path do
-      MORE UPDATES
-      %i.fa.fa-angle-right{'aria-hidden' => "true"}
+        .more-updates-button.text-xs-right
+          = link_to posts_path do
+            MORE UPDATES
+            %i.fa.fa-angle-right.fa-lg{'aria-hidden' => "true"}

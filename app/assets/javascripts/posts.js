@@ -36,6 +36,8 @@ $('.posts.main').ready(function(){
   }
 
   function swapSelectedUpdate(post){
+    var slug = post.slug || post.id;
+    $('#single-news_title_link').attr('href', "/posts/"+slug);
     $('#single-news_title').text(post.title);
     $('#single-news_image').attr("src", post.img_url);
     if (post.text.length > 200) {
@@ -46,7 +48,6 @@ $('.posts.main').ready(function(){
     }
     $('#single-news_tag_list').text(post.tag_list);
     $('#single-news_date').text(post.date);
-    var slug = post.slug || post.id;
     $('#single-news_readmore').attr('href', "/posts/"+slug);
   }
 

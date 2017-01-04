@@ -79,3 +79,16 @@
   font-family: 'Gotham-Thin', arial, sans-serif
   font-weight: normal
   font-style: italic
+
+
+// Setting up keyframe
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
