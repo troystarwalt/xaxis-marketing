@@ -15,7 +15,7 @@
                   |
                   %span#single-news_date.date= @initial_post.pretty_date
           .selected-news_content
-            %h1.content-header#single-news_title.news-title= @initial_post.title
+            %h1.content-header#single-news_title.news-title= @initial_post.title.truncate_words(10)
             %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
             %p.content-text.news-text
               %span#single-news_text= @initial_post.medium_teaser
@@ -25,9 +25,8 @@
           - @posts.each_with_index do |post, index|
             .single-news-container{"data-postId" => post.id, class: ('active' if index == 0) }
               .single-news-text
-                %h1.content-header= post.title
-                %p.content-text
-                  = post.teaser
+                %h1.content-header= post.title.truncate_words(10)
+                %p.content-text= post.short_teaser
                 %p.readmore.hidden-sm-up= link_to 'Read More', post_path(post), class: "readmore-link"
   .more-updates-button.text-xs-right
     = link_to posts_path do

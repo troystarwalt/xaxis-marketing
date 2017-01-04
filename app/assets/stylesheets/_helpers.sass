@@ -4,6 +4,22 @@
   padding-left: 5px
   padding-right: 5px
 
+// This limits amount of text and hides overflow if needed.
+.keep-pretty-text
+  max-height: 4.5em
+  overflow: hidden
+  text-overflow: ellipsis
+
+.keep-pretty-text-high
+  max-height: 5.5em
+  overflow: hidden
+  text-overflow: ellipsis
+
+dt
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
 //Brand specific buttons. Base class name is "#{@brand.slugh}-btn-primary"
 
 .brand-btn-primary
