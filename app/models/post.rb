@@ -41,8 +41,8 @@ class Post < ApplicationRecord
     created_at.to_date.strftime("%b, %Y")
   end
 
-  def teaser
-    text.truncate_words(15)
+  def short_teaser
+    text.truncate_words(20)
   end
 
   def medium_teaser

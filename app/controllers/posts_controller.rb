@@ -39,14 +39,12 @@ class PostsController < ApplicationController
     #
     # @four_most_recent_updates = four_latest_models
 
-    @posts = Post.includes(:tags).last(5)
+    @posts = Post.includes(:tags).order("created_at DESC").first(5)
     @latest_post = Post.last
     @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
-    gon.posts = Post.includes(:tags).last(5).map{|post| post.get_main_json}
-
-    @last_two_101 = OneOhOne.last(2)
-
+    gon.posts = Post.includes(:tags).order("created_at DESC").first(5).map{|post| post.get_main_json}
+    @last_two_101 = OneOhOne.last_two
     @last_expert = ExpertInterview.last
   end
 

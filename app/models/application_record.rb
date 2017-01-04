@@ -11,4 +11,8 @@ class ApplicationRecord < ActiveRecord::Base
   def is_recent
     (Date.today - 10.days) <= updated_at
   end
+
+  # def last_two
+  #   order("created_at DESC").first(2)
+  # end
 end
