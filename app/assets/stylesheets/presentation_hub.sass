@@ -64,6 +64,17 @@
       @include Gotham-Thin
       letter-spacing: 2px
 
+.triad-card-lower-text
+  font-size: 1.1em
+
+.plista-card-lower-text
+  margin-bottom: 23px
+
+.restrict-plista
+  display: inline
+  font-size: 9px
+  padding: 14px 10px
+
 .xaxis-card
   border-top: 5px solid $xaxis-blue-color
   h2
@@ -88,6 +99,10 @@
   .container-fluid.footer-container
     bottom: inherit
 
+// @media (min-width: 992px and max-width: 1199px)
+
+
+
 @media (max-width: 991px)
   #presentation_hub
     .top-section
@@ -103,3 +118,12 @@
               position: static
               margin-left: inherit
               margin-bottom: 30px
+
+@media (max-width: 767px)
+  .plista-card-lower-text
+    margin-bottom: initial
+
+  .restrict-plista
+    display: inline-block
+    font-size: .8em
+    padding: 8px 14px

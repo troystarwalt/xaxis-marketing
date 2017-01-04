@@ -18,11 +18,12 @@
               -else
                 %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
               .hr-faker
-              %p 2016 #{brand.name} Global Capabilities Deck
+              %p{class: "#{brand.slug}-card-lower-text"}
+                2016 #{brand.name} Global Capabilities Deck
               - if brand.brand_accessories.has_category("capability").present?
                 -if brand.slug == "plista"
                   - brand.brand_accessories.has_category("capability").each do |plista|
-                    =link_to plista.name.truncate(15), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                    =link_to plista.name.truncate(15), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary restrict-plista"
                 -else
                   =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
               -else
