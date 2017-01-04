@@ -8,10 +8,7 @@ class ApplicationRecord < ActiveRecord::Base
     created_at.to_date.strftime("%m\/\%d\/\%Y")
   end
 
-  # scope :is_recent, -> {updated_at <= :ten_days_ago}
-
   def is_recent
-    updated_at <= Time.now - 10.days
+    (Date.today - 10.days) <= updated_at
   end
-
 end
