@@ -18,7 +18,6 @@ function setMinHeight() {
 
     var maxHeight = Math.max.apply(null, elementHeights)
     Array.prototype.forEach.call(changeHeight, function(el) {
-      console.log(maxHeight);
       if (maxHeight < 200) {
         el.style.minHeight = (maxHeight + 65) + "px";
 
