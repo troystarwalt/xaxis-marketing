@@ -1,12 +1,24 @@
 /**************  List of Helpers For CSS  ***************/
+$font-size: 14px
+$line-height: 1.57
+$lines-to-show: 3
+
 
 .vertical-bar
   padding-left: 5px
   padding-right: 5px
 
-// This limits amount of text and hides overflow if needed.
 .keep-pretty-text
-  max-height: 4.5em
+  display: block
+  /* Fallback for non-webkit */
+  display: -webkit-box
+  height: $font-size*$line-height*$lines-to-show
+  /* Fallback for non-webkit */
+  // margin: 0 auto
+  font-size: $font-size
+  line-height: $line-height
+  -webkit-line-clamp: $lines-to-show
+  -webkit-box-orient: vertical
   overflow: hidden
   text-overflow: ellipsis
 

@@ -13,10 +13,10 @@
               %span updates
         .row
           .col-sm-12
-            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(10, separator: ' ')
-            %p.color-grid-text.keep-pretty-text= @latest_post.text.truncate_words(30)
-        .link-container
-          =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn", target: "_blank"
+            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(7, separator: ' ')
+            %p.color-grid-text.keep-pretty-text#latest_post_text= @latest_post.text.truncate_words(30)
+      .link-container
+        =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn", target: "_blank"
   .flex-column
     .flex-sm-item.center-top#grid-box-3
       .grid-content-container
