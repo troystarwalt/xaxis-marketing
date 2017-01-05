@@ -3,7 +3,8 @@
     %button.navbar-toggler.hidden-md-up.pull-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
       ☰
     =link_to root_path, class: "navbar-brand" do
-      =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), id: "navbar-logo"
+      =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), class: "hidden-sm-down navbar-logo desktop-logo"
+      =image_tag asset_path("xaxis_mobile_logo.png"), class: "hidden-md-up navbar-logo mobile-logo"
     #collapse-this-navbar.collapse.navbar-toggleable-sm
       %ul.nav.navbar-nav
         %li.nav-item.dropdown

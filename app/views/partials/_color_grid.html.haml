@@ -13,10 +13,10 @@
               %span updates
         .row
           .col-sm-12
-            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(10, separator: ' ')
-            %p.color-grid-text.keep-pretty-text= @latest_post.text.truncate_words(30)
-        .link-container
-          =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn", target: "_blank"
+            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(7, separator: ' ')
+            %p.color-grid-text.keep-pretty-text#latest_post_text= @latest_post.text.truncate_words(35)
+      .link-container
+        =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn"
   .flex-column
     .flex-sm-item.center-top#grid-box-3
       .grid-content-container
@@ -48,7 +48,7 @@
                       %span.new_alert NEW
                 %dt= @last_expert.title.truncate_words(10)
             .link-container
-              =link_to "learn", expert_interview_hub_path, class: "text-uppercase btn color-grid-btn", target: "_blank"
+              =link_to "learn", expert_interview_hub_path, class: "text-uppercase btn color-grid-btn"
           .col-md-4
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid"
