@@ -20,12 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello!"
   post: "Posts"
   feedback: "Feedback"
+  activerecord:
+    models:
+      one_oh_one: "Series"
   active_admin:
     our_welcome:
-      welcome: "Welcome to the dashboard."
+      welcome: "Welcome to the admin side! (dark side?)."
       small_msg: "Here you can create content for the site. This content is dynamically created!"
   errors:
     messages:
