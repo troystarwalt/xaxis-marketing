@@ -3,11 +3,12 @@
 class Post < ApplicationRecord
   validates :title, :text, presence: true
   validate :tag_must_be_approved
-  validates :image,
+  validates :image, :preview_image,
     :file_size => {
       :maximum => 5.megabytes.to_i
     }
   mount_uploader :image, ImageUploader
+  mount_uploader :preview_image, ImageUploader
   acts_as_taggable
   scope :tagged_by, -> (category){where(tags: {name: category})}
   # scope :add_anchors_if_any_urls, -> test_for_url

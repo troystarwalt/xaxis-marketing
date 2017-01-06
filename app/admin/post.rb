@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   menu priority: 2, label: proc { I18n.t "post"}
 
-  permit_params :title, :text, :author, :image, :tag_list
+  permit_params :title, :text, :author, :image, :tag_list, :preview_image
 
   controller do
     def find_resource
@@ -46,6 +46,7 @@ ActiveAdmin.register Post do
       f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link.", hint: "Example: <a href='www.google.com'>Google</a>"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
       f.input :image, as: :file, label: "Image", input_html: {data: {type: 'png'}}, hint: "Maximum 5mb"
+      f.input :preview_image, as: :file, label: "Preview Image", input_html: {data: {type: 'png'}}, hint: "This is for the homepage squre. Maximum 5mb."
       f.input :tag_list,
         as: :radio,
         label: "Tag",
