@@ -31,7 +31,6 @@ $('.platforms').ready(function() {
   }
 });
 
-// This function handles the side nav movement.
 $('#brands').ready(function() {
   // Only running this if on platforms.
   function goToScroll(id) {
@@ -40,6 +39,8 @@ $('#brands').ready(function() {
     $('html, body').animate({
       scrollTop: $("#"+id).offset().top-170}, 'fast');
   }
+
+  // This function handles the side nav movement.
   $(function() {
     $.fn.scrollBottom = function() {
       return $(document).height() - this.scrollTop() - this.height();
@@ -73,6 +74,7 @@ $('#brands').ready(function() {
     }).scroll();
   });
 
+  // A lot of code to keep a back-to-top arrow from moving past the footer
   var backToTopArrow = document.querySelector('#btw-arrow-link');
   var footer = document.querySelector('footer');
   var main_body = document.querySelector('#brands');
