@@ -13,7 +13,7 @@
       #news-container.section-container
         .section-name#news-section
           %h1.header.text-uppercase
-            Latest
+            Updates
           = sortable "updated_at", "Sort"
         %ul.list-group.news-articles-list
           - @posts.includes(:tags).each do |post|
@@ -25,8 +25,7 @@
                   .news-article-date_month_year
                     =post.month_year_only
                 .news-article-content
-                  %p.news-article-tags
-                    Tags:
+                  %p.news-article-tags.text-uppercase
                     = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
                   %h1.news-article-title=link_to post.title, post_path(post)
                   %p.news-article-text= post.medium_teaser

@@ -62,34 +62,27 @@
     width: 77%
     margin-left: 8px
     .news-article-tags
+      font-size: .7em
       @include Gotham-Book
-      font-size: 9px
-      height: 100%
       color: $manatee
+      height: 100%
       margin-bottom: 4px
+      letter-spacing: 2px
       a
-        @include Gotham-Book
-        font-size: 9px
-        height: 100%
-        color: $manatee
-        margin-bottom: 4px
-        &:hover
-          color: $xaxis-blue-color
         &:active, &:visited
           color: $manatee
+        &:hover
+          color: $xaxis-blue-color
     .news-article-title
       margin-bottom: 4px
       font-size: 22px
       a
-        padding:
         color: $xaxis-darkest-blue
         @include Gotham-Medium
+        &:active, &:visited
+          color: $xaxis-darkest-blue
         &:hover
           color: $xaxis-blue-color
-        &:active
-          color: $xaxis-blue-color
-        &:visited
-          color: $xaxis-darkest-blue
     .news-article-text
       @include Gotham-Light-Italic
       font-size: 12px

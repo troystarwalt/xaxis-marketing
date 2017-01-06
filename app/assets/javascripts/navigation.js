@@ -1,5 +1,5 @@
 // Side menu highlighting
-$(document).ready( function () {
+$('#brands').ready( function () {
   var sideMenu = $('#side-nav'),
   sideMenuHeight = sideMenu.outerHeight()+100;
   menuItems = sideMenu.find("a"),
