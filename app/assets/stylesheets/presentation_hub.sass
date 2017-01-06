@@ -16,8 +16,9 @@
         border-radius: 5px
         background-color: $alternate-white
         box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12)
-        padding: 25px 25px
-        min-height: 440px
+        padding: 25px 25px 0 25px
+        min-height: 400px
+        transition: min-height 1s
         h2
           font-size: 1.29em
           @include Gotham-Book
@@ -95,22 +96,20 @@ p.brand-btn-primary
 @media (min-width: 992px) and (max-width: 1199px)
   #presentation_hub
     section
-      h1
     .top-section
       .row
         .card
-          min-height: 460px
+          min-height: 430px
           h2
             min-height: 38px
 
 @media (min-width: 768px) and (max-width: 991px)
   #presentation_hub
     section
-      h1
     .top-section
       .row
         .card
-          min-height: 431px
+          min-height: 401px
 
 @media (max-width: 991px)
   .middle-section
@@ -130,3 +129,9 @@ p.brand-btn-primary
     display: inline-block
     font-size: .8em
     padding: 8px 14px
+  #presentation_hub
+    section
+    .top-section
+      .row
+        .card
+          min-height: 340px
