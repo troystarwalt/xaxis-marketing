@@ -39,7 +39,7 @@ module ApplicationHelper
 
   def sortable(button, title = nil)
     title ||= button.titleize
-    css_class = (button == sort_button) ? "current #{sort_direction}" : nil
+    css_class = (button == sort_button) ? "current #{sort_direction} sort-btn" : nil
     direction = (button == sort_button && sort_direction == "asc") ? "desc" : "asc"
     link_to title, {sort: button, direction: direction, role: "button"}, {class: css_class}
   end
