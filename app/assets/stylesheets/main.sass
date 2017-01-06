@@ -122,11 +122,6 @@
       top: 50%
       transform: translateY(-50%)
 
-  .readmore
-    a
-      color: $xaxis-darkest-blue
-      font-size: 1.2em
-
 .section-container
   .list-group
     a
@@ -137,23 +132,21 @@
         .tag-default
           min-width: 23px
           background-color: $xaxis-yellow
-.more-updates-button,.readmore-link
-  margin-top: 30px
-  a
-    color: $xaxis-darkest-blue
-    font-size: 12px
-    letter-spacing: 1.71px
-    @include Gotham-Book
-a
-  .fa-lg.fa-angle-right
-    vertical-align: -3%
-    color: $silver
 
 .single-news_button
   color: $xaxis-darkest-blue
   font-size: 12px
   letter-spacing: 1.71px
   @include Gotham-Book
+  text-transform: uppercase
+
+.more-updates, .readmore
+  margin-top: 30px
+
+a
+  .fa-lg.fa-angle-right
+    vertical-align: -3%
+    color: $silver
 
 @media screen and (max-width: 845px)
   #preview-container
