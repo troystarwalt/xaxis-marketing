@@ -2,19 +2,18 @@
 .container#posts-index
   .row.container-row
     .col-sm-3.hidden-sm-down
-      .sidebar
-        .section-container
-          .header.text-uppercase
-            Categories
-          %ul.sidebar-list.categories-list
-            - @all_tags.each do |tag|
-              %li.sidebar-list-item.categories-list-item
-                =link_to tag, tag_path(tag.downcase)
+      #side-nav
+        %ul.nav#update_category_list
+          %li.nav-item
+            .text-uppercase Categories
+          -@all_tags.each do |tag|
+            %li.nav-item
+              =link_to tag, tag_path(tag.downcase), class: "side-nav-link"
     .col-md-9.col-xs-12
       #news-container.section-container
         .section-name#news-section
           %h1.header.text-uppercase
-            Latest
+            Updates
           = sortable "updated_at", "Sort"
         %ul.list-group.news-articles-list
           - @posts.includes(:tags).each do |post|
@@ -26,8 +25,7 @@
                   .news-article-date_month_year
                     =post.month_year_only
                 .news-article-content
-                  %p.news-article-tags
-                    Tags:
+                  %p.news-article-tags.text-uppercase
                     = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
                   %h1.news-article-title=link_to post.title, post_path(post)
                   %p.news-article-text= post.medium_teaser
