@@ -2,34 +2,41 @@
 .container#posts-index
   .row.container-row
     .col-sm-3.hidden-sm-down
-      .sidebar
-        .section-container
-          .header.text-uppercase
-            Categories
-          %ul.sidebar-list.categories-list
-            - @all_tags.each do |tag|
-              %li.sidebar-list-item.categories-list-item
-                =link_to tag, tag_path(tag.downcase)
+      #side-nav
+        %ul.nav#update_category_list
+          %li.nav-item
+            .text-uppercase Categories
+          -@all_tags.each do |tag|
+            %li.nav-item
+              =link_to tag, tag_path(tag.downcase), class: "side-nav-link"
     .col-md-9.col-xs-12
       #news-container.section-container
-        .section-name#news-section
-          %h1.header.text-uppercase
-            Latest
-          = sortable "updated_at", "Sort"
-        %ul.list-group.news-articles-list
-          - @posts.includes(:tags).each do |post|
-            %li.list-group-item.news-articles-list-item
-              .row
-                .news-article-date
-                  .news-article-date_day
-                    =post.day_only
-                  .news-article-date_month_year
-                    =post.month_year_only
-                .news-article-content
-                  %p.news-article-tags
-                    Tags:
-                    = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
-                  %h1.news-article-title=link_to post.title, post_path(post)
-                  %p.news-article-text= post.medium_teaser
+        .row
+          .section-name#news-section
+            %h1.header.text-uppercase
+              Updates
+            = sortable "updated_at", "Sort"
+        .row
+          %ul.list-group.news-articles-list
+            - @posts.includes(:tags).each do |post|
+              %li.list-gropu-item.news-articles-list-item
+                .row
+                  .col-sm-2.news-article-date-container.hidden-xs-down
+                    .news-article-date
+                      .news-article-date_day
+                        =post.day_only
+                      .news-article-date_month_year.text-uppercase
+                        =post.month_year_only
+                  .col-sm-10
+                    .news-article-content
+                      %p.news-article-tags.text-uppercase
+                        = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
+                        %span.hidden-sm-up
+                          |
+                          = post.pretty_date
 
-        = will_paginate @posts, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+
+                      %h1.news-article-title=link_to post.title, post_path(post)
+                      %p.news-article-text= post.medium_teaser
+
+          = will_paginate @posts, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
