@@ -22,8 +22,6 @@
         &:active
           color: $gray
 #news-container.section-container
-  .section-name#news-section
-    .header
   .news-articles-list
     list-style: none
     padding-left: 0
@@ -35,32 +33,24 @@
       border-left: 0
       border-top: 0
       border-right: 0
-      .row
-        margin-left: 0
-        margin-right: 0
+      .news-article-date-container
+        padding-left: 0
+        margin-left: -15px
         .news-article-date
-          float: left
-          width: 17%
           margin-top: 22px
           text-align: center
           .news-article-date_day
             display: inline-block
             font-size: 4.5em
+            width: 100%
             @include Gotham-Thin
             color: $xaxis-navy-blue
-            height: 100%
-            width: 100%
           .news-article-date_month_year
             display: inline-block
             @include Gotham-Light
             font-size: 11px
             color: $xaxis-navy-blue
-            height: 100%
-            width: 100%
   .news-article-content
-    float: left
-    width: 77%
-    margin-left: 8px
     .news-article-tags
       font-size: .7em
       @include Gotham-Book
@@ -89,7 +79,8 @@
       color: $xaxis-darkest-blue
 
 #news-section
-  a
+  // This is the anchor tag of the sort button
+  .sort-btn
     margin-left: -5px
     @include Gotham-Book
     color: $xaxis-blue-color
@@ -188,27 +179,47 @@
   width: 43px
   padding: 15px
 
-
-@media (max-width: 767px)
+@media (max-width: 991px)
   #news-container.section-container
-    .section-name#news-section
-      .header
     .news-articles-list
       .news-articles-list-item
-        .row
+        .news-article-date-container
+          padding-left: 15px
           .news-article-date
             .news-article-date_day
-              font-size: 3.8em
-          .news-article-content
-            margin-left: 12px
+            .news-article-date_month_year
 
 
+@media (max-width: 1199px)
+  #news-container.section-container
+    .news-articles-list
+      .news-articles-list-item
+        .news-article-date-container
+          margin-left: 0
 
-                  // .sidebar
-                  //   .section-container
-                  //     .header.text-uppercase
-                  //       Categories
-                  //     %ul.sidebar-list.categories-list
-                  //       - @all_tags.each do |tag|
-                  //         %li.sidebar-list-item.categories-list-item
-                  //           =link_to tag, tag_path(tag.downcase)
+@media (max-width: 543px)
+  #news-container.section-container
+    .news-articles-list
+      margin-left: 15px
+      margin-right: 15px
+//
+// .section-name#news-section
+//   %h1.header.text-uppercase
+//     Updates
+//   = sortable "updated_at", "Sort"
+// %ul.list-group.news-articles-list
+//   - @posts.includes(:tags).each do |post|
+//     %li.list-group-item.news-articles-list-item
+//       .row
+//         .news-article-date
+//           .news-article-date_day
+//             =post.day_only
+//           .news-article-date_month_year
+//             =post.month_year_only
+//         .news-article-content
+//           %p.news-article-tags.text-uppercase
+//             = raw post.get_tag_list.map { |tag| link_to tag, tag_path(tag.downcase) }.join(', ')
+//           %h1.news-article-title=link_to post.title, post_path(post)
+//           %p.news-article-text= post.medium_teaser
+//
+// = will_paginate @posts, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
