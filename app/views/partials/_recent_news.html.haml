@@ -16,11 +16,11 @@
                   %span#single-news_date.date= @initial_post.pretty_date
           .selected-news_content
             =link_to post_path(@initial_post), id: "single-news_title_link" do
-              %h1.content-header#single-news_title.news-title= @initial_post.title.truncate_words(10)
+              %h1.content-header#single-news_title.news-title= sanitize @initial_post.title.truncate_words(10)
             %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
             %p.content-text.news-text
               %span#single-news_text
-                = @initial_post.medium_teaser
+                = sanitize @initial_post.medium_teaser, tags: %w(strong a), attributes: %w(href)
             = link_to post_path(@initial_post), id: 'single-news_readmore', class: "single-news_button" do
               read more
               %i.fa.fa-angle-right.fa-lg
@@ -29,8 +29,8 @@
           - @posts.each_with_index do |post, index|
             .single-news-container{"data-postId" => post.id, class: ('active' if index == 0) }
               .single-news-text
-                %h1.content-header= post.title.truncate_words(10)
-                %p.content-text= post.short_teaser
+                %h1.content-header= sanitize post.title.truncate_words(10)
+                %p.content-text= sanitize post.short_teaser, tags: %w(strong a), attributes: %w(href)
                 %p.readmore.hidden-sm-up
                   = link_to post_path(post), class: "readmore-link single-news_button" do
                     read more

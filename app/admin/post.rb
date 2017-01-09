@@ -29,7 +29,6 @@ ActiveAdmin.register Post do
       column :image do |f|
         image_tag(f.image.url(:thumb)).html_safe
       end
-      column :created_at
       column :updated_at
       actions
     end
@@ -86,12 +85,12 @@ ActiveAdmin.register Post do
         file_label = 'Replace Background Image'
       end
       f.input :preview_image, as: :file, id: "preview_this_image",
-                                label: file_label || "Upload Background",
+                                label: file_label || "Upload Background Image",
                                 hint: "Maximum photo size is 5mb.",
                                 input_html: {
                                   title: (f.object.preview_image? ?
-                                          "Replace Image" :
-                                          "Upload Image"
+                                          "Replace Background Image" :
+                                          "Upload Backgroun Image"
                                           ),
                                   data: {type: 'png'}
                                 }
