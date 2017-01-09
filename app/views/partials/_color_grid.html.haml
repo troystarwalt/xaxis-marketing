@@ -13,8 +13,8 @@
               %span updates
         .row
           .col-sm-12
-            %h1.sm-item-header.color-grid-text= @latest_post.title.truncate_words(7, separator: ' ')
-            %p.color-grid-text.keep-pretty-text#latest_post_text= @latest_post.text.truncate_words(35)
+            %h1.sm-item-header.color-grid-text= sanitize @latest_post.title.truncate_words(7, separator: ' ')
+            %p.color-grid-text.keep-pretty-text#latest_post_text= sanitize @latest_post.text.truncate_words(35), tags: %w(strong a), attributes: %w(href)
       .link-container
         =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn"
   .flex-column
