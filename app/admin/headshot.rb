@@ -15,8 +15,22 @@ ActiveAdmin.register Headshot do
       f.input :title, placeholder: "CFO"
       f.input :brand_id, as: :radio, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
       f.input :priority, as: :select, :collection => Array(1..20), hint: "A person with Priority of 1 will be listed 1st"
-      f.input :image, as: :string, required: false, hint: image_tag(object.image.url(:thumb)).html_safe unless object.image.blank?
-      f.input :image, as: :file, input_html: {data: {type: 'large_png'}}, hint: "Maximum size 10mb"
+      if f.object.image?
+        panel "Current Headshot" do
+          image_tag f.object.image.thumb.url
+        end
+        file_label = 'Replace Headshot'
+      end
+      f.input :image, as: :file, id: "preview_this_image",
+                                label: file_label || "Upload Headshot",
+                                hint: "Maximum photo size is 10mb.",
+                                input_html: {
+                                  title: (f.object.image? ?
+                                          "Replace Image" :
+                                          "Upload Image"
+                                          ),
+                                  data: {type: 'png'}
+                                }
       f.hidden_field :image_cache
       f.input :bio, hint: "Need paragraphs? You can add a <br /> tag."
     end
@@ -34,7 +48,9 @@ ActiveAdmin.register Headshot do
 
   show do
     attributes_table do
-      row :id
+      row :brand do |f|
+        f.brand.name
+      end
       row :first_name
       row :last_name
       row :title

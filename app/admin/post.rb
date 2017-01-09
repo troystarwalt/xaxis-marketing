@@ -34,6 +34,23 @@ ActiveAdmin.register Post do
       actions
     end
 
+  show do
+    attributes_table do
+      row :title
+      row :text
+      row :author
+      row :image do |f|
+        image_tag(f.image.url(:thumb)).html_safe
+      end
+      row :preview do |f|
+        image_tag(f.preview_image.url(:thumb)).html_safe
+      end
+      row :created_at
+      row :updated_at
+      active_admin_comments
+    end
+  end
+
   filter :title
   filter :tag_list
   filter :text
@@ -45,8 +62,42 @@ ActiveAdmin.register Post do
       f.input :title, label: "Title of Post", placeholder: "Ex: Xaxis Holiday Party is at 10 AM on July 8th."
       f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link.", hint: "Example: <a href='www.google.com'>Google</a>"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
-      f.input :image, as: :file, label: "Image", input_html: {data: {type: 'png'}}, hint: "Maximum 5mb"
-      f.input :preview_image, as: :file, label: "Preview Image", input_html: {data: {type: 'png'}}, hint: "This is for the homepage squre. Maximum 5mb."
+      if f.object.image?
+        panel "Current Image" do
+          image_tag f.object.image.thumb.url
+        end
+        file_label = 'Replace Image'
+      end
+      f.input :image, as: :file, id: "preview_this_image",
+                                label: file_label || "Upload Image",
+                                hint: "Maximum photo size is 5mb.",
+                                input_html: {
+                                  title: (f.object.image? ?
+                                          "Replace Image" :
+                                          "Upload Image"
+                                          ),
+                                  data: {type: 'png'}
+                                }
+      f.hidden_field :image_cache
+      if f.object.preview_image?
+        panel "Current Background" do
+          image_tag f.object.preview_image.thumb.url
+        end
+        file_label = 'Replace Background Image'
+      end
+      f.input :preview_image, as: :file, id: "preview_this_image",
+                                label: file_label || "Upload Background",
+                                hint: "Maximum photo size is 5mb.",
+                                input_html: {
+                                  title: (f.object.preview_image? ?
+                                          "Replace Image" :
+                                          "Upload Image"
+                                          ),
+                                  data: {type: 'png'}
+                                }
+      f.hidden_field :image_cache
+      # f.input :image, as: :file, label: "Image", input_html: {data: {type: 'png'}}, hint: "Maximum 5mb"
+      # f.input :preview_image, as: :file, label: "Preview Image", input_html: {data: {type: 'png'}}, hint: "This is for the homepage squre. Maximum 5mb."
       f.input :tag_list,
         as: :radio,
         label: "Tag",

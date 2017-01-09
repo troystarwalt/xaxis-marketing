@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ActiveAdmin.register ExpertInterview do
-  menu label:  "Interview Hub"
+  menu label:  "Interview"
   permit_params :vimeo_url, :contributor_name, :contributor_title, :title, :description, :image
 
   # Adds a custom New action on the show page.
@@ -22,7 +22,7 @@ ActiveAdmin.register ExpertInterview do
         end
         file_label = 'Replace Preview Image'
       end
-      f.input :image, as: :file, id: "preview_shit",
+      f.input :image, as: :file, id: "preview_this_image",
                                 label: file_label || "Upload Preview Image",
                                 hint: "Image dimensions should be 900x500. Max size is 5mb",
                                 input_html: {

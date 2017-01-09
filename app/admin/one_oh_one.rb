@@ -12,7 +12,24 @@ form :html => { :multipart => true } do |f|
     f.input :name, label: "101 Series Name", placeholder: "ex: Programmatic 101"
     f.input :ppt_file, as: :file, input_html: {data: {type: 'ppt'}}, hint: "Max size of 100mb."
     f.input :pdf_file, as: :file, input_html: {data: {type: 'pdf'}}, hint: "Max size of 10mb."
-    f.input :image_preview, as: :file, input_html: {data: {type: 'png'}}, hint: "Use the image from the first slide. Max size of 5mb."
+    if f.object.image_preview?
+      panel "Current Image" do
+        image_tag f.object.image_preview.thumb.url
+      end
+      file_label = 'Replace Preview Image'
+    end
+    f.input :image, as: :file, id: "preview_this_image",
+                              label: file_label || "Upload Preview Image",
+                              hint: "Use first slide as preview. Max size is 5mb.",
+                              input_html: {
+                                title: (f.object.image_preview? ?
+                                        "Replace File" :
+                                        "Upload File"
+                                        ),
+                                data: {type: 'png'}
+                              }
+    f.hidden_field :image_preview_cache
+    # f.input :image_preview, as: :file, input_html: {data: {type: 'png'}}, hint: "Use the image from the first slide. Max size of 5mb."
   end
   f.actions
 end
