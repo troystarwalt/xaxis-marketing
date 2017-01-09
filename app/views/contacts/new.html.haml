@@ -12,6 +12,6 @@
         = f.input :message, placeholder: "Provide feedback here.", required: true
         = f.input :rating, collection: 1..5, hint: "<i>Rate the site! (5 being awesome)</i>".html_safe, as: :radio_buttons, wrapper_html: { class: "radio-area" }, required: true
         = f.button :submit, "Send", class: "brand-btn-secondary xaxis-btn-secondary feedback-btn pull-right"
-    .col-md-5.offset-md-1.hidden-sm-down
+    .col-md-4.offset-md-2.col-lg-3.offset-lg-3.hidden-sm-down
       .eka-img-container
-        =image_tag "feedback-eka.png", alt: "Feedback Image", class: "img-fluid"
+        =image_tag "feedback-eka.png", alt: "Feedback Image", class: "img-fluid eka-img"

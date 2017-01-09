@@ -32,6 +32,15 @@ h1.site_title {
   text-indent: 0 !important;
 }
 
+#titlebar_left {
+  #page_title {
+    max-width: 700px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
 .admin_show_image {
   max-width: 100%;
   height: auto;

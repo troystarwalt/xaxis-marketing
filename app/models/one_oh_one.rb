@@ -5,7 +5,7 @@ class OneOhOne < ApplicationRecord
   scope :last_two, -> {order("created_at DESC").first(2)}
 
   self.per_page = 9
-  validates_presence_of :name, :ppt_file, :pdf_file
+  validates_presence_of :name, :ppt_file, :pdf_file, :image_preview, presence: true
   validates :ppt_file,
   :file_size => {
     :maximum => 100.megabytes.to_i
