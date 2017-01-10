@@ -23,7 +23,6 @@
                 = sanitize @initial_post.medium_teaser, tags: %w(strong a), attributes: %w(href)
             = link_to post_path(@initial_post), id: 'single-news_readmore', class: "single-news_button" do
               read more
-              %i.fa.fa-angle-right.fa-lg
       .col-md-5.offset-md-1.col-sm-12
         .recent_news_container
           - @posts.each_with_index do |post, index|
@@ -34,8 +33,6 @@
                 %p.readmore.hidden-sm-up
                   = link_to post_path(post), class: "readmore-link single-news_button" do
                     read more
-                    %i.fa.fa-angle-right.fa-lg
         .more-updates.text-xs-right
           = link_to posts_path, class: "single-news_button" do
             more updates
-            %i.fa.fa-angle-right.fa-lg{'aria-hidden' => "true"}
