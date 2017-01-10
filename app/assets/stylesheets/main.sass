@@ -135,6 +135,17 @@
   @include Gotham-Book
   text-transform: uppercase
 
+.single-news_button::after
+  font-family: FontAwesome
+  content: "\f105"
+  border: none
+  vertical-align: -5%
+  font-size: 18px
+  transition: color 1s
+
+.single-news_button:hover::after
+    color: $xaxis-blue-color
+
 .more-updates, .readmore
   margin-top: 30px
 
