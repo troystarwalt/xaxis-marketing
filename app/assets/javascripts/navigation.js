@@ -55,7 +55,7 @@ $('#brands').ready(function() {
       var visibleFoot = 360 - $window.scrollBottom();
       var scrollTop = $window.scrollTop()
 
-      if (scrollTop < top - 30) {
+      if (scrollTop < top - 90) {
         $el.css({
           top: (top - scrollTop) + "px",
           bottom: "auto"

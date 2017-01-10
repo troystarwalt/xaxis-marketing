@@ -32,7 +32,7 @@ $('.posts.main').ready(function(){
       if(nextPostIndex >= gon.posts.length){nextPostIndex = 0;}
       setClickedElementStyles($('.single-news-container')[nextPostIndex]);
       postIndex = nextPostIndex;
-    }, 5000);
+    }, 777000);
   }
 
   function swapSelectedUpdate(post){
