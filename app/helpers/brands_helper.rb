@@ -128,8 +128,9 @@ module BrandsHelper
         capa: "<p>For plista, there is a Global Capabilities Deck for Advertiser and a Global Capabilities Deck for Publisher. Please make sure you select the suitable one for your use. </p>"
       },
       lightreaction: {
-        welcome: "<p>At Light Reaction, we understand the science behind consumer behavior. We embrace the power of performance — performance in the form of actions that drive guaranteed business outcomes and grow revenue. We strive to make advertising accountable and remove risk for our clients. We believe in performability.</p>
-        <p>You can download individual assets by choosing from the menu on the left-hand side, or you can download all the brand resources as a zip file.</p>",
+        welcome: "<p>Welcome to the Light Reaction brand resource center! Here you can find our brand guidelines, brand assets, brand templates, and PR Kit. You can also download individual assets by choosing from the menu on the left-hand side.</p>
+        <p>Light Reaction Brand Guidelines<br />The Light Reaction Brand Guidelines explain how to use our brand assets accurately to represent our brand. Please refer to these when using our brand assets in your internal and external materials.</p>",
+        boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='www.lightreaction.com.'>www.lightreaction.com.</a></p>",
         logo: "<p>Both the primary and horizontal logos are available in three different color treatments, which need to be chosen according to how and where you plan to use the logo.</p>",
         font: "<p>Typography plays a significant role in Light Reaction’s visual system. Universe LT STD is the primary font family of Light Reaction. It should be used in three different weights: Light, Roman and Bold.</p>
         <p>For cases where Universe is not available, Arial can be used in Regular and Bold weights.</p>",
