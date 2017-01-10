@@ -6,7 +6,7 @@ class HeadshotsUploader < BaseUploader
   end
 
   version :large, :if => :image? do
-    process resize_to_fit: [1024, 768]
+    process resize_to_fit: [720, 900]
   end
 
   def extension_whitelist
