@@ -24,5 +24,10 @@
           .dropdown-menu
             =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
             =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
-        %li.nav-item
-          =link_to "Feedback", new_contact_path, class: "nav-link main-link "
+            =link_to "Turbine Showcase", "http://xaxis.hs-sites.com/turbine-video-showcase", class: "dropdown-item", target: "_blank"
+        %li.nav-item.dropdown
+          =link_to "Requests", new_contact_path, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", class: "dropdown-item", target: "_blank"
+            =link_to "Analytis Request", "https://docs.google.com/forms/d/e/1FAIpQLScgnBzYhAi24RzAFWtcPXbHeiUz8NhLxH4_Fd-vUnUHFsJcZQ/viewform", class: "dropdown-item", target: "_blank"
+            =link_to "Feedback", new_contact_path,  class: "dropdown-item"
