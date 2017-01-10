@@ -43,12 +43,11 @@
               %dd
                 - @last_two_101.each do |series|
                   %dt
-                    = series.name.truncate_words(5)
+                    =link_to series.name.truncate_words(5), one_oh_one_series_url, class: "learning-update_link"
                     - if series.is_recent
                       %span.new_alert NEW
-                %dt= @last_expert.title.truncate_words(10)
-            .link-container
-              =link_to "learn", expert_interview_hub_path, class: "text-uppercase btn color-grid-btn"
+                %dt
+                  =link_to @last_expert.title.truncate_words(10), expert_interview_hub_url, class: "learning-update_link"
           .col-md-4
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon.png", alt: "Updates", class: "grid-icon img-fluid"

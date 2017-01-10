@@ -13,7 +13,7 @@ $('.admin_namespace').ready(function() {
       var data_types = {ppt: 100,
                         pdf: 10,
                         png: 5,
-                        large_png: 10,
+                        large_png: 15,
                         bank: 300
                       }
       var max_size_of_file_upload = data_types[get_data_type];

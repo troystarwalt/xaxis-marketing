@@ -10,6 +10,10 @@
       %p You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
       - if @group.present?
         = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
+    - if content_for_brands[@brand_for_content][:boilerplate].present?
+      .section#assets-download-section
+        %h3.text-uppercase Boilerplate
+        = content_for_brands[@brand_for_content][:boilerplate].html_safe
     .section#assets-logo
       %h3.text-uppercase Logos
       = content_for_brands[@brand_for_content][:logo].html_safe
@@ -71,12 +75,6 @@
         = content_for_brands[@brand_for_content][:word].html_safe
         - if @brand.brand_accessories.has_category("word_template").present?
           = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
-      %hr
-      .section#assets-facts
-        %h3.text-uppercase fast facts
-        = content_for_brands[@brand_for_content][:facts].html_safe
-        - if @brand.brand_accessories.has_category("facts").present?
-          = link_to "download pdf", @brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
@@ -87,6 +85,13 @@
             = link_to plista.name.truncate(15), plista.file_url, class: "brand-btn-primary xaxis-btn-primary double-horizontal-btn"
         -else
           = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+    %hr
+    .section#assets-kit
+      %h3.text-uppercase pr kit
+      %p
+        The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact, Jennifer Lucas, Director, Global Brand Communications at
+        %a{href: "mailto:jennfier.lucas@xaxis.com"}
+          jennifer.lucas@xaxis.com.
     %hr
     .section#assets-headshots
       %h3.text-uppercase executive headshots

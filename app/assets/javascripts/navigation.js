@@ -1,7 +1,7 @@
 // Side menu highlighting
 $('#brands').ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()+40;
+  sideMenuHeight = sideMenu.outerHeight()-30;
   menuItems = sideMenu.find("a"),
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
@@ -55,7 +55,7 @@ $('#brands').ready(function() {
       var visibleFoot = 360 - $window.scrollBottom();
       var scrollTop = $window.scrollTop()
 
-      if (scrollTop < top - 30) {
+      if (scrollTop < top - 90) {
         $el.css({
           top: (top - scrollTop) + "px",
           bottom: "auto"

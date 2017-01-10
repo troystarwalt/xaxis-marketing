@@ -15,7 +15,7 @@
               =image_tag "twitter.svg", class: "share-btn"
           %h6.news-contributor
             Contributor: Xaxis Marketing
-          %p.news-text= @post.text.html_safe
+          %p.news-text= sanitize @post.text, tags: %w(a strong p br ul li), attributes: %w(href)
           .news-image
             =image_tag(@post.image.url(:preview), class: "img-fluid") if !@post.image.file.nil?
         = link_to :back, class: "btn-back" do

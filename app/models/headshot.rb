@@ -6,7 +6,7 @@ class Headshot < ApplicationRecord
   scope :ordered_by_priority, -> {order(priority: :asc, last_name: :asc)}
   validates :image,
     :file_size => {
-      :maximum => 10.megabytes.to_i
+      :maximum => 15.megabytes.to_i
     }
 
   def full_name

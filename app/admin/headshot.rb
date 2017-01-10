@@ -23,16 +23,16 @@ ActiveAdmin.register Headshot do
       end
       f.input :image, as: :file, id: "preview_this_image",
                                 label: file_label || "Upload Headshot",
-                                hint: "Maximum photo size is 10mb.",
+                                hint: "Maximum photo size is 15mb.",
                                 input_html: {
                                   title: (f.object.image? ?
                                           "Replace Image" :
                                           "Upload Image"
                                           ),
-                                  data: {type: 'png'}
+                                  data: {type: 'large_png'}
                                 }
       f.hidden_field :image_cache
-      f.input :bio, hint: "Need paragraphs? You can add a <br /> tag."
+      f.input :bio, placeholder: "You can add basic html code here. That includes p tags which create a paragraph.", hint: "You can add a '<p>' tag to create a paragraph. Like this: '<p>I'm a paragraph!</p>'"
     end
       para "Adding a new headshot updates the site. So proof your work!"
     f.actions

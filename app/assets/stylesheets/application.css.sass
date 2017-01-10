@@ -39,3 +39,11 @@
 @import "multiselect"
 @import "oneohone_series"
 @import "contacts"
+
+
+// Below fixes the problem with Bootstrap Modal shifting the page.
+.modal-open[style]
+  padding-right: 0px !important
+
+.modal-open
+  overflow: auto
