@@ -59,7 +59,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs "New Post" do
       f.input :title, label: "Title of Post", placeholder: "Ex: Xaxis Holiday Party is at 10 AM on July 8th."
-      f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link.", hint: "Example: <a href='www.google.com'>Google</a>"
+      f.input :text, placeholder: "You can add basic html code here. That includes anchor tags which generate a link.", hint: "Valid tags: <br />, <p>, <strong>, <ul>, <li>. Example: <a href='www.google.com'>Google</a>"
       f.input :author, as: "hidden", :input_html => { value: f.current_admin_user.email }
       if f.object.image?
         panel "Current Image" do

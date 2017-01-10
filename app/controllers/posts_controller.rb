@@ -50,20 +50,11 @@ class PostsController < ApplicationController
     @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     posts = Post.includes(:tags).order("created_at DESC").first(5).map{|post| post.get_main_json}
-    # striped_posts = posts.map!{ |q| if q[0][:text] puts "it's the text" else puts "it's not the tet" end }
-    # gon.posts = striped_posts
-    # q == q[:text] ? ActionController::Base.helpers.strip_tags(q[:text]) : q
-
-    # hash1 = posts.find { |h| h['text'] }
-    # hash1['text'] = ActionController::Base.helpers.strip_tags(hahs1['text'])
-
-
 
     posts.each do |x|
       x.update(x) do |key, value|
         if key == :text || key == :title
           puts "this is text"
-          puts value
           ActionController::Base.helpers.strip_tags(value)
         else
           value = value
