@@ -42,7 +42,7 @@ module BrandsHelper
   def content_for_brands
     {xaxis: {
       welcome: "<p>Welcome to the home of all Xaxis brand assets! We have a few guidelines for using the brand resources to ensure our brand is accurately represented.</p>
-      <p>You can download individual assets by choosing from the menu on the left-hand side, or you can download all the brand resources as a zip file.</p> <p>We hope this identity system inspires you to create brilliant materials for the Xaxis brand.</p>",
+      <p>We hope this identity system inspires you to create brilliant materials for the Xaxis brand.</p>",
       logo: "<p>The vertical Xaxis logo lock-up is the preferred arrangement, and is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>The horizontal Xaxis logo is to be used for smaller applications and endorsements. It is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>For detailed logo usage, please refer to the Xaxis Brand Guidelines.</p>",
@@ -68,8 +68,7 @@ module BrandsHelper
       welcome: "<p>Welcome to Triad Retail Media brand resources center!</p>
 
       <p>This guideline provides the appropriate usage and construction of various Triad Retail Media (TRM) identity elements. Use these elements to accurately communicate our brand. We worked hard to develop this brand for you to be proud of.
-      </p>
-      <p>You can download individual assets by choosing from the menu on the left-hand side, or you can download all the brand resources as a zip file.</p>",
+      </p>",
       logo: "<p>The logo is a unique piece of artwork and must never be modified or altered in any way without prior approval. The preferred version of the logo is the vertical orientation; however, if a horizontal version is necessary, the secondary, non-stacked version may be used.</p>
 
       <p>The Triad Retail Media brand mark (with or without tagline) is to be used in all internal and external deliverables. This includes correspondence, proposals, contracts, editorial strategies, creative decks, and any other documentation that represents the brand and voice of Triad. </p>
@@ -102,8 +101,7 @@ module BrandsHelper
       welcome: "<p>Welcome to plista brand resources center! plista is our native advertising and content distribution platform.</p>
 
       <p><strong>plista should always written in lower case letter, without exception.</strong>
-        </p>
-        <p>You can download individual assets by choosing from the menu on the left-hand side, or you can download all the brand resources as a zip file.</p>",
+        </p>",
         logo: "<p>The primary plista logo should be used on a white background. The reversed white logo can be used on colored background.</p>",
         font: "<p>plista uses the Calibri font for use in the office and in presentations. The font is a component of Microsoft Office for Windows and Apple Macintosh and does not need to be downloaded.</p>
 
