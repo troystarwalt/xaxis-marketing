@@ -1,33 +1,34 @@
 %nav.navbar.navbar-fixed-top.navbar-light
   .container
     %button.navbar-toggler.hidden-md-up.pull-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
-      ☰
+      %i.fa.fa-barcode.fa-lg
     =link_to root_path, class: "navbar-brand" do
       =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), class: "hidden-sm-down navbar-logo desktop-logo"
       =image_tag asset_path("xaxis_mobile_logo.png"), class: "hidden-md-up navbar-logo mobile-logo"
-    #collapse-this-navbar.collapse.navbar-toggleable-sm
-      %ul.nav.navbar-nav
-        %li.nav-item.dropdown
-          =link_to "Brand Assets", brand_path(@xaxis), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-          .dropdown-menu
-            =link_to "Xaxis", brand_path(@xaxis), class: "dropdown-item"
-            =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
-            =link_to "plista", brand_path(@plista), class: "dropdown-item"
-            =link_to "Triad", brand_path(@triad), class: "dropdown-item"
-        %li.nav-item.dropdown
-          =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-          .dropdown-menu
-            =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
-            =link_to "101 Series", one_oh_one_series_url, class: "dropdown-item"
-        %li.nav-item.dropdown
-          =link_to "Landing Pages", presentation_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-          .dropdown-menu
-            =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
-            =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
-            =link_to "Turbine Showcase", "http://xaxis.hs-sites.com/turbine-video-showcase", class: "dropdown-item", target: "_blank"
-        %li.nav-item.dropdown
-          =link_to "Requests", new_contact_path, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-          .dropdown-menu
-            =link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", class: "dropdown-item", target: "_blank"
-            =link_to "Analytis Request", "https://docs.google.com/forms/d/e/1FAIpQLScgnBzYhAi24RzAFWtcPXbHeiUz8NhLxH4_Fd-vUnUHFsJcZQ/viewform", class: "dropdown-item", target: "_blank"
-            =link_to "Feedback", new_contact_path,  class: "dropdown-item"
+    .padding-div
+      #collapse-this-navbar.collapse.navbar-collapse.navbar-toggleable-sm
+        %ul.nav.navbar-nav
+          %li.nav-item.dropdown
+            =link_to "Brand Assets", brand_path(@xaxis), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+            .dropdown-menu
+              =link_to "Xaxis", brand_path(@xaxis), class: "dropdown-item"
+              =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
+              =link_to "plista", brand_path(@plista), class: "dropdown-item"
+              =link_to "Triad", brand_path(@triad), class: "dropdown-item"
+          %li.nav-item.dropdown
+            =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+            .dropdown-menu
+              =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
+              =link_to "101 Series", one_oh_one_series_url, class: "dropdown-item"
+          %li.nav-item.dropdown
+            =link_to "Landing Pages", presentation_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+            .dropdown-menu
+              =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
+              =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
+              =link_to "Turbine Showcase", "http://xaxis.hs-sites.com/turbine-video-showcase", class: "dropdown-item", target: "_blank"
+          %li.nav-item.dropdown
+            =link_to "Requests", new_contact_path, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+            .dropdown-menu
+              =link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", class: "dropdown-item", target: "_blank"
+              =link_to "Analytis Request", "https://docs.google.com/forms/d/e/1FAIpQLScgnBzYhAi24RzAFWtcPXbHeiUz8NhLxH4_Fd-vUnUHFsJcZQ/viewform", class: "dropdown-item", target: "_blank"
+              =link_to "Feedback", new_contact_path,  class: "dropdown-item"

@@ -27,19 +27,16 @@ body.shrnk
           padding-bottom: 0 !important
       .nav-item
         padding: 17px 0 0 0 !important
+        transition: padding, .5s, linear
         .nav-link
           padding-top: 0 !important
           padding-bottom: 0 !important
-
-
-
-
+          transition: padding-top, padding-bottom, .5s, linear
 
 #collapse-this-navbar
   .nav
     .nav-item
       padding: 29px 0
-      transition: padding, .5s, linear
       margin-right: 50px
       @include Gotham-Book
       .nav-link
@@ -47,7 +44,6 @@ body.shrnk
         color: $dim-gray !important
         font-size: .7rem
         letter-spacing: 1px
-        transition: padding-top, padding-bottom, .5s, linear
         .fa-search
           color: #C0C0C0
           font-size: 1rem
@@ -93,21 +89,45 @@ body.shrnk
     .container
       button
         margin-top: 28px
-  #collapse-this-navbar
-    margin-top: 0
-    text-align: center
-    transition: all 2s
-    .nav
-      padding-top: 107px
-      .nav-item
-        padding: 29px 0
-        margin-right: 0
-        .nav-link
-          padding: 0
+  .padding-div
+    padding-top: 107px
+    #collapse-this-navbar
+      margin-top: 0
+      text-align: center
+      .nav
+        .nav-item
+          padding: 20px 0
+          margin-right: 0
+          .nav-link
+            padding: 0
   .dropdown-menu
     position: static
     float: none
     text-align: center
+  // Styles for shrunken nav bar
+  body.shrnk
+    padding-top: 70px
+    nav
+      .container
+        button
+          margin-top: 10px !important
+          transition: margin-top, .5s, linear
+        .navbar-brand
+          padding-top: 0 !important
+          padding-bottom: 0 !important
+          transition: padding-top, padding-bottom, .5s, linear
+          .navbar-logo
+            padding-top: 0 !important
+            padding-bottom: 0 !important
+        .padding-div
+          padding-top: 55px
+          .nav-item
+            padding: 17px 0 0 0 !important
+            transition: padding, .5s, linear
+            .nav-link
+              padding-top: 0 !important
+              padding-bottom: 0 !important
+              transition: padding-top, padding-bottom, .5s, linear
 
 // Before the menu collapses and after the screen is too small for wide buttons
 @media (min-width: 768px) and (max-width: 992px)
