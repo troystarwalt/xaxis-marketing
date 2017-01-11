@@ -1,7 +1,7 @@
 // Side menu highlighting
 $('#brands').ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()-30;
+  sideMenuHeight = sideMenu.outerHeight()-200,
   menuItems = sideMenu.find("a"),
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
@@ -104,3 +104,20 @@ $('#brands').ready(function() {
     checkOffset();
   });
 });
+
+function init() {
+  window.addEventListener('scroll', function(e) {
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrink_on = 150,
+        body_element = document.querySelector("body");
+    if (distanceY > shrink_on) {
+      body_element.classList.add('shrnk');
+    } else {
+      if (body_element.classList.contains('shrnk')) {
+        body_element.classList.toggle('shrnk');
+      }
+    }
+  });
+}
+
+window.onload = init();

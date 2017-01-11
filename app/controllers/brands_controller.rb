@@ -16,12 +16,9 @@ class BrandsController < InheritedResources::Base
     @brands = Brand.all
     @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority
     gon.headshots = @headshots
-    image_bank_check = GlobalAccessory.where(category: 'image_bank').present?
-    if image_bank_check.present? && !image_bank_check.nil?
-      @image_bank = GlobalAccessory.where(category: 'image_bank').last.file_url
-    end
-
+    @image_bank = GlobalAccessory.where(category: 'image_bank').last
     @group = BrandAccessory.where(category: ['guidelines', 'logo', 'palette'], brand_id: @brand.id)
+    @pr_kit = GlobalAccessory.where(category: 'pr_kit').last
 
     respond_to do |format|
       format.html
