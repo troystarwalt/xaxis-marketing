@@ -5,33 +5,33 @@ nav.navbar
   margin-right: 2em
   padding-top: .8em
   padding-bottom: .6em
+  transition: padding-top, padding-bottom, .5s, linear
 
 .mobile-logo
   width: 150px
 
 // Styles for shrunken nav bar
-// body
-//   padding-top: 70px
-//
-// .navbar-brand
-//   padding-top: 0
-//   padding-bottom: 0
-//
-// .navbar-logo
-//   padding-top: 0
-//   padding-bottom: 0
-//
-// .nav-item
-//   padding: 17px 0 0 0
-//
-// .nav-link
-//   padding-top: 0
-//   padding-bottom: 0
-//
-// nav
-//   .container
-//     button
-//       margin-top: 10px
+body.shrnk
+  padding-top: 70px
+  nav
+    .container
+      button
+        margin-top: 10px !important
+        transition: margin-top, .5s, linear
+      .navbar-brand
+        padding-top: 0 !important
+        padding-bottom: 0 !important
+        transition: padding-top, padding-bottom, .5s, linear
+        .navbar-logo
+          padding-top: 0 !important
+          padding-bottom: 0 !important
+      .nav-item
+        padding: 17px 0 0 0 !important
+        .nav-link
+          padding-top: 0 !important
+          padding-bottom: 0 !important
+
+
 
 
 
@@ -39,6 +39,7 @@ nav.navbar
   .nav
     .nav-item
       padding: 29px 0
+      transition: padding, .5s, linear
       margin-right: 50px
       @include Gotham-Book
       .nav-link
@@ -46,6 +47,7 @@ nav.navbar
         color: $dim-gray !important
         font-size: .7rem
         letter-spacing: 1px
+        transition: padding-top, padding-bottom, .5s, linear
         .fa-search
           color: #C0C0C0
           font-size: 1rem
