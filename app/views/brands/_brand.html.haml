@@ -10,10 +10,12 @@
       %p You can download individual assets in each section. If you want everything, use the button below to download a .zip file:
       - if @group.present?
         = link_to "download all assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
+    %hr
     - if content_for_brands[@brand_for_content][:boilerplate].present?
-      .section#assets-download-section
+      .section#assets-boilerplate
         %h3.text-uppercase Boilerplate
         = content_for_brands[@brand_for_content][:boilerplate].html_safe
+      %hr
     .section#assets-logo
       %h3.text-uppercase Logos
       = content_for_brands[@brand_for_content][:logo].html_safe
@@ -64,6 +66,7 @@
     - if @brand.slug != "triad"
       %hr
       .section#assets-ppt
+        %h1 #{@brand.name} Templates
         %h3.text-uppercase powerpoint template
         = content_for_brands[@brand_for_content][:ppt].html_safe
         =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
@@ -87,6 +90,7 @@
           = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-kit
+      %h1 #{@brand.name} PR
       %h3.text-uppercase pr kit
       %p
         The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact, Jennifer Lucas, Director, Global Brand Communications at

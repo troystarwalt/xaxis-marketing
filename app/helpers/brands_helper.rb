@@ -43,6 +43,8 @@ module BrandsHelper
     {xaxis: {
       welcome: "<p>Welcome to the home of all Xaxis brand assets! We have a few guidelines for using the brand resources to ensure our brand is accurately represented.</p>
       <p>We hope this identity system inspires you to create brilliant materials for the Xaxis brand.</p>",
+      boilerplate: "<p>Xaxis is the world’s largest programmatic audience company that connects advertisers to audiences across all addressable channels. Through the expert use of proprietary data and advertising technology along with unparalleled media relationships, Xaxis delivers results for over 3,000 clients in 46 markets across North America, Europe, Asia Pacific, Latin America and the Middle East. Advertisers working with Xaxis achieve exceptionally high return on advertising spend through the company’s proprietary media products, as well as through its specialist companies, Light Reaction and plista. For more information,
+visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       logo: "<p>The vertical Xaxis logo lock-up is the preferred arrangement, and is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>The horizontal Xaxis logo is to be used for smaller applications and endorsements. It is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>For detailed logo usage, please refer to the Xaxis Brand Guidelines.</p>",
@@ -69,6 +71,7 @@ module BrandsHelper
 
       <p>This guideline provides the appropriate usage and construction of various Triad Retail Media (TRM) identity elements. Use these elements to accurately communicate our brand. We worked hard to develop this brand for you to be proud of.
       </p>",
+      boilerplate: "<p>Founded in 2004, Triad Retail Media is the market leader in creating, managing and operating digital retail media programs for highly trafficked retail websites. Triad’s unique approach to retail advertising provides upside for retailers, brand advertisers and shoppers. Contextual and relevant advertising provides a much richer online shopping experience while giving brands the opportunity to engage shoppers while they’re making purchase decisions. Triad Retail Media has thrice been named one of the fastest-growing private companies in the U.S. by Inc. magazine. Headquartered in St. Petersburg, Florida, Triad employs nearly 700 people in 14 offices worldwide. For more information, visit <a href='http://www.tiadretail.com'>www.TriadRetail.com</a>.</p>",
       logo: "<p>The logo is a unique piece of artwork and must never be modified or altered in any way without prior approval. The preferred version of the logo is the vertical orientation; however, if a horizontal version is necessary, the secondary, non-stacked version may be used.</p>
 
       <p>The Triad Retail Media brand mark (with or without tagline) is to be used in all internal and external deliverables. This includes correspondence, proposals, contracts, editorial strategies, creative decks, and any other documentation that represents the brand and voice of Triad. </p>
@@ -102,6 +105,7 @@ module BrandsHelper
 
       <p><strong>plista should always written in lower case letter, without exception.</strong>
         </p>",
+        boilerplate: "<p>plista is a pioneer when it comes to innovative solutions for native advertising and content distribution in premium environments. With its data-driven platform, the Berlin based company has been successfully bringing advertisers and media together since 2008. With its proprietary real-time Recommendation Technology, plista is able to deliver both content and advertising that matches users’ individual interests – across all channels and devices. Publishers benefit from longer user visit duration, increased traffic and the additional monetization of their digital products. By using plista’s native ad formats, advertisers are able to address users seamlessly and efficiently along the entire sales funnel. plista employs over 180 people and offers its solutions in 16 international markets. For more information, visit <a href='https://www.plista.com'>www.plista.com</a>.</p>",
         logo: "<p>The primary plista logo should be used on a white background. The reversed white logo can be used on colored background.</p>",
         font: "<p>plista uses the Calibri font for use in the office and in presentations. The font is a component of Microsoft Office for Windows and Apple Macintosh and does not need to be downloaded.</p>
 
@@ -126,9 +130,9 @@ module BrandsHelper
         capa: "<p>For plista, there is a Global Capabilities Deck for Advertiser and a Global Capabilities Deck for Publisher. Please make sure you select the suitable one for your use. </p>"
       },
       lightreaction: {
-        welcome: "<p>Welcome to the Light Reaction brand resource center! Here you can find our brand guidelines, brand assets, brand templates, and PR Kit. You can also download individual assets by choosing from the menu on the left-hand side.</p>
-        <h1 class='lr-brand-guidelines-section'>Light Reaction Brand Guidelines</h1><p>The Light Reaction Brand Guidelines explain how to use our brand assets accurately to represent our brand. Please refer to these when using our brand assets in your internal and external materials.</p>",
-        boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='www.lightreaction.com.'>www.lightreaction.com.</a></p>",
+        welcome: "<p>Welcome to the Light Reaction brand resource center! Here you can find our brand guidelines, brand assets, brand templates, and PR Kit.</p>
+        <p>The Light Reaction Brand Guidelines explain how to use our brand assets accurately to represent our brand. Please refer to these when using our brand assets in your internal and external materials.</p>",
+        boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='http://www.lightreaction.com'>www.lightreaction.com</a>.</p>",
         logo: "<p>Both the primary and horizontal logos are available in three different color treatments, which need to be chosen according to how and where you plan to use the logo.</p>",
         font: "<p>Typography plays a significant role in Light Reaction’s visual system. Universe LT STD is the primary font family of Light Reaction. It should be used in three different weights: Light, Roman and Bold.</p>
         <p>For cases where Universe is not available, Arial can be used in Regular and Bold weights.</p>",

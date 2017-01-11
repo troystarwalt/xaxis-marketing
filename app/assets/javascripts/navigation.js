@@ -1,7 +1,7 @@
 // Side menu highlighting
 $('#brands').ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()-30;
+  sideMenuHeight = sideMenu.outerHeight()-200,
   menuItems = sideMenu.find("a"),
   scrollItems = menuItems.map(function () {
     var item = $($(this).attr("href"));
