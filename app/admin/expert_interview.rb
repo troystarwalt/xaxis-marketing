@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 ActiveAdmin.register ExpertInterview do
   menu label:  "Interview"
-  permit_params :vimeo_url, :contributor_name, :contributor_title, :title, :description, :image
+  permit_params :vimeo_url, :contributor_name, :contributor_title, :title, :description, :image, :image_cache
 
   # Adds a custom New action on the show page.
   action_item :new, only: [:show] do
@@ -18,7 +18,7 @@ ActiveAdmin.register ExpertInterview do
       f.input :description
       if f.object.image?
         panel :current_image, label: "Current Image" do
-          image_tag f.object.image.url
+          image_tag f.object.image.fitting.url
         end
         file_label = 'Replace Preview Image'
       end
@@ -32,6 +32,7 @@ ActiveAdmin.register ExpertInterview do
                                           ),
                                   data: {type: 'png'}
                                 }
+      f.hidden_field :image_cache
     end
     f.actions
   end

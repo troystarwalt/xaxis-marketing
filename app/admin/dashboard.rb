@@ -15,7 +15,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Posts" do
           ul do
-            Post.order("created_at DESC").last(5).map do |post|
+            Post.order("created_at DESC").first(5).map do |post|
               li link_to(post.title, admin_post_path(post))
               li post.author
               hr

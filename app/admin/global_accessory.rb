@@ -8,7 +8,7 @@ ActiveAdmin.register GlobalAccessory do
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
   menu label: "Global", priority: 20
 
-  permit_params :name, :category, :file, :brand_id
+  permit_params :name, :category, :file, :brand_id, :file_cache
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
@@ -16,7 +16,13 @@ ActiveAdmin.register GlobalAccessory do
     f.inputs "Create a New Global Accessory" do
       f.input :category, as: :radio, :collection => GlobalAccessory::CATEGORIES
       f.input :name, placeholder: "This is for our use."
+      if f.object.file?
+        panel "Current Uploaded File" do
+          para f.object.file.file.filename
+        end
+      end
       f.input :file, input_html: {data: {type: 'bank'}}, hint: "Maximum Size 300mb"
+      f.hidden_field :file_cache
     end
     f.actions
   end

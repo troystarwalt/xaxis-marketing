@@ -5,7 +5,7 @@ ActiveAdmin.register Headshot do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :first_name, :last_name, :title, :brand_id, :grey_image, :color_image, :priority, :bio
+  permit_params :first_name, :last_name, :title, :brand_id, :grey_image, :color_image, :priority, :bio, :grey_image_cache, :color_image_cache
   #
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
@@ -48,7 +48,7 @@ ActiveAdmin.register Headshot do
                                           ),
                                   data: {type: 'large_png'}
                                 }
-      f.hidden_field :color_image_cache, value: f.color_image_cache
+      f.hidden_field :color_image_cache
       f.input :bio, placeholder: "You can add basic html code here. That includes p tags which create a paragraph.", hint: "You can add a '<p>' tag to create a paragraph. Like this: '<p>I'm a paragraph!</p>'"
     end
       para "Adding a new headshot updates the site. So proof your work!"
