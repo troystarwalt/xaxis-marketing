@@ -1,8 +1,8 @@
 $(document).ready(function(){
-  $('.platform-preview-image').hover(function() {
-    $(this).find('div').css({opacity: 0, display: 'flex'}).animate({ opacity: 1}, 500);},
+  $('.platform-preview-image, .headshot-container_image').hover(function() {
+    var image_height = $(this).find('img').height();
+    $(this).find('div').css({opacity: 0, display: 'flex', height: image_height}).animate({ opacity: 1}, 250);},
     function() {
-    $(this).find('div').fadeOut(500);
+    $(this).find('div').fadeOut(250);
   });
-
 });
