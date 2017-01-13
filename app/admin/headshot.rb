@@ -6,6 +6,12 @@ ActiveAdmin.register Headshot do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   permit_params :first_name, :last_name, :title, :brand_id, :grey_image, :color_image, :priority, :bio, :grey_image_cache, :color_image_cache
+
+  # Adds a custom New action on the show page.
+  action_item :new, only: [:show] do
+    link_to 'New', new_admin_headshot_path
+  end
+
   #
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
@@ -17,7 +23,7 @@ ActiveAdmin.register Headshot do
       f.input :priority, as: :select, :collection => Array(1..20), hint: "A person with Priority of 1 will be listed 1st"
       if f.object.grey_image?
         panel "Current B&W Headshot" do
-          image_tag f.object.grey_image.thumb.url
+          image_tag f.object.grey_image.thumb.current_path
         end
         file_label = 'Replace B&W Headshot'
       end
@@ -34,7 +40,7 @@ ActiveAdmin.register Headshot do
       f.hidden_field :grey_image_cache
       if f.object.color_image?
         panel "Current Color Headshot" do
-          image_tag f.object.color_image.thumb.url
+          image_tag f.object.color_image.thumb.current_path
         end
         file_label = 'Replace Color Headshot'
       end
