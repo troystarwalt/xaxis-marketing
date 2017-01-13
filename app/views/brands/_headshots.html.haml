@@ -1,23 +1,30 @@
 .row
   - @headshots.each.with_index do |hs, index|
-    .col-lg-3.col-md-4.col-sm-4.col-xs-6
-      .headshot-container
-        = link_to '###', class: "headshot-image", id: "#{hs.full_name.parameterize}", data: { index: index } do
-          = image_tag hs.image.url(:thumb), class: "img-fluid img-fluid-width"
-          %span.after-text.text-uppercase View Image
-        .text-xs-center.headshot-info
-          %p.font-weight-bold.headshot-name= hs.full_name
+    .col-lg-6
+      .headshot-flex-container
+        .headshot-container_image
+          = image_tag hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index}
+          .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
+            =link_to "View Image", 'javascript:void(0)''', class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
+        .headshot-container_info
+          %p.font-weight-bold.headshot-name= hs.first_name
+          %p.font-weight-bold.headshot-name= hs.last_name
           %p.headshot-title= hs.title
-          %p.headshot-bio{data: { index: index }}
-            %span.fa.fa-file.headshot-download-icons
-            =link_to "View Bio", "###", type: "text", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links"
-          %span.fa.fa-download.headshot-download-icons
-          %span
-            =link_to "Original", hs.image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-          %span
+          =link_to "###", type: "text", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
+            %i.fa.fa-file.headshot-download-icons
+            View Bio
+          %p.headshot-color-type
+            %i.fa.fa-download.headshot-download-icons
+            Color:
+            =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
             |
-          %span
-            =link_to "720x900", hs.image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+            =link_to "Small", hs.color_image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+          %p.headshot-color-type
+            %i.fa.fa-download.headshot-download-icons
+            BW:
+            =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+            |
+            =link_to "Small", hs.grey_image.url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
 -# Modal for Headshots
 .modal.fade(id="hsModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")

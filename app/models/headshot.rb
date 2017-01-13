@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 class Headshot < ApplicationRecord
   belongs_to :brand
-  mount_uploader :image, HeadshotsUploader
-  validates_presence_of :first_name, :last_name, :title, :image, :brand_id, :bio, presence: true
+  mount_uploader :grey_image, HeadshotsUploader
+  mount_uploader :color_image, HeadshotsUploader
+  validates_presence_of :first_name, :last_name, :title, :grey_image, :color_image, :brand_id, :bio, presence: true
   scope :ordered_by_priority, -> {order(priority: :asc, last_name: :asc)}
-  validates :image,
+  validates :grey_image, :color_image,
     :file_size => {
       :maximum => 15.megabytes.to_i
     }

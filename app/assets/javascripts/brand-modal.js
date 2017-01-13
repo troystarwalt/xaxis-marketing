@@ -1,11 +1,11 @@
 $(document).ready(function(){
   // Using gon variables for image modals
-  $('.headshot-image').on('click', function (e){
+  $('.headshot-overlay-link, .headshot-image').on('click', function (e){
     var index = $(this).data('index');
     var headshot = gon.headshots[index];
 
     $('.hs-img').attr({
-      src: headshot.image.large.url,
+      src: headshot.grey_image.large.url,
       alt: headshot.first_name,
       photo_id: headshot.id
       });
@@ -22,7 +22,7 @@ $(document).ready(function(){
     var index = $(this).data('index');
     var hsBio = gon.headshots[index];
     $('.hs-bio-img').attr({
-      src: hsBio.image.thumb.url,
+      src: hsBio.grey_image.thumb.url,
       alt: hsBio.full_name,
       photo_id: hsBio.id
     });

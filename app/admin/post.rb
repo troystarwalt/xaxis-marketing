@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   menu priority: 2, label: proc { I18n.t "post"}
 
-  permit_params :title, :text, :author, :image, :tag_list, :preview_image
+  permit_params :title, :text, :author, :image, :tag_list, :preview_image, :image_cache, :preview_image_cache
 
   controller do
     def find_resource
@@ -53,7 +53,6 @@ ActiveAdmin.register Post do
   filter :title
   filter :tag_list
   filter :text
-  filter :created_at
   filter :updated_at
 
   form do |f|
@@ -84,7 +83,7 @@ ActiveAdmin.register Post do
         end
         file_label = 'Replace Background Image'
       end
-      f.input :preview_image, as: :file, id: "preview_this_image",
+      f.input :preview_image, as: :file, id: "preview_this_preview_image",
                                 label: file_label || "Upload Background Image",
                                 hint: "Maximum photo size is 5mb.",
                                 input_html: {
@@ -95,13 +94,11 @@ ActiveAdmin.register Post do
                                   data: {type: 'png'}
                                 }
       f.hidden_field :image_cache
-      # f.input :image, as: :file, label: "Image", input_html: {data: {type: 'png'}}, hint: "Maximum 5mb"
-      # f.input :preview_image, as: :file, label: "Preview Image", input_html: {data: {type: 'png'}}, hint: "This is for the homepage squre. Maximum 5mb."
+      f.hidden_field :preview_image_cache
       f.input :tag_list,
         as: :radio,
         label: "Tag",
         multiple: :false,
-        hint: "Choose 1",
         collection: Post.valid_tags
     end
     f.actions

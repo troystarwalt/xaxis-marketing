@@ -19,7 +19,7 @@ ActiveAdmin.register BrandAccessory do
 
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
 
-  permit_params :name, :category, :file, :brand_id
+  permit_params :name, :category, :file, :brand_id, :file_cache
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
@@ -27,7 +27,13 @@ ActiveAdmin.register BrandAccessory do
       f.input :brand, as: :radio
       f.input :category, as: :radio, :collection => BrandAccessory::CATEGORIES
       f.input :name, label: "Name The File"
+      if f.object.file?
+        panel "File Ready For Upload" do
+          para f.object.file.file.filename
+        end
+      end
       f.input :file, input_html: {data: {type: 'ppt'}}, hint: "Max size is 100mb."
+      f.hidden_field :file_cache
     end
     para "Max upload, as noted is 100mb, but that's mainly for PPT's. Don't get greedy!"
     f.actions
