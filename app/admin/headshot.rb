@@ -23,7 +23,7 @@ ActiveAdmin.register Headshot do
       f.input :priority, as: :select, :collection => Array(1..20), hint: "A person with Priority of 1 will be listed 1st"
       if f.object.grey_image?
         panel "Current B&W Headshot" do
-          image_tag f.object.grey_image.thumb.current_path
+          image_tag f.object.grey_image.thumb.url
         end
         file_label = 'Replace B&W Headshot'
       end
@@ -40,7 +40,7 @@ ActiveAdmin.register Headshot do
       f.hidden_field :grey_image_cache
       if f.object.color_image?
         panel "Current Color Headshot" do
-          image_tag f.object.color_image.thumb.current_path
+          image_tag f.object.color_image.thumb.url
         end
         file_label = 'Replace Color Headshot'
       end
@@ -67,6 +67,7 @@ ActiveAdmin.register Headshot do
       link_to image_tag(headshot.grey_image.thumb), admin_headshot_path(headshot)
     end
     a truncate(headshot.full_name), :href => admin_headshot_path(headshot)
+    span "Priority: #{headshot.priority}"
   end
 
   show do
