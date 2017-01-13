@@ -7,7 +7,8 @@
           .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
             =link_to "View Image", 'javascript:void(0)''', class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
         .headshot-container_info
-          %p.font-weight-bold.headshot-name= hs.full_name
+          %p.font-weight-bold.headshot-name= hs.first_name
+          %p.font-weight-bold.headshot-name= hs.last_name
           %p.headshot-title= hs.title
           =link_to "###", type: "text", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
             %i.fa.fa-file.headshot-download-icons

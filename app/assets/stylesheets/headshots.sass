@@ -36,14 +36,15 @@
 .headshot-name, .headshot-title
   color: $xaxis-grey-blue
   @include Gotham-Medium
+  line-height: normal
 
 .headshot-name
   font-size: 1.1em
 
 .headshot-title
   margin-bottom: 1rem !important
+  margin-top: 5px
   font-size: .785714em
-  line-height: normal
 
 .headshot-download-icons
   color: $silver
@@ -115,3 +116,7 @@
   #hsBioModal
     .title-and-name
       padding-left: 30px
+
+@media (min-width: 1199px)
+  .headshot-container_info
+    padding: 20px 0 20px 20px
