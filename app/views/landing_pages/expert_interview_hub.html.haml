@@ -1,16 +1,11 @@
 - title "Expert Interview Hub"
-.disclaimer.top-disclaimer
-  .container-fluid
-    .row
-      .col-xs-12
-        .pull-right
-          %i For Internal Use Only
 %header
-  .opacity
-  .logo.text-xs-center
-    %img.logo-img{:src => asset_path("landing_pages/expert_interview_hub/play-arrow.png")}/
-    %h1.text-xs-center Expert Interview Hub
+  #expert_interview_header
+    .container
+      %h1#expert_interview_title Expert Interview Hub
 .container
+  %p.exper-interview-intro
+    The Expert Interviews Video Series is a ongoing production of interviews with experts across different aspects of our business and industry. They are designed to provide insights into where the industry is moving and how Xaxis is prepared to be ahead of it.
   - if !@main_video.nil? && !@rest_of_videos.nil?
     %main
       %section.main-video

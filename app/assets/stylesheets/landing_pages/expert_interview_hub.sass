@@ -27,43 +27,62 @@ body
   .pull-right
     margin-right: 10%
 
-header
-  position: absolute
-  top: 0
-  left: 0
-  background-image: url(asset_path('landing_pages/expert_interview_hub/background.jpg'))
+// header
+//   position: absolute
+//   top: 0
+//   left: 0
+//   background-image: url(asset_path('landing_pages/expert_interview_hub/background.jpg'))
+//   background-size: cover
+//   background-position: top center
+//   height: 100vh
+//   width: 117vw
+//   z-index: 0
+
+#expert_interview_header
+  background: no-repeat url(asset_path('interview_header.jpg'))
+  margin-bottom: 80px
+  height: 500px
   background-size: cover
-  background-position: top center
-  height: 100vh
-  width: 117vw
-  z-index: 0
-
-.opacity
-  background-color: #fff
-  opacity: .5
+  .container
+    position: relative
+    height: 100%
+#expert_interview_title
+  text-align: center
+  color: $more-lightest-grey !important
+  @include Gotham-Medium
   position: absolute
-  top: 0
+  bottom: 15%
   left: 0
-  bottom: 0
   right: 0
-  width: 100%
-  height: 100%
+  margin: 0 auto
+  font-size: 4.57em
+.exper-interview-intro
+  padding: 0 60px
+  margin-bottom: 80px
 
-header .logo
-  width: 100vw
-  position: absolute
-  top: 250px
-  img
-    margin: 0 auto
-    width: 100px
-  h1
-    @include Gotham-Medium
-    color: #00AFEF !important
-    margin-top: 20px
-    margin-bottom: 10px
+// .opacity
+//   background-color: #fff
+//   opacity: .5
+//   position: absolute
+//   top: 0
+//   left: 0
+//   bottom: 0
+//   right: 0
+//   width: 100%
+//   height: 100%
 
-main
-  margin-top: 335px
+// header .logo
+//   width: 100vw
+//   position: absolute
+//   top: 250px
+//   img
+//     margin: 0 auto
+//     width: 100px
+//   h1
+//     @include Gotham-Medium
+//     color: #00AFEF !important
+//     margin-top: 20px
+//     margin-bottom: 10px
 
 main .main-video .card
   background: white
@@ -155,6 +174,7 @@ main .main-video .card
   position: relative
   text-align: center
 
+
 @media (min-width: 767px)
   .small-card
     &:nth-child(odd)
@@ -167,3 +187,16 @@ main .main-video .card
     .small-card-body
       border-bottom-left-radius: 6px
       border-bottom-right-radius: 6px
+
+@media (max-width: 1199px)
+  #expert_interview_header
+    background: no-repeat fixed url(asset_path('interview_header.jpg'))
+    height: 280px
+  #expert_interview_title
+    font-size: 3em
+
+@media (max-width: 543px)
+  #expert_interview_title
+    font-size: 2.5em
+  .exper-interview-intro
+    padding: 0 15px

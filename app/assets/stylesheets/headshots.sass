@@ -19,13 +19,17 @@
     .headshot-overlay-link
       display: inline-block
       margin: 0
-      border: 3px solid $xaxis-blue-color
+      border: 1px solid $xaxis-blue-color
       border-radius: 100px
-      min-width: 98px
       color: $xaxis-blue-color
-      @include Gotham-Book
-      padding: 5px 10px
+      @include Gotham-Medium
+      padding: 8px 14px
       font-size: .7em
+      transition: opacity 1s
+      letter-spacing: 2px
+      white-space: nowrap
+      &:hover
+        opacity: .5
 
 .headshot-container_info
   flex-grow: 2

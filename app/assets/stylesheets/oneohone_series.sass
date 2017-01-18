@@ -1,16 +1,24 @@
 #one_oh_one_series
-  background: $xaxis-light-green
-  padding: 60px 0
+  background: no-repeat url(asset_path('series_header.jpg'))
   margin-bottom: 80px
-
+  height: 500px
+  background-size: cover
+  .container
+    position: relative
+    height: 100%
 #one_oh_one_title
-  margin-bottom: 30px
   text-align: center
   color: $more-lightest-grey
-  @include Gotham-Thin
-
+  @include Gotham-Medium
+  position: absolute
+  bottom: 10%
+  left: 0
+  right: 0
+  margin: 0 auto
+  font-size: 4.57em
 .one-oh-one-series-intro
   padding: 0 60px
+  margin-bottom: 80px
 
 .image-preview-101
   margin-bottom: 10px
@@ -60,3 +68,8 @@
     clear: left
 
 // @media (max-width: 544px)
+
+@media (max-width: 1199px)
+  #one_oh_one_series
+    background: no-repeat fixed url(asset_path('series_header.jpg'))
+    height: 280px
