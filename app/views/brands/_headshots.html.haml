@@ -3,7 +3,12 @@
     .col-lg-6
       .headshot-flex-container
         .headshot-container_image
-          = image_tag hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index}
+          - if !hs.grey_image.file.nil?
+            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+          - elsif !hs.color_image.file.nil?
+            = image_tag(hs.color_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+          - else
+            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
           .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
             =link_to "View Image", 'javascript:void(0)''', class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
         .headshot-container_info
@@ -16,15 +21,21 @@
           %p.headshot-color-type
             %i.fa.fa-download.headshot-download-icons
             Color:
-            =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-            |
-            =link_to "Small", hs.color_image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+            - if hs.color_image.file.nil?
+              N/A
+            - else
+              =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+              |
+              =link_to "Small", hs.color_image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
           %p.headshot-color-type
             %i.fa.fa-download.headshot-download-icons
             BW:
-            =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-            |
-            =link_to "Small", hs.grey_image.url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
+            - if hs.grey_image.file.nil?
+              N/A
+            - else
+              =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+              |
+              =link_to "Small", hs.grey_image.url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
 -# Modal for Headshots
 .modal.fade(id="hsModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")

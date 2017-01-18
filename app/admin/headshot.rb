@@ -2,15 +2,17 @@
 ActiveAdmin.register Headshot do
   menu parent: "Brands"
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  permit_params :first_name, :last_name, :title, :brand_id, :grey_image, :color_image, :priority, :bio, :grey_image_cache, :color_image_cache
+  permit_params :first_name, :last_name, :title, :brand_id, :grey_image, :color_image, :priority, :bio, :grey_image_cache, :color_image_cache, :remove_grey_image, :remove_color_image
 
   # Adds a custom New action on the show page.
   action_item :new, only: [:show] do
     link_to 'New', new_admin_headshot_path
   end
+
+  filter :brand
+  filter :last_name
+  filter :first_name
+  filter :priority
 
   #
   form :html => { :multipart => true } do |f|
@@ -19,16 +21,26 @@ ActiveAdmin.register Headshot do
       f.input :first_name, placeholder: "John"
       f.input :last_name, placeholder: "Smith"
       f.input :title, placeholder: "CFO"
-      f.input :brand_id, as: :radio, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}]
+      f.input :brand_id, as: :radio, :collection => Hash[Brand.all.map{|b| [b.name, b.id]}], required: true
       f.input :priority, as: :select, :collection => Array(1..20), hint: "A person with Priority of 1 will be listed 1st"
       if f.object.grey_image?
         panel "Current B&W Headshot" do
-          image_tag f.object.grey_image.thumb.url
+          columns do
+            column do
+              image_tag(f.object.grey_image.thumb.url)
+            end
+            column span: 2 do
+              panel "Delete B&W Headshot" do
+                f.check_box :remove_grey_image, as: :boolean, require: false
+                para "Just want to remove the file? Check this and hit update."
+              end
+            end
+          end
         end
         file_label = 'Replace B&W Headshot'
       end
       f.input :grey_image, as: :file, id: "preview_this_image",
-                                label: file_label || "Upload B&W",
+                                label: file_label || "Upload B&W Headshot",
                                 hint: "Maximum photo size is 15mb.",
                                 input_html: {
                                   title: (f.object.grey_image? ?
@@ -40,12 +52,22 @@ ActiveAdmin.register Headshot do
       f.hidden_field :grey_image_cache
       if f.object.color_image?
         panel "Current Color Headshot" do
-          image_tag f.object.color_image.thumb.url
+          columns do
+            column do
+              image_tag f.object.color_image.thumb.url
+            end
+            column span: 2 do
+              panel "Delete Color Headshot" do
+                f.check_box :remove_color_image, as: :boolean, require: false
+                para "Just want to remove the file? Check this and hit update."
+              end
+            end
+          end
         end
-        file_label = 'Replace Color Headshot'
+        color_file_label = 'Replace Color Headshot'
       end
       f.input :color_image, as: :file, id: "preview_this_image",
-                                label: file_label || "Upload Color",
+                                label: color_file_label || "Upload Color Headshot",
                                 hint: "Maximum photo size is 15mb.",
                                 input_html: {
                                   title: (f.object.color_image? ?
@@ -58,6 +80,7 @@ ActiveAdmin.register Headshot do
       f.input :bio, placeholder: "You can add basic html code here. That includes p tags which create a paragraph.", hint: "You can add a '<p>' tag to create a paragraph. Like this: '<p>I'm a paragraph!</p>'"
     end
       para "Adding a new headshot updates the site. So proof your work!"
+      para "If you add a color photo, but not a black & white, then the color photo will be shown."
     f.actions
     puts params
   end
