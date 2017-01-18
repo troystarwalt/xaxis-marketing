@@ -55,7 +55,7 @@ dt
   font-size: .8em
   padding: 8px 14px
   text-transform: uppercase
-  border: 1px solid transparent
+  border: 1px solid $white
   transition: all .1s
   letter-spacing: 2px
   @include Gotham-Medium
@@ -64,6 +64,18 @@ dt
 .brand-btn-primary:hover, .brand-btn-secondary:hover
   opacity: .5
   text-decoration: none
+
+.animation-btn-secondary
+  border-radius: 100px
+  background: transparent
+  font-size: .8em
+  padding: 8px 14px
+  text-transform: uppercase
+  transition: all .1s
+  letter-spacing: 2px
+  @include Gotham-Medium
+  display: inline-block
+  text-align: center
 
 .xaxis-btn-primary
   background: $xaxis-blue-color
@@ -106,22 +118,10 @@ dt
   border: 1px solid $grey
 
 .btn-back
-  background: $white
-  color: $xaxis-blue-color
-  padding: 8px 14px
-  @include Gotham-Medium
-  border: 3px solid $xaxis-blue-color
-  border-radius: 50px
-  letter-spacing: 1px
-  text-transform: uppercase
-  display: inline-block
-  text-align: center
-  cursor: pointer
   box-shadow: inset 0 0 0 0 $xaxis-blue-color
   -webkit-transistion: all ease 0.8s
   -moz-transition: all ease 0.8s
   transition: all ease 0.8s
-  font-weight: bold
   &:active, &:visited
     color: $xaxis-blue-color
 

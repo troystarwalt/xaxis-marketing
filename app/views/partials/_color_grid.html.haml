@@ -16,7 +16,7 @@
             %h1.sm-item-header.color-grid-text= sanitize @latest_post.title.truncate_words(7, separator: ' ')
             %p.color-grid-text.keep-pretty-text#latest_post_text= sanitize @latest_post.text.truncate_words(35), tags: %w(strong a), attributes: %w(href)
       .link-container
-        =link_to "see more", post_path(@latest_post), class: "text-uppercase btn color-grid-btn"
+        =link_to "see more", post_path(@latest_post), class: "text-uppercase animation-btn-secondary color-grid-btn-white"
   .flex-column
     .flex-sm-item.center-top#grid-box-3
       .grid-content-container
@@ -29,7 +29,7 @@
             %h1.sm-item-header.color-grid-text Xaxis Value Calculator
             %p.color-grid-text The 2016 Xaxis Programmatic Media Value Calculator is designed to help you calculate Xaxis’ tangible values to your customers.
       .link-container
-        =link_to "try it", value_calculator_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "try it", value_calculator_path, class: "text-uppercase animation-btn-secondary color-grid-btn-white"
     .flex-sm-item.center-bottom#grid-box-4
       .grid-content-container
         .row
@@ -58,6 +58,6 @@
       %h1.lg-item-header.color-grid-text The Presentation Hub
       %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
       .link-container
-        =link_to "go", presentation_hub_path, class: "text-uppercase btn color-grid-btn"
+        =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
       .large-grid-icon-container.hidden-md-down
         = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
