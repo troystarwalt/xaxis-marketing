@@ -74,13 +74,14 @@ $('#brands').ready(function() {
     }).scroll();
   });
 
-  // A lot of code to keep a back-to-top arrow from moving past the footer
-  var backToTopArrow = document.querySelector('#btw-arrow-link');
-  var footer = document.querySelector('footer');
-  var main_body = document.querySelector('#brands');
-  var footer_container = document.querySelector('.footer-container');
+
 
   function checkOffset() {
+    // A lot of code to keep a back-to-top arrow from moving past the footer
+    var backToTopArrow = document.querySelector('#btw-arrow-link');
+    var footer = document.querySelector('footer');
+    var main_body = document.querySelector('#brands');
+    var footer_container = document.querySelector('.footer-container');
     function getRectTop(el){
       var rect = el.getBoundingClientRect();
       return rect.top;
@@ -104,20 +105,3 @@ $('#brands').ready(function() {
     checkOffset();
   });
 });
-
-function init() {
-  window.addEventListener('scroll', function(e) {
-    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrink_on = 150,
-        body_element = document.querySelector("body");
-    if (distanceY > shrink_on) {
-      body_element.classList.add('shrnk');
-    } else {
-      if (body_element.classList.contains('shrnk')) {
-        body_element.classList.toggle('shrnk');
-      }
-    }
-  });
-}
-
-window.onload = init();
