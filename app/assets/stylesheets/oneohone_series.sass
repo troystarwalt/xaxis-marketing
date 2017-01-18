@@ -33,10 +33,6 @@
     -moz-transform: scale(1.05)
     -webkit-transform: scale(1.05)
     transform: scale(1.05)
-    //
-    // -webkit-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
-    // -moz-box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
-    // box-shadow: 0 5px 20px 0 rgba(72,72,72,0.5)
 
 
 .single-101-container
@@ -55,6 +51,9 @@
   a:last-child
     margin-left: 10px
 
+.bubble-text
+  vertical-align: top
+
 @media (min-width: 544px) and (max-width: 1199px)
   .buttons-101 > a:last-child
     margin-top: 10px
@@ -66,10 +65,13 @@
 @media (min-width:544px) and (max-width: 991px)
   .one-oh-one-series-row > div:nth-child(2n+3)
     clear: left
-
-// @media (max-width: 544px)
-
+    
 @media (max-width: 1199px)
   #one_oh_one_series
     background: no-repeat fixed url(asset_path('series_header.jpg'))
     height: 280px
+
+@media (max-width: 419px)
+  .bubble-text
+    float: left
+    width: 45%
