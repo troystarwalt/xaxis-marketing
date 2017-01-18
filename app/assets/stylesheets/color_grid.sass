@@ -74,7 +74,7 @@
 .left-top, .center-top, .left-bottom
   color: $white
 
-
+// Set unique style of the update links
 .learning-update_link
   color: $xaxis-darkest-blue
   font-size: 12px
@@ -83,12 +83,11 @@
   &:hover
     color: $xaxis-blue-color
 
-
+// Font sizes for colored box headers.
 .sm-item-header
   font-size: 1.5em
   font-weight: bold
   letter-spacing: 1px
-
 .lg-item-header
   font-size: 2.5em
   letter-spacing: 1px
@@ -99,25 +98,23 @@
   color: $xaxis-dark-yellow
   font-size: .8em
 
+// Background colors
 .left-top
   background: $xaxis-grey-blue
 .left-bottom
   background: $xaxis-deep-green
-.center-top
-  background: $xaxis-blue-color
+  background-size: cover !important
+  background-repeat: no-repeat
 .center-bottom
   background: $footer-border-color
 .right-top
   background: $xaxis-lightest-blue
-
-#grid-box-3
-  background: asset-url('calculator.jpg') no-repeat
+.center-top
+  background: asset-url('calculator.jpg') no-repeat $xaxis-blue-color
   background-size: cover
 
-#grid-box-2
-  background-size: cover !important
-  background-repeat: no-repeat
 
+// 1900px and above
 @media (min-width: 1900px)
   #grid-box-4
     .grid-icon-container
@@ -125,6 +122,7 @@
   .large-grid-icon-container
     width: 50%
 
+// 1400px - 1899px
 @media (min-width: 1400px) and (max-width: 1899px)
   #grid-box-4
     .grid-icon-container
@@ -132,6 +130,7 @@
   .large-grid-icon-container
     width: 60%
 
+// 1200px wide and above
 @media (min-width: 1200px)
   .flex-container
     .flex-column
@@ -148,6 +147,7 @@
         padding-top: 40px
         padding-bottom: 40px
 
+// 999px wide and below
 @media (max-width: 999px)
   .flex-container
     flex-direction: column
@@ -161,6 +161,7 @@
   .grid-icon-container, .large-grid-icon-container
     display: none
 
+// 767px wide and below
 @media (max-width: 767px)
   .flex-container
     .flex-column
