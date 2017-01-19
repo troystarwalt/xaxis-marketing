@@ -26,7 +26,7 @@
             - else
               =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
               |
-              =link_to "Small", hs.color_image_url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+              =link_to "Small", hs.color_image_url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
           %p.headshot-color-type
             %i.fa.fa-download.headshot-download-icons
             BW:
@@ -35,7 +35,7 @@
             - else
               =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
               |
-              =link_to "Small", hs.grey_image.url(:large), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
+              =link_to "Small", hs.grey_image.url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
 -# Modal for Headshots
 .modal.fade(id="hsModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")
