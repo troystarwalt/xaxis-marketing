@@ -4,13 +4,13 @@
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span oh, hi!
       %h1.lg-item-header.color-grid-text Welcome!
-      %p.color-grid-text Welcome to the Xaxis Marketing Hub. This internal site houses all your marketing needs such as brand assets and guidelines, up to date presentation templates, sales collateral and much more. Check back often for updates and new materials!
+      %p.color-grid-text The new Xaxis Marketing Hub houses all your marketing needs - even when you're on the go. Here you can find brand assets and guidelines, up-to-date presentation templates, collateral and much more! Check back often to keep up with new materials.
     .flex-sm-item.left-bottom#grid-box-2{style: "background-image: url(#{ @latest_post.preview_image.file.nil? ? '' : @latest_post.preview_image.preview.url});"}
       .grid-content-container
         .row
           .col-sm-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span updates
+              %span news
         .row
           .col-sm-12
             %h1.sm-item-header.color-grid-text= sanitize @latest_post.title.truncate_words(7, separator: ' ')
