@@ -27,5 +27,9 @@
                 = link_to one.ppt_file.url, download: one.name, role: "button", class: "brand-btn-primary xaxis-btn-primary button-101" do
                   %i.fa.fa-download
                   PPT
-    .testing-center
-      = will_paginate @one_oh_ones, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+    .row
+      .col-xs-12
+        = will_paginate @one_oh_ones, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
+    .text-xs-center
+      =image_tag "bubble.svg", class: "bubble-text"
+      =image_tag "updates_icon_small.png", class: "update-icon-series"

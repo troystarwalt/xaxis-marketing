@@ -18,7 +18,7 @@
           %p.news-text= sanitize @post.text, tags: %w(a strong p br ul li), attributes: %w(href)
           .news-image
             =image_tag(@post.image.url(:preview), class: "img-fluid") if !@post.image.file.nil?
-        = link_to :back, class: "btn-back" do
+        = link_to :back, class: "animation-btn-secondary xaxis-btn-secondary btn-back" do
           %i.fa.fa-arrow-left
           Back
       .col-sm-3.hidden-xs-down
