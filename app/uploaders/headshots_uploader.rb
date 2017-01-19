@@ -9,6 +9,10 @@ class HeadshotsUploader < BaseUploader
     process resize_to_fit: [720, 900]
   end
 
+  version :small, :if => :image? do
+    process resize_to_fit: [720, 900]
+  end
+
   def extension_whitelist
     %w(jpg jpeg png)
   end

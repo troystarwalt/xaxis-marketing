@@ -8,11 +8,6 @@
           %span.tag_list|
           %span.tag_list= @post.pretty_date
           %h1.article-title= @post.title
-          .social-share-buttons
-            =link_to(post_path(@post), class: "share-btn-link", id: "FBshareBtn", onclick: "window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('#{post_url(@post)}'),'facebook-share-dialog','width=626,height=436'); return false;") do
-              =image_tag "facebook.svg", class: "share-btn share-btn-facebook"
-            =link_to(post_path(@post),  class: "share-btn-link", id: "TWshareBtn", onclick: "javascript:window.open('https://twitter.com/share?text=#{@post.long_teaser}&amp;url=#{post_path(@post)}','Twitter-dialog','width=626,height=436'); return false;") do
-              =image_tag "twitter.svg", class: "share-btn"
           %h6.news-contributor
             Contributor: Xaxis Marketing
           %p.news-text= sanitize @post.text, tags: %w(a strong p br ul li), attributes: %w(href)

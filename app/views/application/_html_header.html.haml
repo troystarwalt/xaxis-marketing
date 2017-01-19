@@ -21,24 +21,9 @@
   %meta{:content => "#ffffff", :name => "msapplication-TileColor"}/
   %meta{:content => "/favicons/ms-icon-144x144.png", :name => "msapplication-TileImage"}/
   %meta{:content => "#ffffff", :name => "theme-color"}/
-  -# OG for facebook
-  %meta{:content => "https://marketing.xaxis.com/", :property => "og:url"}/
-  %meta{:content => "website", :property => "og:type"}/
-  %meta{:content => "Xaxis Marketing", :property => "og:title"}/
-  %meta{:content => "A site for Xaxis Employees", :property => "og:description"}/
-  %meta{:content => asset_path("Xaxis_Logo_Pos_Vert.png"), :property => "og:image"}/
   %script{src: "https://use.typekit.net/ehp4uxd.js"}
   %script try{Typekit.load({ async: true });}catch(e){}
   = csrf_meta_tags
-  -if @post
-    %meta{ name: 'twitter:title', content: @post.title }
-    %meta{ name: 'twitter:description', content: @post.text }
-    %meta{ name: 'twitter:image', content: @post.image_url }
-    %meta{ property: 'og:title', content: @post.title }
-    %meta{ property: 'og:description', content: @post.text }
-    %meta{ property: 'og:url', content: post_url(@post) }
-    %meta{ property: 'og:image', content: @post.image.url }
-
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   -if @css_files_overwrite
     = stylesheet_link_tag @css_files_overwrite, media: 'all', 'data-turbolinks-track': 'reload'
