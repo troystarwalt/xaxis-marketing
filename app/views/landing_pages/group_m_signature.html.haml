@@ -33,28 +33,31 @@
       #generated_container
         %h3 Generated Preview
         %p Click inside this box, select all (command+A), and copy (command+C) the entire preview to use as your signature.
+        %p You may need to do some adjusting of colors and spacing due to Outlook's settings.
         #generated_signature_block.generated_signature_block{:contenteditable => "true"}
-          %h1#full_name.full_name
-            %span#first_name.first_name Freddie
-            %span
-            %span#last_name.last_name Prince Jr.
-          %p
-            %span#job_title.job_title Global Prince
-          %p
-            %img{:alt => "GroupM Logo", :src => "https://s3.amazonaws.com/email-logos-xaxis/groupm_logo_small_email_red.png", class: "signature-logo"}/
-          #address_and_phone
-            %p#address_street 498 7th Avenue
-            %p#address_city_state_zip New York, NY 10018
-            %p
-              Office: +
-              %span#sig_office_phone>212.234.8181
-            %p#mobile_section
-              Mobile: +
-              %span#sig_mobile_phone>212.234.2391
-          %ul
-            %li
-              %a{:href => "https://twitter.com/groupmworldwide", :target => "_blank"} Twitter
-            %li
-              %a{:href => "https://www.linkedin.com/company-beta/3765?pathWildcard=3765", :target => "_blank"} LinkedIn
-            %li
-              %a{:href => "https://groupm.com", :target => "_blank"} Website
+          .copy_area{:style => "font-family: Arial, sans-sirif; color: #0A2756; line-height: normal;"}
+            %h1#full_name.full_name{:style => "margin-bottom: 0;font-size: 20px;color: #3B6E8F;"}
+              %span#first_name.first_name{:style => "margin-bottom: 0;font-size: 20px;color: #0080FF;"} Freddie
+              %span
+              %span#last_name.last_name{:style => "margin-bottom: 0;font-size: 20px;color: #0080FF;"} Prince Jr.
+            %p{:style => "font-size: 12px;margin: 0;"}
+              %span#job_title.job_title{:style => "margin-top: 0;"} Global Prince
+            %p{:style => "font-size: 12px;margin: 0;"}
+              %img.signature-logo{:alt => "GroupM Logo", :src => "https://s3.amazonaws.com/email-logos-xaxis/groupm_logo_small_email_red_100.png", :style => "width: 100px;height: auto;margin-top: 15px;margin-bottom: 15px;"}/
+            #address_and_phone
+              %p#address_street{:style => "font-size: 12px;margin: 0;"} 498 7th Avenue
+              %p#address_city_state_zip{:style => "font-size: 12px;margin: 0;"} New York, NY 10018
+              %p{:style => "font-size: 12px;margin: 0;"}
+                Office: +
+                %span#sig_office_phone>212.234.8181
+              %p#mobile_section{:style => "font-size: 12px;margin: 0;"}
+                Mobile: +
+                %span#sig_mobile_phone>212.234.2391
+            %table{style: "width: 175px; margin-top: 15px;"}
+              %tr
+                %td
+                  %a{:href => "https://twitter.com/groupmworldwide", :style => "font-size: 12px;", :target => "_blank"} Twitter
+                %td
+                  %a{:href => "https://www.linkedin.com/company-beta/3765?pathWildcard=3765", :style => "font-size: 12px;", :target => "_blank"} LinkedIn
+                %td
+                  %a{:href => "https://groupm.com", :style => "font-size: 12px;", :target => "_blank"} Website
