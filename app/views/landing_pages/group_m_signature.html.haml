@@ -1,0 +1,60 @@
+#signature_container.container
+  %h1 Signature Generator
+  %p Use the below form to create a GroupM Signature for your email.
+  .row
+    .col-md-6
+      #signature_information_form
+        %h3 Signature Form
+        %p Start typing to create your form. Leave a field blank if you want to keep the default.
+        %form#signature_form{:method => "post"}
+          .form-group.row
+            %label.col-sm-4.col-form-label.col-form-label-sm{:for => "first_name_input"} First Name
+            .col-sm-8
+              %input#first_name_input.field-input.form-control.form-control-sm{"data-target" => "first_name", :placeholder => "Donald", :type => "text"}/
+          .form-group.row
+            %label.col-sm-4.col-form-label.col-form-label-sm{:for => "last_name_input"} Last Name
+            .col-sm-8
+              %input#last_name_input.field-input.form-control.form-control-sm{"data-target" => "last_name", :placeholder => "Glover", :type => "text"}/
+          .form-group.row
+            %label.col-sm-4.col-form-label.col-form-label-sm{:for => "title_input"} Job Title
+            .col-sm-8
+              %input#title_input.field-input.form-control.form-control-sm{"data-target" => "job_title", :placeholder => "Chief Atlanta Star", :type => "text"}/
+          .form-group.row
+            %label.col-sm-4.col-form-label.col-form-label-sm{:for => "office_num_input"} Office Number
+            .col-sm-8
+              %input#office_num_input.field-input.form-control.form-control-sm{"data-target" => "sig_office_phone", :placeholder => "555.867.5309", :type => "tel"}/
+          .form-group.row
+            %label.col-sm-4.col-form-label.col-form-label-sm{:for => "mobile_num_input"} Mobile Number
+            .col-sm-8
+              %input#mobile_num_input.field-input.form-control.form-control-sm{"data-target" => "sig_mobile_phone", :placeholder => "555.842.3089", :type => "tel"}/
+          .input-button.hidden-xs-up.form-group
+            %input#form_submit_button.brand-btn-secondary.xaxis-btn-secondary.form-control{:type => "button", :value => "Generate"}/
+    .col-md-6
+      #generated_container
+        %h3 Generated Preview
+        %p Click inside this box, select all (command+A), and copy (command+C) the entire preview to use as your signature.
+        #generated_signature_block.generated_signature_block{:contenteditable => "true"}
+          %h1#full_name.full_name
+            %span#first_name.first_name Freddie
+            %span
+            %span#last_name.last_name Prince Jr.
+          %p
+            %span#job_title.job_title Global Prince
+          %p
+            %img{:alt => "GroupM Logo", :src => "https://s3.amazonaws.com/email-logos-xaxis/groupm_logo_small_email_red.png", class: "signature-logo"}/
+          #address_and_phone
+            %p#address_street 498 7th Avenue
+            %p#address_city_state_zip New York, NY 10018
+            %p
+              Office: +
+              %span#sig_office_phone>212.234.8181
+            %p#mobile_section
+              Mobile: +
+              %span#sig_mobile_phone>212.234.2391
+          %ul
+            %li
+              %a{:href => "https://twitter.com/groupmworldwide", :target => "_blank"} Twitter
+            %li
+              %a{:href => "https://www.linkedin.com/company-beta/3765?pathWildcard=3765", :target => "_blank"} LinkedIn
+            %li
+              %a{:href => "https://groupm.com", :target => "_blank"} Website
