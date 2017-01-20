@@ -20,4 +20,9 @@ class LandingPagesController < ApplicationController
       @one_oh_ones = OneOhOne.page(params[:page]).order('created_at ASC')
     end
   end
+
+  def group_m_signature
+    @javascript_file_overwrite_name = 'landing_pages/signature.js'
+    # @css_files_overwrite = 'landing_pages/signature'
+  end
 end
