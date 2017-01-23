@@ -16,7 +16,7 @@
     .row.one-oh-one-series-row
       - @one_oh_ones.each do |one|
         .col-lg-4.col-sm-6.boxer
-          .single-101-container
+          .single-101-container{id: one.name.parameterize.truncate(20) }
             = link_to one.pdf_file.url, target: "_blank", role: "button" do
               = image_tag one.image_preview.preview, alt: "#{one.name}", class: "img-fluid image-preview-101"
             .text-xs-center.buttons-101

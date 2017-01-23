@@ -10,7 +10,7 @@
         .row
           .col-sm-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span news
+              %span THE LATEST
         .row
           .col-sm-12
             %h1.sm-item-header.color-grid-text= sanitize @latest_post.title.truncate_words(7, separator: ' ')
@@ -39,15 +39,14 @@
         .row
           .col-md-8
             %h1.lg-item-header.color-grid-text Learning
-            %dl
-              %dd
-                - @last_two_101.each do |series|
-                  %dt
-                    =link_to series.name.truncate_words(5), one_oh_one_series_url, class: "learning-update_link"
-                    - if series.is_recent
-                      %span.new_alert NEW
-                %dt
-                  =link_to @last_expert.title.truncate_words(10), expert_interview_hub_url, class: "learning-update_link"
+            %ul.learning-update_list
+              - @last_two_101.each do |series|
+                %li
+                  =link_to series.name.truncate_words(5), one_oh_one_series_url(anchor: series.name.parameterize.truncate(20)), class: "learning-update_link wave"
+                  - if series.is_recent
+                    %span.new_alert NEW
+              %li
+                =link_to @last_expert.title.truncate_words(10), expert_interview_hub_url(anchor: @last_expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
           .col-md-4
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"

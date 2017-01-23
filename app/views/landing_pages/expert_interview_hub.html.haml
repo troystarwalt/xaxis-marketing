@@ -8,7 +8,7 @@
     The Expert Interviews Video Series is a ongoing production of interviews with experts across different aspects of our business and industry. They are designed to provide insights into where the industry is moving and how Xaxis is prepared to be ahead of it.
   - if !@main_video.nil? && !@rest_of_videos.nil?
     %main
-      %section.main-video
+      %section.main-video{id: @main_video.title.parameterize.truncate(20)}
         .col-xs-12.card
           .col-sm-10.offset-sm-1.col-xs-12.card-body
             .card-image
@@ -27,7 +27,7 @@
                     =@main_video.contributor_title
                 .col-sm-8.col-xs-12
                   .about-text
-                    %p.description-header
+                    %h5.description-header
                       =@main_video.title
                     %p.description-text
                       =@main_video.description
@@ -50,7 +50,7 @@
                     %p.contributor-title
                       =video.contributor_title
                   .about-text
-                    %p.description-header
+                    %h6.description-header
                       =video.title
                     %p.description-text
                       =video.description

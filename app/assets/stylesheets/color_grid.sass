@@ -74,12 +74,29 @@
 .left-top, .center-top, .left-bottom
   color: $white
 
+.learning-update_list
+  list-style-type: none
+  padding-left: 0
+  margin-bottom: 0
+  li
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    font-weight: normal
+    margin-bottom: 5px
+
 // Set unique style of the update links
 .learning-update_link
   color: $xaxis-darkest-blue
   font-size: 12px
   letter-spacing: 1px
   @include Gotham-Book
+  padding: 10px 0
+  &:link
+    text-decoration: underline
+    color: $xaxis-darkest-blue
+  &:visited
+    color: $xaxis-grey-blue
   &:hover
     color: $xaxis-blue-color
 

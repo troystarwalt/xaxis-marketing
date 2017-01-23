@@ -10,12 +10,12 @@
           - else
             = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
           .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
-            =link_to "View Image", 'javascript:void(0)''', class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
+            =link_to "View Image", "javascript:void(0)", class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
         .headshot-container_info
           %p.font-weight-bold.headshot-name= hs.first_name
           %p.font-weight-bold.headshot-name= hs.last_name
           %p.headshot-title= hs.title
-          =link_to "###", type: "text", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
+          =link_to "javascript:void(0)", type: "text/html", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
             %i.fa.fa-file.headshot-download-icons
             View Bio
           %p.headshot-color-type
@@ -44,7 +44,7 @@
         %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
           %span(aria-hidden="true") &times;
       .modal-body
-        %image.hs-img.img-fluid{src: ''}
+        %img.hs-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoId: ''}}
 -# Modal for bios
 .modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")
@@ -55,7 +55,7 @@
       .modal-body
         .row.headshot-header-info
           .col-sm-3
-            %image.hs-bio-img.img-fluid{src: ''}
+            %img.hs-bio-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoid: ''}}
           .col-sm-9.title-and-name
             %h2.hs-name
             %p.hs-title

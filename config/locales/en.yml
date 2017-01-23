@@ -21,7 +21,7 @@
 
 en:
   hello: "Hello!"
-  post: "Posts"
+  post: "Latest"
   feedback: "Feedback"
   activerecord:
     models:

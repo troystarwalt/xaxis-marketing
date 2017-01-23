@@ -8,7 +8,7 @@
               =link_to 'Home', root_path, class: 'footer-main-link'
               %ul.footer-list
                 %li= link_to 'Xaxis.com', "https://xaxis.com", target: "_blank"
-                %li= link_to 'News', posts_path
+                %li= link_to 'The Latest', posts_path
                 %li= link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", target: "_blank"
                 %li= link_to 'Feedback', new_contact_path
             .col-md-3.col-sm-3.col-xs-6.footer-column
@@ -17,13 +17,13 @@
                 - Brand.all.each do |brand|
                   %li= link_to "#{brand.name} Brand Assets", brand_path(brand)
             .col-md-3.col-sm-3.col-xs-6.footer-column
-              =link_to 'Learning', "###", class: 'footer-main-link'
+              %p.footer-main-link Learning
               %ul.footer-list
                 %li= link_to 'Expert Interviews Hub', expert_interview_hub_url
                 %li= link_to '101 Series', one_oh_one_series_url
                 %li= link_to "Admin Panel", admin_dashboard_path if current_admin_user
             .col-md-3.col-sm-3.col-xs-6.footer-column
-              =link_to 'Landing Pages', "###", class: 'footer-main-link'
+              %p.footer-main-link Landing Pages
               %ul.footer-list
                 %li= link_to 'Value Calculator', value_calculator_url
                 %li= link_to 'Presentation Hub', presentation_hub_path

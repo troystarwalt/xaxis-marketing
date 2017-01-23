@@ -39,7 +39,7 @@ $('.posts.main').ready(function(){
     var slug = post.slug || post.id;
     $('#single-news_title_link').attr('href', "/posts/"+slug);
     $('#single-news_title').text(post.title);
-    $('#single-news_image').attr("src", post.img_url);
+    $('#single-news_image').attr({src: post.img_url, alt: post.title});
     if (post.text.length > 200) {
       $('#single-news_text').text(post.text.substr(0,200) + '...');
     }
