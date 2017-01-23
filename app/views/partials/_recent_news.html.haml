@@ -17,7 +17,7 @@
           .selected-news_content
             =link_to post_path(@initial_post), id: "single-news_title_link" do
               %h1.content-header#single-news_title.news-title= sanitize @initial_post.title.truncate_words(10)
-            %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid'}
+            %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid', alt: @initial_post.title }
             %p.content-text.news-text
               %span#single-news_text
                 = sanitize @initial_post.medium_teaser, tags: %w(strong a), attributes: %w(href)

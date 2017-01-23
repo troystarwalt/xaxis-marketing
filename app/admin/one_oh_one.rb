@@ -43,7 +43,7 @@ form :html => { :multipart => true } do |f|
       end
       image_label = 'Replace Preview Image'
     end
-    f.input :image, as: :file, id: "preview_this_image",
+    f.input :image_preview, as: :file, id: "preview_this_image",
                               label: image_label || "Upload Preview Image",
                               hint: "Use first slide as preview. Max size is 5mb.",
                               input_html: {

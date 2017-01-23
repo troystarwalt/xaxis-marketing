@@ -6,9 +6,9 @@ $(document).ready(function(){
 
     $('.hs-img').attr({
       src: headshot.grey_image.large.url,
-      alt: headshot.first_name,
-      photo_id: headshot.id
+      alt: headshot.first_name + ' ' + headshot.last_name
       });
+    $('hs-img').data('photoId', headshot.id);
     $('#hsModal').modal('show');
     e.preventDefault();
   });
@@ -23,9 +23,9 @@ $(document).ready(function(){
     var hsBio = gon.headshots[index];
     $('.hs-bio-img').attr({
       src: hsBio.grey_image.thumb.url,
-      alt: hsBio.full_name,
-      photo_id: hsBio.id
+      alt: hsBio.first_name + ' ' + hsBio.last_name
     });
+    $('.hs-bio-img').data('photoid', hsBio.id);
     $('.hs-name').html(hsBio.first_name + " " + hsBio.last_name);
     $('.hs-title').html(hsBio.title);
     $('.hs-bio').html(hsBio.bio);

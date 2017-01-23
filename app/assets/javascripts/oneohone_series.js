@@ -6,7 +6,6 @@ $('.one_oh_one_series').ready(function () {
     setMinHeight();
   });
 });
-
 function setMinHeight() {
   var elements = document.getElementsByClassName('image-preview-101');
   var changeHeight = document.getElementsByClassName('single-101-container');
@@ -23,7 +22,7 @@ function setMinHeight() {
 
       }
       else {
-      el.style.minHeight = (maxHeight + 35) + "px";
+        el.style.minHeight = (maxHeight + 35) + "px";
       }
     });
-}
+  }
