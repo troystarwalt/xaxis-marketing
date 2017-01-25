@@ -16,7 +16,7 @@ module Social
     if File.exist?(Rails.root + 'lib/tweets.yml')
       # Since it is, we are going to find out when the file was created.
       check_file = File.open(Rails.root + 'lib/tweets.yml')
-      if check_file.birthtime < Time.now - 1.hour
+      if check_file.mtime < Time.now - 1.hour
         # If it is older than an hour, then we'll connectTwitter
         puts "it's an old file so we'll create a new one to use"
         connectTwitter
@@ -47,8 +47,8 @@ module Social
 
   def self.force_update_twitter_warning
     time = Time.now.localtime
-    last_updated_time = File.open(Rails.root + 'lib/tweets.yml').birthtime.localtime
+    last_updated_time = File.open(Rails.root + 'lib/tweets.yml').mtime.localtime
     minutes_since_update = ((time - last_updated_time) / 60).to_i
-    output_string = "Are you sure? The last update was at #{File.open(Rails.root + 'lib/tweets.yml').birthtime.localtime}, only #{minutes_since_update} minutes ago. Forcing updates my result in Twitter blocking our site."
+    output_string = "Are you sure? The last update was at #{File.mtime(Rails.root + 'lib/tweets.yml').localtime.strftime('%r on %D')}, only #{minutes_since_update} minutes ago. Forcing updates my result in Twitter blocking all updates."
   end
 end
