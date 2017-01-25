@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
   helper_method :sort_button, :sort_direction
+  require 'social'
 
   def index
     if params[:tag]
@@ -50,11 +51,10 @@ class PostsController < ApplicationController
     @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     posts = Post.includes(:tags).order("created_at DESC").first(5).map{|post| post.get_main_json}
-
+    @tweets = Social.getTweets
     posts.each do |x|
       x.update(x) do |key, value|
         if key == :text || key == :title
-          puts "this is text"
           ActionController::Base.helpers.strip_tags(value)
         else
           value = value
@@ -62,6 +62,13 @@ class PostsController < ApplicationController
       end
     end
     gon.posts = posts
+  end
+
+  def force_update_twitter
+    return redirect_to root_path unless current_admin_user
+    Social.connectTwitter
+    flash[:notice] = "It may take a minute to update"
+    redirect_to admin_dashboard_path
   end
 
   private
