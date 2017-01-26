@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'expert-interview-hub' => "landing_pages#expert_interview_hub", as: :expert_interview_hub
   get '101-series' => "landing_pages#one_oh_one_series", as: :one_oh_one_series
   get 'groupm-signature' => "landing_pages#group_m_signature", as: :groupm_sig
+  get 'xaxis-signature' => "landing_pages#xaxis_signature", as: :xaxis_sig
 
 
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub

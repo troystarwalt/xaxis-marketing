@@ -25,4 +25,8 @@ class LandingPagesController < ApplicationController
     @javascript_file_overwrite_name = 'landing_pages/signature.js'
     # @css_files_overwrite = 'landing_pages/signature'
   end
+
+  def xaxis_signature
+    @javascript_file_overwrite_name = 'landing_pages/signature.js'
+  end
 end
