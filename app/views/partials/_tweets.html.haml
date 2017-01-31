@@ -1,0 +1,12 @@
+.row
+  .col-sm-10.offset-sm-1
+    .row
+      .col-sm-12
+        .section-name
+          %h1.header.text-uppercase Latest tweets
+    - @tweets.each do |tweet|
+      .row
+        .col-sm-8
+          %p= tweet.full_text
+        .col-sm-4
+          %p= tweet.created_at.strftime('%D')

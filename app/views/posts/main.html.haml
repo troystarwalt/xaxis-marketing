@@ -5,14 +5,4 @@
     .row
       .col-sm-10.offset-sm-1
         = render partial: "partials/recent_news"
-  #social-content
-    .container
-      .row
-        .col-sm-12
-          %h6 Latest tweets
-      - @tweets.each do |tweet|
-        .row
-          .col-sm-6
-            %p= tweet.full_text
-          .col-sm-6
-            %p= tweet.created_at
+  = render partial: "partials/social"
