@@ -14,13 +14,12 @@ $('.posts.main').ready(function(){
     var current_post = gon.posts[postIndex];
     var cycle_posts = true;
     autoSwap();
-
     $('.single-news-container').on('click', function(event){
       cycle_posts = false;
       setClickedElementStyles(this);
       setTimeout(function(){
         cycle_posts = true;
-      }, 20000);
+      }, 5000);
     });
   }
 
@@ -32,7 +31,7 @@ $('.posts.main').ready(function(){
       if(nextPostIndex >= gon.posts.length){nextPostIndex = 0;}
       setClickedElementStyles($('.single-news-container')[nextPostIndex]);
       postIndex = nextPostIndex;
-    }, 777000);
+    }, 2000);
   }
 
   function swapSelectedUpdate(post){

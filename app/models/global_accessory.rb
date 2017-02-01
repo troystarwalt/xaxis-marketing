@@ -6,6 +6,6 @@ class GlobalAccessory < ApplicationRecord
     validates :category, inclusion: { in: CATEGORIES }
     validates :file,
       :file_size => {
-        :maximum => 300.megabytes.to_i
+        :maximum => 1200.megabytes.to_i
       }
 end

@@ -21,7 +21,7 @@ ActiveAdmin.register GlobalAccessory do
           para f.object.file.file.filename
         end
       end
-      f.input :file, input_html: {data: {type: 'bank'}}, hint: "Maximum Size 300mb"
+      f.input :file, input_html: {data: {type: 'bank'}}, hint: "Maximum Size 1.1gb"
       f.hidden_field :file_cache
     end
     f.actions
