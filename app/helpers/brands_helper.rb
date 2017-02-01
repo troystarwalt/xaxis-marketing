@@ -61,7 +61,7 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       </ul>
       <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
       ppt: "<p>The new Xaxis Powerpoint Template is updated with countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
-      <p>Remember, always check back to the hub for the latest templates and updates!</p>",
+      <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
       word: "<p>Please make sure all external facing material is written in this template.</p>",
       facts: "<p>Xaxis Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
       capa: "<p>The Xaxis Global Capabilities deck includes Xaxis’ core capabilities, corporate structure, and an overview of our products and services. It provides clients with a deep understanding of what Xaxis has to offer as well as our overall mission and objectives.</p>"
@@ -124,7 +124,7 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
         </ul>
         <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
         ppt: "<p>The plista Powerpoint template has countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
-        <p>Remember, always check back to the hub for the latest templates and updates!</p>",
+        <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
         word: "<p>Please make sure all external facing material is written in this template.</p>",
         facts: "<p>plista Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
         capa: "<p>For plista, there is a Global Capabilities Deck for Advertiser and a Global Capabilities Deck for Publisher. Please make sure you select the suitable one for your use. </p>"
@@ -148,11 +148,15 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
         </ul>
         <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
         ppt: "<p>The new Light Reaction Template is updated with countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
-        <p>Remember, always check back to the hub for the latest templates and updates!</p>",
+        <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
         word: "<p>Please make sure all external facing material is written in this template.</p>",
         facts: "<p>Light Reaction Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
         capa: "<p>The Light Reaction Global Capabilities Deck includes Light Reaction’s mission statement, core capabilities and product offerings.</p>"
       }
     }
+  end
+
+  def can_connect?
+    open('https://www.box.com/') rescue false
   end
 end
