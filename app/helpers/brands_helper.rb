@@ -155,8 +155,4 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       }
     }
   end
-
-  def can_connect?
-    open('https://www.box.com/') rescue false
-  end
 end

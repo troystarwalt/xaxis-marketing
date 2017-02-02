@@ -6,7 +6,7 @@
       - if @brand.brand_accessories.has_category("guidelines").present?
         = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
-      %h1 #{@brand.name} Brand Assets
+      %h1 Brand Assets
       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format, and brand guidelines in one file, then click the below button to download them.
       - if @group.present?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
@@ -97,19 +97,18 @@
       %h3.text-uppercase pr kit
       %p
         The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact,
-        - if @brand.name != "Triad"
+        - if @brand.slug != "triad"
           Jennifer Lucas, Director, Global Brand Communications at
           %a{href: "mailto:jennfier.lucas@xaxis.com"}
             jennifer.lucas@xaxis.com.
         - else
           Misty Brown, Global SVP, Marketing Communications at
           %a{href: "mailto:mbrown@triadretail.com"}
-            mbrown@traidretail.com.
+            mbrown@triadretail.com.
       - if @pr_kit.present? && !@pr_kit.nil?
         = link_to "download PR kit", @pr_kit.file_url, class: "brand-btn-primary xaxis-btn-primary"
       - else
-        %i No PR Kit available for download at this time.
-    %hr
+        %i No PR Kit available for download at this time.    %hr
     .section#assets-headshots
       %h3.text-uppercase executive bio & headshots
       - unless @headshots.blank?
