@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
   helper_method :sort_button, :sort_direction
-  require 'social'
 
   def index
     if params[:tag]
