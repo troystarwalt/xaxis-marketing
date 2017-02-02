@@ -14,7 +14,7 @@ $('.admin_namespace').ready(function() {
                         pdf: 10,
                         png: 5,
                         large_png: 15,
-                        bank: 1200
+                        bank: 1000
                       }
       var max_size_of_file_upload = data_types[get_data_type];
       addTextInput(specificFileInput, max_size_of_file_upload);
