@@ -6,7 +6,7 @@
       - if @brand.brand_accessories.has_category("guidelines").present?
         = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
-      %h1 #{@brand.name} Brand Assets
+      %h1 Brand Assets
       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format, and brand guidelines in one file, then click the below button to download them.
       - if @group.present?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
