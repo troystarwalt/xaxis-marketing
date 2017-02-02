@@ -35,13 +35,16 @@
           .more-resources.image-bank
             = image_tag "image-bank.svg", alt: "Image Bank", class: "img-fluid"
             %h2.text-uppercase image bank
-            %p Download and view the entire image bank, or access them on Xperience.
+            %p
+              Download and view the entire image bank, or access them on
+              =link_to "https://inside.xaxis.com/GMarketing/Xaxis%20Image%20Bank/Forms/AllItems.aspx", target: "_blank" do
+                Xperience.
             - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
               %p.subtitle
                 Can't access Box?
                 =link_to @image_bank.remote_download do
                   Then you can download the file here.
-            =link_to "view bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
+            =link_to "view bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
         .col-sm-4
           .more-resources.tutorial
             = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
