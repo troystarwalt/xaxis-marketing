@@ -21,3 +21,6 @@
 
 # Ignore the stored tweets in the repo
 /lib/tweets.yml
+
+
+mem.rb

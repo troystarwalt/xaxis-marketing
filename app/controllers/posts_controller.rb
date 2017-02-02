@@ -54,7 +54,6 @@ class PostsController < ApplicationController
     posts.each do |x|
       x.update(x) do |key, value|
         if key == :text || key == :title
-          puts "this is text"
           ActionController::Base.helpers.strip_tags(value)
         else
           value = value
