@@ -33,11 +33,6 @@ ActiveAdmin.register_page "Dashboard" do
           para class: "subtitle" do
             "Note: If you see a robot, that means that the file or image you uploaded was bad. Please try again!"
           end
-          para do
-            a button("Force Tweet Update"), href: force_update_twitter_url,
-                                    :'data-method' => :post,
-                                    :'data-confirm' => Social.force_update_twitter_warning
-          end
         end
       end
     end

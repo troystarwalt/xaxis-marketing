@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index, :main]
   get 'tags/:tag', to: 'posts#index', as: :tag
   root :to => 'posts#main'
-  post '/update_tweets' => 'posts#force_update_twitter', as: :force_update_twitter
 
   get '404' => 'errors#four_oh_four', as: :error_404
   get "*detail" => 'application#catch_not_found'
