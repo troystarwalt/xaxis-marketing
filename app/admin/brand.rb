@@ -32,7 +32,7 @@ ActiveAdmin.register Brand do
     end
   end
   show do
-    para 'This is your list of accessories/assets related to #{brand.name}.'
+    para "#{brand.name}'s Assets and Accessories"
     panel 'PPT Template' do
       table_for brand.brand_accessories.where(category: 'ppt_template') do
         column :name
