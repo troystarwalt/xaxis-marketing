@@ -96,14 +96,19 @@
       %h1 #{@brand.name} PR
       %h3.text-uppercase pr kit
       %p
-        The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact, Jennifer Lucas, Director, Global Brand Communications at
-        %a{href: "mailto:jennfier.lucas@xaxis.com"}
-          jennifer.lucas@xaxis.com.
+        The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact,
+        - if @brand.slug != "triad"
+          Jennifer Lucas, Director, Global Brand Communications at
+          %a{href: "mailto:jennfier.lucas@xaxis.com"}
+            jennifer.lucas@xaxis.com.
+        - else
+          Misty Brown, Global SVP, Marketing Communications at
+          %a{href: "mailto:mbrown@triadretail.com"}
+            mbrown@traidretail.com.
       - if @pr_kit.present? && !@pr_kit.nil?
         = link_to "download PR kit", @pr_kit.file_url, class: "brand-btn-primary xaxis-btn-primary"
       - else
-        %i No PR Kit available for download at this time.
-    %hr
+        %i No PR Kit available for download at this time.    %hr
     .section#assets-headshots
       %h3.text-uppercase executive bio & headshots
       - unless @headshots.blank?
