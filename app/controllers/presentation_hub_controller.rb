@@ -2,6 +2,6 @@
 class PresentationHubController < ApplicationController
   def index
     @brands = Brand.all
-    @global_accessory = GlobalAccessory.last
+    @image_bank = GlobalAccessory.where(category: 'image_bank').last
   end
 end

@@ -35,22 +35,25 @@
           .more-resources.image-bank
             = image_tag "image-bank.svg", alt: "Image Bank", class: "img-fluid"
             %h2.text-uppercase image bank
-            %p Download the entire image bank onto your computer here, or access them on Xperience
-            %p.subtitle Note: this is a large file, please do not download on mobile
-            - unless @global_accessory.nil?
-              =link_to "download", @global_accessory.file_url, class: "card-btn brand-btn-secondary xaxis-btn-secondary"
+            %p Download and view the entire image bank, or access them on Xperience.
+            - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
+              %p.subtitle
+                Can't access Box?
+                =link_to @image_bank.remote_download do
+                  Then you can download the file here.
+            =link_to "view bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
         .col-sm-4
           .more-resources.tutorial
             = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
             %h2.text-uppercase tutorial
             %p File size is too big? Learn how to reduce file size by compressing the images.
-            =link_to "watch", "https://vimeo.com/xaxis/review/172765382/5e868fcd40", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary"
+            =link_to "watch", "https://vimeo.com/xaxis/review/172765382/5e868fcd40", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
         .col-sm-4
           .more-resources.custom
             = image_tag "pencil-stencil.svg", alt: "Custom Images", class: "img-fluid"
             %h2.text-uppercase custom
             %p Need something else? You can make a request for the images you may need to Xaxis Global Marketing Team below.
-            =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary"
+            =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
   %section.bottom-section
     %h2 Need additional brand assets?
     =link_to "See All Brand Assets", brand_path(@xaxis), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"

@@ -59,11 +59,12 @@
       %h3.text-uppercase images
       = content_for_brands[@brand_for_content][:images].html_safe
       = link_to "view image bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "brand-btn-primary xaxis-btn-primary"
-      - if @image_bank.present? && !@image_bank.nil?
+      - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
+      -byebug
         %p.notice-text
           %i
             If you can't access box, then you can
-            = link_to @image_bank.file_url do
+            = link_to @image_bank.remote_download do
               download the zip file here.
     -# Hiding this section for Triad as we do not have these files yet.
     - if @brand.slug != "triad"
