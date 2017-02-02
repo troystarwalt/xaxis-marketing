@@ -292,7 +292,7 @@ GEM
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
     hashery (2.1.2)
-    heroku-deflater (0.6.2)
+    heroku-deflater (0.6.3)
       rack (>= 1.4.5)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
