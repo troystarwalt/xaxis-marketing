@@ -73,13 +73,10 @@ test:
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
-# You can use this database configuration with:
-#
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
   <<: *default
   database: internal-site_production
   username: internal-site
   password: <%= ENV['INTERNAL-SITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
