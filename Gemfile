@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
-ruby '2.3.1'
 
 # gem 'rails_12factor', group: :production
 gem 'heroku-deflater', group: :production
@@ -61,4 +60,7 @@ group :development do
   gem 'faker'
   gem 'pry-rails'
   gem 'bullet'
+  gem 'derailed'
 end
+
+ruby '2.3.1'
