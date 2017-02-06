@@ -29,4 +29,7 @@ class LandingPagesController < ApplicationController
   def xaxis_signature
     @javascript_file_overwrite_name = 'landing_pages/signature.js'
   end
+
+  def smart_kapp
+  end
 end
