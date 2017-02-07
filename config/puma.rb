@@ -25,7 +25,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
 #
-workers ENV.fetch("WEB_CONCURRENCY") { 3 }
+workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
@@ -36,9 +36,9 @@ workers ENV.fetch("WEB_CONCURRENCY") { 3 }
 #
 preload_app!
 #
-# before_fork do
-#   ActiveRecord::Base.connection_pool.disconnect!
-# end
+before_fork do
+  ActiveRecord::Base.connection_pool.disconnect!
+end
 
 # The code in the `on_worker_boot` will be called if you are using
 # clustered mode by specifying a number of `workers`. After each worker
@@ -53,17 +53,15 @@ on_worker_boot do
  end
 end
 
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
+
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
 
-Thread.new do
-    while true do
-            p ObjectSpace.count_objects
-            sleep 60
-        end
-end
+# Thread.new do
+#     while true do
+#             p ObjectSpace.count_objects
+#             sleep 60
+#         end
+# end

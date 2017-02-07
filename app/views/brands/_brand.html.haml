@@ -2,7 +2,21 @@
   .brand-assets-container
     .section#assets-welcome
       = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
-      = content_for_brands[@brand_for_content][:welcome].html_safe
+      = @content[:welcome].html_safe
+      .row
+        .col-sm-3
+          = link_to @content[:social][:facebook], class: "social-icon-link" do
+            %i.fa.fa-facebook-square.fa-2x
+        .col-sm-3
+          = link_to @content[:social][:linkedin], class: "social-icon-link" do
+            %i.fa.fa-linkedin-square.fa-2x
+        .col-sm-3
+          = link_to @content[:social][:twitter], class: "social-icon-link" do
+            %i.fa.fa-twitter-square.fa-2x
+        .col-sm-3
+          - if !@content[:social][:instagram].blank?
+            = link_to @content[:social][:instagram], class: "social-icon-link" do
+              %i.fa.fa-instagram.fa-2x
       - if @brand.brand_accessories.has_category("guidelines").present?
         = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
@@ -11,14 +25,14 @@
       - if @group.present?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
     %hr
-    - if content_for_brands[@brand_for_content][:boilerplate].present?
+    - if @content[:boilerplate].present?
       .section#assets-boilerplate
         %h3.text-uppercase Boilerplate
-        = content_for_brands[@brand_for_content][:boilerplate].html_safe
+        = @content[:boilerplate].html_safe
       %hr
     .section#assets-logo
       %h3.text-uppercase Logos
-      = content_for_brands[@brand_for_content][:logo].html_safe
+      = @content[:logo].html_safe
       = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-logo"
       - if @brand.brand_accessories.has_category("logo").present?
         = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
@@ -28,7 +42,7 @@
     %hr
     .section#assets-fonts
       %h3.text-uppercase fonts
-      = content_for_brands[@brand_for_content][:font].html_safe
+      = @content[:font].html_safe
       .row{class: "font-top #{@brand.slug}-top" }
         .col-sm-3
           %p.font-name= get_font_name(@brand.slug, "a")
@@ -57,7 +71,7 @@
     %hr
     .section#assets-images
       %h3.text-uppercase images
-      = content_for_brands[@brand_for_content][:images].html_safe
+      = @content[:images].html_safe
       = link_to "view image bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "brand-btn-primary xaxis-btn-primary"
       - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
         %p.notice-text
@@ -71,20 +85,20 @@
       .section#assets-ppt
         %h1 #{@brand.name} Templates
         %h3.text-uppercase powerpoint template
-        = content_for_brands[@brand_for_content][:ppt].html_safe
+        = @content[:ppt].html_safe
         =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
         - if @brand.brand_accessories.has_category("ppt_template").present?
           = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
       %hr
       .section#assets-word
         %h3.text-uppercase word template
-        = content_for_brands[@brand_for_content][:word].html_safe
+        = @content[:word].html_safe
         - if @brand.brand_accessories.has_category("word_template").present?
           = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
-      = content_for_brands[@brand_for_content][:capa].html_safe
+      = @content[:capa].html_safe
       - if @brand.brand_accessories.has_category("capability").present?
         -if @brand.slug == "plista"
           - @brand.brand_accessories.has_category("capability").each do |plista|

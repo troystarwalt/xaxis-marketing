@@ -3,6 +3,7 @@ class BrandsController < InheritedResources::Base
   require 'zip'
   actions :index, :show   # This tells InheritedResources to only use index and show.
 
+
   def index
     # Not using index for anything at this time.
     @brands = Brand.all
@@ -12,7 +13,8 @@ class BrandsController < InheritedResources::Base
 
   def show
     @brand = Brand.friendly.find(params[:id])
-    @brand_for_content = @brand.slug.gsub('-','').to_sym
+    brand_for_content = @brand.slug.gsub('-','').to_sym
+    @content = helpers.content_for_brands[brand_for_content.to_sym]
     @brands = Brand.all
     @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority
     gon.headshots = @headshots
