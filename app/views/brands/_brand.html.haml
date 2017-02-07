@@ -4,16 +4,16 @@
       = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
       = @content[:welcome].html_safe
       .row
-        .col-sm-3
+        .col-xs-1
           = link_to @content[:social][:facebook], class: "social-icon-link" do
             %i.fa.fa-facebook-square.fa-2x
-        .col-sm-3
+        .col-xs-1
           = link_to @content[:social][:linkedin], class: "social-icon-link" do
             %i.fa.fa-linkedin-square.fa-2x
-        .col-sm-3
+        .col-xs-1
           = link_to @content[:social][:twitter], class: "social-icon-link" do
             %i.fa.fa-twitter-square.fa-2x
-        .col-sm-3
+        .col-xs-1
           - if !@content[:social][:instagram].blank?
             = link_to @content[:social][:instagram], class: "social-icon-link" do
               %i.fa.fa-instagram.fa-2x
