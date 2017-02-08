@@ -1,100 +1,127 @@
 - title "Smart Kapp"
-#smart_kapp_container
-  %header
-    #smart_kapp_header
-      .container
-        %h1#smart_kapp_title SMART kapp
+#sk_container
+  %header#sk_header.sk-gradient
+    .container
+      .header-content.text-xs-center
+        =image_tag 'kapp/logo.png', class: 'img-fluid sk-logo-header'
         %p Host video conferences. Brainstorm on a whiteboard. Work on standard office applications.
-        =button_to "View One Sheeter"
-  %section#get-started-section
+        %button.brand-btn-transparent View One Sheeter
+  %section#main-section
     .container
-      .get-started
-        %h2 Get Started
-        %p SMART makes sharing ideas with your colleagues around the world as natural as meeting over coffee. They can be found in these conference rooms:
-        .row
-          .col-sm-3
-            %h3 Steve Jobs
-            %p 9th floor
-            %p Smart Kapp 42"
-          .col-sm-3
-            %h3 Steve Jobs
-            %p 9th floor
-            %p Smart Kapp 42"
-          .col-sm-3
-            %h3 Steve Jobs
-            %p 9th floor
-            %p Smart Kapp 42"
-          .col-sm-3
-            %h3 Steve Jobs
-            %p 9th floor
-            %p Smart Kapp 42"
-      .what-you-need
-        %h2 What You Need
-        %p Download the app so you can you can pass ideas back and forth between mobile devices, PCs, and interactive displays as fast as you can think of them.
-        .row
-          .col-sm-4
-            =image_tag "http://placehold.it/32/32"
-            %h3 Smart Kapp Board
-            %p
-              Kapp 42"
-              %br
-              or Kapp IQ
-          .col-sm-4
-            =image_tag "http://placehold.it/32/32"
-            %h3 Smart Kapp Board
-            %p
-              Kapp 42"
-              %br
-              or Kapp IQ
-          .col-sm-4
-            =image_tag "http://placehold.it/32/32"
-            %h3 Smart Kapp Board
-            %p
-              Kapp 42"
-              %br
-              or Kapp IQ
-        %p Please ONLY use the following pens when you write on the board
-        %p (remember, if you write too small, the board won't pick up):
-        %ul
-          %li BIC® Magic Marker® dry erase liquid markers, fine tip
-          %li Expo® low odor fine tip dry erase markers
-          %li Staples® Remarx™ dry erase markers, bullet tip
-          %li Melissa & Doug® dry erase markers
-        %h4 You CANNOT use a dry erase on the Kapp IQ; please use the provided stylus
-        %p Please clean the board when you're done. You can use the following to clean the board:
-        %ul
-          %li Water
-          %li Dry erase cleaners
-          %li EXPO® Whiteboard Care Cleaner
-          %li Windex® glass cleaner (for SMART kapp 42 only)
-        %h4 After you're done using the board, please leave it at it's original place so it doesn't go missing!
-  %section#action-section
-    .container
-      %h2 See It In Action
-      #video-container
-        %video
-  %section#resources-section
-    %h2 Additional Resources
-    %p Find additional manuals and tutorials from SMART Kapp’s website, if you still have questions, just email marketing!
-    .row
-      .col-sm-4
-        =image_tag "http://placehold.it/32/32"
-        %h3 Smart Kapp Board
-        %p
-          Kapp 42"
-          %br
-          or Kapp IQ
-      .col-sm-4
-        =image_tag "http://placehold.it/32/32"
-        %h3 Smart Kapp Board
-        %p
-          Kapp 42"
-          %br
-          or Kapp IQ
-      .col-sm-4
-        =image_tag "http://placehold.it/32/32"
-        %h3 Smart Kapp Board
-        %p
-          Kapp 42"
-          %br
-          or Kapp IQ
+      %section#get_started_section
+        .restrict-width
+          %h2.sk-section-name Get Started
+          %p.section-info SMART makes sharing ideas with your colleagues around the world as natural as meeting over coffee. They can be found in these conference rooms:
+        .spaced-columns.spaced-columns-4
+          .row
+            .col-sm-3.col-xs-6
+              .spaced-columns-content
+                %h3 Steve Jobs
+                %p 9th floor
+                %p Smart Kapp 42"
+            .col-sm-3.col-xs-6
+              .spaced-columns-content
+                %h3 Mark Zuckerberg
+                %p 9th floor
+                %p Smart Kapp 42"
+            .col-sm-3.col-xs-6
+              .spaced-columns-content
+                %h3 Larry Page
+                %p 9th floor
+                %p Smart Kapp 42"
+            .col-sm-3.col-xs-6
+              .spaced-columns-content
+                %h3 Jeff Bezos
+                %p 10th floor
+                %p Smart IQ
+      %section#what_you_need_section
+        .restrict-width
+          %h2.sk-section-name What You Need
+          %p.section-info Download the app so you can you can pass ideas back and forth between mobile devices, PCs, and interactive displays as fast as you can think of them.
+        .spaced-columns
+          .row
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ
+        .restrict-width
+          .sk-bullet-container
+            %p.bullet-list-header Please ONLY use the following pens when you write on the board (remember, if you write too small, the board won't pick up):
+            %ul.sk-bullet
+              %li
+                %span BIC® Magic Marker® dry erase liquid markers, fine tip
+              %li
+                %span Expo® low odor fine tip dry erase markers
+              %li
+                %span Staples® Remarx™ dry erase markers, bullet tip
+              %li
+                %span Melissa & Doug® dry erase markers
+          %h4.focus-on-me You CANNOT use a dry erase on the Kapp IQ; please use the provided stylus
+          .sk-bullet-container
+            %p.bullet-list-header Please clean the board when you're done. You can use the following to clean the board:
+            %ul.sk-bullet
+              %li
+                %span Water
+              %li
+                %span Dry erase cleaners
+              %li
+                %span EXPO® Whiteboard Care Cleaner
+              %li
+                %span Windex® glass cleaner (for SMART kapp 42 only)
+          %h4.focus-on-me After you're done using the board, please leave it at it's original place so it doesn't go missing!
+    %section#action_section.sk-gradient
+      .container
+        %h2.action-section-name See It In Action
+        .embed-responsive.embed-responsive-16by9#sk-video
+          %iframe.embed-responsive-item{src: "https://www.youtube.com/embed/QrnefO7UB0c", allowfullscreen: "always"}
+    %section#resources_section
+      .container
+        .restrict-width
+          %h2.sk-section-name Additional Resources
+          %p.section-info Find additional manuals and tutorials from SMART Kapp’s website, if you still have questions, just email marketing!
+        .spaced-columns
+          .row
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ
+            .col-sm-4
+              .spaced-columns-content
+                =image_tag "http://placehold.it/173/173", class: "rounded img-fluid"
+                %h3 Smart Kapp Board
+                %p
+                  Kapp 42"
+                  %br
+                  or Kapp IQ

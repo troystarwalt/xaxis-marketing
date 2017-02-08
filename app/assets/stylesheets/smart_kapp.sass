@@ -1,9 +1,115 @@
 // CSS Rules for Smart Kapp
 
-#smart_kapp_container
-  margin-top: 10px
+#sk_container
+  color: $smart-kapp-grey
+  text-align: center
 
-#smart_kapp_header
+  ul
+    text-align: left
+
+.sk-section-name, .action-section-name
+  color: $smart-kapp-section-font
+  @include Gotham-Thin
+  text-align: center
+  margin-bottom: 25px
+  font-size: 36px
+
+.action-section-name
+  color: $white
+
+#sk_header
+  background: asset-url('kapp/header.png')
+  background-size: cover
+  height: 400px
+  width: auto
+  color: $white
+  &:before
+    content: ''
+    background: #821b8e ; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #821b8e 0%, #205dc2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #821b8e 0%,#205dc2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #821b8e 0%,#205dc2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#821b8e ', endColorstr='#205dc2 ',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+.header-content
+  max-width: 630px
+  margin: 0 auto
+  padding-top: 88px
+  img
+    margin-bottom: 14px
+  p
+    max-width: 500px
+    margin: 0 auto
+    @include Gotham-Book
+  button
+    margin-top: 75px
+
+#get_started_section
+  margin-top: 75px
+
+#get_started_section, #action_section, #what_you_need_section,
+  margin-bottom: 75px
+
+#action_section
+  padding: 3% 9% 5% 9%
+
+.section-info
+  @include Gotham-Light
+  max-width: 630px
+  margin: 0 auto
+  margin-bottom: 35px
+  line-height: 22px
+
+.spaced-columns
+  text-align: center
+  h3
+    font-size: 20px
+    @include Gotham-Medium
+
+.spaced-columns-4
+  h3
+    font-size: 18px
+
+.spaced-columns-content
+  img
+    margin: 0 auto
+    border-radius: 110px
+    margin-bottom: 15px
+  p:first-of-type
+    margin-bottom: 5px
+
+.sk-bullet-container
+  margin-top: 35px
+  margin-bottom: 35px
+
+.bullet-list-header
+  @include Gotham-Medium
+  line-height: 28px
+
+.sk-bullet
+  line-height: 28px
+  @include Gotham-Light
+  li
+    color: $xaxis-grey-blue
+    span
+      color: $smart-kapp-grey
+
+
+#sk-video
+  border-radius: 5px
+
+.focus-on-me
+  color: $xaxis-grey-blue
+  @include Gotham-Medium-Italic
+  font-size: 18px
+  line-height: 28px
+
+.restrict-width
+  max-width: 630px
+  margin: 0 auto
+
+
+.sk-gradient
   background: #821b8e ; /* Old browsers */
   background: -moz-linear-gradient(45deg,  #821b8e 0%, #205dc2 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg,  #821b8e 0%,#205dc2 100%); /* Chrome10-25,Safari5.1-6 */

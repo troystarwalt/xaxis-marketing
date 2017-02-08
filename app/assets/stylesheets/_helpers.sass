@@ -55,7 +55,20 @@ $lines-to-show: 3
   @include Gotham-Medium
   display: inline-block
 
-.brand-btn-primary:hover, .brand-btn-secondary:hover
+.brand-btn-transparent
+  border-radius: 100px
+  background: transparent
+  font-size: .8em
+  padding: 8px 14px
+  text-transform: uppercase
+  border: 2px solid $white
+  transition: all .1s
+  letter-spacing: 2px
+  @include Gotham-Bold
+  display: inline-block
+  color: $white
+
+.brand-btn-primary:hover, .brand-btn-secondary:hover, .brand-btn-transparent:hover
   opacity: .5
   text-decoration: none
 
