@@ -58,7 +58,7 @@ end
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-
+# Uncomment the below to see memory usage.
 # Thread.new do
 #     while true do
 #             p ObjectSpace.count_objects
