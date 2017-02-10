@@ -60,11 +60,15 @@
 
 .spaced-columns
   text-align: center
+  padding-left: 30px
+  padding-right: 30px
   h3
     font-size: 20px
     @include Gotham-Medium
 
 .spaced-columns-4
+  padding-left: 42px
+  padding-right: 42px
   h3
     font-size: 18px
 
@@ -80,12 +84,12 @@
     &:hover
       color: $xaxis-grey-blue
 
-.circle-cropper__image
-  clip-path: circle(33% at center)
+// .circle-cropper__image
+//   clip-path: circle(33% at center)
 
 .sk-bullet-container
-  margin-top: 35px
-  margin-bottom: 35px
+  margin-top: 38px
+  margin-bottom: 38px
 
 .bullet-list-header
   @include Gotham-Medium
@@ -99,6 +103,10 @@
     color: $xaxis-grey-blue
     span
       color: $smart-kapp-grey
+
+.forty_two, .iq
+  width: 100px
+  margin: 0 auto
 
 .sk-span-row
   span
@@ -137,6 +145,7 @@
 
 .steve:hover
   cursor: pointer
+  color: $xaxis-blue-color
 
 .steve:hover .steve__content
   -webkit-transform: translate3d(-50%, -10%, 0)
@@ -161,7 +170,7 @@
   -ms-transform-origin: 0 10px
   -o-transform-origin: 0 10px
   transform-origin: 0 10px
-  background-color: #fff
+  background-color: $white
   border-radius: 4px
   color: #2f2f2f
   display: block
@@ -173,14 +182,15 @@
   pointer-events: none
   position: absolute
   text-align: left
-  bottom: 100%
+  bottom: 20%
+  border: 1px solid $xaxis-blue-color
   img
     width: 200px
     height: auto
 
 .steve__content:before
   border-color: transparent
-  border-top-color: #fff
+  border-top-color: $xaxis-blue-color
   border-style: solid
   border-width: 10px
   content: ' '
