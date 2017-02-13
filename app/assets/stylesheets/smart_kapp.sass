@@ -1,0 +1,225 @@
+// CSS Rules for Smart Kapp
+
+#sk_container
+  color: $smart-kapp-grey
+  text-align: center
+
+  ul
+    text-align: left
+
+.sk-section-name, .action-section-name
+  color: $smart-kapp-section-font
+  @include Gotham-Thin
+  text-align: center
+  margin-bottom: 25px
+  font-size: 36px
+
+.action-section-name
+  color: $white
+
+#sk_header
+  background: asset-url('kapp/header_ng.png')
+  background: #821b8e  /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgba(130,27,142, .7) 0%, rgba(32,93,194, .7) 100%), asset-url('kapp/header_ng.png') /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgba(130,27,142, .7) 0%,rgba(32,93,194, .7) 100%), asset-url('kapp/header_ng.png') /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgba(130,27,142, .7) 0%,rgba(32,93,194, .7) 100%), asset-url('kapp/header_ng.png') /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#821b8e ', endColorstr='#205dc2 ',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+  background-size: cover
+  height: 400px
+  width: auto
+  color: $white
+
+.header-content
+  max-width: 630px
+  margin: 0 auto
+  padding-top: 88px
+  img
+    margin-bottom: 14px
+  p
+    max-width: 600px
+    margin: 0 auto
+    @include Gotham-Book
+    font-size: 22px
+    line-height: 32px
+
+#get_started_section
+  margin-top: 75px
+
+#get_started_section, #action_section, #what_you_need_section,
+  margin-bottom: 75px
+
+#action_section
+  padding: 3% 9% 5% 9%
+
+.section-info
+  @include Gotham-Light
+  max-width: 630px
+  margin: 0 auto
+  margin-bottom: 35px
+  line-height: 22px
+
+.spaced-columns
+  text-align: center
+  padding-left: 42px
+  padding-right: 42px
+  h3
+    font-size: 20px
+    @include Gotham-Medium
+
+.spaced-columns-4
+  padding-left: 42px
+  padding-right: 42px
+  h3
+    font-size: 18px
+
+.spaced-columns-content
+  img
+    margin: 0 auto
+    margin-bottom: 15px
+  a
+    text-decoration: underline
+    color: $smart-kapp-grey
+    &:visited
+      color: $xaxis-grey-blue
+    &:hover
+      color: $xaxis-grey-blue
+
+
+.sk-bullet-container
+  margin-top: 38px
+  margin-bottom: 38px
+
+.bullet-list-header
+  @include Gotham-Medium
+  line-height: 28px
+  margin-bottom: .5rem
+
+.sk-bullet
+  line-height: 28px
+  @include Gotham-Light
+  margin: 0 13%
+  li
+    color: $xaxis-grey-blue
+    span
+      color: $smart-kapp-grey
+
+.forty_two, .iq
+  width: 100px
+  margin: 0 auto
+
+// .sk-span-row
+//   span
+//     display: block
+
+#sk-video
+  border-radius: 5px
+
+.block-link
+  display: block
+
+.focus-on-me
+  color: $xaxis-grey-blue
+  @include Gotham-Medium-Italic
+  font-size: 18px
+  line-height: 28px
+
+.restrict-width
+  max-width: 617px
+  margin: 0 auto
+
+
+.sk-gradient
+  background: #821b8e  /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #821b8e 0%, #205dc2 100%) /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #821b8e 0%,#205dc2 100%) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #821b8e 0%,#205dc2 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#821b8e ', endColorstr='#205dc2 ',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+
+// Yeah, a bad name, but I can't use tooltip.
+.steve
+  display: block
+  -webkit-perspective: none
+  -moz-perspective: none
+  perspective: none
+  width: 100px
+  margin: 0 auto
+
+.steve:hover
+  cursor: pointer
+  color: $xaxis-blue-color
+
+.steve:hover .steve__content
+  -webkit-transform: translate3d(44%, -56%, 0)
+  -moz-transform: translate3d(44%, -56%, 0)
+  -ms-transform: translate3d(44%, -56%, 0)
+  -o-transform: translate3d(44%, -56%, 0)
+  transform: translate3d(44%, -56%, 0)
+  opacity: 1
+  pointer-events: auto
+  display: block
+
+.steve__content
+  -webkit-transition: all 200ms ease
+  -moz-transition: all 200ms ease
+  transition: all 200ms ease
+  -webkit-transform: translate3d(60%, -56%, 0)
+  -moz-transform: translate3d(60%, -56%, 0)
+  -ms-transform: translate3d(60%, -56%, 0)
+  -o-transform: translate3d(60%, -56%, 0)
+  transform: translate3d(60%, -56%, 0)
+  -webkit-transform-origin: 0 10px
+  -moz-transform-origin: 0 10px
+  -ms-transform-origin: 0 10px
+  -o-transform-origin: 0 10px
+  transform-origin: 0 10px
+  background-color: #F2F2F2
+  border-radius: 4px
+  color: #2f2f2f
+  display: none
+  font-size: 14px
+  font-weight: normal
+  z-index: 20
+  opacity: 0
+  padding: 10px 20px
+  pointer-events: none
+  position: absolute
+  text-align: left
+  img
+    width: 200px
+    height: auto
+
+.steve__content:before
+  border-color: transparent #F2F2F2 transparent transparent
+  border-style: solid
+  border-width: 10px
+  content: ' '
+  display: block
+  top: 50%
+  right: 100%
+  margin-top: -5px
+  position: absolute
+  width: 0
+
+.steve__content:after
+  content: ' '
+  display: block
+  position: absolute
+  bottom: -20px
+  left: 0
+  width: 100%
+  height: 20px
+
+.steve__content:hover
+  -webkit-transform: rotateX(0deg) translate3d(-50%, -10%, 0)
+  -moz-transform: rotateX(0deg) translate3d(-50%, -10%, 0)
+  -ms-transform: rotateX(0deg) translate3d(-50%, -10%, 0)
+  -o-transform: rotateX(0deg) translate3d(-50%, -10%, 0)
+  transform: rotateX(0deg) translate3d(-50%, -10%, 0)
+  opacity: 1
+  pointer-events: auto
+
+
+
+@media (max-width: 543px)
+  div.spaced-columns-content:not(.dont-add-margin):nth-of-type(n+1)
+    margin-bottom: 40px
