@@ -10,6 +10,10 @@ nav.navbar
 .mobile-logo
   width: 150px
 
+.navbar-light
+  .navbar-toggler
+    border-color: transparent
+
 // Styles for shrunken nav bar
 body.shrnk
   padding-top: 70px
@@ -144,3 +148,9 @@ body.shrnk
 @media (min-width: 768px) and (max-width: 885px)
   .dropdown-menu.last-menu-child
     left: -20px
+
+@media (max-width: 576px)
+  nav.navbar
+    .container
+      margin-left: 0
+      margin-right: 0
