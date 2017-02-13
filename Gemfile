@@ -6,7 +6,7 @@ gem 'heroku-deflater', group: :production
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'acts-as-taggable-on'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'devise'
 gem 'font-awesome-rails'

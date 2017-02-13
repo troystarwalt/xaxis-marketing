@@ -1,13 +1,13 @@
-%nav.navbar.navbar-fixed-top.navbar-light
+%nav.navbar.fixed-top.navbar-light.navbar-toggleable-md
   .container
-    %button.navbar-toggler.hidden-md-up.pull-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
+    %button.navbar-toggler.hidden-md-up.navbar-toggler-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
       %i.fa.fa-bars.fa-lg
     =link_to root_path, class: "navbar-brand" do
       =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), class: "hidden-sm-down navbar-logo desktop-logo"
       =image_tag asset_path("xaxis_mobile_logo.png"), class: "hidden-md-up navbar-logo mobile-logo"
     .padding-div
-      #collapse-this-navbar.collapse.navbar-collapse.navbar-toggleable-sm
-        %ul.nav.navbar-nav
+      #collapse-this-navbar.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto.mt-2.mt-md-0
           %li.nav-item.dropdown
             =link_to "Brand Assets", brand_path(@xaxis), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
             .dropdown-menu
