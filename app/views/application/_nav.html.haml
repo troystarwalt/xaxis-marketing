@@ -1,36 +1,35 @@
-%nav.navbar.fixed-top.navbar-light.navbar-toggleable-md
+%nav.navbar.navbar-toggleable-sm.fixed-top.navbar-light
   .container
-    %button.navbar-toggler.hidden-md-up.navbar-toggler-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "collapse-this-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#collapse-this-navbar", "data-toggle" => "collapse", :type => "button"}
       %i.fa.fa-bars.fa-lg
     =link_to root_path, class: "navbar-brand" do
       =image_tag asset_path('Xaxis_Logo_Pos_Vert.png'), class: "hidden-sm-down navbar-logo desktop-logo"
       =image_tag asset_path("xaxis_mobile_logo.png"), class: "hidden-md-up navbar-logo mobile-logo"
-    .padding-div
-      #collapse-this-navbar.collapse.navbar-collapse
-        %ul.navbar-nav.mr-auto.mt-2.mt-md-0
-          %li.nav-item.dropdown
-            =link_to "Brand Assets", brand_path(@xaxis), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-            .dropdown-menu
-              =link_to "Xaxis", brand_path(@xaxis), class: "dropdown-item"
-              =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
-              =link_to "plista", brand_path(@plista), class: "dropdown-item"
-              =link_to "Triad Retail Media", brand_path(@triad), class: "dropdown-item"
-          %li.nav-item.dropdown
-            =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-            .dropdown-menu
-              =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
-              =link_to "101 Series", one_oh_one_series_url, class: "dropdown-item"
-          %li.nav-item.dropdown
-            =link_to "Landing Pages", presentation_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-            .dropdown-menu
-              =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
-              =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
-              =link_to "Turbine Showcase", "http://xaxis.hs-sites.com/turbine-video-showcase", class: "dropdown-item"
-              =link_to "Google Partnership", "http://xaxis.hs-sites.com/xaxis-google-partnership", class: "dropdown-item"
-              =link_to "Triad Announcement", "http://xaxis.hs-sites.com/triad", class: "dropdown-item"
-              =link_to "SMART kapp", smart_kapp_path, class: "dropdown-item"
-          %li.nav-item.dropdown
-            =link_to "Requests", new_contact_path, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
-            .dropdown-menu
-              =link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", class: "dropdown-item", target: "_blank"
-              =link_to "Feedback", new_contact_path,  class: "dropdown-item"
+    #collapse-this-navbar.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto.mt-2.mt-md-0
+        %li.nav-item.dropdown
+          =link_to "Brand Assets", brand_path(@xaxis), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Xaxis", brand_path(@xaxis), class: "dropdown-item"
+            =link_to "Light Reaction", brand_path(@light_reaction), class: "dropdown-item"
+            =link_to "plista", brand_path(@plista), class: "dropdown-item"
+            =link_to "Triad Retail Media", brand_path(@triad), class: "dropdown-item"
+        %li.nav-item.dropdown
+          =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Expert Videos", expert_interview_hub_url, class: "dropdown-item"
+            =link_to "101 Series", one_oh_one_series_url, class: "dropdown-item"
+        %li.nav-item.dropdown
+          =link_to "Landing Pages", presentation_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to "Presentation Hub", presentation_hub_url,  class: "dropdown-item"
+            =link_to "Calculator", value_calculator_path,  class: "dropdown-item"
+            =link_to "Turbine Showcase", "http://xaxis.hs-sites.com/turbine-video-showcase", class: "dropdown-item"
+            =link_to "Google Partnership", "http://xaxis.hs-sites.com/xaxis-google-partnership", class: "dropdown-item"
+            =link_to "Triad Announcement", "http://xaxis.hs-sites.com/triad", class: "dropdown-item"
+            =link_to "SMART kapp", smart_kapp_path, class: "dropdown-item"
+        %li.nav-item.dropdown
+          =link_to "Requests", new_contact_path, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          .dropdown-menu
+            =link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", class: "dropdown-item", target: "_blank"
+            =link_to "Feedback", new_contact_path,  class: "dropdown-item"
