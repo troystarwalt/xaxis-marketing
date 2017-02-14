@@ -57,12 +57,7 @@ $('#brands').ready(function() {
       var gap = $window.height() - top_of_side_nav.top - footerHeight;
       var visibleFoot = 360 - $window.scrollBottom();
       var scrollTop = $window.scrollTop()
-      console.log("Visible Footer: " + visibleFoot)
-      console.log("gap: " + gap)
-      console.log("checkign ST vs top of side nav: " + (scrollTop < (top_of_side_nav.top - 90)));
       if (scrollTop < top_of_side_nav.top - 90) {
-        console.log("balls: " + (top_of_side_nav.top - scrollTop));
-        console.log("st: " + scrollTop);
         $el.css({
           top: "255px",
           bottom: "auto"
@@ -72,7 +67,6 @@ $('#brands').ready(function() {
           top: "auto",
           bottom: "360px"
         });
-        console.log("visibleFooter-----------------")
       } else {
         $el.css({
           top: 190,

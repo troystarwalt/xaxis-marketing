@@ -1,13 +1,13 @@
 #color_change
   .container-fluid.color-change-content
-    %h1.has-text-centered
-      This Is What A Headline Looks Like
+    %h2.has-text-centered
+      This Is What A Dark Headline Looks Like
     %p.has-text-centered
-      %span.white-block This is what a block of text looks like with this color.
+      %span.white-block This is what white text looks lik on this color.
       %br
       %span.black-block
         This box will fade away in
         %span.color-counter 4
         second(s)
-    %button.color-close.pull-right
-      .fa.fa-close.fa-lg
+    %button.color-close.pull-right{type: "button", "aria-label": "Close"}
+      .fa.fa-close.fa-lg{ "aria-hidden": "true"}
