@@ -49,22 +49,30 @@ $('#brands').ready(function() {
     var $el = $('#side-nav');
     var $window = $(window);
     var top = $el.parent().position().top;
+    var top_of_side_nav = $el.offset();
+    var footer = $('footer');
+    var footerHeight = footer.height();
 
     $window.bind("scroll resize", function() {
-      var gap = $window.height() - $el.height() - 180;
+      var gap = $window.height() - top_of_side_nav.top - footerHeight;
       var visibleFoot = 360 - $window.scrollBottom();
       var scrollTop = $window.scrollTop()
-
-      if (scrollTop < top - 90) {
+      console.log("Visible Footer: " + visibleFoot)
+      console.log("gap: " + gap)
+      console.log("checkign ST vs top of side nav: " + (scrollTop < (top_of_side_nav.top - 90)));
+      if (scrollTop < top_of_side_nav.top - 90) {
+        console.log("balls: " + (top_of_side_nav.top - scrollTop));
+        console.log("st: " + scrollTop);
         $el.css({
-          top: (top - scrollTop) + "px",
+          top: "255px",
           bottom: "auto"
         });
       } else if (visibleFoot > gap) {
         $el.css({
           top: "auto",
-          bottom: visibleFoot + "px"
+          bottom: "360px"
         });
+        console.log("visibleFooter-----------------")
       } else {
         $el.css({
           top: 190,
@@ -87,13 +95,16 @@ $('#brands').ready(function() {
       return rect.top;
     }
 
+
     if((getRectTop(backToTopArrow) + document.body.scrollTop) + backToTopArrow.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 200) {
-      backToTopArrow.style.position = 'absolute';
       var getStyle = window.getComputedStyle;
       var margin_top_footer = getStyle(footer_container).marginTop;
       var footer_height = getStyle(footer).height;
       var container_height = getStyle(main_body).height;
-      backToTopArrow.style.bottom = ((parseInt(footer_height) - parseInt(margin_top_footer) - 140) - parseInt(container_height)) + "px";
+      backToTopArrow.style.position = 'absolute';
+
+      // backToTopArrow.style.bottom = ((parseInt(footer_height) - parseInt(margin_top_footer) - 140) - parseInt(container_height)) + "px";
+      backToTopArrow.style.bottom = ((parseInt(footer_height) - 539)) + "px";
       }
     if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop)) {
       backToTopArrow.style.position = 'fixed'; // restore when you scroll up
