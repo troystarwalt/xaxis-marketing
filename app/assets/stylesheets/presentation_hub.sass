@@ -38,24 +38,23 @@
           margin-bottom: 19px
   .middle-section
     background-color: $alternate-white
-    .more-resources
-      min-height: 470px
-      position: relative
-      img
-        margin: 0 auto
+    .card
+      border: none
+      background-color: transparent
+      border-radius: initial
       h2
         font-size: 22px
         @include Gotham-Book
-        margin-top: 20px
         margin-bottom: 20px
       p
         padding: 0 2%
-      .middle-section-button
-        min-width: 120px
-        position: absolute
-        bottom: 10px
-        left: 50%
-        margin-left: -60px
+      .card-footer
+        border: none
+        background-color: transparent
+        border-radius: initial
+        .middle-section-button
+          min-width: 120px
+
   .bottom-section
     background-color: $xaxis-blue-color
     margin-bottom: -180px
@@ -112,14 +111,11 @@ p.brand-btn-primary
           min-height: 420px
 
 @media (max-width: 991px)
-  .middle-section
-    .container
+  #presentation_hub
+    .top-section
       .row
-        .more-resources
-          button
-            position: static
-            margin-left: inherit
-            margin-bottom: 30px
+        .card
+          margin-bottom: 0.75rem
 
 @media (max-width: 767px)
   .plista-card-lower-text
@@ -130,9 +126,11 @@ p.brand-btn-primary
     font-size: .8em
     padding: 8px 14px
   #presentation_hub
-    section
     .top-section
       .row
         .card
           min-height: 340px
           padding: 25px 25px 20px 25px
+    .middle-section
+      .card
+        margin-bottom: 20px

@@ -31,32 +31,36 @@
   %section.middle-section
     .container
       .row
-        .col-sm-4
-          .more-resources.image-bank
-            = image_tag "image-bank.svg", alt: "Image Bank", class: "img-fluid"
-            %h2.text-uppercase image bank
-            %p
-              Download and view the entire image bank, or access them on
-              =link_to "https://inside.xaxis.com/GMarketing/Xaxis%20Image%20Bank/Forms/AllItems.aspx", target: "_blank" do
-                Xperience.
-            - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
-              %p.subtitle
-                Can't access Box?
-                =link_to @image_bank.remote_download do
-                  Then you can download the file here.
-            =link_to "view bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
-        .col-sm-4
-          .more-resources.tutorial
-            = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid"
-            %h2.text-uppercase tutorial
-            %p File size is too big? Learn how to reduce file size by compressing the images.
-            =link_to "watch", "https://vimeo.com/xaxis/review/172765382/5e868fcd40", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
-        .col-sm-4
-          .more-resources.custom
-            = image_tag "pencil-stencil.svg", alt: "Custom Images", class: "img-fluid"
-            %h2.text-uppercase custom
-            %p Need something else? You can make a request for the images you may need to Xaxis Global Marketing Team below.
-            =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
+        .card-deck
+          .card
+            = image_tag "image-bank.svg", alt: "Image Bank", class: "img-fluid card-img-top"
+            .card-block
+              %h2.card-title.text-uppercase image bank
+              %p.card-text
+                Download and view the entire image bank, or access them on
+                =link_to "https://inside.xaxis.com/GMarketing/Xaxis%20Image%20Bank/Forms/AllItems.aspx", class: "card-text", target: "_blank" do
+                  Xperience.
+              - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
+                %p.subtitle.card-text
+                  Can't access Box?
+                  =link_to @image_bank.remote_download do
+                    Then you can download the file here.
+            .card-footer
+              =link_to "view bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
+          .card
+            = image_tag "graph-grey.svg", alt: "Reduce File Size", class: "img-fluid card-img-top"
+            .card-block
+              %h2.card-title.text-uppercase Tutorial
+              %p.card-text File size is too big? Learn how to reduce file size by compressing the images.
+            .card-footer
+              =link_to "watch", "https://vimeo.com/xaxis/review/172765382/5e868fcd40", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
+          .card
+            = image_tag "pencil-stencil.svg", alt: "Custom Images", class: "img-fluid card-img-top"
+            .card-block
+              %h2.card-title.text-uppercase Custom
+              %p.card-text Need something else? You can make a request for the images you may need to Xaxis Global Marketing Team below.
+            .card-footer
+              =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
   %section.bottom-section
     %h2 Need additional brand assets?
     =link_to "See All Brand Assets", brand_path(@xaxis), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"

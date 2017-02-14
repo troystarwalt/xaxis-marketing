@@ -2,16 +2,16 @@
 #feedback-form
   .container
     .row
-    .col-md-6.col-xs-12
-      %h1 Feedback
-      %p Have something to say? Let us know below.
-      = simple_form_for @contact, html: { class: 'form-horizontal feedback-form-container'}, wrapper: :vertical_form, wrapper_mappings: { radio_buttons: :vertical_radio_and_checkboxes} do |f|
-        = f.error_notification
-        = f.input :name, placeholder: 'Bruce Campbell', required: false
-        = f.input :email, placeholder: 'you@xaxis.com (if you want us to contact you)', required: false
-        = f.input :message, placeholder: "Provide feedback here.", required: true
-        = f.input :rating, collection: 1..5, hint: "<i>Rate the site! (5 being awesome)</i>".html_safe, as: :radio_buttons, wrapper_html: { class: "radio-area" }, required: true
-        = f.button :submit, "Send", class: "brand-btn-secondary xaxis-btn-secondary feedback-btn pull-right"
-    .col-md-4.offset-md-2.col-lg-3.offset-lg-3.hidden-sm-down
-      .eka-img-container
-        =image_tag "feedback-eka.png", alt: "Feedback Image", class: "img-fluid eka-img"
+      .col-md-6.col-12
+        %h1 Feedback
+        %p Have something to say? Let us know below.
+        = simple_form_for @contact, html: { class: 'form-horizontal feedback-form-container'}, wrapper: :vertical_form, wrapper_mappings: { radio_buttons: :vertical_radio_and_checkboxes} do |f|
+          = f.error_notification
+          = f.input :name, placeholder: 'Bruce Campbell', required: false
+          = f.input :email, placeholder: 'you@xaxis.com (if you want us to contact you)', required: false
+          = f.input :message, placeholder: "Provide feedback here.", required: true
+          = f.input :rating, collection: 1..5, hint: "<i>Rate the site! (5 being awesome)</i>".html_safe, as: :radio_buttons, wrapper_html: { class: "radio-area" }, required: true
+          = f.button :submit, "Send", class: "brand-btn-secondary xaxis-btn-secondary feedback-btn pull-right"
+      .col-md-4.offset-md-2.col-lg-3.offset-lg-3.hidden-sm-down
+        .eka-img-container
+          =image_tag "feedback-eka.png", alt: "Feedback Image", class: "img-fluid eka-img"
