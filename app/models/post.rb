@@ -70,6 +70,14 @@ class Post < ApplicationRecord
     }
   end
 
+  def next
+    self.class.where("id > ? ", id).first
+  end
+
+  def previous
+    self.class.where("id < ? ", id).last
+  end
+
 
 # future
   # def make_pretty_links(arr)
