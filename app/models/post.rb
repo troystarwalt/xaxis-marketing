@@ -71,11 +71,11 @@ class Post < ApplicationRecord
   end
 
   def next
-    self.class.where("id > ? ", id).first
+    self.class.where("id > ? ", id).limit(2)
   end
 
   def previous
-    self.class.where("id < ? ", id).last
+    self.class.where("id < ? ", id).limit(2)
   end
 
 
