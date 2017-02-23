@@ -5,7 +5,8 @@
     = render partial: "nav"
     .container
       = flash_messages
-    = yield
+    .content
+      = yield
     = render partial: "footer"
     = Gon::Base.render_data({})
     -if @javascript_file_overwrite_name
