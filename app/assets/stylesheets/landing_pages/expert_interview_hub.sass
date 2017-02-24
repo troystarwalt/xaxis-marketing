@@ -110,6 +110,19 @@ main .main-video .card
 //     font-size: 14px
 //     color: #808080
 //
+
+.small-card
+  padding: 0
+  margin-bottom: 40px
+  .small-card-body
+    padding-top: 40px
+    padding-bottom: 40px
+    background-color: #FFF
+    .contributor
+      @include Gotham-Light
+      font-size: 14px
+      color: #808080
+
 .card .contributor
   @include Gotham-Light
   font-size: 14px
@@ -175,18 +188,18 @@ main .main-video .card
   text-align: center
 //
 //
-// @media (min-width: 767px)
-//   .small-card
-//     &:nth-child(odd)
-//       padding-right: 20px
-//     &:nth-child(even)
-//       padding-left: 20px
-//     img
-//       border-top-left-radius: 6px
-//       border-top-right-radius: 6px
-//     .small-card-body
-//       border-bottom-left-radius: 6px
-//       border-bottom-right-radius: 6px
+@media (min-width: 767px)
+  .small-card
+    &:nth-child(odd)
+      padding-right: 20px
+    &:nth-child(even)
+      padding-left: 20px
+    img
+      border-top-left-radius: 6px
+      border-top-right-radius: 6px
+    .small-card-body
+      border-bottom-left-radius: 6px
+      border-bottom-right-radius: 6px
 
 @media (max-width: 1199px)
   #expert_interview_header
