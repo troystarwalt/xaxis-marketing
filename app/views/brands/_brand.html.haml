@@ -4,16 +4,16 @@
       = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
       = @content[:welcome].html_safe
       .row
-        .col-xs-1
+        .col-1
           = link_to @content[:social][:facebook], class: "social-icon-link" do
             %i.fa.fa-facebook-square.fa-2x
-        .col-xs-1
+        .col-1
           = link_to @content[:social][:linkedin], class: "social-icon-link" do
             %i.fa.fa-linkedin-square.fa-2x
-        .col-xs-1
+        .col-1
           = link_to @content[:social][:twitter], class: "social-icon-link" do
             %i.fa.fa-twitter-square.fa-2x
-        .col-xs-1
+        .col-1
           - if !@content[:social][:instagram].blank?
             = link_to @content[:social][:instagram], class: "social-icon-link" do
               %i.fa.fa-instagram.fa-2x
@@ -33,7 +33,7 @@
     .section#assets-logo
       %h3.text-uppercase Logos
       = @content[:logo].html_safe
-      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-logo"
+      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-logo d-block"
       - if @brand.brand_accessories.has_category("logo").present?
         = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
