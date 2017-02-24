@@ -84,8 +84,6 @@
     &:hover
       color: $xaxis-grey-blue
 
-// .circle-cropper__image
-//   clip-path: circle(33% at center)
 
 .sk-bullet-container
   margin-top: 38px
@@ -109,9 +107,9 @@
   width: 100px
   margin: 0 auto
 
-.sk-span-row
-  span
-    display: block
+// .sk-span-row
+//   span
+//     display: block
 
 #sk-video
   border-radius: 5px
@@ -126,7 +124,7 @@
   line-height: 28px
 
 .restrict-width
-  max-width: 630px
+  max-width: 617px
   margin: 0 auto
 
 
@@ -139,7 +137,7 @@
 
 // Yeah, a bad name, but I can't use tooltip.
 .steve
-  display: inline
+  display: block
   -webkit-perspective: none
   -moz-perspective: none
   perspective: none
@@ -158,6 +156,7 @@
   transform: translate3d(44%, -56%, 0)
   opacity: 1
   pointer-events: auto
+  display: block
 
 .steve__content
   -webkit-transition: all 200ms ease
@@ -176,7 +175,7 @@
   background-color: #F2F2F2
   border-radius: 4px
   color: #2f2f2f
-  display: block
+  display: none
   font-size: 14px
   font-weight: normal
   z-index: 20
@@ -218,3 +217,9 @@
   transform: rotateX(0deg) translate3d(-50%, -10%, 0)
   opacity: 1
   pointer-events: auto
+
+
+
+@media (max-width: 543px)
+  div.spaced-columns-content:not(.dont-add-margin):nth-of-type(n+1)
+    margin-bottom: 40px

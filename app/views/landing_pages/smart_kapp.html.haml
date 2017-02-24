@@ -45,8 +45,8 @@
           .row
             .col-sm-4
               .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/board.png", class: "circle-cropper__image img-fluid"
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/board.png", class: "img-fluid"
                 %h3 SMART kapp Board
                 %p.sk-span-row
                   %span.forty-two.steve
@@ -59,22 +59,21 @@
                       =image_tag "kapp/IQ.png"
             .col-sm-4
               .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/marker.png", class: "circle-cropper__image img-fluid"
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/marker.png", class: "img-fluid"
                 %h3 Marker
                 %p.sk-span-row
-                  %span Dry erase marker
-                  %span Eraser
+                  %span Dry erase marker*
             .col-sm-4
-              .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/app.png", class: "circle-cropper__image img-fluid"
+              .spaced-columns-content.dont-add-margin
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/app.png", class: "img-fluid"
                 %h3 kapp App
                 %a{href: "https://play.google.com/store/apps/details?id=com.smarttech.kapp", class: "block-link", target: "_blank"}Apple Store
                 %a{href: "https://itunes.apple.com/us/app/smart-kapp/id860144252?mt=8", class: "block-link", target: "_blank"}Google Play
         .restrict-width
           .sk-bullet-container
-            %p.bullet-list-header Please ONLY use the following pens when you write on the board (remember, if you write too small, the board won't pick up):
+            %p.bullet-list-header *Please ONLY use the following pens when you write on the board (remember, if you write too small, the board won't pick up):
             %ul.sk-bullet
               %li
                 %span BIC® Magic Marker® dry erase liquid markers, fine tip
@@ -111,22 +110,22 @@
           .row
             .col-sm-4
               .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/manual.png", class: "circle-cropper__image img-fluid"
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/manual.png", class: "img-fluid"
                 %h3 Manuals
                 %a{href: "http://downloads.smarttech.com/media/sitecore/en/support/product/kapp/kapp42and84/guides/guidekappusersv16mar16.pdf", class: "block-link", target: "_blank"}kapp 42&#34
                 %a{href: "http://downloads.smarttech.com/media/sitecore/en/support/product/kapp/kappiq/guide/userguide_kappiq_16dec16.pdf", class: "block-link", target: "_blank"}kapp IQ
             .col-sm-4
               .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/tutorial.png", class: "circle-cropper__image img-fluid"
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/tutorial.png", class: "img-fluid"
                 %h3 Online Tutorials
                 %a{href: "https://support.smarttech.com/en/hardware/kapp", class: "block-link", target: "_blank"}kapp Knowledge Base
                 %a{href: "https://training.smarttech.com/en/courses/ent/smart-kapp", class: "block-link", target: "_blank"}More Training Videos
             .col-sm-4
-              .spaced-columns-content
-                .circle-cropper
-                  =image_tag "kapp/resized/questions.png", class: "circle-cropper__image img-fluid"
+              .spaced-columns-content.dont-add-margin
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/questions.png", class: "img-fluid"
                 %h3 SMART kapp Board
                 %a{href: "mailto:rannie.he@xaxis.com", class: "block-link", target: "_blank"}Email Marketing
                 %a{href: "https://support.smarttech.com/contact-support", class: "block-link", target: "_blank"}SMART Tech Support

@@ -104,36 +104,51 @@
   margin-left: .6em
   opacity: .5
 
-.posts.show
-  .post-container
-    margin-top: 80px
-    .news-article
-      margin-bottom: 80px
-      .tag_list
+.post-container
+  margin-top: 80px
+  .news-article
+    margin-bottom: 80px
+    .tag_list
+      @include Gotham-Book
+      font-size: 9px
+      color: $manatee
+      margin-bottom: 15px
+      letter-spacing: 2px
+    .article-title
+      @include Gotham-Medium
+      font-size: 24px
+      color: $xaxis-darkest-blue
+      margin-bottom: 10px
+      margin-top: 20px
+    .news-contributor
+      @include Gotham-Book-Italic
+      font-size: 10px
+      color: $redishblack
+      margin: 10px 0 20px 0
+    .news-text
+      @include Gotham-Light
+      font-size: 14px
+      color: $xaxis-darkest-blue
+      line-height: 22px
+    .news-image
+      width: 100%
+  .more-post-container
+    transition: all 1s ease
+    .more-post-link
+      .more-article-date
         @include Gotham-Book
-        font-size: 9px
+        font-size: .6428em
         color: $manatee
-        margin-bottom: 15px
         letter-spacing: 2px
-      .article-title
+      .more-article-title
         @include Gotham-Medium
-        font-size: 24px
+        font-size: 1em
         color: $xaxis-darkest-blue
-        margin-bottom: 10px
-        margin-top: 20px
-      .news-contributor
-        @include Gotham-Book-Italic
-        font-size: 10px
-        color: $redishblack
-        margin: 10px 0 20px 0
-      .news-text
-        @include Gotham-Light
-        font-size: 14px
-        color: $xaxis-darkest-blue
-        line-height: 22px
-      .news-image
-        width: 100%
-  .related-news
+        margin-bottom: 1.4rem
+    &:hover
+      background-color: $lightest-grey
+      padding-left: 2%
+
 .news-sidebar
   .sidebar-header
     border-bottom: 2px solid $xaxis-blue-color

@@ -1,7 +1,7 @@
 function init() {
   window.addEventListener('scroll', function(e) {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrink_on = 150,
+        shrink_on = 111,
         body_element = document.querySelector("body");
     if (distanceY > shrink_on) {
       body_element.classList.add('shrnk');

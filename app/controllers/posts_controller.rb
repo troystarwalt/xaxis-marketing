@@ -12,7 +12,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:id])  # get the post from the params
+
+    @next_posts = @post.next
+    @previous_posts = @post.previous
+
     @all_tags = Post.tag_counts.pluck(:name)
     if Rails.env.development?
       puts 'the facebook link will error out in development'
