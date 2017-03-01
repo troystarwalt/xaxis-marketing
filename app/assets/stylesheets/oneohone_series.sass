@@ -46,14 +46,17 @@
   max-width: 30%
   display: flex
   flex-flow: column nowrap
-  justify-content: space-between
+  justify-content: space-around
   align-items: center
   margin-bottom: 3rem
   .single-101-buttons
     margin-top: 1rem
+    a:last-of-type
+      margin-left: 5px
 
 @media (min-width: 544px) and (max-width: 992px)
   .single-101-container
+    justify-content: space-between
     max-width: 45%
 
 @media (max-width: 543px)
