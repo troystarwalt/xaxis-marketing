@@ -39,14 +39,14 @@
 .flex-col
   display: flex
   flex-flow: row wrap
-  justify-content: space-between
+  justify-content: space-around
 
 .single-101-container
   flex: 1 1 auto
   max-width: 30%
   display: flex
   flex-flow: column nowrap
-  justify-content: space-around
+  justify-content: space-between
   align-items: center
   margin-bottom: 3rem
   .single-101-buttons
@@ -55,8 +55,9 @@
       margin-left: 5px
 
 @media (min-width: 544px) and (max-width: 992px)
-  .single-101-container
+  .flex-col
     justify-content: space-between
+  .single-101-container
     max-width: 45%
 
 @media (max-width: 543px)
