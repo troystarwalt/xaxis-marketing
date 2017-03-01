@@ -1,12 +1,16 @@
 // Check for page load and ready.
-$('.one_oh_one_series').ready(function () {
-  setMinHeight();
-  // Check for window resize and set the minHeight
-  $(window).resize(function () {
+$(document).on('ready page:change', function() {
+  $('.one_oh_one_series').ready(function() {
+    console.log("sucks")
     setMinHeight();
+    // Check for window resize and set the minHeight
+    $(window).resize(function () {
+      setMinHeight();
+    });
   });
 });
 function setMinHeight() {
+  console.log("setting height");
   var elements = document.getElementsByClassName('image-preview-101');
   var changeHeight = document.getElementsByClassName('single-101-container');
 
