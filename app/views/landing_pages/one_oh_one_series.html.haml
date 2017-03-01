@@ -11,22 +11,22 @@
     will include presentations on Programmatic, Native Advertising, Performance
     Marketing and more.
   - if @one_oh_ones.nil?
-    %p No one one series uploaded.
+    %p No 101 Series uploaded.
   - else
-    .row.one-oh-one-series-row
+    .flex-col
       - @one_oh_ones.each do |one|
-        .col-lg-4.col-sm-6.boxer
-          .single-101-container{id: one.name.parameterize.truncate(20) }
+        .single-101-container{id: one.name.parameterize.truncate(20) }
+          .single-101-img
             = link_to one.pdf_file.url, target: "_blank", role: "button" do
               = image_tag one.image_preview.preview, alt: "#{one.name}", class: "img-fluid image-preview-101"
-            .text-center.buttons-101
-              .keep-centered
-                = link_to one.pdf_file.url, target: "_blank", role: "button", class: "brand-btn-primary xaxis-btn-primary button-101" do
-                  %i.fa.fa-external-link
-                  PDF
-                = link_to one.ppt_file.url, download: one.name, role: "button", class: "brand-btn-primary xaxis-btn-primary button-101" do
-                  %i.fa.fa-download
-                  PPT
+          .single-101-buttons
+            .keep-centered
+              = link_to one.pdf_file.url, target: "_blank", role: "button", class: "brand-btn-primary xaxis-btn-primary button-101" do
+                %i.fa.fa-external-link
+                PDF
+              = link_to one.ppt_file.url, download: one.name, role: "button", class: "brand-btn-primary xaxis-btn-primary button-101" do
+                %i.fa.fa-download
+                PPT
     .row
       .col-12
         = will_paginate @one_oh_ones, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}

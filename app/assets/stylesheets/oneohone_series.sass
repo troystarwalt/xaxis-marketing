@@ -27,45 +27,41 @@
   -o-transition: all .5s
   transition: all .5s
   &:hover
-    -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
-    -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5)
     -moz-transform: scale(1.05)
     -webkit-transform: scale(1.05)
     transform: scale(1.05)
 
-
-.single-101-container
-  // min-height: 300px
-  position: relative
-  margin-bottom: 60px
-
-.buttons-101
-  position: absolute
-  bottom: 0
-  left: 50%
-  transform: translateX(-50%)
-  width: 100%
-
-.keep-centered
-  a:last-child
-    margin-left: 10px
-
 .bubble-text
   vertical-align: top
 
-@media (min-width: 544px) and (max-width: 1199px)
-  .buttons-101 > a:last-child
-    margin-top: 10px
+// FLEX
 
-@media (min-width: 992px)
-  .one-oh-one-series-row > div:nth-child(3n+1)
-    clear: left
+.flex-col
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
 
-@media (min-width:544px) and (max-width: 991px)
-  .one-oh-one-series-row > div:nth-child(2n+3)
-    clear: left
-    
+.single-101-container
+  flex: 1 1 auto
+  max-width: 30%
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 3rem
+  .single-101-buttons
+    margin-top: 1rem
+
+@media (min-width: 544px) and (max-width: 992px)
+  .single-101-container
+    max-width: 45%
+
+@media (max-width: 543px)
+  .flex-col
+    flex-flow: column nowrap
+  .single-101-container
+    max-width: 100%
+
 @media (max-width: 1199px)
   #one_oh_one_series
     background: no-repeat fixed url(asset_path('series_header.jpg'))
