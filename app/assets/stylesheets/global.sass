@@ -1,15 +1,23 @@
+html
+  height: 100%
+
 body
   padding-top: 111px
   position: relative
-  min-height: 100vh
+  min-height: 100%
   @include Gotham-Light
   color: $xaxis-darkest-blue
   font-size: 14px
   line-height: 22px
+  display: flex
+  flex-direction: column
   // transition: padding-top, .5s, linear
 a:link, a:active, a:hover
   text-decoration: none
 
+
+.content
+  flex: 1
 
 // 404 Style
 

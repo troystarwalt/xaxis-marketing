@@ -3,18 +3,18 @@
   .row.container-row
     .col-sm-3.hidden-sm-down
       #side-nav
-        %ul.nav#update_category_list
+        %ul.nav.flex-column#update_category_list
           %li.nav-item
             .text-uppercase Categories
           -@all_tags.each do |tag|
             %li.nav-item
               =link_to tag, tag_path(tag.downcase), class: "side-nav-link"
-    .col-md-9.col-xs-12
+    .col-md-9.col-12
       #news-container.section-container
         .row
           .section-name#news-section
             %h1.header.text-uppercase
-              Updates
+              Latests
             = sortable "updated_at", "Sort"
         .row
           %ul.list-group.news-articles-list

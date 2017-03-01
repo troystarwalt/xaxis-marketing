@@ -1,4 +1,4 @@
-.row.col-xs-12
+.row.col-12
   -if @case_studies.any?
     %ul.case_studies_list#case_study_ul
       - if params[:platform_id] || action_name != 'index'
@@ -11,5 +11,5 @@
     No Case Studies Available For This #{action_name == 'search' ? "Search Criteria" : "Platform"}.
 -if include_pagination
   .row
-    .col-xs-12
+    .col-12
       = will_paginate @case_studies, {next_label: '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>', previous_label:'<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'}
