@@ -3,5 +3,20 @@
   .container
     %header
       %h1 Q1 All Hands
-    .carousel
-    
+    %section.image-slide-section
+      .image-slide-wrapper
+        %ul#slides
+          %li.slide.showing
+            Slide 1
+          %li.slide
+            Slide 2
+          %li.slide
+            Slide 3
+          %li.slide
+            Slide 4
+          %li.slide
+            Slide 5
+        %button.controls#previous{type: "button"}
+          .fa.fa-chevron-left
+        %button.controls#next{type: "button"}
+          .fa.fa-chevron-right
