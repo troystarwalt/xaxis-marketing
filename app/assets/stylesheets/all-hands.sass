@@ -6,13 +6,18 @@
   position: absolute
   cursor: pointer
   z-index: 10
-  background-color: rgba($splashed-white, .2)
+  background-color: rgba($splashed-white, .3)
   color: $white
   border: none
   font-size: 20px
   border-bottom: 2px solid $white
   padding: 4px 8px
   display: none
+  transition: color .5s
+  &:hover
+    background-color: rgba($splashed-white, 1)
+    color: $xaxis-darkest-blue
+    border-bottom: 2px solid $xaxis-darkest-blue
 
 
 #previous

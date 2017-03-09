@@ -27,21 +27,19 @@ function previousSlide() {
 
 function goToSlide(n) {
   slides[currentSlide].className = 'slide';
-  slides[currentSlide].style.opacity = "0";
+  slides[currentSlide].style.opacity = "0";  // Update the opacity.
   currentSlide = (n+slides.length)%slides.length;
   slides[currentSlide].className = 'slide showing';
-  slides[currentSlide].style.opacity = "1";
+  slides[currentSlide].style.opacity = "1";  // Hey we'd like to see you.
 }
 
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
 
 next.onclick = function() {
-  // pauseSlideshow();
   nextSlide();
 };
 
 previous.onclick = function() {
-  // pauseSlideshow();
   previousSlide();
 };
