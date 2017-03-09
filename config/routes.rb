@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'groupm-signature' => "landing_pages#group_m_signature", as: :groupm_sig
   get 'xaxis-signature' => "landing_pages#xaxis_signature", as: :xaxis_sig
   get 'smart-kapp' => "landing_pages#smart_kapp"
+  get 'all-hands' => "landing_pages#all_hands"
 
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub
   get "case-studies/search" => "case_studies#search", as: :case_studies_search
