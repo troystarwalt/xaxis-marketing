@@ -41,4 +41,8 @@ class ApplicationController < ActionController::Base
   #   @xanadu = set_our_platforms('xanadu')
   # end
 
+  protected # Only inherited controllers can call authorized?
+    def authorized?
+      request.authorization.present? && (request.authorization.split(' ', 2).first == 'Basic')
+    end
 end
