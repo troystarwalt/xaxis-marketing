@@ -10,11 +10,6 @@ class ApplicationController < ActionController::Base
               ActiveRecord::RecordNotFound,
               with: :catch_not_found
 
-  # def set_asset_path
-  #   @bring_me_to_xaxis = Brand.find_by!(name: :Xaxis).slug
-  #   @bring_me_to_turbine = Platform.find_by!(name: :Turbine).slug
-  # end
-
   def set_our_brands(slug)
     Brand.find_by!(slug: slug)
   end

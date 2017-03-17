@@ -43,4 +43,22 @@ class LandingPagesController < ApplicationController
       redirect_to root_path
     end
   end
+
+  # This is a simple way to create a basic static page.
+  # Simply create the page under lading-pages just like
+  # you would access it in the url.
+  # IE marekting.xaxis.com/pages/dinosaur
+  # You would create a page under landing_pages/dinosaur.haml
+  def show
+    if valid_page?
+      render "#{params[:page]}"
+    else
+      render 'errors/four_oh_four', status: 404  # If it isn't there, then poof, 404
+    end
+  end
+
+  private
+  def valid_page?
+    File.exists?(Pathname.new(Rails.root + "app/views/landing_pages/#{params[:page]}.haml"))
+  end
 end
