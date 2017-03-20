@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 class LandingPagesController < ApplicationController
-  require 'will_paginate/array'
-
   http_basic_authenticate_with name: "my", password: "secret", only: :all_hands
+  require 'will_paginate/array'
 
   def value_calculator
     @javascript_file_overwrite_name = 'landing_pages/value_calculator.js'
@@ -35,6 +34,9 @@ class LandingPagesController < ApplicationController
 
   def smart_kapp
   end
+
+  # Landing Pages
+
 
   def all_hands
     if authorized?
