@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/pages/:page" => "landing_pages#show"
 
   # Custom Generated Landing Pages
+  get 'one-xaxis' => 'landing_pages#one_xaxis'
+
 
   # Hiding case studies for now.
   # resources :case_studies, path: :'case-studies', only: [:index, :show]

@@ -36,6 +36,10 @@ class LandingPagesController < ApplicationController
   end
 
   # Landing Pages
+  def one_xaxis
+   # start here
+  end
+
 
 
   def all_hands
