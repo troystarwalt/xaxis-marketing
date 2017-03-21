@@ -37,6 +37,15 @@
         });
     %section.event-photos
       .row
-        - @eventPhotos.each do |photo|
+        - @eventPhotos.each_with_index do |photo, index|
           .col-sm-4
-            =image_tag photo.image.grid
+            =image_tag photo.image.grid, class: "single-event-photo", alt: photo.title, data: { index: index}
+-# Modal for Headshots
+.modal.fade(id="eventPhotos" tabindex="-1" role="dialog")
+  .modal-dialog(role="document")
+    .modal-content
+      .modal-header
+        %button(type="button" class="close photos-close" data-dismiss="modal" aria-label="Close")
+          %span(aria-hidden="true") &times;
+      .modal-body
+        %img.event-photos.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoId: ''}}
