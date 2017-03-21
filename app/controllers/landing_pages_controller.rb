@@ -44,7 +44,7 @@ class LandingPagesController < ApplicationController
 
   def all_hands
     if authorized?
-
+      @eventPhotos = Photo.all.tagged_with("all-hands")
     else
       redirect_to root_path
     end

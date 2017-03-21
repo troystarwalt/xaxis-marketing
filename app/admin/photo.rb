@@ -9,7 +9,7 @@ ActiveAdmin.register Photo do
     link_to 'New', new_admin_photo_path
   end
 
-  controller do
+  controller  do
     def scoped_collection
       super.includes :taggings # prevents N+1 queries to your database
     end
@@ -43,7 +43,7 @@ ActiveAdmin.register Photo do
                                   data: {type: 'png'}
                                 }
       f.hidden_field :image_cache
-      f.input :taken, as: :datepicker, hint: "When was the photo taken?"
+      f.input :taken, label: "Taken on:", as: :date_select, hint: "When was the photo taken?"
       f.input :tag_list, hint: "Use all-hands if you want to include this in All Hands", required: true
     end
     f.actions

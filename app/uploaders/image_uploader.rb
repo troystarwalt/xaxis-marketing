@@ -6,6 +6,10 @@ class ImageUploader < BaseUploader
     process resize_to_limit: [100, 100]
   end
 
+  version :grid, :if => :image? do
+    process resize_to_limit: [300, 400]
+  end
+
   version :preview, :if => :image? do
     process resize_to_fit: [600, 600]
   end
