@@ -3,7 +3,10 @@ ActiveAdmin.register Photo do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :image, :description, :taken, :image_cache, :tag_list, :title
+
+  config.create_another = true
+
+  permit_params :image, :description, :taken, :image_cache, :tag_list, :title, :remote_image_url
 
   action_item :new, only: [:show] do
     link_to 'New', new_admin_photo_path
@@ -21,7 +24,7 @@ ActiveAdmin.register Photo do
 
   # ----------Edit and New Form
 
-  form do |f|
+  form html: { multipart: true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "New Image" do
       f.input :title, placeholder: "Drinking Coffee", hint: "Reference title for photo.", required: true
@@ -42,9 +45,11 @@ ActiveAdmin.register Photo do
                                           ),
                                   data: {type: 'png'}
                                 }
+      para "or", class: "seperator"
+      f.input :remote_image_url, as: :string, placeholder: "Ex.: https://github-jobs.s3.amazonaws.com/48997d7a-043e-11e7-89f6-aa4c41cf1794.png", hint: "Don't have the photo on your computer? User a URL."
       f.hidden_field :image_cache
       f.input :taken, label: "Taken on:", as: :date_select, hint: "When was the photo taken?"
-      f.input :tag_list, hint: "Use all-hands if you want to include this in All Hands", required: true
+      f.input :tag_list, hint: "Use all-hands if you want to include this in All Hands", placeholder: "Ex.: all-hands", required: true
     end
     f.actions
   end
