@@ -37,9 +37,11 @@
         });
     %section.event-photos
       .row
-        - @eventPhotos.each_with_index do |photo, index|
-          .col-sm-4
-            =image_tag photo.image.grid, class: "single-event-photo", alt: photo.title, data: { index: index}
+        .photo-grid
+          .photo-grid-sizer
+          - @eventPhotos.each_with_index do |photo, index|
+            .photo-grid-item
+              =image_tag photo.image.medium, class: "single-event-photo img-fluid", alt: photo.title, data: { index: index}
 -# Modal for Headshots
 .modal.fade(id="eventPhotos" tabindex="-1" role="dialog")
   .modal-dialog(role="document")

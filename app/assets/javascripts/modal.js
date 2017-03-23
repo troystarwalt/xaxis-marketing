@@ -17,3 +17,15 @@ $(document).ready(function(){
     $('.event-photos').attr('src', '');
   });
 });
+
+var elem = document.querySelector('.photo-grid');
+
+var msnry;
+
+imagesLoaded( elem, function() {
+  console.log("images loaded")
+  msnry = new Masonry( elem, {
+    itemSelector: '.photo-grid-item',
+    columnWidth: '.photo-grid-sizer',
+  });
+});
