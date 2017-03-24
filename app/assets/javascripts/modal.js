@@ -19,19 +19,29 @@ $(document).ready(function(){
 });
 
 
-// var $grid = $('.photo-grid').masonry({
+// Sort images only after they are loaded.
+var $grid = $('.photo-grid').masonry({
+  itemSelector: '.photo-grid-item',
+  percentPosition: true,
+  columnWidth: '.photo-grid-sizer'
+});
+// layout Isotope after each image loads
+$grid.imagesLoaded().progress( function() {
+  console.log("loading...")
+  $grid.masonry();
+});
+
+
+// Another way to control the photos.
+// $('.photo-grid').masonry({
 //   itemSelector: '.photo-grid-item',
+//   columnWidth: '.photo-grid-sizer',
 //   percentPosition: true,
-//   columnWidth: 330
-// });
-// // layout Isotope after each image loads
-// $grid.imagesLoaded().progress( function() {
-//   console.log("loading...")
-//   $grid.masonry();
 // });
 
-$('.photo-grid').masonry({
-  itemSelector: '.photo-grid-item',
-  columnWidth: '.photo-grid-sizer',
-  percentPosition: true,
-});
+
+// Quick and dirty loader check for hbspt-form.
+$('.hbspt-form').ready(function () {
+  var ss = $('.survey-section');
+  ss.css('background', 'none');
+})

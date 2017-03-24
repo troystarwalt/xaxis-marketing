@@ -38,11 +38,14 @@
 %section.event-photos
   .container-fluid
     %h2.text-center.mb-4 Event Photos
-    .photo-grid.bs-fake-row
-      .photo-grid-sizer.col-12.col-sm-4.col-md-3
-      - @eventPhotos.each_with_index do |photo, index|
-        .photo-grid-item.col-12.col-sm-4.col-md-3
-          =image_tag photo.image.medium, class: "single-event-photo img-fluid", alt: photo.title, data: { index: index}
+    - if @eventPhotos.exists?
+      .photo-grid.bs-fake-row
+        .photo-grid-sizer.col-12.col-sm-4.col-md-3
+        - @eventPhotos.each_with_index do |photo, index|
+          .photo-grid-item.col-12.col-sm-4.col-md-3
+            =image_tag photo.image.medium, class: "single-event-photo img-fluid", alt: photo.title, data: { index: index}
+    - else
+      %p.text-center No photos have been added yet.
 -# Modal for Headshots
 .modal.fade(id="eventPhotos" tabindex="-1" role="dialog")
   .modal-dialog(role="document")
