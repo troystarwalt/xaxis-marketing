@@ -178,7 +178,7 @@ if Rails.env.development? || Rails.env.test?
   puts '---------------'
 end
 
-Photo.destroy_all
+# Photo.destroy_all
 random_url = "https://source.unsplash.com/random"
 random_tag = %w(all-hands mwc event)
 

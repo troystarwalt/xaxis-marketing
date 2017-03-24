@@ -18,14 +18,20 @@ $(document).ready(function(){
   });
 });
 
-var elem = document.querySelector('.photo-grid');
 
-var msnry;
+// var $grid = $('.photo-grid').masonry({
+//   itemSelector: '.photo-grid-item',
+//   percentPosition: true,
+//   columnWidth: 330
+// });
+// // layout Isotope after each image loads
+// $grid.imagesLoaded().progress( function() {
+//   console.log("loading...")
+//   $grid.masonry();
+// });
 
-imagesLoaded( elem, function() {
-  console.log("images loaded")
-  msnry = new Masonry( elem, {
-    itemSelector: '.photo-grid-item',
-    columnWidth: '.photo-grid-sizer',
-  });
+$('.photo-grid').masonry({
+  itemSelector: '.photo-grid-item',
+  columnWidth: '.photo-grid-sizer',
+  percentPosition: true,
 });

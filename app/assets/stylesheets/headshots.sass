@@ -68,22 +68,24 @@
 
 /***********  lightbox Window  ***********/
 
-#hsModal
+#hsModal, #eventPhotos
   .modal-content
-    background-color: transparent
+    // background-color: transparent
     border: none
     .modal-header
       border: none
       position: relative
-  .hs-close
-    color: $white
+  .hs-close, .photos-close
+    color: $xaxis-blue-color
     opacity: .5
     padding-top: 4px
     position: absolute
     right: 4%
-  .hs-close:hover
+    font-size: 2em
+  .hs-close:hover, .photos-close:hover
     opacity: 1
-    color: $white
+    color: $xaxis-blue-color
+    font-size: 2.5em
   .modal-body
     text-align: center
 
