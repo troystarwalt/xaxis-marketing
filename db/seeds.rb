@@ -169,7 +169,7 @@ if Rails.env.development? || Rails.env.test?
     brand_id: brand.id,
     priority: Faker::Number.between(1, 20),
     grey_image: open('public/seedfiles/hs-seed.jpg'),
-    color_image: open(headshot_photo.sample),
+    color_image: open('public/seedfiles/hs-seed.jpg'),
     bio: Faker::Lorem.paragraph(10, 10)
     )
     puts "created headshot"
@@ -177,6 +177,20 @@ if Rails.env.development? || Rails.env.test?
   puts 'created or updated ' + brand_name
   puts '---------------'
 end
+
+# Photo.destroy_all
+random_url = "https://source.unsplash.com/random"
+random_tag = %w(all-hands mwc event)
+
+30.times do
+  Photo.create!(
+  title: Faker::Book.title,
+  remote_image_url: random_url,
+  taken: Faker::Date.backward,
+  tag_list: random_tag.sample
+  )
+end
+
 
 # video_embed = '<iframe src="https://player.vimeo.com/video/149429953" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 # <p><a href="https://vimeo.com/149429953">The Xaxis Advantage</a> from <a href="https://vimeo.com/xaxis">Xaxis</a> on <a href="https://vimeo.com">Vimeo</a>.</p>'

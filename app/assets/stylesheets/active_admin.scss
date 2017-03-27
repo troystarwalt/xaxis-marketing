@@ -18,7 +18,7 @@ $panelHeaderBck: #002744;
 @import "active_skin";
 @import "tagsinput";
 @import "select2";
-@import "font-awesome"
+@import "font-awesome";
 
 
 // Overriding any non-variable SASS must be done after the fact.
@@ -26,7 +26,7 @@ $panelHeaderBck: #002744;
 //
 // .status_tag { background: #6090DB; }
 
-h1.site_title {
+.site_title {
   background: none !important;
   padding-left: inherit !important;
   text-indent: 0 !important;
@@ -208,4 +208,26 @@ h1.site_title {
   #tabs {
     display: table-cell !important;
   }
+}
+
+form fieldset > ol > li fieldset ol li {
+  clear: none;
+}
+
+.create_another ~ label {
+  width: 80%;
+}
+
+.seperator {
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #5E6469;
+  border-left: 3px solid #5E6468;
+}
+
+form fieldset.inputs legend {
+  border-bottom: none;
+  position: absolute;
+  top: 0;
 }

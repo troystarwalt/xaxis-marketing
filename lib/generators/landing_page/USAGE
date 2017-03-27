@@ -1,0 +1,16 @@
+Description:
+    Generates custom landing pages. Two main options of a simple setup with a url structure of *.com/pages/:page or a full setup *.com/:page
+
+Example:
+    rails generate landing_page account
+
+    This will create:
+        app/views/landing_pages/account.haml
+        app/assets/stylesheets/account.sass
+        add a line to routes
+        add a line to landing_pages controller
+
+    rails generate landing_page account --no-full --no-stylesheet
+
+    This will create:
+        app/views/landing_pages/account.haml

@@ -22,4 +22,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require tagsinput.min
+//= require masonry.min
+//= require imagesloaded.min
 //= require_tree .

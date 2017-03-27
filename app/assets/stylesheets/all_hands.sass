@@ -1,0 +1,150 @@
+// Header CSS
+.header-image-section
+  max-width: 100%
+  .fake-lax-background-image
+    background: asset-url('all_hands.png')
+    background-size: cover
+    padding-bottom: 35%
+    width: auto
+    color: $white
+
+
+//--------------- Slider CSS
+.image-slide-wrapper
+  position: relative
+
+.controls
+  position: absolute
+  cursor: pointer
+  z-index: 10
+  background-color: rgba($splashed-white, .3)
+  color: $white
+  border: none
+  font-size: 20px
+  border-bottom: 2px solid $white
+  padding: 4px 8px
+  display: none
+  transition: color .5s
+  &:hover
+    background-color: rgba($splashed-white, 1)
+    color: $xaxis-darkest-blue
+    border-bottom: 2px solid $xaxis-darkest-blue
+
+
+#previous
+  top: 45%
+  left: 20px
+
+#next
+  top: 45%
+  right: 20px
+
+#slides
+  position: relative
+  height: auto
+  padding: 0px
+  margin: 0
+  list-style-type: none
+
+.slide
+  position: static
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  opacity: 1
+  z-index: 1
+
+  -webkit-transition: opacity 1s
+  -moz-transition: opacity 1s
+  -o-transition: opacity 1s
+  transition: opacity 1s
+
+.showing
+  opacity: 1
+  z-index: 2
+
+.slide
+  font-size: 3em
+  padding: 40px
+  background: #333
+  color: $white
+  background-size: cover
+
+.slide:nth-of-type(1)
+  background-image: url('https://source.unsplash.com/random/800x300')
+
+.slide:nth-of-type(2)
+  background-image: url('https://source.unsplash.com/category/nature/800x300')
+
+.slide:nth-of-type(3)
+  background-image: url('https://source.unsplash.com/category/people/800x300')
+
+.slide:nth-of-type(4)
+  background-image: url('https://source.unsplash.com/category/objects/800x300')
+
+.slide:nth-of-type(5)
+  background-image: url('https://source.unsplash.com/category/technology/800x300')
+
+//---------------- Additional Styles
+
+.survey-section
+  margin-top: 80px
+  iframe
+    border: none
+
+#all-hands
+  section:not(.header-image-section)
+    margin-top: 55px
+
+
+// Survey Submit Button from HubSpot
+.hs-button
+  border-radius: 100px !important
+  color: $white !important
+  font-size: .8em !important
+  padding: 8px 14px !important
+  text-transform: uppercase !important
+  box-shadow: none !important
+  border-top: none !important
+  border-bottom: none !important
+  border-left: none !important
+  border-right: none !important
+  border: 1px solid transparent !important
+  transition: all .1s !important
+  letter-spacing: 2px !important
+  @include Gotham-Medium
+  display: inline-block !important
+  background: $xaxis-blue-color !important
+  &:hover, &:active
+    color: $white !important
+    opacity: .5
+
+.hs-form fieldset
+  max-width: 100% !important
+
+
+
+// Give us a gutter for our grid.
+.photo-grid-item
+  margin-bottom: 10px
+  &:hover
+    cursor: pointer
+
+// Quick and dirty loader that is hidden once hbspt-form is ready.
+.survey-section
+  background: asset_url('Preloader_5.gif') center center no-repeat
+  min-height: 200px
+
+@media (max-width: 400px), (max-device-width: 480px) and (min-device-width: 320px)
+  form.hs-form .form-columns-2 .hs-form-field .hs-input, form.hs-form .form-columns-3 .hs-form-field .hs-input
+      width: auto !important
+
+@media (max-width: 576px)
+  // Header CSS
+  .header-image-section
+    max-width: 100%
+    .fake-lax-background-image
+      background: asset-url('all_hands_mobile.png')
+      background-size: cover
+      padding-bottom: 139%

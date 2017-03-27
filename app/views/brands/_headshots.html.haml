@@ -4,13 +4,13 @@
       .headshot-flex-container
         .headshot-container_image
           - if !hs.grey_image.file.nil?
-            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
           - elsif !hs.color_image.file.nil?
-            = image_tag(hs.color_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+            = image_tag(hs.color_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
           - else
-            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
           .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
-            =link_to "View Image", "javascript:void(0)", class: "headshot-overlay-link headshot-launch-modal", data: { index: index}
+            =link_to "View Image", "javascript:void(0)", class: "headshot-overlay-link headshot-launch-modal  activate-modal", data: { index: index}
         .headshot-container_info
           %p.font-weight-bold.headshot-name= hs.first_name
           %p.font-weight-bold.headshot-name= hs.last_name
@@ -37,14 +37,7 @@
               |
               =link_to "Small", hs.grey_image.url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
 -# Modal for Headshots
-.modal.fade(id="hsModal" tabindex="-1" role="dialog")
-  .modal-dialog(role="document")
-    .modal-content
-      .modal-header
-        %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
-          %span(aria-hidden="true") &times;
-      .modal-body
-        %img.hs-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoId: ''}}
+= render partial: "partials/bs_modal", locals: {model_id: "hsModal"}
 -# Modal for bios
 .modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")

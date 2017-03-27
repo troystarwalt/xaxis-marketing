@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-
   resources :contacts, only: [:new, :create]
 
   get 'value-calculator' => "landing_pages#value_calculator", as: :value_calculator
@@ -13,6 +12,12 @@ Rails.application.routes.draw do
 
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub
   get "case-studies/search" => "case_studies#search", as: :case_studies_search
+
+  get "/pages/:page" => "landing_pages#show"
+
+  # Custom Generated Landing Pages
+  get 'one-xaxis' => 'landing_pages#one_xaxis'
+
 
   # Hiding case studies for now.
   # resources :case_studies, path: :'case-studies', only: [:index, :show]

@@ -1,22 +1,33 @@
 - title "All Hands"
 #all-hands
+  %section.header-image-section
+    .fake-lax-background-image
   .container
-    %header
-      %h1 Q1 All Hands
-    %section.image-slide-section
-      .image-slide-wrapper
-        %ul#slides
-          %li.slide.showing
-            Slide 1
-          %li.slide
-            Slide 2
-          %li.slide
-            Slide 3
-          %li.slide
-            Slide 4
-          %li.slide
-            Slide 5
-        %button.controls#previous{type: "button"}
-          .fa.fa-chevron-left
-        %button.controls#next{type: "button"}
-          .fa.fa-chevron-right
+    %section.materials-section
+      .brand-btn-primary.xaxis-btn-primary Download Deck
+      .brand-btn-primary.xaxis-btn-primary Download Deck 2
+    %section.video-section
+      %h2.text-center.mb-4 Watch the All Hands
+      .embed-responsive.embed-responsive-16by9
+        %iframe.embed-responsive-item{:allowfullscreen => "", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/149429953?title=0&byline=0&portrait=0", :webkitallowfullscreen => "",}
+    %section.survey-section
+      /[if lte IE 8]
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+      %script{:charset => "utf-8", :src => "//js.hsforms.net/forms/v2.js", :type => "text/javascript"}
+      :javascript
+        hbspt.forms.create({
+          portalId: '436935',
+          formId: '169e12cd-425c-4c0e-aa43-08f4bf7af504'
+        });
+%section.event-photos-section
+  .container-fluid
+    %h2.text-center.mb-4 Event Photos
+    - if @eventPhotos.exists?
+      .photo-grid.bs-fake-row
+        .photo-grid-sizer.col-12.col-sm-4.col-md-3
+        - @eventPhotos.each_with_index do |photo, index|
+          .photo-grid-item.col-12.col-sm-4.col-md-3
+            =image_tag photo.image.medium, class: "single-event-photo img-fluid activate-modal", alt: photo.title, data: { index: index}
+    - else
+      %p.text-center No photos have been added yet.
+= render partial: "partials/bs_modal", locals: {model_id: "eventPhotos"}

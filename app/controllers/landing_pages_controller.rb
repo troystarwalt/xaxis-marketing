@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 class LandingPagesController < ApplicationController
+  http_basic_authenticate_with name: "AllHands", password: "OneXaxis", only: :all_hands
   require 'will_paginate/array'
-
-  http_basic_authenticate_with name: "my", password: "secret", only: :all_hands
 
   def value_calculator
     @javascript_file_overwrite_name = 'landing_pages/value_calculator.js'
@@ -36,11 +35,37 @@ class LandingPagesController < ApplicationController
   def smart_kapp
   end
 
+  # Landing Pages
+  def one_xaxis
+   # start here
+  end
+
+
+
   def all_hands
     if authorized?
-
+      @eventPhotos = Photo.all.tagged_with("all-hands")
+      gon.photos = @eventPhotos
     else
       redirect_to root_path
     end
+  end
+
+  # This is a simple way to create a basic static page.
+  # Simply create the page under lading-pages just like
+  # you would access it in the url.
+  # IE marekting.xaxis.com/pages/dinosaur
+  # You would create a page under landing_pages/dinosaur.haml
+  def show
+    if valid_page?
+      render "#{params[:page]}"
+    else
+      render 'errors/four_oh_four', status: 404  # If it isn't there, then poof, 404
+    end
+  end
+
+  private
+  def valid_page?
+    File.exists?(Pathname.new(Rails.root + "app/views/landing_pages/#{params[:page]}.haml"))
   end
 end
