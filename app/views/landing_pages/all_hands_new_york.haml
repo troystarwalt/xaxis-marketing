@@ -1,0 +1,16 @@
+- title "All Hands New York Survey"
+#all-hands
+  %section.header-image-section
+    .fake-lax-background-image
+  .container
+    %section.survey-section
+      %h2.text-center.mb-4 Survey
+      %p.text-center.mb-5 Thank you for attending Q1 All Hands 2017. Please take a few minutes to complete the below survey.
+      /[if lte IE 8]
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+      %script{:charset => "utf-8", :src => "//js.hsforms.net/forms/v2.js", :type => "text/javascript"}
+      :javascript
+        hbspt.forms.create({
+          portalId: '436935',
+          formId: '169e12cd-425c-4c0e-aa43-08f4bf7af504'
+        });
