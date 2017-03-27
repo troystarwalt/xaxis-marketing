@@ -1,47 +1,40 @@
-$(document).ready(function(){
-  // Using gon variables for image modals
-  $('.single-event-photo').on('click', function (e){
-    var index = $(this).data('index');
-    var photo = gon.photos[index];
-
-    $('.event-photos').attr({
-      src: photo.image.medium.url,
-      alt: photo.title
-      });
-    $('.event-photos').data('photoId', photo.id);
-    $('#eventPhotos').modal('show');
-    e.preventDefault();
-  });
-  // Clearing out the image from the modal on hide/close
-  $('#eventPhotos').on('hidden.bs.modal', function(e){
-    $('.event-photos').attr('src', '');
-  });
-});
-
-
-// Sort images only after they are loaded.
-var $grid = $('.photo-grid').masonry({
-  itemSelector: '.photo-grid-item',
-  percentPosition: true,
-  columnWidth: '.photo-grid-sizer'
-});
-// layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  console.log("loading...")
-  $grid.masonry();
-});
-
-
-// Another way to control the photos.
-// $('.photo-grid').masonry({
-//   itemSelector: '.photo-grid-item',
-//   columnWidth: '.photo-grid-sizer',
-//   percentPosition: true,
+// $(document).ready(function(){
+//   // Using gon variables for image modals
+//   $('.single-event-photo').on('click', function (e){
+//     var index = $(this).data('index');
+//     var photo = gon.photos[index];
+//
+//     $('.event-photos').attr({
+//       src: photo.image.medium.url,
+//       alt: photo.title
+//       });
+//     $('.event-photos').data('photoId', photo.id);
+//     $('#eventPhotos').modal('show');
+//     e.preventDefault();
+//   });
+//   // Clearing out the image from the modal on hide/close
+//   $('#eventPhotos').on('hidden.bs.modal', function(e){
+//     $('.event-photos').attr('src', '');
+//   });
 // });
 
 
-// Quick and dirty loader check for hbspt-form.
-$('.hbspt-form').ready(function () {
-  var ss = $('.survey-section');
-  ss.css('background', 'none');
-})
+var activate_modal = function (click_item, modal_image_class, model_id) {
+  // Using gon variables for image modals
+  $(click_item).on('click', function (e){
+    var index = $(this).data('index');
+    var photo = gon.photos[index];
+
+    $(modal_image_class).attr({
+      src: photo.image.medium.url,
+      alt: photo.title
+      });
+    $(modal_image_class).data('photoId', photo.id);
+    $(model_id).modal('show');
+    e.preventDefault();
+  });
+  // Clearing out the image from the modal on hide/close
+  $(model_id).on('hidden.bs.modal', function(e){
+    $(modal_image_class).attr('src', '');
+    });
+});

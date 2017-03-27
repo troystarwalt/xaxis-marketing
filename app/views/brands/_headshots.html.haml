@@ -37,14 +37,7 @@
               |
               =link_to "Small", hs.grey_image.url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
 -# Modal for Headshots
-.modal.fade(id="hsModal" tabindex="-1" role="dialog")
-  .modal-dialog(role="document")
-    .modal-content
-      .modal-header
-        %button(type="button" class="close hs-close" data-dismiss="modal" aria-label="Close")
-          %span(aria-hidden="true") &times;
-      .modal-body
-        %img.hs-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoId: ''}}
+= render partial: "partials/bs_modal", locals: {model_id: "hsModal", photo_type: "hs-img"}
 -# Modal for bios
 .modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
   .modal-dialog(role="document")

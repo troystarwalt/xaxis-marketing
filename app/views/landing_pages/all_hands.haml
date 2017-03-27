@@ -35,7 +35,7 @@
           portalId: '436935',
           formId: '169e12cd-425c-4c0e-aa43-08f4bf7af504'
         });
-%section.event-photos
+%section.event-photos-section
   .container-fluid
     %h2.text-center.mb-4 Event Photos
     - if @eventPhotos.exists?
@@ -46,12 +46,6 @@
             =image_tag photo.image.medium, class: "single-event-photo img-fluid", alt: photo.title, data: { index: index}
     - else
       %p.text-center No photos have been added yet.
--# Modal for Headshots
-.modal.fade(id="eventPhotos" tabindex="-1" role="dialog")
-  .modal-dialog(role="document")
-    .modal-content
-      .modal-header
-        %button(type="button" class="close photos-close" data-dismiss="modal" aria-label="Close")
-          %span(aria-hidden="true") &times;
-      .modal-body
-        %img.event-photos.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoId: ''}}
+= render partial: "partials/bs_modal", locals: {model_id: "eventPhotos", photo_type: "event-photos"}
+:javascript
+  activate_modal(".single-event-photo", ".event-photos", "#eventPhotos");
