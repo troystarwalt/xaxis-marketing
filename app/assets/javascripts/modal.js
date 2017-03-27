@@ -1,40 +1,36 @@
-// $(document).ready(function(){
-//   // Using gon variables for image modals
-//   $('.single-event-photo').on('click', function (e){
-//     var index = $(this).data('index');
-//     var photo = gon.photos[index];
-//
-//     $('.event-photos').attr({
-//       src: photo.image.medium.url,
-//       alt: photo.title
-//       });
-//     $('.event-photos').data('photoId', photo.id);
-//     $('#eventPhotos').modal('show');
-//     e.preventDefault();
-//   });
-//   // Clearing out the image from the modal on hide/close
-//   $('#eventPhotos').on('hidden.bs.modal', function(e){
-//     $('.event-photos').attr('src', '');
-//   });
-// });
-
-
-var activate_modal = function (click_item, modal_image_class, model_id) {
+$(document).ready(function(){
   // Using gon variables for image modals
-  $(click_item).on('click', function (e){
-    var index = $(this).data('index');
-    var photo = gon.photos[index];
+  $('.activate-modal').on('click', function (e){
 
-    $(modal_image_class).attr({
-      src: photo.image.medium.url,
-      alt: photo.title
-      });
-    $(modal_image_class).data('photoId', photo.id);
-    $(model_id).modal('show');
+    var index = $(this).data('index');
+    $modalImage = $('.modal-image');
+    var modalId = getId();
+    var photo = getId() == 'eventPhotos' ? gon.photos[index] : gon.headshots[index]
+
+    // var setAttr = $('.modal-image').attr;
+
+    if ( modalId == 'eventPhotos') {
+      $modalImage.attr({
+          src: photo.image.medium.url,
+          alt: photo.title
+        });
+      } else if ( modalId == 'hsModal') {
+      $modalImage.attr({
+        src: photo.grey_image.large.url,
+        alt: photo.first_name + ' ' + photo.last_name
+        });
+      }
+
+    $modalImage.data('photoId', photo.id);
+    $('#' + modalId).modal('show');
     e.preventDefault();
   });
   // Clearing out the image from the modal on hide/close
-  $(model_id).on('hidden.bs.modal', function(e){
-    $(modal_image_class).attr('src', '');
-    });
+  $('#' + getId()).on('hidden.bs.modal', function(e){
+    $modalImage.attr('src', '');
+  });
+
+  function getId() {
+    return modalId = $('.modal')[0].id
+  }
 });

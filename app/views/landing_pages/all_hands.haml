@@ -1,25 +1,8 @@
 - title "All Hands"
 #all-hands
+  %section.header-image-section
+    .fake-lax-background-image
   .container
-    %header.mt-5
-      %h1 Q1 All Hands
-    %section.image-slide-section
-      .image-slide-wrapper
-        %ul#slides
-          %li.slide.showing
-            Slide 1
-          %li.slide
-            Slide 2
-          %li.slide
-            Slide 3
-          %li.slide
-            Slide 4
-          %li.slide
-            Slide 5
-        %button.controls#previous{type: "button"}
-          .fa.fa-chevron-left
-        %button.controls#next{type: "button"}
-          .fa.fa-chevron-right
     %section.materials-section
       .brand-btn-primary.xaxis-btn-primary Download Deck
       .brand-btn-primary.xaxis-btn-primary Download Deck 2
@@ -43,9 +26,7 @@
         .photo-grid-sizer.col-12.col-sm-4.col-md-3
         - @eventPhotos.each_with_index do |photo, index|
           .photo-grid-item.col-12.col-sm-4.col-md-3
-            =image_tag photo.image.medium, class: "single-event-photo img-fluid", alt: photo.title, data: { index: index}
+            =image_tag photo.image.medium, class: "single-event-photo img-fluid activate-modal", alt: photo.title, data: { index: index}
     - else
       %p.text-center No photos have been added yet.
-= render partial: "partials/bs_modal", locals: {model_id: "eventPhotos", photo_type: "event-photos"}
-:javascript
-  activate_modal(".single-event-photo", ".event-photos", "#eventPhotos");
+= render partial: "partials/bs_modal", locals: {model_id: "eventPhotos"}

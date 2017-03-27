@@ -1,3 +1,13 @@
+// Header CSS
+.header-image-section
+  max-width: 100%
+  .fake-lax-background-image
+    background: asset-url('all_hands.png')
+    background-size: cover
+    padding-bottom: 35%
+    width: auto
+    color: $white
+
 
 //--------------- Slider CSS
 .image-slide-wrapper
@@ -84,7 +94,7 @@
     border: none
 
 #all-hands
-  section
+  section:not(.header-image-section)
     margin-top: 55px
 
 
@@ -118,8 +128,14 @@
 // Give us a gutter for our grid.
 .photo-grid-item
   margin-bottom: 10px
+  &:hover
+    cursor: pointer
 
 // Quick and dirty loader that is hidden once hbspt-form is ready.
 .survey-section
   background: asset_url('Preloader_5.gif') center center no-repeat
   min-height: 200px
+
+@media (max-width: 400px), (max-device-width: 480px) and (min-device-width: 320px)
+  form.hs-form .form-columns-2 .hs-form-field .hs-input, form.hs-form .form-columns-3 .hs-form-field .hs-input
+      width: auto !important
