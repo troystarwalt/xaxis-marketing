@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class LandingPagesController < ApplicationController
-  http_basic_authenticate_with name: "my", password: "secret", only: :all_hands
+  http_basic_authenticate_with name: "AllHands", password: "OneXaxis", only: :all_hands
   require 'will_paginate/array'
 
   def value_calculator
