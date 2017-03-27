@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$('.all_hands, .brands').ready(function(){
   // Using gon variables for image modals
   $('.activate-modal').on('click', function (e){
 
@@ -33,5 +33,5 @@ $(document).ready(function(){
 
   function getId() {
     return modalId = $('.modal')[0].id
-  }
+  };
 });
