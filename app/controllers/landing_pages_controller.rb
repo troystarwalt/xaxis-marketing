@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 class LandingPagesController < ApplicationController
-  http_basic_authenticate_with name: "AllHands", password: "OneXaxis", only: :all_hands
+  http_basic_authenticate_with name: "AllHands", password: "OneXaxis", only: [:all_hands, :all_hands_north_america]
   require 'will_paginate/array'
-  impressionist actions: [:all_hands, :all_hands_new_york]
+  impressionist actions: [:all_hands, :all_hands_new_york, :all_hands_north_america]
 
   def value_calculator
     @javascript_file_overwrite_name = 'landing_pages/value_calculator.js'
@@ -37,8 +37,20 @@ class LandingPagesController < ApplicationController
   end
 
   # Landing Pages
+  def all_hands_north_america
+   # start here
+   if authorized?
+     @eventPhotos = Photo.all.tagged_with("all-hands")
+     gon.photos = @eventPhotos
+   else
+     redirect_to root_path
+   end
+  end
+
   def all_hands_new_york
    # start here
+   @eventPhotos = Photo.all.tagged_with("all-hands")
+   gon.photos = @eventPhotos
   end
 
   def one_xaxis

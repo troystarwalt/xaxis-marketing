@@ -28,6 +28,9 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Info" do
           para "Welcome to your dashboard."
           span current_admin_user.email
+          para do
+            "Total views of All Hands: #{Impression.all.count}"
+          end
           hr
           para class: "subtitle" do
             "Note: If you see a robot, that means that the file or image you uploaded was bad. Please try again!"
