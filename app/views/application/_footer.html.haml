@@ -12,9 +12,9 @@
                 %li= link_to 'Project Request', "https://goo.gl/forms/OwhsgR0vKni8gdgx1", target: "_blank"
                 %li= link_to 'Feedback', new_contact_path
             .col-sm-3.col-6.footer-column
-              =link_to 'Brand Assets', brand_path(@xaxis), class: 'footer-main-link'
+              =link_to 'Brand Assets', brand_path(@all_brands.find_by_name("Xaxis")), class: 'footer-main-link'
               %ul.footer-list
-                - Brand.all.each do |brand|
+                - @all_brands.all.each do |brand|
                   %li= link_to "#{brand.name} Brand Assets", brand_path(brand)
             .col-sm-3.col-6.footer-column
               %p.footer-main-link Learning

@@ -22,11 +22,12 @@
   .container-fluid
     %h2.text-center.mb-4 Event Photos
     - if @eventPhotos.exists?
-      .photo-grid.bs-fake-row
-        .photo-grid-sizer.col-12.col-sm-4.col-md-3
-        - @eventPhotos.each_with_index do |photo, index|
-          .photo-grid-item.col-12.col-sm-4.col-md-3
-            =image_tag photo.image.medium, class: "single-event-photo img-fluid activate-modal", alt: photo.title, data: { index: index}
+      - cache @eventPhotos do
+        .photo-grid.bs-fake-row
+          .photo-grid-sizer.col-12.col-sm-4.col-md-3
+          - @eventPhotos.each_with_index do |photo, index|
+            .photo-grid-item.col-12.col-sm-4.col-md-3
+              =image_tag photo.image.medium, class: "single-event-photo img-fluid activate-modal", alt: photo.title, data: { index: index}
+        = render partial: "partials/bs_modal", locals: {model_id: "eventPhotos"}
     - else
       %p.text-center No photos have been added yet.
-= render partial: "partials/bs_modal", locals: {model_id: "eventPhotos"}
