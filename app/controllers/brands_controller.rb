@@ -6,7 +6,7 @@ class BrandsController < InheritedResources::Base
 
   def index
     # Not using index for anything at this time.
-    @brands = Brand.all
+    # @brands = Brand.all
     brand = Brand.find_by!(:name => 'Xaxis')
     redirect_to brand_path(brand.slug)
   end
@@ -15,7 +15,6 @@ class BrandsController < InheritedResources::Base
     @brand = Brand.friendly.find(params[:id])  #Get Brand from params
     brand_for_content = @brand.slug.gsub('-','').to_sym   #if brand has a -, then remove it
     @content = helpers.content_for_brands[brand_for_content.to_sym]  # Pull in text content for each brand
-    @brands = Brand.all # Get all brands for sub-nav
     @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority  # Get headshots and sort them by priority
     gon.headshots = @headshots  # Make headshots accessible in gon gem
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
