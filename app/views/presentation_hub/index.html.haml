@@ -63,4 +63,4 @@
               =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
   %section.bottom-section
     %h2 Need additional brand assets?
-    =link_to "See All Brand Assets", brand_path(@xaxis), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"
+    =link_to "See All Brand Assets", brand_path(@brands.find_by_name("Xaxis")), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"

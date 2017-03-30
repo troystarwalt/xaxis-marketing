@@ -54,5 +54,6 @@ class CaseStudiesController < ApplicationController
     @case_studies = case_studies.paginate(page: params[:page])
     @platforms = Platform.all
     render 'index'
+
   end
 end

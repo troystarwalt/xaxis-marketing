@@ -10,15 +10,8 @@ class ApplicationController < ActionController::Base
               ActiveRecord::RecordNotFound,
               with: :catch_not_found
 
-  def set_our_brands(slug)
-    Brand.find_by!(slug: slug)
-  end
-
   def get_our_brands
-    @xaxis = set_our_brands('xaxis')
-    @light_reaction = set_our_brands('light-reaction')
-    @plista = set_our_brands('plista')
-    @triad = set_our_brands('triad')
+    @brands = Brand.all
   end
 
   def catch_not_found
