@@ -36,6 +36,8 @@ gem 'select2-rails'
 gem 'newrelic_rpm'
 gem 'responsive_active_admin'
 gem 'impressionist'
+gem 'scout_apm'
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
