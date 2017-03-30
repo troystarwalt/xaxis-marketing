@@ -457,6 +457,7 @@ GEM
       bundler
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
+    scout_apm (2.1.22)
     select2-rails (4.0.3)
       thor (~> 0.14)
     sendgrid-ruby (4.0.8)
@@ -546,6 +547,7 @@ DEPENDENCIES
   rubocop (~> 0.45.0)
   rubyzip
   sassc-rails!
+  scout_apm
   select2-rails
   sendgrid-ruby
   simple_form
