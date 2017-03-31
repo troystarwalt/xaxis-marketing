@@ -4,7 +4,7 @@
     .container
       %h1 Global Presentation Resource Center
       .row
-        - @brands.each do |brand|
+        - @brands_hub.each do |brand|
           .col-lg-3.col-md-6
             .card{:class => "#{brand.slug}-card"}
               %h2{:class => ("text-uppercase" unless brand.slug === "plista")  }= brand.name

@@ -8,10 +8,11 @@
     #collapse-this-navbar.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto.mt-2.mt-md-0
         %li.nav-item.dropdown
-          =link_to "Brand Assets", brand_path(@brands.find_by_name("Xaxis")), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
+          =link_to "Brand Assets", brand_path("xaxis"), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
           .dropdown-menu
             - @brands.each do |brand|
-              =link_to brand.name, brand_path(brand), class: "dropdown-item"
+              - cache brand do
+                =link_to brand.name, brand_path(brand), class: "dropdown-item"
         %li.nav-item.dropdown
           =link_to "Learning", expert_interview_hub_url, class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
           .dropdown-menu
