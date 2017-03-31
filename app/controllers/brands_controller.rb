@@ -18,7 +18,8 @@ class BrandsController < InheritedResources::Base
     @headshots = @brand.headshots.ordered_by_priority
     gon.headshots = @headshots  # Make headshots accessible in gon gem
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
-    @brand_accessories = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
+    @brand_accessories = @brand.brand_accessories
+    brand_accessories_zip = @brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
 
     # Take the assets and zip them up for the user.
@@ -26,7 +27,7 @@ class BrandsController < InheritedResources::Base
       format.html
       format.zip do
         stringio = Zip::OutputStream.write_buffer do |zos|
-          @brand_accessories.each do |stuff|
+          brand_accessories_zip.each do |stuff|
             path = stuff.file_identifier
             zos.put_next_entry(path)
             zos.write stuff.file.read
