@@ -13,7 +13,7 @@
             %li.error-item
               =link_to "Home", root_path, class: "error-link"
             %li.error-item
-              =link_to "Brand Assets",brand_path(@xaxis), class: "error-link"
+              =link_to "Brand Assets",brand_path(@brands.find_by_name("Xaxis")), class: "error-link"
             %li.error-item
               =link_to "Presentation Hub", presentation_hub_url, class: "error-link"
       .col-sm-6

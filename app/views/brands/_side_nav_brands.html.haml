@@ -18,7 +18,7 @@
     %ul.nav.flex-column#brand-template-links
       %li.nav-item
         .text-uppercase Brand templates
-      -if @brand.slug != "triad"
+      -if brand.slug != "triad"
         %li.nav-item
           =link_to "Powerpoint Template", "#assets-ppt", class: "side-nav-link smooth-scroll", id: "brand-ppt-link"
         %li.nav-item

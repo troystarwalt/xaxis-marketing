@@ -15,10 +15,10 @@ class BrandsController < InheritedResources::Base
     @brand = Brand.friendly.find(params[:id])  #Get Brand from params
     brand_for_content = @brand.slug.gsub('-','').to_sym   #if brand has a -, then remove it
     @content = helpers.content_for_brands[brand_for_content.to_sym]  # Pull in text content for each brand
-    @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority  # Get headshots and sort them by priority
+    @headshots = @brand.headshots.ordered_by_priority
     gon.headshots = @headshots  # Make headshots accessible in gon gem
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
-    @group = BrandAccessory.where(category: ['guidelines', 'logo', 'palette'], brand_id: @brand.id)  # Pull together brand assets to prepare for zip
+    @brand_accessories = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
 
     # Take the assets and zip them up for the user.
@@ -26,7 +26,7 @@ class BrandsController < InheritedResources::Base
       format.html
       format.zip do
         stringio = Zip::OutputStream.write_buffer do |zos|
-          @group.each do |stuff|
+          @brand_accessories.each do |stuff|
             path = stuff.file_identifier
             zos.put_next_entry(path)
             zos.write stuff.file.read

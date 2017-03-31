@@ -1,77 +1,77 @@
 .col-md-8.offset-md-1.col-sm-12
   .brand-assets-container
     .section#assets-welcome
-      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
-      = @content[:welcome].html_safe
+      = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
+      = content[:welcome].html_safe
       .row
         .col-1
-          = link_to @content[:social][:facebook], class: "social-icon-link" do
+          = link_to content[:social][:facebook], class: "social-icon-link" do
             %i.fa.fa-facebook-square.fa-2x
         .col-1
-          = link_to @content[:social][:linkedin], class: "social-icon-link" do
+          = link_to content[:social][:linkedin], class: "social-icon-link" do
             %i.fa.fa-linkedin-square.fa-2x
         .col-1
-          = link_to @content[:social][:twitter], class: "social-icon-link" do
+          = link_to content[:social][:twitter], class: "social-icon-link" do
             %i.fa.fa-twitter-square.fa-2x
         .col-1
-          - if !@content[:social][:instagram].blank?
-            = link_to @content[:social][:instagram], class: "social-icon-link" do
+          - if !content[:social][:instagram].blank?
+            = link_to content[:social][:instagram], class: "social-icon-link" do
               %i.fa.fa-instagram.fa-2x
-      - if @brand.brand_accessories.has_category("guidelines").present?
-        = link_to "download brand guidelines", @brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      - if brand_accessories.has_category("guidelines").present?
+        = link_to "download brand guidelines", brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
       %h1 Brand Assets
       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format, and brand guidelines in one file, then click the below button to download them.
-      - if @group.present?
+      - if brand_accessories.present?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
     %hr
-    - if @content[:boilerplate].present?
+    - if content[:boilerplate].present?
       .section#assets-boilerplate
         %h3.text-uppercase Boilerplate
-        = @content[:boilerplate].html_safe
+        = content[:boilerplate].html_safe
       %hr
     .section#assets-logo
       %h3.text-uppercase Logos
-      = @content[:logo].html_safe
-      = image_tag "brand-logos/#{@brand.slug}_logo.png", class: "img-fluid brand-assets-logo d-block"
-      - if @brand.brand_accessories.has_category("logo").present?
-        = link_to "download logos", @brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      = content[:logo].html_safe
+      = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-logo d-block"
+      - if brand_accessories.has_category("logo").present?
+        = link_to "download logos", brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-color-palette
-      = render partial: "brands/palettes/#{@brand.slug}-p"
+      = render partial: "brands/palettes/#{brand.slug}-p"
     %hr
     .section#assets-fonts
       %h3.text-uppercase fonts
-      = @content[:font].html_safe
-      .row{class: "font-top #{@brand.slug}-top" }
+      = content[:font].html_safe
+      .row{class: "font-top #{brand.slug}-top" }
         .col-sm-3
-          %p.font-name= get_font_name(@brand.slug, "a")
+          %p.font-name= get_font_name(brand.slug, "a")
           %p.font-italic.font-use For Powerpoint and Word Use
         .col-sm-9
           %p.list-of-chars= raw get_chars
       %br
-      .row{class: "#{@brand.slug}-bottom" }
+      .row{class: "#{brand.slug}-bottom" }
         .col-sm-3
-          %p.font-name= get_font_name(@brand.slug, "b")
+          %p.font-name= get_font_name(brand.slug, "b")
           %p.font-italic.font-use
-            - if @brand.slug === "plista"
+            - if brand.slug === "plista"
               For web use
             - else
               For web and print use
         .col-sm-9
           %p.list-of-chars= raw get_chars
-      - if @brand.slug === "plista"
+      - if brand.slug === "plista"
         %br
-        .row{class: "#{@brand.slug}-extra-bottom" }
+        .row{class: "#{brand.slug}-extra-bottom" }
           .col-sm-3
-            %p.font-name= get_font_name(@brand.slug, "q")
+            %p.font-name= get_font_name(brand.slug, "q")
             %p.font-italic.font-use For print use
           .col-sm-9
             %p.list-of-chars= raw get_chars
     %hr
     .section#assets-images
       %h3.text-uppercase images
-      = @content[:images].html_safe
+      = content[:images].html_safe
       = link_to "view image bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "brand-btn-primary xaxis-btn-primary"
       - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
         %p.notice-text
@@ -80,38 +80,38 @@
             = link_to @image_bank.remote_download do
               download the zip file here.
     -# Hiding this section for Triad as we do not have these files yet.
-    - if @brand.slug != "triad"
+    - if brand.slug != "triad"
       %hr
       .section#assets-ppt
-        %h1 #{@brand.name} Templates
+        %h1 #{brand.name} Templates
         %h3.text-uppercase powerpoint template
-        = @content[:ppt].html_safe
-        =image_tag "brand-template-image/#{@brand.slug}-tp.png", class: "img-fluid"
-        - if @brand.brand_accessories.has_category("ppt_template").present?
-          = link_to "download template", @brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        = content[:ppt].html_safe
+        =image_tag "brand-template-image/#{brand.slug}-tp.png", class: "img-fluid"
+        - if brand_accessories.has_category("ppt_template").present?
+          = link_to "download template", brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
       %hr
       .section#assets-word
         %h3.text-uppercase word template
-        = @content[:word].html_safe
-        - if @brand.brand_accessories.has_category("word_template").present?
-          = link_to "download template", @brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        = content[:word].html_safe
+        - if brand_accessories.has_category("word_template").present?
+          = link_to "download template", brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
-      = @content[:capa].html_safe
-      - if @brand.brand_accessories.has_category("capability").present?
-        -if @brand.slug == "plista"
-          - @brand.brand_accessories.has_category("capability").each do |plista|
+      = content[:capa].html_safe
+      - if brand_accessories.has_category("capability").present?
+        -if brand.slug == "plista"
+          - brand_accessories.has_category("capability").each do |plista|
             = link_to plista.name.truncate(15), plista.file_url, class: "brand-btn-primary xaxis-btn-primary double-horizontal-btn"
         -else
-          = link_to "download deck", @brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+          = link_to "download deck", brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-kit
-      %h1 #{@brand.name} PR
+      %h1 #{brand.name} PR
       %h3.text-uppercase pr kit
       %p
         The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact,
-        - if @brand.slug != "triad"
+        - if brand.slug != "triad"
           Jennifer Lucas, Director, Global Brand Communications at
           %a{href: "mailto:jennfier.lucas@xaxis.com"}
             jennifer.lucas@xaxis.com.
@@ -127,7 +127,7 @@
     .section#assets-headshots
       %h3.text-uppercase executive bio & headshots
       - unless @headshots.blank?
-        = render partial: "headshots", brand: @brand
+        = render partial: "headshots", brand: brand
       - if @headshots.blank?
         %h4 No headshots available at this time.
 .col-md-1.col-sm-12.btt-container
