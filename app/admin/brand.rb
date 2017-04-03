@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 ActiveAdmin.register Brand do
+  skip_before_action :get_our_brands
+  
   permit_params :name
 
   config.filters = false
