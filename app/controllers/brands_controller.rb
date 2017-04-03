@@ -12,14 +12,14 @@ class BrandsController < InheritedResources::Base
   end
 
   def show
-    @brand = Brand.friendly.find(params[:id])  #Get Brand from params
+    brand_collection = Brand.includes(:headshots, :brand_accessories)
+    @brand = brand_collection.friendly.find(params[:id]) #Get Brand from params
     brand_for_content = @brand.slug.gsub('-','').to_sym   #if brand has a -, then remove it
     @content = helpers.content_for_brands[brand_for_content.to_sym]  # Pull in text content for each brand
-    @headshots = @brand.headshots.ordered_by_priority
-    gon.headshots = @headshots  # Make headshots accessible in gon gem
+    headshots = @brand.headshots.ordered_by_priority
+    gon.headshots = headshots  # Make headshots accessible in gon gem
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
-    @brand_accessories = @brand.brand_accessories
-    brand_accessories_zip = @brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
+    brand_accessories_zip = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
 
     # Take the assets and zip them up for the user.

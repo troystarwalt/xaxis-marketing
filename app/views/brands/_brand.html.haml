@@ -17,12 +17,12 @@
           - if !content[:social][:instagram].blank?
             = link_to content[:social][:instagram], class: "social-icon-link" do
               %i.fa.fa-instagram.fa-2x
-      - if brand_accessories.has_category("guidelines").present?
-        = link_to "download brand guidelines", brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      - if brand.brand_accessories.has_category("guidelines").present?
+        = link_to "download brand guidelines", brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
       %h1 Brand Assets
       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format, and brand guidelines in one file, then click the below button to download them.
-      - if brand_accessories.present?
+      - if brand.brand_accessories.present?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
     %hr
     - if content[:boilerplate].present?
@@ -34,8 +34,8 @@
       %h3.text-uppercase Logos
       = content[:logo].html_safe
       = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-logo d-block"
-      - if brand_accessories.has_category("logo").present?
-        = link_to "download logos", brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      - if brand.brand_accessories.has_category("logo").present?
+        = link_to "download logos", brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-color-palette
       = render partial: "brands/palettes/#{brand.slug}-p"
@@ -87,24 +87,24 @@
         %h3.text-uppercase powerpoint template
         = content[:ppt].html_safe
         =image_tag "brand-template-image/#{brand.slug}-tp.png", class: "img-fluid"
-        - if brand_accessories.has_category("ppt_template").present?
-          = link_to "download template", brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        - if brand.brand_accessories.has_category("ppt_template").present?
+          = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
       %hr
       .section#assets-word
         %h3.text-uppercase word template
         = content[:word].html_safe
-        - if brand_accessories.has_category("word_template").present?
-          = link_to "download template", brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        - if brand.brand_accessories.has_category("word_template").present?
+          = link_to "download template", brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-capability
       %h3.text-uppercase global capability deck
       = content[:capa].html_safe
-      - if brand_accessories.has_category("capability").present?
+      - if brand.brand_accessories.has_category("capability").present?
         -if brand.slug == "plista"
-          - brand_accessories.has_category("capability").each do |plista|
+          - brand.brand_accessories.has_category("capability").each do |plista|
             = link_to plista.name.truncate(15), plista.file_url, class: "brand-btn-primary xaxis-btn-primary double-horizontal-btn"
         -else
-          = link_to "download deck", brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+          = link_to "download deck", brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     %hr
     .section#assets-kit
       %h1 #{brand.name} PR
@@ -126,9 +126,9 @@
     %hr
     .section#assets-headshots
       %h3.text-uppercase executive bio & headshots
-      - unless @headshots.blank?
-        = render partial: "headshots", brand: brand
-      - if @headshots.blank?
+      - unless brand.headshots.blank?
+        = render partial: "headshots", locals: {brand: brand}
+      - if brand.headshots.blank?
         %h4 No headshots available at this time.
 .col-md-1.col-sm-12.btt-container
   =link_to '#top-brands', id: "btw-arrow-link" do
