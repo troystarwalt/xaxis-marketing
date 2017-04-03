@@ -13,7 +13,7 @@ class BrandsController < InheritedResources::Base
 
   def show
     brand_collection = Brand.includes(:headshots, :brand_accessories)
-    @brand = brand_collection.friendly.find(params[:id]) #Get Brand from params
+    @brand = brand_collection.friendly.find(params[:id]).includes(:headshots, :brand_accessories)  #Get Brand from params
     brand_for_content = @brand.slug.gsub('-','').to_sym   #if brand has a -, then remove it
     @content = helpers.content_for_brands[brand_for_content.to_sym]  # Pull in text content for each brand
     headshots = @brand.headshots.ordered_by_priority

@@ -3,6 +3,7 @@
     .section#assets-welcome
       = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
       = content[:welcome].html_safe
+      %p= assets[0].name
       .row
         .col-1
           = link_to content[:social][:facebook], class: "social-icon-link" do
