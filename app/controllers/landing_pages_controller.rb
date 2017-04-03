@@ -19,9 +19,10 @@ class LandingPagesController < ApplicationController
   end
 
   def one_oh_one_series
-    if OneOhOne.any?
-      @one_oh_ones = OneOhOne.page(params[:page]).order('created_at ASC')
-    end
+    redirect_to "http://xaxis.hs-sites.com/101-series"
+    # if OneOhOne.any?
+    #   @one_oh_ones = OneOhOne.page(params[:page]).order('created_at ASC')
+    # end
   end
 
   def group_m_signature
