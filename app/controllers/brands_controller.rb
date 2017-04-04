@@ -5,19 +5,16 @@ class BrandsController < InheritedResources::Base
 
 
   def index
-    # Not using index for anything at this time.
-    # @brands = Brand.all
     brand = Brand.find_by!(:name => 'Xaxis')
     redirect_to brand_path(brand.slug)
   end
 
   def show
     brand_collection = Brand.includes(:headshots, :brand_accessories)
-    @brand = brand_collection.friendly.find(params[:id]).includes(:headshots, :brand_accessories)  #Get Brand from params
+    @brand = brand_collection.friendly.find(params[:id]) #Get Brand from params
     brand_for_content = @brand.slug.gsub('-','').to_sym   #if brand has a -, then remove it
     @content = helpers.content_for_brands[brand_for_content.to_sym]  # Pull in text content for each brand
-    headshots = @brand.headshots.ordered_by_priority
-    gon.headshots = headshots  # Make headshots accessible in gon gem
+    gon.headshots = @brand.headshots.ordered_by_priority
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
     brand_accessories_zip = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
