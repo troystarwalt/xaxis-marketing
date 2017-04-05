@@ -1,20 +1,23 @@
 // Side menu highlighting
 $('#brands').ready( function () {
-  var sideMenu = $('#side-nav'),
-      sideMenuHeight = sideMenu.outerHeight()-200,
-      menuItems = sideMenu.find("a"),
-      scrollItems = menuItems.map(function () {
+  var sideMenu = $('#side-nav'),                   // Capture the nav
+      sideMenuHeight = sideMenu.outerHeight()-170, // Get the height of the sideMenu
+      menuItems = sideMenu.find("a"),              // Grab each anchor in the sideMenu
+      scrollItems = menuItems.map(function () {    // Go through the anchors and return the href value.
         var item = $($(this).attr("href"));
-        if (item.length) { return item;}
+        if (item.length) {
+          console.log(item);
+          return item;
+        }           // If there is a length (a value), then return it.
       });
   $(window).scroll(function(){
-    var fromTop = $(this).scrollTop()+sideMenuHeight;
-    var cur = scrollItems.map(function(){
+    var fromTop = $(this).scrollTop()+sideMenuHeight;  // Find out how far we are from the top
+    var cur = scrollItems.map(function(){              // If window is scrolled to a specfici href, then return it.
       if ($(this).offset().top<fromTop)
       return this;
     });
     cur = cur[cur.length-1];
-    var id = cur && cur.length ? cur[0].id: "";
+    var id = cur && cur.length ? cur[0].id: "";        // Get the ID of the target DIV from the ScrollItem
     menuItems.parent().removeClass('active-side-link').end().filter("[href='#"+id+"']").parent().addClass("active-side-link");
   });
 });
