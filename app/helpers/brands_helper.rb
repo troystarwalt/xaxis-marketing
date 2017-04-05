@@ -212,10 +212,12 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       }
     },
     onexaxis: {
-      welcome: "<p>Set the stage of “why” we need One Xaxis … <br />
+      welcome: "<p class='font-italic'>One Xaxis is an internal cultural initiative that should not be used on any external communications.</p>
+                <p>Set the stage of “why” we need One Xaxis … <br />
                 In a simpler, less multi-tasking world, people actually enjoyed interacting with brands. Now every time they power up they’re hit with seemingly endless, mostly irrelevant messaging. Noise, noise and more noise. Especially ironic as consumers become more and more focused and selective about the content they want to receive.</p>
                 <p>We’re committed to keeping and enhancing that focus. We’re all about the right time, the right place, the right people. Tech, scalability and talent. So we can bring brand messages to consumers at the perfect moment of impact. A moment that turns a marketing message into real content that people actually invite in and, in turn, providing our clients with measurable results.</p>
-                <p>To win in the marketplace, we act as one. We are some of the smartest people in the industry, in areas as varied as mobile, performance, retail media, native, and many more. We have the tools and systems in place that make collaboration possible around the world. And we leverage our collective intelligence and experience to continue to innovate in outcome-based media.</p>"
+                <p>To win in the marketplace, we act as one. We are some of the smartest people in the industry, in areas as varied as mobile, performance, retail media, native, and many more. We have the tools and systems in place that make collaboration possible around the world. And we leverage our collective intelligence and experience to continue to innovate in outcome-based media.</p>",
+      logo: "<p>The One Xaxis logo is an internal facing identity; it should NOT replace the Xaxis logo or appear in any client facing communication at all. It should only be used in employee swag, internal events, etc. Please contact marketing@xaxis.com if you have questions about the usage of the One Xaxis logo.</p>",
     }
     }
   end

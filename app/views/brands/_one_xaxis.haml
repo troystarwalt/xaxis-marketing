@@ -1,10 +1,9 @@
 .col-md-8.offset-md-1.col-sm-12
   .brand-assets-container
     .section#assets-welcome
-      = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
+      = image_tag "brand-logos/#{brand.slug}_logo_h.png", class: "img-fluid brand-assets-top-logo"
       = content[:welcome].html_safe
-      -# - if brand.brand_accessories.has_category("ppt_template").any?
-      = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("ppt_template").any?
     %hr
     .section#assets-facts
       %h3.text-uppercase #{brand.name} Fast Facts
@@ -16,93 +15,52 @@
       #assets-boilerplate
         #selected-boilerplate
           =render partial: "facts", locals: {selected: @selected, other_content: @other_content}
-
+        = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("facts").any?
+    %hr
+    .section#assets-logo
+      %h3.text-uppercase #{brand.name} Logos
+      = content[:logo].html_safe
+      .row
+        .col-md-4
+          %p.p-medium Main One Xaxis Logo:
+        .col-md-8
+          = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-logo-v d-block"
+      .row.mt-5
+        .col-md-4
+          %p.p-medium Horizontal One Xaxis Logo:
+        .col-md-8
+          = image_tag "brand-logos/#{brand.slug}_logo_h", class: "img-fluid brand-logo-h d-block"
+      = link_to "download logos", brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("logo").any?
+    %hr
+    .section#assets-video
+      %h3.text-uppercase #{brand.name} Lobby Video
+      = image_tag "one-xaxis_header.png", class: "img-fluid d-block"
+      = link_to "download videos", brand.brand_accessories.has_category("video").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("video").any?
+    %hr
+    .section#assets-header
+      %h3.text-uppercase Newsletter headers
+      %p
+        If your department needs customzied newsletter headers, please put in a
+        %a{href: "https://goo.gl/forms/OwhsgR0vKni8gdgx1", target: "_blank"}
+          creative request.
+      = image_tag "one-xaxis_header.png", class: "img-fluid d-block"
+      = link_to "download headers", brand.brand_accessories.has_category("header").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("header").any?
+    %hr
+    .section#assets-rollup
+      %h3.text-uppercase Rollup Banner
+      %p Please customize the banner into the specs you were given by your vendor if needed.
+      = image_tag "one-xaxis_header.png", class: "img-fluid d-block"
+      = link_to "download rollups", brand.brand_accessories.has_category("rollup").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("rollup").any?
+    %hr
+    .section#assets-sticker
+      %h3.text-uppercase Stickers
+      %p The stickers come in 2 colors — light and dark. Please contact your local vendor for specs.
+      .row
+        .col-sm-6
+          = image_tag "sticker_d.png", class: "img-fluid"
+        .col-sm-6
+          = image_tag "sticker_l.png", class: "img-fluid"
+      = link_to "download stickers", brand.brand_accessories.has_category("sticker").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("sticker").any?
 .col-md-1.col-sm-12.btt-container
   =link_to '#top-brands', id: "btw-arrow-link" do
     =image_tag "btt.svg", class: "btt-arrow"
--# - @brands.each do |brand|
--#   - if brand.name != "One Xaxis"
--#     %p= @other_content[remove_dash_make_symbol(brand.slug).to_sym][:boilerplate].html_safe
--#     .section#assets-download-section
--#       %h1 Brand Assets
--#       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format, and brand guidelines in one file, then click the below button to download them.
--#       - if brand.brand_accessories.any?
--#         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
--#     %hr
--#     - if !content[:boilerplate].empty?
--#       .section#assets-boilerplate
--#         %h3.text-uppercase Boilerplate
--#         = content[:boilerplate].html_safe
--#       %hr
--#     .section#assets-logo
--#       %h3.text-uppercase Logos
--#       = content[:logo].html_safe
--#       = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-logo d-block"
--#       - if brand.brand_accessories.has_category("logo").any?
--#         = link_to "download logos", brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
--#     %hr
--#     .section#assets-images
--#       %h3.text-uppercase images
--#       = content[:images].html_safe
--#       = link_to "view image bank", "https://xaxismarketing.app.box.com/s/xd6426vxup4szd6gidw3y2ib1dpqtzc3", class: "brand-btn-primary xaxis-btn-primary"
--#       - if @image_bank.present? && !@image_bank.nil? && @image_bank.remote_download?
--#         %p.notice-text
--#           %i
--#             If you can't access box, then you can
--#             = link_to @image_bank.remote_download do
--#               download the zip file here.
--#     -# Hiding this section for Triad as we do not have these files yet.
--#     - if brand.slug != "triad"
--#       %hr
--#       .section#assets-ppt
--#         %h1 #{brand.name} Templates
--#         %h3.text-uppercase powerpoint template
--#         = content[:ppt].html_safe
--#         =image_tag "brand-template-image/#{brand.slug}-tp.png", class: "img-fluid"
--#         - if brand.brand_accessories.has_category("ppt_template").any?
--#           = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
--#       %hr
--#       .section#assets-word
--#         %h3.text-uppercase word template
--#         = content[:word].html_safe
--#         - if brand.brand_accessories.has_category("word_template").any?
--#           = link_to "download template", brand.brand_accessories.has_category("word_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
--#     %hr
--#     .section#assets-capability
--#       %h3.text-uppercase global capability deck
--#       = content[:capa].html_safe
--#       - if brand.brand_accessories.has_category("capability").any?
--#         -if brand.slug == "plista"
--#           - brand.brand_accessories.has_category("capability").each do |plista|
--#             = link_to plista.name.truncate(15), plista.file_url, class: "brand-btn-primary xaxis-btn-primary double-horizontal-btn"
--#         -else
--#           = link_to "download deck", brand.brand_accessories.has_category("capability").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
--#     %hr
--#     .section#assets-kit
--#       %h1 #{brand.name} PR
--#       %h3.text-uppercase pr kit
--#       %p
--#         The PR Kit includes all PR related materials for press releases and speaking opportunities. For PR related inquiries and more detailed PR materials, please contact,
--#         - if brand.slug != "triad"
--#           Jennifer Lucas, Director, Global Brand Communications at
--#           %a{href: "mailto:jennfier.lucas@xaxis.com"}
--#             jennifer.lucas@xaxis.com.
--#         - else
--#           Misty Brown, Global SVP, Marketing Communications at
--#           %a{href: "mailto:mbrown@triadretail.com"}
--#             mbrown@triadretail.com.
--#       - if @pr_kit.present? && !@pr_kit.nil?
--#         = link_to "download PR kit", @pr_kit.file_url, class: "brand-btn-primary xaxis-btn-primary"
--#       - else
--#         %i No PR Kit available for download at this time.
--#     %hr
--#     .section#assets-headshots
--#       %h3.text-uppercase executive bio & headshots
--#       - if brand.headshots.any?
--#         = render partial: "headshots", locals: {brand: brand}
--#       - else
--#         %h4 No headshots available at this time.
--# .col-md-1.col-sm-12.btt-container
--#   =link_to '#top-brands', id: "btw-arrow-link" do
--#     =image_tag "btt.svg", class: "btt-arrow"
--# = render partial: "brands/palettes/color_change"

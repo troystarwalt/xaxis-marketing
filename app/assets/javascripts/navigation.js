@@ -1,12 +1,12 @@
 // Side menu highlighting
 $('#brands').ready( function () {
   var sideMenu = $('#side-nav'),
-  sideMenuHeight = sideMenu.outerHeight()-200,
-  menuItems = sideMenu.find("a"),
-  scrollItems = menuItems.map(function () {
-    var item = $($(this).attr("href"));
-    if (item.length) { return item;}
-  });
+      sideMenuHeight = sideMenu.outerHeight()-200,
+      menuItems = sideMenu.find("a"),
+      scrollItems = menuItems.map(function () {
+        var item = $($(this).attr("href"));
+        if (item.length) { return item;}
+      });
   $(window).scroll(function(){
     var fromTop = $(this).scrollTop()+sideMenuHeight;
     var cur = scrollItems.map(function(){
