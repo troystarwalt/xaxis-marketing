@@ -1,5 +1,5 @@
 .col-md-8.offset-md-1.col-sm-12
-  .brand-assets-container
+  .brand-assets-container{data: {page: "onexaxis"}}
     .section#assets-welcome
       = image_tag "brand-logos/#{brand.slug}_logo_h.png", class: "img-fluid brand-assets-top-logo"
       = content[:welcome].html_safe
@@ -8,10 +8,10 @@
     .section#assets-facts
       %h3.text-uppercase #{brand.name} Fast Facts
       -# Render each brand's boiler plate.
-      .nav#sub-nav
+      %nav.nav#facts-nav
         - @brands.each do |brand|
           - if brand.name != "One Xaxis"
-            = link_to brand.name, fetch_facts_path(brand_id: brand.id), remote: true, class: "nav-item sub-links", id: "switch-boiler-plate"
+            = link_to brand.name, fetch_facts_path(brand_id: brand.id), remote: true, class: "facts-link"
       #assets-boilerplate
         #selected-boilerplate
           =render partial: "facts", locals: {selected: @selected, other_content: @other_content}
@@ -34,7 +34,6 @@
     %hr
     .section#assets-video
       %h3.text-uppercase #{brand.name} Lobby Video
-      = image_tag "one-xaxis_header.png", class: "img-fluid d-block"
       = link_to "download videos", brand.brand_accessories.has_category("video").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("video").any?
     %hr
     .section#assets-header

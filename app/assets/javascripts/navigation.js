@@ -6,7 +6,6 @@ $('#brands').ready( function () {
       scrollItems = menuItems.map(function () {    // Go through the anchors and return the href value.
         var item = $($(this).attr("href"));
         if (item.length) {
-          console.log(item);
           return item;
         }           // If there is a length (a value), then return it.
       });

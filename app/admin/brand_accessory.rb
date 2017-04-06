@@ -16,6 +16,10 @@ ActiveAdmin.register BrandAccessory do
   # fonts
   # color palettes
   # fast facts
+  # header
+  # Rollup
+  # sticker
+  # video
 
   # There is validation that only allows specific file extensions. Check the FileUploader for specifics.
 
