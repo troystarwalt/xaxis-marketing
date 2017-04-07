@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407164439) do
+ActiveRecord::Schema.define(version: 20170407201807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -262,6 +262,7 @@ ActiveRecord::Schema.define(version: 20170407164439) do
     t.string   "remote_image_preview_url"
     t.integer  "brand_id"
     t.string   "vimeo_video_id"
+    t.string   "box_download_link"
     t.index ["brand_id"], name: "index_videos_on_brand_id", using: :btree
     t.index ["platform_id"], name: "index_videos_on_platform_id", using: :btree
   end

@@ -40,6 +40,7 @@
           %p= video.name
           .embed-responsive.embed-responsive-16by9
             %iframe.embed-responsive-item{src: "https://player.vimeo.com/video/#{video.vimeo_video_id}"}
+          = link_to "download video", video.box_download_link, class: "brand-btn-primary xaxis-btn-primary", download: '', target: "_blank" if video.box_download_link.present?
     %hr
     .section#assets-header
       %h3.text-uppercase Newsletter headers

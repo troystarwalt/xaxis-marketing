@@ -212,7 +212,7 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       }
     },
     onexaxis: {
-      welcome: "<p class='font-italic'>One Xaxis is an internal cultural initiative that should not be used on any external communications.</p>
+      welcome: "<p class='p-medium-italic'>One Xaxis is an internal cultural initiative that should not be used on any external communications.</p>
                 <p>Set the stage of “why” we need One Xaxis … <br />
                 In a simpler, less multi-tasking world, people actually enjoyed interacting with brands. Now every time they power up they’re hit with seemingly endless, mostly irrelevant messaging. Noise, noise and more noise. Especially ironic as consumers become more and more focused and selective about the content they want to receive.</p>
                 <p>We’re committed to keeping and enhancing that focus. We’re all about the right time, the right place, the right people. Tech, scalability and talent. So we can bring brand messages to consumers at the perfect moment of impact. A moment that turns a marketing message into real content that people actually invite in and, in turn, providing our clients with measurable results.</p>
