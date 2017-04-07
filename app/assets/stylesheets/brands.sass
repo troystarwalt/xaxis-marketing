@@ -3,15 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sub-nav-section
-  margin: 60px 0
+  margin-top: 60px
+  margin-bottom: 60px
 
 #sub-nav
+  justify-content: space-between
   .sub-links
     @include Gotham-Book
     color: $light-grey
     padding-left: 5px
     padding-right: 5px
-    margin: 0 4%
     text-decoration: none
 
   .active-sub-link, .sub-links:hover, .sub-links:active
@@ -29,6 +30,8 @@
     width: 30px
 
 .brand-assets-container
+  .section:first-of-type
+    padding-top: 0
   .section
     padding-top: 66px
     padding-bottom: 66px
