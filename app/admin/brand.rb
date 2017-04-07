@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 ActiveAdmin.register Brand do
-  skip_before_action :get_our_brands
+
+
+  # skip_before_action :get_our_brands
+
 
   permit_params :name
 
@@ -20,10 +23,7 @@ ActiveAdmin.register Brand do
     column :updated_at
     actions
   end
-  #
-  # index as: :grid do |brand|
-  #   link_to brand.name, admin_brand_path(brand)
-  # end
+
 
 
   controller do
