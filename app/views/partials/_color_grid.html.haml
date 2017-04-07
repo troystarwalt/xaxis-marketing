@@ -23,13 +23,13 @@
         .row
           .col-sm-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span Utilities
+              %span Update
         .row
           .col-sm-12
-            %h1.sm-item-header.color-grid-text Xaxis Value Calculator
-            %p.color-grid-text The 2016 Xaxis Programmatic Media Value Calculator is designed to help you calculate Xaxis’ tangible values to your customers.
+            %h1.sm-item-header.color-grid-text One Xaxis
+            %p.color-grid-text Introducing the One Xaxis assets page for all of your internal branding needs. We have logos, stickers and even videos.
       .link-container
-        =link_to "try it", value_calculator_path, class: "text-uppercase animation-btn-secondary color-grid-btn-white"
+        =link_to "make it", brand_path("one-xaxis"), class: "text-uppercase animation-btn-secondary color-grid-btn-white"
     .flex-sm-item.center-bottom#grid-box-4
       .grid-content-container
         .row
@@ -44,7 +44,7 @@
                 %li
                   =link_to series.name.truncate_words(5), one_oh_one_series_url(anchor: series.name.parameterize.truncate(20)), class: "learning-update_link wave"
                   - if series.is_recent
-                    %span.new_alert NEW
+                    %span.new-alert NEW
               %li
                 =link_to @last_expert.title.truncate_words(10), expert_interview_hub_url(anchor: @last_expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
           .col-md-4
@@ -55,6 +55,7 @@
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span Templates
       %h1.lg-item-header.color-grid-text The Presentation Hub
+      %p.color-grid-text.new-alert-red 2017 Decks Available!
       %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
       .link-container
         =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"

@@ -32,6 +32,8 @@ $('.all_hands, .brands, .all_hands_north_america, .all_hands_new_york').ready(fu
   });
 
   function getId() {
-    return modalId = $('.modal')[0].id
+    if ($('.modal')[0]) {
+      return modalId = $('.modal')[0].id
+      }
   };
 });
