@@ -12,7 +12,7 @@ class BrandsController < InheritedResources::Base
 
   def show
     if params[:id] == "one-xaxis"
-      @brand = Brand.includes(:brand_accessories).friendly.find(params[:id])
+      @brand = Brand.includes(:brand_accessories, :videos).friendly.find(params[:id])
       get_content()
     else
       @brand = Brand.includes(:headshots, :brand_accessories).friendly.find(params[:id])

@@ -1,5 +1,5 @@
 - if @selected.nil?
-  %p.dry
+  %p.mb-4
     = @other_content[:xaxis][:boilerplate].html_safe
   %table.table.table-bordered.table-sm.table-responsive.table-of-facts
     %thead
@@ -34,7 +34,7 @@
         %td.table-number
           2100
 - else
-  %p.dry
+  %p.mb-4
     = @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:boilerplate].html_safe
     %table.table.table-bordered.table-sm.table-responsive.table-of-facts
       %thead

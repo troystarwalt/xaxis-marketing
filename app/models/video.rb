@@ -16,7 +16,6 @@ class Video < ApplicationRecord
     image_preview = self.image_preview
     if image_preview.blank?
       if accessible?(video_link)
-        open(self.direct_link)
         preview = VideoThumb::get(self.direct_link)
         self.image_preview = open(preview)
       else
@@ -34,9 +33,7 @@ class Video < ApplicationRecord
     try_match = /vimeo.com\/?(.+([^\D\s]))/
     matched_id = try_match.match(url_of_video)
     if matched_id[1].present?
-      self.description = matched_id[1]
-    else
-      puts "nope"
+      self.vimeo_video_id = matched_id[1]
     end
   end
 
@@ -50,6 +47,3 @@ class Video < ApplicationRecord
       end
     end
 end
-
-
-# self.description = "dinosaur"
