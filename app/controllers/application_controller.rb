@@ -12,13 +12,12 @@ class ApplicationController < ActionController::Base
     render 'errors/four_oh_four', status: 404
   end
 
+  def get_our_brands
+    @brands = Brand.all
+  end
+
   protected # Only inherited controllers can call authorized?
     def authorized?
       request.authorization.present? && (request.authorization.split(' ', 2).first == 'Basic')
-    end
-
-  private
-    def get_our_brands
-      @brands = Brand.all
     end
 end

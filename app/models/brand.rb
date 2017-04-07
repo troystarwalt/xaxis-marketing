@@ -2,6 +2,7 @@
 class Brand < ApplicationRecord
   has_many :brand_accessories, :dependent => :destroy
   has_many :headshots, :dependent => :destroy
+  has_many :videos, :dependent => :destroy
   accepts_nested_attributes_for :brand_accessories, :allow_destroy => true
   # accepts_nested_attributes_for :headshots, :allow_destroy => true
   extend FriendlyId

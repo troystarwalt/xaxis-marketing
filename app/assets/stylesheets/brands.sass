@@ -3,21 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sub-nav-section
-  margin: 60px 0
+  margin-top: 60px
+  margin-bottom: 60px
 
 #sub-nav
+  justify-content: space-between
   .sub-links
     @include Gotham-Book
     color: $light-grey
     padding-left: 5px
     padding-right: 5px
-    margin: 0 4%
     text-decoration: none
 
   .active-sub-link, .sub-links:hover, .sub-links:active
     color: $xaxis-blue-color
     border-bottom: 2px solid $xaxis-blue-color
     text-decoration: none
+
+
+
 
 // Back to Top
 .btt-container
@@ -26,9 +30,11 @@
     width: 30px
 
 .brand-assets-container
+  .section:first-of-type
+    padding-top: 0
   .section
-    padding-top: 30px
-    padding-bottom: 40px
+    padding-top: 66px
+    padding-bottom: 66px
     .brand-btn-primary
       margin-top: 30px
     h1, h3
@@ -45,7 +51,8 @@
 
 .brand-assets-top-logo
   margin-bottom: 40px
-  width: 150px
+  width: 300px
+  height: auto
 
 .brand-assets-logo
   margin: 40px 0
@@ -151,6 +158,59 @@ img ~ .brand-btn-primary, img ~ .brand-btn-secondary
   position: absolute
   right: 2%
   bottom: 5%
+
+#assets-facts
+  h3
+    margin-bottom: 60px
+
+#assets-boilerplate
+  min-height: 400px
+
+#facts-nav
+  .facts-link
+    @include Gotham-Book
+    color: $light-grey
+    padding-left: 5px
+    padding-right: 5px
+    margin-right: 4%
+    text-decoration: none
+    border-bottom: 2px solid transparent
+
+  .active-facts-link, .facts-link:hover, .facts-link:active
+    color: $xaxis-blue-color
+    border-bottom: 2px solid $xaxis-blue-color
+    text-decoration: none
+
+.table-of-facts
+  margin-bottom: 1.45rem
+  th, td
+    padding-left: 8px
+    padding-right: 8px
+  thead
+    background-color: rgba(0, 175, 239, .1)
+    th
+      color: #336699
+      @include Gotham-Medium
+      font-size: .867em
+  tbody
+    th
+      @include Gotham-Medium
+      vertical-align: middle
+      font-size: .867em
+    td
+      @include Gotham-Book
+      font-size: .867em
+      vertical-align: middle
+    .table-number
+      font-size: 1em
+
+#assets-video
+  section:nth-of-type(2)
+    margin-top: 40px
+
+.set-width-3
+  width: 300px
+  height: auto
 
 /***********  Media Q's  ***********/
 

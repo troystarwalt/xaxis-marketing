@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'all-hands-new-york' => 'landing_pages#all_hands_new_york'
 
-  get 'one-xaxis' => 'landing_pages#one_xaxis'
+  get "/fetch_facts" => 'brands#facts', as: 'fetch_facts'
 
 
   # Hiding case studies for now.

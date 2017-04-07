@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 ActiveAdmin.register Video do
-  menu false
-  permit_params :name, :description, :direct_link, :embed_link, :image_preview, :platform_id
+  menu parent: "Global Accessories"
+  permit_params :name, :description, :direct_link, :embed_link, :image_preview, :platform_id, :brand_id
 
   # before_save do |video|
   #   get_link = VideoThumb::get(video.direct_link)
@@ -31,11 +31,11 @@ ActiveAdmin.register Video do
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Create a New video" do
-      f.input :platform, as: :radio
+      f.input :brand, as: :radio  # Can add platforms back like this.
       f.input :name, placeholder: "Video Name"
-      f.input :description
-      f.input :direct_link
-      f.input :embed_link
+      f.input :description, hint: "Not required, but can be useful for you."
+      f.input :direct_link, placeholder: "https://vimeo.com/149429953"
+      f.input :image_preview, as: :file, hint: "Upload image here. If you don't have one, we'll try and grab an image from Vimeo."
     end
     f.actions
   end

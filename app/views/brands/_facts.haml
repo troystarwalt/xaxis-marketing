@@ -1,0 +1,63 @@
+- if @selected.nil?
+  %p.mb-4
+    = @other_content[:xaxis][:boilerplate].html_safe
+  %table.table.table-bordered.table-sm.table-responsive.table-of-facts
+    %thead
+      %tr
+        %th
+        %th
+          Headquarter
+        %th
+          Leadership
+        %th
+          Markets
+        %th
+          Offices
+        %th
+          Employees
+        %th
+          Clients
+    %tbody
+      %tr
+        %th
+          Xaxis
+        %td
+          New York (Global), London, Sinagapore, Miami (Latin America)
+        %td
+          Nicolas Bidon, Global President
+        %td.table-number
+          47
+        %td.table-number
+          63
+        %td.table-number
+          2108
+        %td.table-number
+          2100
+- else
+  %p.mb-4
+    = @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:boilerplate].html_safe
+    %table.table.table-bordered.table-sm.table-responsive.table-of-facts
+      %thead
+        %tr
+          %th
+          %th
+            Headquarter
+          %th
+            Leadership
+          %th
+            Markets
+          %th
+            Offices
+          %th
+            Employees
+          %th
+            Clients
+      %tbody
+        %tr
+          %th= @selected.name
+          %td= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:headquarter].html_safe
+          %td= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:leader].html_safe
+          %td.table-number= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:market].html_safe
+          %td.table-number= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:office].html_safe
+          %td.table-number= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:employee].html_safe
+          %td.table-number= @other_content[remove_dash_make_symbol(@selected.slug).to_sym][:stats][:client].html_safe

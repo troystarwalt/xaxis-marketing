@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 ActiveAdmin.register Brand do
+
+  menu priority: 2
   skip_before_action :get_our_brands
+
 
   permit_params :name
 
@@ -20,10 +23,7 @@ ActiveAdmin.register Brand do
     column :updated_at
     actions
   end
-  #
-  # index as: :grid do |brand|
-  #   link_to brand.name, admin_brand_path(brand)
-  # end
+
 
 
   controller do
@@ -55,15 +55,15 @@ ActiveAdmin.register Brand do
       end
     end
 
-    panel 'Font' do
-      table_for brand.brand_accessories.where(category: 'font') do
-        column :name
-        column :file, &:file_url
-        column :link do |f|
-          link_to('View', admin_brand_accessory_path(f.id))
-        end
-      end
-    end
+    # panel 'Font' do
+    #   table_for brand.brand_accessories.where(category: 'font') do
+    #     column :name
+    #     column :file, &:file_url
+    #     column :link do |f|
+    #       link_to('View', admin_brand_accessory_path(f.id))
+    #     end
+    #   end
+    # end
 
     panel 'Guidelines' do
       table_for brand.brand_accessories.where(category: 'guidelines') do
@@ -94,8 +94,17 @@ ActiveAdmin.register Brand do
         end
       end
     end
-    panel 'Palette' do
-      table_for brand.brand_accessories.where(category: 'palette') do
+    # panel 'Palette' do
+    #   table_for brand.brand_accessories.where(category: 'palette') do
+    #     column :name
+    #     column :file, &:file_url
+    #     column :link do |f|
+    #       link_to('View', admin_brand_accessory_path(f.id))
+    #     end
+    #   end
+    # end
+    panel 'Facts' do
+      table_for brand.brand_accessories.where(category: 'facts') do
         column :name
         column :file, &:file_url
         column :link do |f|
@@ -103,12 +112,39 @@ ActiveAdmin.register Brand do
         end
       end
     end
-    panel 'Facts' do
-      table_for brand.brand_accessories.where(category: 'facts') do
+    panel 'Headers' do
+      table_for brand.brand_accessories.where(category: 'header') do
         column :name
         column :file, &:file_url
         column :link do |f|
           link_to('View', admin_brand_accessory_path(f.id))
+        end
+      end
+    end
+    panel 'Stickers' do
+      table_for brand.brand_accessories.where(category: 'sticker') do
+        column :name
+        column :file, &:file_url
+        column :link do |f|
+          link_to('View', admin_brand_accessory_path(f.id))
+        end
+      end
+    end
+    panel 'Rollups' do
+      table_for brand.brand_accessories.where(category: 'rollup') do
+        column :name
+        column :file, &:file_url
+        column :link do |f|
+          link_to('View', admin_brand_accessory_path(f.id))
+        end
+      end
+    end
+    panel 'Videos' do
+      table_for brand.videos.each do
+        column :name
+        column :image_preview
+        column :link do |f|
+          link_to('View', admin_video_path(f.id))
         end
       end
     end
