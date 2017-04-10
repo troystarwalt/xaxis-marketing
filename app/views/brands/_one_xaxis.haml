@@ -30,7 +30,7 @@
           .col-md-4.d-flex
             %p.p-medium.vertically-center-flex Horizontal One Xaxis Logo:
           .col-md-8
-            = image_tag "brand-logos/#{brand.slug}_logo_h", class: "img-fluid brand-logo-h d-block"
+            = image_tag "brand-logos/#{brand.slug}_logo_h.png", class: "img-fluid brand-logo-h d-block"
       = link_to "download logos", brand.brand_accessories.has_category("logo").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("logo").any?
     %hr
     .section#assets-video
