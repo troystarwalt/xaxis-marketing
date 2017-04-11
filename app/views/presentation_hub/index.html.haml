@@ -18,7 +18,7 @@
                 - elsif ass.category == "ppt_template"
                   =link_to "Powerpoint", ass.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
                 - else
-              %hr-faker
+              .hr-faker
               %p{class: "#{brand.slug}-card-lower-text"} Global Capabilities Deck
               - brand.brand_accessories.where(category: "capability").each do |ass|
                 - if brand.slug == "plista"
