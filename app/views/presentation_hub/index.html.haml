@@ -6,28 +6,26 @@
       .row
         - @brands_hub.each do |brand|
           .col-lg-3.col-md-6
-            .card{:class => "#{brand.slug}-card"}
-              %h2{:class => ("text-uppercase" unless brand.slug === "plista")  }= brand.name
+            .card{class: "#{brand.slug}-card"}
+              %h2{class: ("text-uppercase" unless brand.slug === "plista")}= brand.name
               %p Templates
-              - if brand.brand_accessories.has_category("ppt_template").present?
-                =link_to "powerpoint", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
-              -else
+              - if brand.slug == "triad"
                 %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
-              - if brand.brand_accessories.has_category("word_template").present?
-                =link_to "word doc", brand.brand_accessories.has_category("word_template").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
-              -else
                 %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+              - brand.brand_accessories.each do |ass|
+                - if ass.category == "word_template"
+                  =link_to "Word Doc", ass.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                - elsif ass.category == "ppt_template"
+                  =link_to "Powerpoint", ass.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+                - else
               .hr-faker
-              %p{class: "#{brand.slug}-card-lower-text"}
-                Global Capabilities Deck
-              - if brand.brand_accessories.has_category("capability").present?
-                -if brand.slug == "plista"
-                  - brand.brand_accessories.has_category("capability").each do |plista|
-                    =link_to plista.name.truncate(11), plista.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary restrict-plista"
+              %p{class: "#{brand.slug}-card-lower-text"} Global Capabilities Deck
+              - brand.brand_accessories.where(category: "capability").each do |ass|
+                - if brand.slug == "plista"
+                  =link_to ass.name.truncate(11), ass.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary restric-plista"
                 -else
-                  =link_to "download", brand.brand_accessories.has_category("capability").last.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
-              -else
-                %p.card-btn.brand-btn-primary{:class => "#{brand.slug}-btn-primary"} Not available
+                  =link_to "download", ass.file_url, class: "card-btn brand-btn-primary #{brand.slug}-btn-primary"
+
   %section.middle-section
     .container
       .row
@@ -63,4 +61,4 @@
               =link_to "email us", "https://goo.gl/forms/1OiT5qUAX3phIZmu2", target: "_blank", class: "card-btn brand-btn-secondary xaxis-btn-secondary middle-section-button"
   %section.bottom-section
     %h2 Need additional brand assets?
-    =link_to "See All Brand Assets", brand_path(@brands.find_by_name("Xaxis")), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"
+    =link_to "See All Brand Assets", brand_path("Xaxis"), class: "text-uppercase brand-btn-secondary xaxis-btn-secondary"
