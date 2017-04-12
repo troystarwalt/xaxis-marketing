@@ -131,7 +131,7 @@ if Rails.env.development? || Rails.env.test?
   # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
   categories = %w(ppt_template word_template guidelines logo capability facts)
-  headshot_photo = %w(public/seedfiles/female.jpg public/seedfiles/male.jpg)
+  headshot_photo = %w(public/seedfiles/female.jpg public/seedfiles/male.jpg public/seedfiles/hs-seed.jpg)
 
   brands = ['Xaxis', 'plista', 'Light Reaction', 'Triad']
   brands.each do |brand_name|
@@ -161,6 +161,8 @@ if Rails.env.development? || Rails.env.test?
     # end
   # end
 
+  grey = []
+
   10.times do
     Headshot.create!(
     first_name: Faker::Name.first_name,
@@ -168,8 +170,8 @@ if Rails.env.development? || Rails.env.test?
     title: Faker::Name.title,
     brand_id: brand.id,
     priority: Faker::Number.between(1, 20),
-    grey_image: open('public/seedfiles/hs-seed.jpg'),
-    color_image: open('public/seedfiles/hs-seed.jpg'),
+    grey_image: open(headshot_photo.sample),
+    color_image: open(headshot_photo.sample),
     bio: Faker::Lorem.paragraph(10, 10)
     )
     puts "created headshot"
