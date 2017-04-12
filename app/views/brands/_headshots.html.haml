@@ -1,5 +1,5 @@
 .row
-  - brand.headshots.each.with_index do |hs, index|
+  - brand.headshots.ordered_by_priority.each.with_index do |hs, index|
     .col-lg-6
       .headshot-flex-container
         .headshot-container_image
