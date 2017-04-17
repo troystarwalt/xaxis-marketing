@@ -7,15 +7,8 @@
     %hr
     .section#assets-facts
       %h3.text-uppercase #{brand.name} Fast Facts
-      -# Render each brand's boiler plate.
-      %nav.nav#facts-nav
-        - @brands.each do |brand|
-          - if brand.name != "One Xaxis"
-            = link_to brand.name, fetch_facts_path(brand_id: brand.id), remote: true, class: "facts-link"
-      #assets-boilerplate
-        #selected-boilerplate
-          =render partial: "facts", locals: {selected: @selected, other_content: @other_content}
-        = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("facts").any?
+      %p Xaxis GLobal Fast Facts are updated on a quarterly basis. Last updated April 2017.
+      = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("facts").any?
     %hr
     .section#assets-logo
       %h3.text-uppercase #{brand.name} Logos

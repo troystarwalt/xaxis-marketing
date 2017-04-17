@@ -41,13 +41,6 @@ class BrandsController < InheritedResources::Base
     end
   end
 
-  def facts
-    @selected = Brand.find(params[:brand_id])
-    @other_content = helpers.content_for_brands
-    respond_to do |format|
-      format.js
-    end
-  end
   protected
     def get_content
       @other_content = helpers.content_for_brands

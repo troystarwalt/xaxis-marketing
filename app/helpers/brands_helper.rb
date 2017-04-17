@@ -72,7 +72,7 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       facts: "<p>Xaxis Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
       capa: "<p>The Xaxis Global Capabilities deck includes Xaxis’ core capabilities, corporate structure, and an overview of our products and services. It provides clients with a deep understanding of what Xaxis has to offer as well as our overall mission and objectives.</p>",
       stats: {
-        headquarter: "New York (Global), London, Sinagapore, Miami (Latin America)",
+        headquarter: "New York (Global), London, Singapore, Miami (Latin America)",
         leader: "Nicolas Bidon, Global President",
         market: "47",
         office: "63",
@@ -203,7 +203,7 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       facts: "<p>Light Reaction Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
       capa: "<p>The Light Reaction Global Capabilities Deck includes Light Reaction’s mission statement, core capabilities and product offerings.</p>",
       stats: {
-        headquarter: "New York (Global), London, Sinagapore",
+        headquarter: "New York (Global), London, Singapore",
         leader: "",
         market: "32",
         office: "39",
@@ -212,11 +212,9 @@ visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       }
     },
     onexaxis: {
-      welcome: "<p class='p-medium-italic'>One Xaxis is an internal cultural initiative that should not be used on any external communications.</p>
-                <p>Set the stage of “why” we need One Xaxis … <br />
-                In a simpler, less multi-tasking world, people actually enjoyed interacting with brands. Now every time they power up they’re hit with seemingly endless, mostly irrelevant messaging. Noise, noise and more noise. Especially ironic as consumers become more and more focused and selective about the content they want to receive.</p>
-                <p>We’re committed to keeping and enhancing that focus. We’re all about the right time, the right place, the right people. Tech, scalability and talent. So we can bring brand messages to consumers at the perfect moment of impact. A moment that turns a marketing message into real content that people actually invite in and, in turn, providing our clients with measurable results.</p>
-                <p>To win in the marketplace, we act as one. We are some of the smartest people in the industry, in areas as varied as mobile, performance, retail media, native, and many more. We have the tools and systems in place that make collaboration possible around the world. And we leverage our collective intelligence and experience to continue to innovate in outcome-based media.</p>",
+      welcome: "<p class='p-medium-italic'>One Xaxis is a global internal cultural initiative that can't be used on any external communications.</p>
+                <p>Welcome to the One Xaxis resource hub where you can find all the materials you need to bring One Xaxis to life in your region! We hope these assets inspire you to unite Xaxis culture across the globe.</p>
+                <p>Click on the below link to download the One Xaxis overview deck.</p>",
       logo: "<p class='mb-5'>The One Xaxis logo is an internal facing identity; it should NOT replace the Xaxis logo or appear in any client facing communication at all. It should only be used in employee swag, internal events, etc. Please contact marketing@xaxis.com if you have questions about the usage of the One Xaxis logo.</p>",
     }
     }
