@@ -1,7 +1,7 @@
 - title @brand.name
 .container#brands
   .row.sub-nav-section
-    .col-sm-12.col-md-8.offset-md-3
+    .col-sm-12.col-md-9.offset-md-3.col-lg-8.offset-lg-3
       %nav#sub-nav.nav
         - @brands.each do |brand|
           = link_to brand.name, brand_path(brand), class: "nav-item sub-links #{is_at_end_path(brand.slug.to_s)}"
