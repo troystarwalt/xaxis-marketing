@@ -3,12 +3,18 @@
     .section#assets-welcome
       = image_tag "brand-logos/#{brand.slug}_logo_h.png", class: "img-fluid brand-assets-top-logo"
       = content[:welcome].html_safe
-      = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("ppt_template").any?
+      - if brand.brand_accessories.has_category("ppt_template").any?
+        = link_to "download template", brand.brand_accessories.has_category("ppt_template").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      - else
+        %p Coming soon...
     %hr
     .section#assets-facts
       %h3.text-uppercase #{brand.name} Fast Facts
       %p Xaxis GLobal Fast Facts are updated on a quarterly basis. Last updated April 2017.
-      = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary" if brand.brand_accessories.has_category("facts").any?
+      - if brand.brand_accessories.has_category("facts").any?
+        = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+      -else
+        %p Coming Soon...
     %hr
     .section#assets-logo
       %h3.text-uppercase #{brand.name} Logos
