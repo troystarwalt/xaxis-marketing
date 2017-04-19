@@ -62,7 +62,7 @@
       .color-card-bottom
         %h6.color-card-title Dark Green
         %p.color-card-text.color-hex #006443
-        %p.color-card-text rgb (0, 101, 67)
+        %p.color-card-text rgb (0, 100, 67)
         %p.color-card-text CMYK (93, 10, 75, 43)
   .col-md-4
     .color-card
@@ -70,7 +70,7 @@
       .color-card-bottom
         %h6.color-card-title Dark Blue
         %p.color-card-text.color-hex #004F88
-        %p.color-card-text rgb (0, 79, 137)
+        %p.color-card-text rgb (0, 79, 136)
         %p.color-card-text CMYK (94, 54, 5, 27)
 .row.top-margin-md
   .col-md-4
@@ -79,7 +79,7 @@
       .color-card-bottom
         %h6.color-card-title Cool Grey
         %p.color-card-text.color-hex #696B70
-        %p.color-card-text rgb (105, 108, 112)
+        %p.color-card-text rgb (105, 107, 112)
         %p.color-card-text CMYK (8, 5, 7, 16)
   .col-md-4
     .color-card
@@ -87,7 +87,7 @@
       .color-card-bottom
         %h6.color-card-title Cool Grey 2
         %p.color-card-text.color-hex #D2D3D1
-        %p.color-card-text rgb (210, 211, 210)
+        %p.color-card-text rgb (210, 211, 209)
         %p.color-card-text CMYK (8, 5, 7, 16)
 - if @brand.brand_accessories.has_category("palette").present?
   = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
