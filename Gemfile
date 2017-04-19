@@ -10,6 +10,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'font_assets', group: :production
 gem 'haml-rails'
 gem 'haml'
 gem 'fog'

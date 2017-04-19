@@ -281,6 +281,8 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
+    font_assets (0.1.14)
+      rack
     formatador (0.2.5)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -524,6 +526,7 @@ DEPENDENCIES
   faker
   fog
   font-awesome-rails
+  font_assets
   friendly_id (~> 5.1.0)
   gon
   haml
