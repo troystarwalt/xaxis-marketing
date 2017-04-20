@@ -14,5 +14,6 @@ module InternalSite
     # -- all .rb files in that directory are automatically loaded.
     config.exceptions_app = self.routes
     config.middleware.use Rack::Deflater
+    config.font_assets.origin = "*"
   end
 end

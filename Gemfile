@@ -15,6 +15,7 @@ gem 'haml'
 gem 'fog'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate'
+gem 'font_assets'
 gem 'rack-cors', :require => 'rack/cors'
 #   required for latest activeadmin.
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
