@@ -1,8 +1,8 @@
 ## Configure Rack CORS Middleware, so that CloudFront can serve our assets.
 ## See https://github.com/cyu/rack-cors
-
+puts "not defined ----------------------------------------------"
 if defined? Rack::Cors
-  puts "dinosaur"
+  puts "dinosaur-------------------------------------------------------------"
     # Rails.configuration.middleware.insert_before 0, Rack::Cors do
     #     allow do
     #         origins %w[
@@ -32,4 +32,5 @@ if defined? Rack::Cors
           methods: [:get, :options]
       end
     end
+    byebug
 end
