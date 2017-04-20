@@ -2,6 +2,7 @@
 ## See https://github.com/cyu/rack-cors
 
 if defined? Rack::Cors
+  puts "dinosaur"
     # Rails.configuration.middleware.insert_before 0, Rack::Cors do
     #     allow do
     #         origins %w[
