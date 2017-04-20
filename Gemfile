@@ -10,12 +10,12 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'devise'
 gem 'font-awesome-rails'
-gem 'font_assets', group: :production
 gem 'haml-rails'
 gem 'haml'
 gem 'fog'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate'
+gem 'rack-cors', :require => 'rack/cors'
 #   required for latest activeadmin.
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'jbuilder', '~> 2.5'
