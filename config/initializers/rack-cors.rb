@@ -32,5 +32,4 @@ if defined? Rack::Cors
           methods: [:get, :options]
       end
     end
-    byebug
 end
