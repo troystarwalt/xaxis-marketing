@@ -26,7 +26,7 @@ class BrandsController < InheritedResources::Base
     # Take the assets and zip them up for the user.
     respond_to do |format|
       format.html
-      format.zip do
+      format.zip do { send_data create_the_zip_stream_from(brand_accessories_zip)}
         stringio = Zip::OutputStream.write_buffer do |zos|
           brand_accessories_zip.each do |stuff|
             path = stuff.file_identifier
