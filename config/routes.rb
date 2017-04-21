@@ -20,9 +20,6 @@ Rails.application.routes.draw do
 
   get 'all-hands-new-york' => 'landing_pages#all_hands_new_york'
 
-  get "/fetch_facts" => 'brands#facts', as: 'fetch_facts'
-
-
   # Hiding case studies for now.
   # resources :case_studies, path: :'case-studies', only: [:index, :show]
 
