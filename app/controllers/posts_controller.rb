@@ -27,28 +27,11 @@ class PostsController < ApplicationController
   end
 
   def main
-
-    # The commented out lines below is for Platforms. Until we know what are doing with it, I'm
-    # commenting out the code with hope to reuse the content.
-  # There is a SQL query in post.rb that is more effecient...
-    # views = {OneSheeter.name => 'box_onesheeter',
-    #         CaseStudy.name => 'box_casestudy',
-    #         Infographic.name => 'box_infographic',
-    #         Video.name => 'box_video'}
-    # latest_model = collect_latest_resource
-    # four_latest_models = collect_last_four_resources
-    #
-    # @view_this_box = views[latest_model.class.name]  # This is what tells the view to render a specific box.
-    # @most_recent_update = latest_model
-    #
-    # @four_most_recent_updates = four_latest_models
-
     # colored grid post
     @latest_post = Post.last
     gon.latest_post = @latest_post
     # Learning section
-    @last_two_101 = OneOhOne.last_two
-    @last_expert = ExpertInterview.last
+    @last_expert = ExpertInterview.last_three
     # posts for the recent news section
     @posts = Post.includes(:tags).order("created_at DESC").first(5)
     @initial_post = @posts.first
@@ -67,10 +50,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def post_params
-    params.require(:post).permit(:title, :text, :tag_list, :author)
-  end
   # Unused methods as the deal with Platforms.
   # def collect_latest_resource
   #   # Set which models we want to feature.
