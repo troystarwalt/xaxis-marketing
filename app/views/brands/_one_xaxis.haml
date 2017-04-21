@@ -14,7 +14,7 @@
       - if brand.brand_accessories.has_category("facts").any?
         = link_to "download fast facts", brand.brand_accessories.has_category("facts").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
       -else
-        %p Coming Soon...    
+        %p Coming Soon...
     %hr
     .section#assets-logo
       %h3.text-uppercase #{brand.name} Logos
