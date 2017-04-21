@@ -68,7 +68,7 @@
       .color-card-bottom
         %h6.color-card-title Grey
         %p.color-card-text.color-hex #939598
-        %p.color-card-text rgb (0, 175, 239)
+        %p.color-card-text rgb (147, 149, 152)
         %p.color-card-text CMYK (0, 0, 0, 50)
   .col-md-4
     .color-card
@@ -76,7 +76,7 @@
       .color-card-bottom
         %h6.color-card-title Light Grey
         %p.color-card-text.color-hex #C7C8CA
-        %p.color-card-text rgb (0, 175, 239)
+        %p.color-card-text rgb (199, 200, 202)
         %p.color-card-text CMYK (0, 0, 0, 25)
 - if @brand.brand_accessories.has_category("palette").present?
   = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
