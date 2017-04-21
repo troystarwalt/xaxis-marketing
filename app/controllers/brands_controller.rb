@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 class BrandsController < InheritedResources::Base
-  require 'zip'
   actions :index, :show   # This tells InheritedResources to only use index and show.
   helper_method :remove_dash_make_symbol
 
@@ -23,25 +22,16 @@ class BrandsController < InheritedResources::Base
     end
     @content = helpers.content_for_brands[remove_dash_make_symbol(@brand.slug)]  # Pull in text content for each brand
 
+
     # Take the assets and zip them up for the user.
     respond_to do |format|
       format.html
-      format.zip do { send_data create_the_zip_stream_from(brand_accessories_zip)}
-        stringio = Zip::OutputStream.write_buffer do |zos|
-          brand_accessories_zip.each do |stuff|
-            path = stuff.file_identifier
-            zos.put_next_entry(path)
-            zos.write stuff.file.read
-          end
-          puts stringio
-        end
-        stringio.rewind
-        send_data stringio.read
-      end
+      format.zip { send_data ZipContentService.new(brand_accessories_zip).zip_files_please }
     end
   end
 
   protected
+
     def get_content
       @other_content = helpers.content_for_brands
     end
@@ -51,6 +41,8 @@ class BrandsController < InheritedResources::Base
     end
 
   private
+
+
     def brand_params
       params.require(:brand).permit(:name)
     end

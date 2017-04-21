@@ -40,13 +40,11 @@
           .col-md-8
             %h1.lg-item-header.color-grid-text Learning
             %ul.learning-update_list
-              - @last_two_101.each do |series|
+              - @last_expert.each do |expert|
                 %li
-                  =link_to series.name.truncate_words(5), one_oh_one_series_url(anchor: series.name.parameterize.truncate(20)), class: "learning-update_link wave"
-                  - if series.is_recent
+                  =link_to expert.title.truncate_words(10), expert_interview_hub_url(anchor: expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
+                  - if expert.is_recent
                     %span.new-alert NEW
-              %li
-                =link_to @last_expert.title.truncate_words(10), expert_interview_hub_url(anchor: @last_expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
           .col-md-4
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"
