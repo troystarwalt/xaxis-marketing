@@ -132,90 +132,84 @@ module BrandsHelper
 
       <p><strong>plista should always written in lower case letter, without exception.</strong>
         </p>",
-      social: {
-        facebook: "https://www.facebook.com/plista/",
-        linkedin: "https://www.linkedin.com/company/plista-gmbh",
-        twitter: "https://twitter.com/plista",
-      },
-      boilerplate: "<p>plista is a global platform for data-driven native advertising in premium editorial environments.  The Berlin based company successfully brings advertisers and publishers together since 2008 and is one of the pioneers in its segment. As a one-stop shop plista offers direct, single-source access to a broad portfolio of native solutions. With its proprietary real-time Recommendation Technology, plista is able to deliver both content and advertising that matches users’ individual interests – across all channels and devices.</p>
-                    <p>Thousands of advertisers and publishers worldwide trust in the unique tech know-how of plista. The native ad formats stand out through their strong engagement character and enable brands to efficiently target audiences along the entire sales funnel. This way, advertisers can easily pursue branding as well as performance marketing goals.</p>
-                    <p>At the same time, plista empowers publishers to engage their visitors with customized recommendations. This lets publishers get the best out of their website or app and benefit from outstanding content monetization, increased website stickiness and sustainable traffic growth.</p>
-                    <p>plista employs over 200 people worldwide and offers its native solutions on four continents.</p>",
-      logo: "<p>The primary plista logo should be used on a white background. The reversed white logo can be used on colored background.</p>",
-      font: "<p>plista uses the Calibri font for use in the office and in presentations. The font is a component of Microsoft Office for Windows and Apple Macintosh and does not need to be downloaded.</p>
+        social: {
+          facebook: "https://www.facebook.com/plista/",
+          linkedin: "https://www.linkedin.com/company/plista-gmbh",
+          twitter: "https://twitter.com/plista",
+        },
+        boilerplate: "<p>plista is a global platform for data-driven native advertising in premium editorial environments.  The Berlin based company successfully brings advertisers and publishers together since 2008 and is one of the pioneers in its segment. As a one-stop shop plista offers direct, single-source access to a broad portfolio of native solutions. With its proprietary real-time Recommendation Technology, plista is able to deliver both content and advertising that matches users’ individual interests – across all channels and devices.</p>
+        <p>Thousands of advertisers and publishers worldwide trust in the unique tech know-how of plista. The native ad formats stand out through their strong engagement character and enable brands to efficiently target audiences along the entire sales funnel. This way, advertisers can easily pursue branding as well as performance marketing goals.</p>
+        <p>At the same time, plista empowers publishers to engage their visitors with customized recommendations. This lets publishers get the best out of their website or app and benefit from outstanding content monetization, increased website stickiness and sustainable traffic growth.</p>
+        <p>plista employs over 200 people worldwide and offers its native solutions on four continents.</p>",
+        logo: "<p>The primary plista logo should be used on a white background. The reversed white logo can be used on colored background.</p>",
+        font: "<p>plista uses the Calibri font for use in the office and in presentations. The font is a component of Microsoft Office for Windows and Apple Macintosh and does not need to be downloaded.</p>
 
-      <p>The font Myriad Pro is the standard font for plista GmbH print media.</p>
+        <p>The font Myriad Pro is the standard font for plista GmbH print media.</p>
 
-      <p>For web design the Google Web Font Lato was chosen.</p>",
-      images: "<p>The plista images should have a lot of green and natural feel to it. They should be native, authentic and welcoming. The overall tone should be green for nature, and blue for the ocean.</p>
-      <p>The images should have at least three of these qualities:</p>
-      <ul>
-      <li>interesting angles</li>
-      <li>contrast</li>
-      <li>style</li>
-      <li>movement</li>
-      <li>depth</li>
-      <li>audience faces</li>
-      </ul>
-      <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
-      ppt: "<p>The plista Powerpoint template has countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
-      <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
-      word: "<p>Please make sure all external facing material is written in this template.</p>",
-      facts: "<p>plista Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
-      capa: "<p>For plista, there is a Global Capabilities Deck for Advertiser and a Global Capabilities Deck for Publisher. Please make sure you select the suitable one for your use. </p>",
-      stats: {
-        headquarter: "Berlin",
-        leader: "Jana Kusick, Global MD",
-        market: "21",
-        office: "21",
-        employee: "211",
-        client: "1157"
-      }
+        <p>For web design the Google Web Font Lato was chosen.</p>",
+        images: "<p>The plista images should have a lot of green and natural feel to it. They should be native, authentic and welcoming. The overall tone should be green for nature, and blue for the ocean.</p>
+        <p>The images should have at least three of these qualities:</p>
+        <ul>
+        <li>interesting angles</li>
+        <li>contrast</li>
+        <li>style</li>
+        <li>movement</li>
+        <li>depth</li>
+        <li>audience faces</li>
+        </ul>
+        <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
+        ppt: "<p>The plista Powerpoint template has countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
+        <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
+        word: "<p>Please make sure all external facing material is written in this template.</p>",
+        facts: "<p>plista Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
+        capa: "<p>For plista, there is a Global Capabilities Deck for Advertiser and a Global Capabilities Deck for Publisher. Please make sure you select the suitable one for your use. </p>",
+        stats: {
+          headquarter: "Berlin",
+          leader: "Jana Kusick, Global MD",
+          market: "21",
+          office: "21",
+          employee: "211",
+          client: "1157"
+        }
       },
-    lightreaction: {
-      welcome: "<p>Welcome to the Light Reaction brand resource center! Here you can find our brand guidelines, brand assets, brand templates, and PR Kit.</p>
+      lightreaction: {
+        welcome: "<p>Welcome to the Light Reaction brand resource center! Here you can find our brand guidelines, brand assets, brand templates, and PR Kit.</p>
         <p>The Light Reaction Brand Guidelines explain how to use our brand assets accurately to represent our brand. Please refer to these when using our brand assets in your internal and external materials.</p>",
-      social: {
-        facebook: "https://www.facebook.com/LightReaction",
-        linkedin: "https://www.linkedin.com/company/light-reaction",
-        twitter: "https://twitter.com/LightReaction",
-        instagram: "https://instagram.com/LightReaction/"
-      },
-      boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='http://www.lightreaction.com'>www.lightreaction.com</a>.</p>",
-      logo: "<p>Both the primary and horizontal logos are available in three different color treatments, which need to be chosen according to how and where you plan to use the logo.</p>",
-      font: "<p>Typography plays a significant role in Light Reaction’s visual system. Universe LT STD is the primary font family of Light Reaction. It should be used in three different weights: Light, Roman and Bold.</p>
-      <p>For cases where Universe is not available, Arial can be used in Regular and Bold weights.</p>",
-      images: "<p>Choosing the right image to communicate the brand values and message is very important. The Light Reaction images should have heavy use of yellow beam lights, and the overall tone should be warm.</p>
-      <p>The images should have at least three of these qualities:</p>
-      <ul>
-      <li>interesting angles</li>
-      <li>contrast</li>
-      <li>style</li>
-      <li>movement</li>
-      <li>depth</li>
-      <li>audience faces</li>
-      </ul>
-      <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
-      ppt: "<p>The new Light Reaction Template is updated with countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
-      <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
-      word: "<p>Please make sure all external facing material is written in this template.</p>",
-      facts: "<p>Light Reaction Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
-      capa: "<p>The Light Reaction Global Capabilities Deck includes Light Reaction’s mission statement, core capabilities and product offerings.</p>",
-      stats: {
-        headquarter: "New York (Global), London, Singapore",
-        leader: "",
-        market: "32",
-        office: "39",
-        employee: "157",
-        client: "400+"
+        social: {
+          facebook: "https://www.facebook.com/LightReaction",
+          linkedin: "https://www.linkedin.com/company/light-reaction",
+          twitter: "https://twitter.com/LightReaction",
+          instagram: "https://instagram.com/LightReaction/"
+        },
+        boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='http://www.lightreaction.com'>www.lightreaction.com</a>.</p>",
+        logo: "<p>Both the primary and horizontal logos are available in three different color treatments, which need to be chosen according to how and where you plan to use the logo.</p>",
+        font: "<p>Typography plays a significant role in Light Reaction’s visual system. Universe LT STD is the primary font family of Light Reaction. It should be used in three different weights: Light, Roman and Bold.</p>
+        <p>For cases where Universe is not available, Arial can be used in Regular and Bold weights.</p>",
+        images: "<p>Choosing the right image to communicate the brand values and message is very important. The Light Reaction images should have heavy use of yellow beam lights, and the overall tone should be warm.</p>
+        <p>The images should have at least three of these qualities:</p>
+        <ul>
+        <li>interesting angles</li>
+        <li>contrast</li>
+        <li>style</li>
+        <li>movement</li>
+        <li>depth</li>
+        <li>audience faces</li>
+        </ul>
+        <p>Images used in Powerpoint as a background should have an overlay layer of the color #1D3647 at 30% opacity. If you are unsure of how to adjust the layer opacity, just copy and paste the overlay you see on the cover slide in the template!</p>",
+        ppt: "<p>The new Light Reaction Template is updated with countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>
+        <p>Remember, <a href='#{presentation_hub_path}'>always check back to the hub</a> for the latest templates and updates!</p>",
+        word: "<p>Please make sure all external facing material is written in this template.</p>",
+        facts: "<p>Light Reaction Fast Facts is a document that contains boilerplates for all Xaxis portfolio brands and statistics such as, number of employees, number of offices, and revenue. This document is updated on a quarterly basis by the Global Marketing team.</p>",
+        capa: "<p>The Light Reaction Global Capabilities Deck includes Light Reaction’s mission statement, core capabilities and product offerings.</p>",
+        stats: {
+          headquarter: "New York (Global), London, Singapore",
+          leader: "",
+          market: "32",
+          office: "39",
+          employee: "157",
+          client: "400+"
+        }
       }
-    },
-    onexaxis: {
-      welcome: "<p class='p-medium-italic'>One Xaxis is a global internal cultural initiative that can't be used on any external communications.</p>
-                <p>Welcome to the One Xaxis resource hub where you can find all the materials you need to bring One Xaxis to life in your region! We hope these assets inspire you to unite Xaxis culture across the globe.</p>
-                <p>Click on the below link to download the One Xaxis overview deck.</p>",
-      logo: "<p class='mb-5'>The One Xaxis logo is an internal facing identity; it should NOT replace the Xaxis logo or appear in any client facing communication at all. It should only be used in employee swag, internal events, etc. Please contact marketing@xaxis.com if you have questions about the usage of the One Xaxis logo.</p>",
-    }
     }
   end
 end
