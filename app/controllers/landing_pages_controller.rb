@@ -2,7 +2,6 @@
 class LandingPagesController < ApplicationController
   http_basic_authenticate_with name: "AllHands", password: "OneXaxis", only: [:all_hands, :all_hands_north_america]
   require 'will_paginate/array'
-  impressionist actions: [:all_hands, :all_hands_new_york, :all_hands_north_america]
 
   def value_calculator
     @javascript_file_overwrite_name = 'landing_pages/value_calculator.js'
