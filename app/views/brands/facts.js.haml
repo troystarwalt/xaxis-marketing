@@ -1,7 +1,0 @@
-:plain
-  $('#selected-boilerplate').slideUp(200, function () {
-      var selectedBoilerplate = "#{escape_javascript(render partial: 'facts', locals: { brands: @selected, other_content: @other_content})}";
-      var selectedDiv = $('#selected-boilerplate');
-      selectedDiv.html(selectedBoilerplate).slideDown(250);
-    }
-  )
