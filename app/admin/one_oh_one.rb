@@ -2,7 +2,7 @@ ActiveAdmin.register OneOhOne, as: "Series" do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-menu label: "101 Series"
+menu false
 permit_params :name, :pdf_file, :ppt_file, :image_preview, :pdf_file_cache, :ppt_file_cache, :image_preview_cache
 
 form :html => { :multipart => true } do |f|
