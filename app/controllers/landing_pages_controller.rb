@@ -54,10 +54,6 @@ class LandingPagesController < ApplicationController
    gon.photos = @eventPhotos
   end
 
-  def one_xaxis
-   # start here
-  end
-
   def all_hands
     if authorized?
       @eventPhotos = Photo.all.tagged_with("all-hands")
