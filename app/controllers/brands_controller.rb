@@ -10,16 +10,11 @@ class BrandsController < InheritedResources::Base
   end
 
   def show
-    if params[:id] == "one-xaxis"
-      @brand = Brand.includes(:brand_accessories, :videos).friendly.find(params[:id])
-      get_content()
-    else
-      @brand = Brand.includes(:headshots, :brand_accessories).friendly.find(params[:id])
-      gon.headshots = @brand.headshots.ordered_by_priority
-      @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
-      brand_accessories_zip = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
-      @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
-    end
+    @brand = Brand.includes(:headshots, :brand_accessories).friendly.find(params[:id])
+    gon.headshots = @brand.headshots.ordered_by_priority
+    @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
+    brand_accessories_zip = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
+    @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
     @content = helpers.content_for_brands[remove_dash_make_symbol(@brand.slug)]  # Pull in text content for each brand
 
 
@@ -32,18 +27,18 @@ class BrandsController < InheritedResources::Base
 
   protected
 
-    def get_content
-      @other_content = helpers.content_for_brands
-    end
+  def get_content
+    @other_content = helpers.content_for_brands
+  end
 
-    def remove_dash_make_symbol(s)
-      s.gsub('-', '').to_sym
-    end
+  def remove_dash_make_symbol(s)
+    s.gsub('-', '').to_sym
+  end
 
   private
 
 
-    def brand_params
-      params.require(:brand).permit(:name)
-    end
+  def brand_params
+    params.require(:brand).permit(:name)
+  end
 end

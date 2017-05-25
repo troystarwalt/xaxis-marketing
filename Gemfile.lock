@@ -320,8 +320,6 @@ GEM
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.8.1)
-    impressionist (1.5.2)
-      nokogiri (~> 1.6)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.6.4)
@@ -551,7 +549,6 @@ DEPENDENCIES
   haml
   haml-rails
   heroku-deflater
-  impressionist
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

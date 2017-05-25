@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'all-hands' => "landing_pages#all_hands"
 
   get 'presentation_hub', to: 'presentation_hub#index', as: :presentation_hub
-  get "case-studies/search" => "case_studies#search", as: :case_studies_search
+  # get "case-studies/search" => "case_studies#search", as: :case_studies_search
 
   get "/pages/:page" => "landing_pages#show"
 
@@ -25,11 +25,6 @@ Rails.application.routes.draw do
 
   resources :brands, path: :brand_assets, only: [:index, :show]
 
-  # Hiding platform routes for now.
-
-  # resources :platforms, only: [:show] do
-  #   resources :case_studies, path: :'case-studies', only: [:index]
-  # end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :posts, only: [:show, :index, :main]

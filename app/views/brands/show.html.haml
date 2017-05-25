@@ -6,9 +6,5 @@
         - @brands.each do |brand|
           = link_to brand.name, brand_path(brand), class: "nav-item sub-links #{is_at_end_path(brand.slug.to_s)}"
   .row
-    - if @brand.slug == "one-xaxis"
-      = render partial: "side_nav_one_xaxis", locals: {brand: @brand}
-      = render partial: "one_xaxis", locals: {brand: @brand, content: @content}
-    - else
-      = render partial: "side_nav_brands", locals: {brand: @brand}
-      = render partial: "brand", locals: {brand: @brand, content: @content}
+    = render partial: "side_nav_brands", locals: {brand: @brand}
+    = render partial: "brand", locals: {brand: @brand, content: @content}
