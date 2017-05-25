@@ -50,34 +50,6 @@ class PostsController < ApplicationController
   end
 
   private
-  # Unused methods as the deal with Platforms.
-  # def collect_latest_resource
-  #   # Set which models we want to feature.
-  #   models = [OneSheeter, CaseStudy, Infographic, Video]
-  #   # Create an empty array to store the models that have records.
-  #   models_with_data = []
-  #   # Map over each of the models and put those that have data into the clean array.
-  #   models.map { |q| if q.any? then models_with_data << q end }
-  #   # Take those models_with_data and order them all by created_at.
-  #   latest_models = models_with_data.map { |x| x.order('created_at').last  }
-  #   sorted_models = latest_models.sort_by{ |x| x.created_at }
-  #   sorted_models.last
-  # end
-
-  # def collect_last_four_resources
-  #   # Set which models we want to feature.
-  #   models = [OneSheeter, CaseStudy, Infographic, Video]
-  #   # Create an empty array to store the models that have records.
-  #   models_with_data = []
-  #   # Map over each of the models and put those that have data into the clean array.
-  #   models.map { |q| if q.any? then models_with_data << q end }
-  #   # Take those models_with_data and order them all by created_at.
-  #   latest_models = models_with_data.map { |x| x.order('created_at').last  }
-  #   sorted_models = latest_models.sort_by{ |x| x.created_at }
-  #   sorted_models.last(4)
-  # end
-
-  private
 
   def sort_button
     Post.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"

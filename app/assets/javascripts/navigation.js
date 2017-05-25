@@ -22,16 +22,16 @@ $('#brands').ready( function () {
 });
 
 // Only run this function if we are on platforms. This helps with the side menu nav.
-$('.platforms').ready(function() {
-  if (window.location.href.indexOf("platforms/") > -1) {
-    $(window).scroll(function(){
-      $("#side-nav").css("top",Math.max(375,1175-$(this).scrollTop()));
-    });
-  }
-  if (document.referrer.includes("platforms") && window.scrollY === 0) {
-    goToScroll('learn-more');
-  }
-});
+// $('.platforms').ready(function() {
+//   if (window.location.href.indexOf("platforms/") > -1) {
+//     $(window).scroll(function(){
+//       $("#side-nav").css("top",Math.max(375,1175-$(this).scrollTop()));
+//     });
+//   }
+//   if (document.referrer.includes("platforms") && window.scrollY === 0) {
+//     goToScroll('learn-more');
+//   }
+// });
 
 $('#brands').ready(function() {
   // Only running this if on platforms.

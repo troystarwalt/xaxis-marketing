@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 ActiveAdmin.register CaseStudy do
 menu false
-  permit_params :title, :pdf_attachment, :platform_id, :author, :release_date, :short_description, :industry_list, region_list: []
+  permit_params :title, :pdf_attachment, :author, :release_date, :short_description, :industry_list, region_list: []
 
   form :html => { :multipart => true } do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Create a New One Sheeter" do
-      f.input :platform, as: :radio
       f.input :title, placeholder: "Name of Case Study"
       f.input :release_date, as: :datepicker,
                               input_html: {
@@ -65,7 +64,6 @@ menu false
       row :pdf_attachment do |f|
         link_to f.pdf_attachment_identifier, f.pdf_attachment_url, target: '_blank'
       end
-      row :platform
       row :industries do |f|
         f.industry_list
       end
@@ -87,7 +85,6 @@ menu false
     column :pdf_attachment do |f|
       f.pdf_attachment_identifier
     end
-    column :platform
     column :industries do |f|
       f.industry_list
     end
@@ -97,11 +94,6 @@ menu false
     column :created_at
     column :updated_at
     actions
-  end
-  controller do
-    def scoped_collection
-      super.includes :taggings, :platform # prevents N+1 queries to your database
-    end
   end
 
 end
