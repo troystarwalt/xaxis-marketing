@@ -39,6 +39,11 @@ gem 'newrelic_rpm'
 gem 'responsive_active_admin'
 gem 'impressionist'
 gem 'scout_apm'
+gem 'stackprof'
+gem 'rack-mini-profiler'
+gem 'flamegraph'
+gem 'memory_profiler'
+
 
 
 source 'https://rails-assets.org' do
