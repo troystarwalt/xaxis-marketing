@@ -3,10 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :get_our_brands
   rescue_from ActionController::RoutingError,
-              ActionController::UnknownController,
-              ::AbstractController::ActionNotFound,
-              ActiveRecord::RecordNotFound,
-              with: :catch_not_found
+    ActionController::UnknownController,
+    ::AbstractController::ActionNotFound,
+    ActiveRecord::RecordNotFound,
+    with: :catch_not_found
+
+  before_action do
+    if current_admin_user
+      Rack::MiniProfiler.authorize_request
+    end
+  end
 
   def catch_not_found
     render 'errors/four_oh_four', status: 404
@@ -17,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   protected # Only inherited controllers can call authorized?
-    def authorized?
-      request.authorization.present? && (request.authorization.split(' ', 2).first == 'Basic')
-    end
+  def authorized?
+    request.authorization.present? && (request.authorization.split(' ', 2).first == 'Basic')
+  end
 end
