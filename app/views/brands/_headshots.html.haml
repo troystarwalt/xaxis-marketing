@@ -1,55 +1,58 @@
-.row
-  - brand.headshots.ordered_by_priority.each.with_index do |hs, index|
-    .col-lg-6
-      .headshot-flex-container
-        .headshot-container_image
-          - if !hs.grey_image.file.nil?
-            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
-          - elsif !hs.color_image.file.nil?
-            = image_tag(hs.color_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
-          - else
-            = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
-          .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
-            =link_to "View Image", "javascript:void(0)", class: "headshot-overlay-link headshot-launch-modal  activate-modal", data: { index: index}
-        .headshot-container_info
-          %p.font-weight-bold.headshot-name= hs.first_name
-          %p.font-weight-bold.headshot-name= hs.last_name
-          %p.headshot-title= hs.title
-          =link_to "javascript:void(0)", type: "text/html", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
-            %i.fa.fa-file.headshot-download-icons
-            View Bio
-          %p.headshot-color-type
-            %i.fa.fa-download.headshot-download-icons
-            Color:
-            - if hs.color_image.file.nil?
-              N/A
+%hr
+.section#assets-headshots
+  %h3.text-uppercase executive bio & headshots
+  .row
+    - brand.headshots.ordered_by_priority.each.with_index do |hs, index|
+      .col-lg-6
+        .headshot-flex-container
+          .headshot-container_image
+            - if !hs.grey_image.file.nil?
+              = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+            - elsif !hs.color_image.file.nil?
+              = image_tag(hs.color_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
             - else
-              =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-              |
-              =link_to "Small", hs.color_image_url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-          %p.headshot-color-type
-            %i.fa.fa-download.headshot-download-icons
-            BW:
-            - if hs.grey_image.file.nil?
-              N/A
-            - else
-              =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
-              |
-              =link_to "Small", hs.grey_image.url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
--# Modal for Headshots
-= render partial: "partials/bs_modal", locals: {model_id: "hsModal"}
--# Modal for bios
-.modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
-  .modal-dialog(role="document")
-    .modal-content
-      .modal-header
-        %button(type="button" class="close hs-bio-close" data-dismiss="modal" aria-label="Close")
-          %span.fa.fa-times-circle(aria-hidden="true")
-      .modal-body
-        .row.headshot-header-info
-          .col-sm-3
-            %img.hs-bio-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoid: ''}}
-          .col-sm-9.title-and-name
-            %h2.hs-name
-            %p.hs-title
-        %p.hs-bio
+              = image_tag(hs.grey_image.url(:thumb), class: "img-fluid headshot-image activate-modal", id: "#{hs.full_name.parameterize}", alt: hs.full_name, data: { index: index})
+            .headshot-image-overlay.card-img-overlay.text-uppercase.text-xs-center
+              =link_to "View Image", "javascript:void(0)", class: "headshot-overlay-link headshot-launch-modal  activate-modal", data: { index: index}
+          .headshot-container_info
+            %p.font-weight-bold.headshot-name= hs.first_name
+            %p.font-weight-bold.headshot-name= hs.last_name
+            %p.headshot-title= hs.title
+            =link_to "javascript:void(0)", type: "text/html", role: "button", id: "#{hs.first_name}_bio", class: "headshot-download-links headshot-bio", data: { index: index } do
+              %i.fa.fa-file.headshot-download-icons
+              View Bio
+            %p.headshot-color-type
+              %i.fa.fa-download.headshot-download-icons
+              Color:
+              - if hs.color_image.file.nil?
+                N/A
+              - else
+                =link_to "Large", hs.color_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+                |
+                =link_to "Small", hs.color_image_url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+            %p.headshot-color-type
+              %i.fa.fa-download.headshot-download-icons
+              BW:
+              - if hs.grey_image.file.nil?
+                N/A
+              - else
+                =link_to "Large", hs.grey_image_url, type: "image/jpeg", download: hs.full_name, class: "headshot-download-links"
+                |
+                =link_to "Small", hs.grey_image.url(:small), type: "image/jpeg", download: hs.full_name, class: "headshot-download-links only-links"
+  -# Modal for Headshots
+  = render partial: "partials/bs_modal", locals: {model_id: "hsModal"}
+  -# Modal for bios
+  .modal.fade(id="hsBioModal" tabindex="-1" role="dialog")
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          %button(type="button" class="close hs-bio-close" data-dismiss="modal" aria-label="Close")
+            %span.fa.fa-times-circle(aria-hidden="true")
+        .modal-body
+          .row.headshot-header-info
+            .col-sm-3
+              %img.hs-bio-img.img-fluid{src: "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E", alt: 'Placeholder', data: {photoid: ''}}
+            .col-sm-9.title-and-name
+              %h2.hs-name
+              %p.hs-title
+          %p.hs-bio

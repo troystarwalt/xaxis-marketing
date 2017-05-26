@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 8f7f58016802cd5a7f663fbc80b90b884252f939
+  revision: a5df0d7231022dc8a3684033f141e7fc0bd640a1
   specs:
     activeadmin (1.0.0)
       arbre (>= 1.1.1)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/activeadmin/inherited_resources.git
-  revision: 051b3c9e7b22e3d45c090c1c91f3569eafc13d41
+  revision: 398a3bf731d101d26064467ead6a101d825cc02c
   specs:
     inherited_resources (1.7.2)
       actionpack (>= 3.2, < 5.2.x)
@@ -95,6 +95,8 @@ GEM
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
     bindex (0.5.0)
+    bootsnap (0.2.15)
+      msgpack (~> 1.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
@@ -111,9 +113,9 @@ GEM
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
     coderay (1.1.1)
-    coffee-rails (4.2.1)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -198,7 +200,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (1.44.2)
+    fog-core (1.44.3)
       builder
       excon (~> 0.49)
       formatador (~> 0.2)
@@ -359,9 +361,10 @@ GEM
     mini_magick (4.7.0)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
+    msgpack (1.1.0)
     multi_json (1.12.1)
     mustermann (1.0.0)
-    newrelic_rpm (4.1.0.333)
+    newrelic_rpm (4.2.0.334)
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
@@ -533,6 +536,7 @@ DEPENDENCIES
   active_skin
   activeadmin!
   acts-as-taggable-on
+  bootsnap
   bootstrap (~> 4.0.0.alpha6)
   bullet
   byebug
