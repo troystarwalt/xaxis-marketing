@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   before_action do
     if current_admin_user
+      puts "eat shit ....................."
       Rack::MiniProfiler.authorize_request
     end
   end
