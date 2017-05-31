@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: a5df0d7231022dc8a3684033f141e7fc0bd640a1
+  revision: d941aaa88c6e9011f7e9d1c7d85b2cd871160f0f
   specs:
     activeadmin (1.0.0)
       arbre (>= 1.1.1)
@@ -95,7 +95,7 @@ GEM
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
     bindex (0.5.0)
-    bootsnap (0.2.15)
+    bootsnap (0.3.2)
       msgpack (~> 1.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
@@ -138,7 +138,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
-    excon (0.55.0)
+    excon (0.56.0)
     execjs (2.7.0)
     faker (1.7.3)
       i18n (~> 0.5)
@@ -228,7 +228,7 @@ GEM
       multi_json (~> 1.10)
     fog-local (0.3.1)
       fog-core (~> 1.27)
-    fog-openstack (0.1.20)
+    fog-openstack (0.1.21)
       fog-core (>= 1.40)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
@@ -321,7 +321,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (0.8.1)
+    i18n (0.8.4)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.6.4)
@@ -365,7 +365,7 @@ GEM
     multi_json (1.12.1)
     mustermann (1.0.0)
     newrelic_rpm (4.2.0.334)
-    nio4r (2.0.0)
+    nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
@@ -473,7 +473,7 @@ GEM
     scout_apm (2.1.24)
     select2-rails (4.0.3)
       thor (~> 0.14)
-    sendgrid-ruby (4.3.3)
+    sendgrid-ruby (5.0.0)
       ruby_http_client (~> 3.0)
       sinatra (>= 1.4.7, < 3)
     sexp_processor (4.9.0)
