@@ -39,7 +39,6 @@ gem 'newrelic_rpm'
 gem 'responsive_active_admin'
 gem 'scout_apm'
 gem 'stackprof'
-gem 'rack-mini-profiler'
 gem 'flamegraph'
 gem 'memory_profiler'
 gem 'bootsnap'
@@ -56,6 +55,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rubocop', '~> 0.45.0', require: false
   gem 'traceroute'
+  gem 'rack-mini-profiler'
 end
 
 group :development do
