@@ -22,7 +22,7 @@
               %ul.footer-list
                 %li= link_to 'Expert Interviews Hub', expert_interview_hub_url
                 %li= link_to '101 Series', "http://xaxis.hs-sites.com/101-series"
-                %li= link_to "Admin Panel", admin_dashboard_path if current_admin_user
+                %li= link_to "Admin Panel", admin_dashboard_path if admin_user_signed_in?
             .col-sm-3.col-6.footer-column
               %p.footer-main-link Landing Pages
               %ul.footer-list

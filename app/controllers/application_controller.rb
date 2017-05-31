@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     ::AbstractController::ActionNotFound,
     ActiveRecord::RecordNotFound,
     with: :catch_not_found
-
+  #
   before_action do
-    if current_admin_user
+    if admin_user_signed_in?
       puts "eat shit ....................."
       Rack::MiniProfiler.authorize_request
     end
