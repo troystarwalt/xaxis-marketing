@@ -42,6 +42,7 @@ gem 'stackprof'
 gem 'flamegraph'
 gem 'memory_profiler'
 gem 'bootsnap'
+gem 'rack-mini-profiler'
 
 
 
@@ -55,7 +56,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rubocop', '~> 0.45.0', require: false
   gem 'traceroute'
-  gem 'rack-mini-profiler'
 end
 
 group :development do
