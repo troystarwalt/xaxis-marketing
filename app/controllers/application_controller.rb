@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
     ::AbstractController::ActionNotFound,
     ActiveRecord::RecordNotFound,
     with: :catch_not_found
+  #
+  before_action do
+    if admin_user_signed_in?
+      Rack::MiniProfiler.authorize_request
+    end
+  end
 
   def catch_not_found
     render 'errors/four_oh_four', status: 404
