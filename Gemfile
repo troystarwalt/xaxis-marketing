@@ -39,7 +39,7 @@ gem 'newrelic_rpm'
 gem 'responsive_active_admin'
 gem 'scout_apm'
 gem 'stackprof'
-gem 'rack-mini-profiler', require: false
+gem 'rack-mini-profiler'
 gem 'flamegraph'
 gem 'memory_profiler'
 gem 'bootsnap'
