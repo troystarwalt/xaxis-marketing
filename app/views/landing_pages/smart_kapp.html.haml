@@ -11,60 +11,35 @@
         .restrict-width
           %h2.sk-section-name Get Started
           %p.section-info SMART makes sharing ideas with your colleagues around the world as natural as meeting over coffee. They can be found in these conference rooms:
-        .spaced-columns.spaced-columns-4
+        .spaced-columns
           .row
-            .col-sm-3.col-xs-6
+            .col-sm-4.col-xs-12
               .spaced-columns-content
                 %h3 Steve Jobs
                 %p.sk-span-row
                   %span 9th floor
                   %span SMART kapp 42"
-            .col-sm-3.col-xs-6
+            .col-sm-4.col-xs-12
               .spaced-columns-content
-                %h3 Mark Zuckerberg
+                %h3 X1 & X2
                 %p.sk-span-row
-                  %span 9th floor
+                  %span 11th floor
                   %span SMART kapp 42"
-            .col-sm-3.col-xs-6
-              .spaced-columns-content
-                %h3 Larry Page
-                %p.sk-span-row
-                  %span 9th floor
-                  %span SMART kapp 42"
-            .col-sm-3.col-xs-6
+            .col-sm-4.col-xs-12
               .spaced-columns-content
                 %h3 Jeff Bezos
                 %p.sk-span-row
                   %span 10th floor
-                  %span SMART IQ
+                  %span SMART IQ**
       %section#what_you_need_section
         .restrict-width
           %h2.sk-section-name What You Need
-          %p.section-info Download the app so you can you can pass ideas back and forth between mobile devices, PCs, and interactive displays as fast as you can think of them.
         .spaced-columns
           .row
-            .col-sm-4
-              .spaced-columns-content
-                .spaced-columns__circle
-                  =image_tag "kapp/resized/board.png", class: "img-fluid"
-                %h3 SMART kapp Board
-                %p.sk-span-row
-                  %span.forty-two.steve
-                    kapp 42&#34
-                    %span.steve__content
-                      =image_tag "kapp/forty_two.png"
-                  %span.iq.steve
-                    kapp IQ
-                    %span.steve__content
-                      =image_tag "kapp/IQ.png"
-            .col-sm-4
-              .spaced-columns-content
-                .spaced-columns__circle
-                  =image_tag "kapp/resized/marker.png", class: "img-fluid"
-                %h3 Marker
-                %p.sk-span-row
-                  %span Dry erase marker*
-            .col-sm-4
+            .col-sm-5.offset-sm-1
+              .spaced-columns-content.d-flex.what-you-need-paragraph
+                %p.section-info Download the app so you can you can pass ideas back and forth between mobile devices, PCs, and interactive displays as fast as you can think of them.
+            .col-sm-6
               .spaced-columns-content.dont-add-margin
                 .spaced-columns__circle
                   =image_tag "kapp/resized/app.png", class: "img-fluid"
@@ -72,8 +47,29 @@
                 %a{href: "https://play.google.com/store/apps/details?id=com.smarttech.kapp", class: "block-link", target: "_blank"}Apple Store
                 %a{href: "https://itunes.apple.com/us/app/smart-kapp/id860144252?mt=8", class: "block-link", target: "_blank"}Google Play
         .restrict-width
+          %h2.sk-section-name smart KAPP 42"
+        .spaced-columns
+          .row
+            .col-sm-6
+              .spaced-columns-content
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/smart_42_real.png", class: "img-fluid"
+                %h3 SMART kapp 42"
+                %p.sk-span-row
+                  %span.forty-two.steve
+                    kapp 42&#34
+                    %span.steve__content
+                      =image_tag "kapp/forty_two.png"
+            .col-sm-6
+              .spaced-columns-content
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/marker.png", class: "img-fluid"
+                %h3 Marker
+                %p.sk-span-row
+                  %span Dry erase marker*
+        .restrict-width
           .sk-bullet-container
-            %p.bullet-list-header *Please ONLY use the following pens when you write on the board (remember, if you write too small, the board won't pick up):
+            %p.bullet-list-header * ONLY use the following pens when you write on the board (remember, if you write too small, the board won't pick up):
             %ul.sk-bullet
               %li
                 %span BIC® Magic Marker® dry erase liquid markers, fine tip
@@ -83,9 +79,8 @@
                 %span Staples® Remarx™ dry erase markers, bullet tip
               %li
                 %span Melissa & Doug® dry erase markers
-          %h4.focus-on-me You CANNOT use a dry erase on the kapp IQ; please use the provided stylus
           .sk-bullet-container
-            %p.bullet-list-header Please clean the board when you're done. You can use the following to clean the board:
+            %p.bullet-list-header Clean the board when you're done. You can use the following to clean the board:
             %ul.sk-bullet
               %li
                 %span Water
@@ -96,6 +91,38 @@
               %li
                 %span Windex® glass cleaner (for SMART kapp 42 only)
           %h4.focus-on-me After you're done using the board, please leave it at it's original place so it doesn't go missing!
+        .restrict-width
+          %h2.sk-section-name smart KAPP IQ
+        .spaced-columns
+          .row
+            .col-sm-6
+              .spaced-columns-content
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/board.png", class: "img-fluid"
+                %h3 SMART kapp Board
+                %p.sk-span-row
+                  %span.iq.steve
+                    kapp IQ**
+                    %span.steve__content
+                      =image_tag "kapp/IQ.png"
+            .col-sm-6
+              .spaced-columns-content
+                .spaced-columns__circle
+                  =image_tag "kapp/resized/stylus.png", class: "img-fluid"
+                %h3 Stylus
+        .restrict-width
+          %h4.focus-on-me ** You CANNOT use a dry erase on the kapp IQ; please use the provided stylus.
+          .sk-bullet-container
+            %p.bullet-list-header To clean up, touch the "Clean Up" button on the launcher to:
+            %ul.sk-bullet
+              %li
+                %span Erase the whiteboard
+              %li
+                %span Saves the Sessoin, if enbled
+              %li
+                %span Resets the Browser*
+              %li
+                %span Closes the application
     %section#action_section.sk-gradient
       .container
         %h2.action-section-name See It In Action
