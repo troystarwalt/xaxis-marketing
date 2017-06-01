@@ -43,7 +43,7 @@ gem 'flamegraph'
 gem 'memory_profiler'
 gem 'bootsnap'
 gem 'rack-mini-profiler'
-
+gem 'puma_worker_killer'
 
 
 source 'https://rails-assets.org' do

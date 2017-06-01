@@ -392,6 +392,9 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.8.2)
+    puma_worker_killer (0.1.0)
+      get_process_mem (~> 0.2)
+      puma (>= 2.7, < 4)
     rack (2.0.3)
     rack-cors (0.4.1)
     rack-mini-profiler (0.10.5)
@@ -565,6 +568,7 @@ DEPENDENCIES
   pg_search
   pry-rails
   puma
+  puma_worker_killer
   rack-cors
   rack-mini-profiler
   rails (~> 5.0.0, >= 5.0.0.1)
