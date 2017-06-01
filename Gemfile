@@ -38,6 +38,12 @@ gem 'select2-rails'
 gem 'newrelic_rpm'
 gem 'responsive_active_admin'
 gem 'scout_apm'
+gem 'stackprof'
+gem 'flamegraph'
+gem 'memory_profiler'
+gem 'bootsnap'
+gem 'rack-mini-profiler'
+
 
 
 source 'https://rails-assets.org' do
