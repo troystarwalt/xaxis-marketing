@@ -6,6 +6,7 @@
 .container
   %p.exper-interview-intro
     The Expert Interviews Video Series is a ongoing production of interviews with experts across different aspects of our business and industry. They are designed to provide insights into where the industry is moving and how Xaxis is prepared to be ahead of it.
+    %span.font-italic  * Note, Turbine is now called [m]insights.
   - if !@main_video.nil? && !@rest_of_videos.nil?
     %main
       %section.main-video{id: @main_video.title.parameterize.truncate(20)}
