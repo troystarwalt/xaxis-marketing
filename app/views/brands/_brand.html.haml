@@ -19,7 +19,8 @@
               = link_to @content[:social][:instagram], class: "social-icon-link" do
                 %i.fa.fa-instagram.fa-2x
       - if brand.brand_accessories.has_category("guidelines").any?
-        = link_to "download brand guidelines", brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+        .d-block
+          = link_to "download brand guidelines", brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
     .section#assets-download-section
       %h1 Brand Assets
       %p You can download individual assets in each section. If you want the logos, color swatch in ASE format (if available), and brand guidelines in one file, then click the below button to download a zip file.
