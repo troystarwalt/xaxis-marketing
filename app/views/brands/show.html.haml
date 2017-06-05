@@ -6,5 +6,9 @@
         - @brands.each do |brand|
           = link_to brand.name, brand_path(brand), class: "nav-item sub-links #{is_at_end_path(brand.slug.to_s)}"
   .row
-    = render partial: "side_nav_brands", locals: {brand: @brand}
-    = render partial: "brand", locals: {brand: @brand, content: @content}
+    - if @content.nil?
+      .col-md-6.offset-md-3.col-sm-12
+        %p Please be patient while we create some amazing assets for #{@brand.name}!
+    - else
+      = render partial: "side_nav_brands", locals: {brand: @brand}
+      = render partial: "brand", locals: {brand: @brand}

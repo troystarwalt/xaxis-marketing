@@ -10,7 +10,7 @@
         %li.nav-item.dropdown
           =link_to "Brand Assets", brand_path("xaxis"), class: "nav-link main-link dropdown-toggle", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"
           .dropdown-menu
-            - @brands.each do |brand|
+            - @brands.included_in_nav.each do |brand|
               - cache brand do
                 =link_to brand.name, brand_path(brand), class: "dropdown-item"
         %li.nav-item.dropdown

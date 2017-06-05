@@ -5,7 +5,7 @@ ActiveAdmin.register Brand do
   skip_before_action :get_our_brands
 
 
-  permit_params :name
+  permit_params :name, :main_nav, :presentation_hub
 
   config.filters = false
 
@@ -13,12 +13,16 @@ ActiveAdmin.register Brand do
     ul do
       li brand.name
       li "Created on #{brand.pretty_date}"
+      li brand.main_nav? ? "Included in Main Navigation" : "Not Included in Main Navigation"
+      li brand.presentation_hub? ? "Included in Presentation Hub" : "Not Included in Presentation Hub"
     end
   end
 
   index do
     selectable_column
     column :name
+    column :main_nav
+    column :presentation_hub
     column :created_at
     column :updated_at
     actions
@@ -55,16 +59,6 @@ ActiveAdmin.register Brand do
       end
     end
 
-    # panel 'Font' do
-    #   table_for brand.brand_accessories.where(category: 'font') do
-    #     column :name
-    #     column :file, &:file_url
-    #     column :link do |f|
-    #       link_to('View', admin_brand_accessory_path(f.id))
-    #     end
-    #   end
-    # end
-
     panel 'Guidelines' do
       table_for brand.brand_accessories.where(category: 'guidelines') do
         column :name
@@ -94,15 +88,7 @@ ActiveAdmin.register Brand do
         end
       end
     end
-    # panel 'Palette' do
-    #   table_for brand.brand_accessories.where(category: 'palette') do
-    #     column :name
-    #     column :file, &:file_url
-    #     column :link do |f|
-    #       link_to('View', admin_brand_accessory_path(f.id))
-    #     end
-    #   end
-    # end
+
     panel 'Facts' do
       table_for brand.brand_accessories.where(category: 'facts') do
         column :name
@@ -156,6 +142,8 @@ ActiveAdmin.register Brand do
     f.inputs 'You can add a new Brand here.' do
       f.input :name, label: 'Brand Name', placeholder: 'Again...you probably do not want to create a new brand.'
       f.input :author, as: 'hidden', input_html: { value: f.current_admin_user.email }
+      f.input :main_nav, label: "Include in Main Navigation?"
+      f.input :presentation_hub, label: "Included in Presentation Hub?"
     end
     f.actions
   end
