@@ -3,32 +3,42 @@
     %ul.nav.flex-column#brand-asset-links
       %li.nav-item
         .text-uppercase Brand assets
-      %li.nav-item
-        =link_to "Brand Guidelines", "#assets-welcome", class: "side-nav-link smooth-scroll", id: "brand-guidelines-link"
-      %li.nav-item
-        =link_to "Boilerplate", "#assets-boilerplate", class: "side-nav-link smooth-scroll", id: "brand-boilerplate-link"
-      %li.nav-item
-        =link_to "Logos", "#assets-logo", class: "side-nav-link smooth-scroll", id: "brand-logos-link"
-      %li.nav-item
-        =link_to "Colors Palettes", "#assets-color-palette", class: "side-nav-link smooth-scroll", id: "brand-colors-link"
-      %li.nav-item
-        =link_to "Fonts", "#assets-fonts", class: "side-nav-link smooth-scroll", id: "brand-fonts-link"
-      %li.nav-item
-        =link_to "Images", "#assets-images", class: "side-nav-link smooth-scroll", id: "brand-images-link"
+      - if brand.brand_accessories.has_category("guidelines").any?
+        %li.nav-item
+          =link_to "Brand Guidelines", "#assets-welcome", class: "side-nav-link smooth-scroll", id: "brand-guidelines-link"
+      - if @content.key?(:boilerplate)
+        %li.nav-item
+          =link_to "Boilerplate", "#assets-boilerplate", class: "side-nav-link smooth-scroll", id: "brand-boilerplate-link"
+      - if @content.key?(:logo)
+        %li.nav-item
+          =link_to "Logos", "#assets-logo", class: "side-nav-link smooth-scroll", id: "brand-logos-link"
+      - if lookup_context.find_all("brands/palettes/#{brand.slug}-p").any?
+        %li.nav-item
+          =link_to "Colors Palettes", "#assets-color-palette", class: "side-nav-link smooth-scroll", id: "brand-colors-link"
+      - if brand.brand_accessories.has_category("font").any?
+        %li.nav-item
+          =link_to "Fonts", "#assets-fonts", class: "side-nav-link smooth-scroll", id: "brand-fonts-link"
+      - if @content.key?(:images)
+        %li.nav-item
+          =link_to "Images", "#assets-images", class: "side-nav-link smooth-scroll", id: "brand-images-link"
     %ul.nav.flex-column#brand-template-links
       %li.nav-item
         .text-uppercase Brand templates
       -if brand.slug != "triad"
+        - if @content.key?(:ppt)
+          %li.nav-item
+            =link_to "Powerpoint Template", "#assets-ppt", class: "side-nav-link smooth-scroll", id: "brand-ppt-link"
+        - if @content.key?(:word)
+          %li.nav-item
+            =link_to "Word Template", "#assets-word", class: "side-nav-link smooth-scroll", id: "brand-word-link"
+      - if @content.key?(:capa)
         %li.nav-item
-          =link_to "Powerpoint Template", "#assets-ppt", class: "side-nav-link smooth-scroll", id: "brand-ppt-link"
-        %li.nav-item
-          =link_to "Word Template", "#assets-word", class: "side-nav-link smooth-scroll", id: "brand-word-link"
-      %li.nav-item
-        =link_to "Global Capability Deck", "#assets-capability", class: "side-nav-link smooth-scroll", id: "brand-cred-link"
+          =link_to "Global Capability Deck", "#assets-capability", class: "side-nav-link smooth-scroll", id: "brand-cred-link"
     %ul.nav.flex-column#brand-pr-links
       %li.nav-item
         .text-uppercase brand pr
       %li.nav-item
         =link_to "PR Kit", "#assets-kit", class: "side-nav-link smooth-scroll", id: "brand-kit-link"
-      %li.nav-item
-        =link_to "Executive Headshots", "#assets-headshots", class: "side-nav-link smooth-scroll", id: "brand-hs-link"
+      - if brand.headshots.any?
+        %li.nav-item
+          =link_to "Executive Headshots", "#assets-headshots", class: "side-nav-link smooth-scroll", id: "brand-hs-link"

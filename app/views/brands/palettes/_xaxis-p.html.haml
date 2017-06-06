@@ -80,3 +80,4 @@
         %p.color-card-text CMYK (0, 0, 0, 25)
 - if @brand.brand_accessories.has_category("palette").present?
   = link_to "download color palette", @brand.brand_accessories.has_category("palette").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
+%hr

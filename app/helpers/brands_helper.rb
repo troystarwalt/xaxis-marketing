@@ -209,6 +209,13 @@ module BrandsHelper
           employee: "157",
           client: "400+"
         }
+      },
+      "mplatform": {
+        welcome: "<p>Welcome to the [m]PLATFORM resource center! Here you will find the brand guidelines, assets and templates to use for [m]PLATFORM and its products.</p>
+        <p>Please follow the brand guidelines and use the approved assets here accordingly in order to ensure consistency and appropriate representation. If you have any questions, or need to request an asset that is not located on this page, please reach out to <a href='mailto:lindsay.west@groupm.com'> Lindsay West</a>.",
+        logo: "<p>Included are logos for the different groups under [m]PLATFORM. Refer to brand guidelines for correct usage.</p>",
+        ppt: "<p>The new [m]PLATFORM] deck is updated with countless selections of icons, layouts and stock images that allow you to build beautiful slides with just a few clicks!</p>",
+        word: "<p>Please make sure all external facing material is written in this template.</p>",
       }
     }
   end

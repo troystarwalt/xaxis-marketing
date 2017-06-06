@@ -17,7 +17,6 @@ class BrandsController < InheritedResources::Base
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
     @content = helpers.content_for_brands[remove_dash_make_symbol(@brand.slug)]  # Pull in text content for each brand
 
-
     # Take the assets and zip them up for the user.
     respond_to do |format|
       format.html
@@ -26,10 +25,6 @@ class BrandsController < InheritedResources::Base
   end
 
   protected
-
-  def get_content
-    @other_content = helpers.content_for_brands
-  end
 
   def remove_dash_make_symbol(s)
     s.gsub('-', '').to_sym

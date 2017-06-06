@@ -37,6 +37,7 @@ class LandingPagesController < ApplicationController
   end
 
   # Landing Pages
+
   def all_hands_north_america
    # start here
    if authorized?
