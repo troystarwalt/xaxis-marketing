@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get "/pages/:page" => "landing_pages#show"
 
   # Custom Generated Landing Pages
-  get 'xaxapalooza' => 'landing_pages#xaxapalooza'
 
   get 'all-hands-north-america' => 'landing_pages#all_hands_north_america'
 

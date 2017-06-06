@@ -38,12 +38,6 @@ class LandingPagesController < ApplicationController
 
   # Landing Pages
 
-  def xaxapalooza
-   # start here
-   @eventPhotos = Photo.all.tagged_with("xaxapalooza")
-   gon.photos = @eventPhotos
-  end
-
   def all_hands_north_america
    # start here
    if authorized?
