@@ -3,7 +3,7 @@ require 'file_size_validator'
 
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
-  scope :last_three, -> {order("created_at DESC").first(3)}
+  scope :last_three, -> {order(created_at: :desc).first(3)}
 
   def pretty_date
     created_at.to_date.strftime("%m\/\%d\/\%Y")
