@@ -4,20 +4,20 @@
       = image_tag "brand-logos/#{brand.slug}_logo.png", class: "img-fluid brand-assets-top-logo"
       = @content[:welcome].html_safe if @content.key?(:welcome)
       - if @content.key?(:social)
-        .row
-          .col-1
-            = link_to @content[:social][:facebook], class: "social-icon-link" do
-              %i.fa.fa-facebook-square.fa-2x
-          .col-1
-            = link_to @content[:social][:linkedin], class: "social-icon-link" do
-              %i.fa.fa-linkedin-square.fa-2x
-          .col-1
-            = link_to @content[:social][:twitter], class: "social-icon-link" do
-              %i.fa.fa-twitter-square.fa-2x
-          .col-1
-            - if !@content[:social][:instagram].blank?
-              = link_to @content[:social][:instagram], class: "social-icon-link" do
-                %i.fa.fa-instagram.fa-2x
+        %p
+          Don't forget to connect with us on
+          = succeed ',' do
+            = link_to "Facebook", @content[:social][:facebook], class: "social-icon-link"
+          = succeed ',' do
+            = link_to "LinkedIn", @content[:social][:linkedin], class: "social-icon-link"
+          - if @content[:social].key?(:instagram)
+            = succeed ', and' do
+              = link_to "Twitter", @content[:social][:twitter], class: "social-icon-link"
+            = succeed '.' do
+              = link_to "Instagram", @content[:social][:instagram], class: "social-icon-link"
+          - else
+            = succeed '.' do
+              = link_to "and Twitter", @content[:social][:twitter], class: "social-icon-link"
       - if brand.brand_accessories.has_category("guidelines").any?
         .d-block
           = link_to "download brand guidelines", brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
@@ -133,7 +133,7 @@
       - else
         %i No PR Kit available for download at this time.
     - if brand.headshots.any?
-      = render partial: "headshots", locals: {brand: brand}
+      = render partial: "headshots"
 .col-md-1.col-sm-12.btt-container
   =link_to '#top-brands', id: "btw-arrow-link" do
     =image_tag "btt.svg", class: "btt-arrow"
