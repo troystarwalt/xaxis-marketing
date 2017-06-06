@@ -40,7 +40,7 @@ class LandingPagesController < ApplicationController
 
   def xaxapalooza
    # start here
-   @eventPhotos = Photo.all.tagged_with("event")
+   @eventPhotos = Photo.all.tagged_with("xaxapalooza")
    gon.photos = @eventPhotos
   end
 
