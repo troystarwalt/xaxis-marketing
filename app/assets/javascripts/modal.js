@@ -1,4 +1,4 @@
-$('.all_hands, .brands, .all_hands_north_america, .all_hands_new_york').ready(function(){
+$('.all_hands, .brands, .all_hands_north_america, .all_hands_new_york, .xaxapalooza').ready(function(){
   // Using gon variables for image modals
   $('.activate-modal').on('click', function (e){
 
