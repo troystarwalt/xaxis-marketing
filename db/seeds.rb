@@ -165,7 +165,7 @@ if Rails.env.development? || Rails.env.test?
   end
   # Photo.destroy_all
   random_url = "https://source.unsplash.com/random"
-  random_tag = %w(all-hands mwc event)
+  random_tag = %w(all-hands mwc event xaxapalooza)
 
   30.times do
     Photo.create!(
