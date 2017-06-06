@@ -133,7 +133,7 @@
       - else
         %i No PR Kit available for download at this time.
     - if brand.headshots.any?
-      = render partial: "headshots", locals: {brand: brand}
+      = render partial: "headshots"
 .col-md-1.col-sm-12.btt-container
   =link_to '#top-brands', id: "btw-arrow-link" do
     =image_tag "btt.svg", class: "btt-arrow"

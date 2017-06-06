@@ -2,7 +2,7 @@
 .section#assets-headshots
   %h3.text-uppercase executive bio & headshots
   .row
-    - brand.headshots.ordered_by_priority.each.with_index do |hs, index|
+    - @headshots.each.with_index do |hs, index|
       .col-lg-6
         .headshot-flex-container
           .headshot-container_image

@@ -10,8 +10,11 @@ class BrandsController < InheritedResources::Base
   end
 
   def show
-    @brand = Brand.includes(:headshots, :brand_accessories).friendly.find(params[:id])
-    gon.headshots = @brand.headshots.ordered_by_priority
+    @brand = Brand.friendly.find(params[:id])
+    # gon.headshots = @brand.headshots.ordered_by_priority
+
+    @headshots = Headshot.where(brand_id: @brand.id).ordered_by_priority
+    gon.headshots = @headshots
     @image_bank = GlobalAccessory.where(category: 'image_bank').last  # Get the most recent image bank download
     brand_accessories_zip = @brand.brand_accessories.where(category: ['guidelines', 'logo', 'palette'])
     @pr_kit = GlobalAccessory.where(category: 'pr_kit').last  # Get the brands pr kit
