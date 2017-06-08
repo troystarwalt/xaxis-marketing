@@ -7,17 +7,17 @@
         %p
           Don't forget to connect with us on
           = succeed ',' do
-            = link_to "Facebook", @content[:social][:facebook], class: "social-icon-link"
+            = link_to "Facebook", @content[:social][:facebook]
           = succeed ',' do
-            = link_to "LinkedIn", @content[:social][:linkedin], class: "social-icon-link"
+            = link_to "LinkedIn", @content[:social][:linkedin]
           - if @content[:social].key?(:instagram)
             = succeed ', and' do
-              = link_to "Twitter", @content[:social][:twitter], class: "social-icon-link"
+              = link_to "Twitter", @content[:social][:twitter]
             = succeed '.' do
-              = link_to "Instagram", @content[:social][:instagram], class: "social-icon-link"
+              = link_to "Instagram", @content[:social][:instagram]
           - else
             = succeed '.' do
-              = link_to "and Twitter", @content[:social][:twitter], class: "social-icon-link"
+              = link_to "and Twitter", @content[:social][:twitter]
       - if brand.brand_accessories.has_category("guidelines").any?
         .d-block
           = link_to "download brand guidelines", brand.brand_accessories.has_category("guidelines").last.file_url, class: "brand-btn-primary xaxis-btn-primary"
