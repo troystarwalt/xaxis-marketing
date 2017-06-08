@@ -13,8 +13,7 @@ module InternalSite
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.exceptions_app = self.routes
+    # config.exceptions_app = self.routes   # Not sure where this came from.
     config.middleware.use Rack::Deflater
-    config.font_assets.origin = "*"
   end
 end
