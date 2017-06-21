@@ -34,22 +34,26 @@
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span UPDATE
       %h1.sm-item-header.color-grid-text vCPV
-      %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
-      .link-container
-        =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
-      .grid-icon-container.hidden-lg-down
-        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+      .d-flex.color-box-container
+        .color-box-copy-container
+          %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
+          .link-container
+            =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
+        .grid-icon-container.hidden-lg-down
+          = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
   .flex-column
     .flex-sm-item.right-top#grid-box-5
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span Templates
       %h1.sm-item-header.color-grid-text The Presentation Hub
       %p.color-grid-text.new-alert-red 2017 Decks Available!
-      %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
-      .link-container
-        =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
-      .grid-icon-container.hidden-lg-down
-        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+      .d-flex.color-box-container
+        .color-box-copy-container
+          %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
+          .link-container
+            =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
+        .grid-icon-container.hidden-lg-down
+          = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
     .flex-sm-item.right-bottom#grid-box-6
       .grid-content-container
         .row

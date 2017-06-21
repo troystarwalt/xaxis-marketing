@@ -15,12 +15,19 @@
       padding: 40px
       position: relative
 
+.color-box-container
+  .color-box-copy-container
+    flex: 1 1 70%
+    margin-right: 20px
+  .grid-icon-container
+    flex: 0 2 23%
+
 .grid-icon-container
   margin: 0 auto
-  margin-left: -15px
   .grid-icon
-    max-width: 250px
-    max-height: 200px
+    // max-width: 250px
+    // max-height: 200px
+    max-height: 100%
 
 // Restrictions on how much space the icon can take up.
 .large-grid-icon-container
@@ -117,6 +124,7 @@
 
 .new-alert-red
   color: $xaxis-red
+  margin-bottom: .3rem
 
 // Background colors
 .left-top
@@ -139,6 +147,16 @@
   #grid-box-6
     .grid-icon-container
       width: 70%
+      max-width: 120px
+
+@media (min-width: 1600px)
+  .color-box-container
+    .color-box-copy-container
+      flex: 1 1 60%
+      margin-right: 40px
+    .grid-icon-container
+      flex: 0 2 33%
+      max-width: 200px
 
 // 1400px - 1899px
 @media (min-width: 1400px) and (max-width: 1899px)
@@ -146,8 +164,9 @@
     .grid-icon-container
       width: 75%
 
+
 // 1200px wide and above
-@media (min-width: 1200px)
+@media (min-width: 1300px)
   .flex-container
     .flex-column
       .flex-sm-item
