@@ -27,16 +27,15 @@ class PostsController < ApplicationController
   end
 
   def main
-    # colored grid post
-    @latest_post = Post.last
-    gon.latest_post = @latest_post
+    # gon.latest_post = @latest_post
     # Learning section
     @last_expert = ExpertInterview.last_three
     # posts for the recent news section
     @posts = Post.includes(:tags).order("created_at DESC").first(5)
-    @initial_post = @posts.first
+    @latest_post = @posts.first
+    # @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
-    posts = Post.includes(:tags).order("created_at DESC").first(5).map{|post| post.get_main_json}
+    posts = @posts.map{|post| post.get_main_json}
     posts.each do |x|
       x.update(x) do |key, value|
         if key == :text || key == :title

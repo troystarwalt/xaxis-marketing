@@ -11,17 +11,17 @@
                 .circle_text MKT
               .content-text.content-text-sub.text-uppercase
                 .content-text-sub_inner_text
-                  %span#single-news_tag_list.tag_list= @initial_post.get_tag_list.to_sentence
+                  %span#single-news_tag_list.tag_list= @latest_post.get_tag_list.to_sentence
                   |
-                  %span#single-news_date.date= @initial_post.pretty_date
+                  %span#single-news_date.date= @latest_post.pretty_date
           .selected-news_content
-            =link_to post_path(@initial_post), id: "single-news_title_link" do
-              %h1.content-header#single-news_title.news-title= sanitize @initial_post.title.truncate_words(10)
-            %img#single-news_image{src: @initial_post.image.url, class: 'img-fluid', alt: @initial_post.title }
+            =link_to post_path(@latest_post), id: "single-news_title_link" do
+              %h1.content-header#single-news_title.news-title= sanitize @latest_post.title.truncate_words(10)
+            %img#single-news_image{src: @latest_post.image.url, class: 'img-fluid', alt: @latest_post.title }
             %p.content-text.news-text
               %span#single-news_text
-                = sanitize @initial_post.medium_teaser, tags: %w(strong a), attributes: %w(href)
-            = link_to post_path(@initial_post), id: 'single-news_readmore', class: "single-news_button" do
+                = sanitize @latest_post.medium_teaser, tags: %w(strong a), attributes: %w(href)
+            = link_to post_path(@latest_post), id: 'single-news_readmore', class: "single-news_button" do
               read more
       .col-md-5.offset-md-1.col-sm-12
         .recent_news_container

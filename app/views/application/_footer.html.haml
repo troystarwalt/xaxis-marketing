@@ -14,7 +14,7 @@
             .col-sm-3.col-6.footer-column
               =link_to 'Brand Assets', brand_path("xaxis"), class: 'footer-main-link'
               %ul.footer-list
-                - @brands.all.each do |brand|
+                - @brands.each do |brand|
                   - cache brand do
                     %li= link_to "#{brand.name} Brand Assets", brand_path(brand)
             .col-sm-3.col-6.footer-column

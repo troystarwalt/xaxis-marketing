@@ -3,19 +3,21 @@
   %section.header-image-section
     .fake-lax-background-image
   .container
-    %section.video-section
-      %h2.text-center.mb-4 Watch the Q1 One Xaxis All Hands Presentation
-      .embed-responsive.embed-responsive-16by9
-        %iframe.embed-responsive-item{:allowfullscreen => "", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/210618201", :webkitallowfullscreen => "",}
-    %section.survey-section
-      %h2.text-center.mb-4 Survey
-      %p.text-center.mb-5 Please take this quick survey!
-      /[if lte IE 8]
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-      %script{:charset => "utf-8", :src => "//js.hsforms.net/forms/v2.js", :type => "text/javascript"}
-      :javascript
-        hbspt.forms.create({
-          portalId: '436935',
-          formId: '169e12cd-425c-4c0e-aa43-08f4bf7af504'
-        });
-= render partial: "event_photos"
+    %section.agenda-section
+
+    -# %section.video-section
+    -#   %h2.text-center.mb-4 Watch the Q1 One Xaxis All Hands Presentation
+    -#   .embed-responsive.embed-responsive-16by9
+    -#     %iframe.embed-responsive-item{:allowfullscreen => "", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/210618201", :webkitallowfullscreen => "",}
+    -# %section.survey-section
+    -#   %h2.text-center.mb-4 Survey
+    -#   %p.text-center.mb-5 Please take this quick survey!
+    -#   /[if lte IE 8]
+    -#     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+    -#   %script{:charset => "utf-8", :src => "//js.hsforms.net/forms/v2.js", :type => "text/javascript"}
+    -#   :javascript
+    -#     hbspt.forms.create({
+    -#       portalId: '436935',
+    -#       formId: '169e12cd-425c-4c0e-aa43-08f4bf7af504'
+    -#     });
+-# = render partial: "event_photos"
