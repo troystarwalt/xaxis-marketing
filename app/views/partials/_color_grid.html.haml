@@ -23,14 +23,34 @@
         .row
           .col-sm-12
             %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span Update
+              %span UPDATE
         .row
           .col-sm-12
-            %h1.sm-item-header.color-grid-text Project Request
-            %p.color-grid-text Need a deck, landing page or some print work? Let us know here.
+            %h1.sm-item-header.color-grid-text Outcome Media Company
+            %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
       .link-container
-        =link_to "make it", "https://docs.google.com/forms/d/e/1FAIpQLSdsiWT4ReCtP7wHxFpP3ebJnCak_k8-HhdQCLRDsVptbvjThQ/viewform?c=0&w=1&usp=send_form", class: "text-uppercase animation-btn-secondary color-grid-btn-white"
+        =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-white"
     .flex-sm-item.center-bottom#grid-box-4
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span UPDATE
+      %h1.sm-item-header.color-grid-text vCPV
+      %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
+      .link-container
+        =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
+      .grid-icon-container.hidden-lg-down
+        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+  .flex-column
+    .flex-sm-item.right-top#grid-box-5
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span Templates
+      %h1.sm-item-header.color-grid-text The Presentation Hub
+      %p.color-grid-text.new-alert-red 2017 Decks Available!
+      %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
+      .link-container
+        =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
+      .grid-icon-container.hidden-lg-down
+        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+    .flex-sm-item.right-bottom#grid-box-6
       .grid-content-container
         .row
           .col-lg-12
@@ -48,14 +68,3 @@
           .col-md-4
             .grid-icon-container.hidden-sm-down
               = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"
-  .flex-column
-    .flex-lg-item.right-top#grid-box-5
-      %p.text-uppercase.color-grid-category-text.color-grid-text
-        %span Templates
-      %h1.lg-item-header.color-grid-text The Presentation Hub
-      %p.color-grid-text.new-alert-red 2017 Decks Available!
-      %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
-      .link-container
-        =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
-      .large-grid-icon-container.hidden-md-down
-        = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
