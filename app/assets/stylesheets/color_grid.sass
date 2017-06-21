@@ -71,7 +71,7 @@
   @include Gotham-Book
 
 // Setting specific boxes as white font.
-.left-top, .center-top, .left-bottom
+.left-top, .center-top, .left-bottom, .right-bottom
   color: $white
 
 .learning-update_list
@@ -87,18 +87,18 @@
 
 // Set unique style of the update links
 .learning-update_link
-  color: $xaxis-darkest-blue
+  color: $white-smoke
   font-size: 12px
   letter-spacing: 1px
   @include Gotham-Book
   padding: 10px 0
   &:link
     text-decoration: underline
-    color: $xaxis-darkest-blue
+    color: $white-smoke
   &:visited
-    color: $xaxis-grey-blue
+    color: $xaxis-yellow
   &:hover
-    color: $xaxis-blue-color
+    color: $xaxis-yellow
 
 // Font sizes for colored box headers.
 .sm-item-header
@@ -112,7 +112,7 @@
 
 // Added if updates are less than 10 days old.
 .new-alert
-  color: $xaxis-dark-yellow
+  color: $onyx
   font-size: .8em
 
 .new-alert-red
@@ -131,23 +131,21 @@
   background: $xaxis-lightest-blue
 .center-top
   background: $xaxis-blue-color
+.right-bottom
+  background: $xaxis-orange
 
 
 // 1900px and above
 @media (min-width: 1900px)
-  #grid-box-4
+  #grid-box-6
     .grid-icon-container
       width: 70%
-  .large-grid-icon-container
-    width: 50%
 
 // 1400px - 1899px
 @media (min-width: 1400px) and (max-width: 1899px)
-  #grid-box-4
+  #grid-box-6
     .grid-icon-container
       width: 75%
-  .large-grid-icon-container
-    width: 60%
 
 // 1200px wide and above
 @media (min-width: 1200px)
