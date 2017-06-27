@@ -19,15 +19,20 @@
   .color-box-copy-container
     flex: 1 1 70%
     margin-right: 20px
+    max-width: 100%
   .grid-icon-container
     flex: 0 2 23%
+    margin: 0 auto
+    .grid-icon
+      max-height: 100%
+  .grid-icon-container--tall
+    text-align: center
+    max-width: 90px
 
-.grid-icon-container
-  margin: 0 auto
-  .grid-icon
-    // max-width: 250px
-    // max-height: 200px
-    max-height: 100%
+#grid-box-6
+  .color-box-container
+    .color-box-copy-container
+      max-width: 60%
 
 // Restrictions on how much space the icon can take up.
 .large-grid-icon-container
@@ -91,6 +96,7 @@
     text-overflow: ellipsis
     font-weight: normal
     margin-bottom: 5px
+    max-width: 100%
 
 // Set unique style of the update links
 .learning-update_link
@@ -144,24 +150,29 @@
 
 // 1900px and above
 @media (min-width: 1900px)
-  #grid-box-6
-    .grid-icon-container
+  .color-box-container
+    .grid-icon-container--tall
       width: 70%
       max-width: 120px
+
 
 @media (min-width: 1600px)
   .color-box-container
     .color-box-copy-container
       flex: 1 1 60%
       margin-right: 40px
+      max-width: 400px
     .grid-icon-container
       flex: 0 2 33%
       max-width: 200px
+      margin: 0 auto
+    .grid-icon-container--tall
+      max-width: 91px
 
 // 1400px - 1899px
 @media (min-width: 1400px) and (max-width: 1899px)
-  #grid-box-6
-    .grid-icon-container
+  .color-box-container
+    .grid-icon-container--tall
       width: 75%
 
 
@@ -192,9 +203,12 @@
   .large-grid-icon-container
     width: calc(75%/2)
     margin-bottom: 40px
+  .color-box-container
+    .color-box-copy-container
+      max-width: 65%
 
-  .grid-icon-container, .large-grid-icon-container
-    display: none
+  // .grid-icon-container, .large-grid-icon-container
+  //   display: none
 
 // 767px wide and below
 @media (max-width: 767px)
@@ -213,3 +227,17 @@
   .link-container
     .color-grid-btn
       width: 50%
+
+@media (min-width: 1000px) and (max-width: 1199px)
+  .grid-icon-container
+    display: none
+  .full-width
+    max-width: 100%
+
+  #grid-box-6
+    .color-box-container
+      .color-box-copy-container
+        max-width: 100%
+
+@media (max-width: 767px)
+  margin-top: 20px
