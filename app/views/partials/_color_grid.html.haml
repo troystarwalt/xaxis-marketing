@@ -19,56 +19,69 @@
         =link_to "see more", post_path(@latest_post), class: "text-uppercase animation-btn-secondary color-grid-btn-white"
   .flex-column
     .flex-sm-item.center-top#grid-box-3
-      .grid-content-container
-        .row
-          .col-sm-12
-            %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span UPDATE
-        .row
-          .col-sm-12
-            %h1.sm-item-header.color-grid-text Outcome Media Company
-            %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      .link-container
-        =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-white"
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span NEWS
+      %h1.sm-item-header.color-grid-text The Outcome Media Company
+      .d-flex.color-box-container
+        .color-box-copy-container
+          %p.color-grid-text Find out more about what it meas to be The Outcome Media Company
+          .link-container
+            =link_to "Go", "https://inside.xaxis.com/GMarketing/SitePages/Additional%20Resources.aspx", class: "text-uppercase animation-btn-secondary color-grid-btn-white"
+        .grid-icon-container
+          = image_tag "graph-screen.png", alt: "Outcomes", class: "grid-icon img-fluid"
     .flex-sm-item.center-bottom#grid-box-4
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span UPDATE
       %h1.sm-item-header.color-grid-text vCPV
       .d-flex.color-box-container
         .color-box-copy-container
-          %p.color-grid-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
+          %p.color-grid-text Grab the latest deck for more information about vCPV.
           .link-container
             =link_to "Go", "###", class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
-        .grid-icon-container.hidden-lg-down
-          = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
+        .grid-icon-container
+          = image_tag "folders-screen.png", alt: "Views", class: "grid-icon img-fluid"
   .flex-column
     .flex-sm-item.right-top#grid-box-5
       %p.text-uppercase.color-grid-category-text.color-grid-text
         %span Templates
       %h1.sm-item-header.color-grid-text The Presentation Hub
-      %p.color-grid-text.new-alert-red 2017 Decks Available!
       .d-flex.color-box-container
         .color-box-copy-container
+          %p.color-grid-text.new-alert-red 2017 Decks Available!
           %p.color-grid-text Download the latest sales decks and brand templates, as well as learn how to customize your presentations.
           .link-container
             =link_to "go", presentation_hub_path, class: "text-uppercase animation-btn-secondary color-grid-btn-dark"
-        .grid-icon-container.hidden-lg-down
+        .grid-icon-container
           = image_tag "pres_hub_icon.png", alt: "Updated Template", class: "grid-icon img-fluid"
     .flex-sm-item.right-bottom#grid-box-6
-      .grid-content-container
-        .row
-          .col-lg-12
-            %p.text-uppercase.color-grid-category-text.color-grid-text
-              %span get smart
-        .row
-          .col-md-8
-            %h1.lg-item-header.color-grid-text Learning
-            %ul.learning-update_list
-              - @last_expert.each do |expert|
-                %li
-                  =link_to expert.title.truncate_words(10), expert_interview_hub_url(anchor: expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
-                  - if expert.is_recent
-                    %span.new-alert NEW
-          .col-md-4
-            .grid-icon-container.hidden-sm-down
-              = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"
+      %p.text-uppercase.color-grid-category-text.color-grid-text
+        %span get smart
+      %h1.lg-item-header.color-grid-text Learning
+      .d-flex.color-box-container
+        .color-box-copy-container
+          %ul.learning-update_list
+            - @last_expert.each do |expert|
+              %li
+                =link_to expert.title.truncate_words(10), expert_interview_hub_url(anchor: expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
+                - if expert.is_recent
+                  %span.new-alert NEW
+        .grid-icon-container.grid-icon-container--tall
+          = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"
+      -#
+      -# .grid-content-container
+      -#   .row
+      -#     .col-lg-12
+      -#       %p.text-uppercase.color-grid-category-text.color-grid-text
+      -#         %span get smart
+      -#   .row
+      -#     .col-md-8.full-width
+      -#       %h1.lg-item-header.color-grid-text Learning
+      -#       %ul.learning-update_list
+      -#         - @last_expert.each do |expert|
+      -#           %li
+      -#             =link_to expert.title.truncate_words(10), expert_interview_hub_url(anchor: expert.title.parameterize.truncate(20)), class: "learning-update_link wave"
+      -#             - if expert.is_recent
+      -#               %span.new-alert NEW
+      -#     .col-md-4
+      -#       .grid-icon-container.grid-icon-container--tall
+      -#         = image_tag "updates_icon_small.png", alt: "Updates", class: "grid-icon img-fluid"
