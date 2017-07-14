@@ -50,7 +50,7 @@ ActiveAdmin.register Photo do
       f.input :remote_image_url, as: :string, placeholder: "Ex.: https://github-jobs.s3.amazonaws.com/48997d7a-043e-11e7-89f6-aa4c41cf1794.png", hint: "Don't have the photo on your computer? User a URL."
       f.hidden_field :image_cache
       f.input :taken, label: "Taken on:", as: :date_select, hint: "When was the photo taken?"
-      f.input :tag_list, hint: "Use all-hands if you want to include this in All Hands", placeholder: "Ex.: all-hands", required: true
+      f.input :tag_list, hint: "Comma separated tags. use all-hands, 2017-q2 to be inluded for now.", placeholder: "Ex.: all-hands, 2017-q2", required: true
     end
     f.actions
   end

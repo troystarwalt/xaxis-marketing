@@ -56,7 +56,7 @@ class LandingPagesController < ApplicationController
 
   def all_hands
     if authorized?
-      @eventPhotos = Photo.all.tagged_with("all-hands")
+      @eventPhotos = Photo.all.tagged_with(["all-hands", "2017-q2"], :match_all => true)
       gon.photos = @eventPhotos
     else
       redirect_to root_path
