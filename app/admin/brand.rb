@@ -134,6 +134,15 @@ ActiveAdmin.register Brand do
         end
       end
     end
+    panel 'Boilerplate' do
+      table_for brand.boilerplate do
+        column :description
+        column :updated_at
+        column :link do |f|
+          link_to('View', admin_boilerplate_path(f.id)) if f.id.present?
+        end
+      end
+    end
   end
 
   form do |f|
