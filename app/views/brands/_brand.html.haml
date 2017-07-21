@@ -27,10 +27,10 @@
       - if brand.brand_accessories.any?
         = link_to "download assets", brand_path(format: :zip), class: "brand-btn-secondary xaxis-btn-secondary"
     %hr
-    - if @content.key?(:boilerplate)
+    - if brand.boilerplate.present?
       .section#assets-boilerplate
         %h3.text-uppercase Boilerplate
-        = @content[:boilerplate].html_safe
+        = brand.boilerplate.description
       %hr
     - if @content.key?(:logo)
       .section#assets-logo
