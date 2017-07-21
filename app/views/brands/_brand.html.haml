@@ -30,7 +30,7 @@
     - if brand.boilerplate.present?
       .section#assets-boilerplate
         %h3.text-uppercase Boilerplate
-        = brand.boilerplate.description
+        .boilerplate= brand.boilerplate.description.html_safe
       %hr
     - if @content.key?(:logo)
       .section#assets-logo
