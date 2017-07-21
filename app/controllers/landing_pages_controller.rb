@@ -37,6 +37,10 @@ class LandingPagesController < ApplicationController
   end
 
   # Landing Pages
+  def all_hands_survey
+   # start here
+  end
+
 
   def all_hands_north_america
    # start here
