@@ -31,9 +31,8 @@ class PostsController < ApplicationController
     # Learning section
     @last_expert = ExpertInterview.last_three
     # posts for the recent news section
-    @posts = Post.includes(:tags).order("created_at DESC").first(5)
+    @posts = Post.includes(:tags).order("published_at DESC").first(5)
     @latest_post = @posts.first
-    # @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     posts = @posts.map{|post| post.get_main_json}
     posts.each do |x|
@@ -51,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def sort_button
-    Post.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+    Post.column_names.include?(params[:sort]) ? params[:sort] : "published_at"
   end
 
   def sort_direction

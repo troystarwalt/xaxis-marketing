@@ -5,7 +5,7 @@
         %span oh, hi!
       %h1.lg-item-header.color-grid-text Welcome!
       %p.color-grid-text The new Xaxis Marketing Hub houses all your marketing needs - even when you're on the go. Here you can find brand assets and guidelines, up-to-date presentation templates, collateral and much more! Check back often to keep up with new materials.
-    .flex-sm-item.left-bottom#grid-box-2{style: "background-image: url(#{ @latest_post.preview_image.file.nil? ? '' : @latest_post.preview_image.preview.url});"}
+    .flex-sm-item.left-bottom#grid-box-2{style: "background: linear-gradient(to right, rgba(65, 67, 69, .5), rgba(35, 37, 38, .5)), url(#{ @latest_post.preview_image.file.nil? ? '' : @latest_post.preview_image.preview.url});"}
       .grid-content-container
         .row
           .col-sm-12
