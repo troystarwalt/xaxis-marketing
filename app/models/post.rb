@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   mount_uploader :preview_image, ImageUploader
   acts_as_taggable
   scope :tagged_by, -> (category){where(tags: {name: category})}
+  scope :published, -> {where.not(published_at: nil)}
   # scope :add_anchors_if_any_urls, -> test_for_url
   self.per_page = 6
   extend FriendlyId
