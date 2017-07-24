@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   menu priority: 2, label: proc { I18n.t "post"}
 
-  permit_params :title, :text, :author, :image, :tag_list, :preview_image, :image_cache, :preview_image_cache
+  permit_params :title, :text, :author, :image, :tag_list, :preview_image, :image_cache, :preview_image_cache, :published_at
 
   controller do
     def find_resource
@@ -30,6 +30,13 @@ ActiveAdmin.register Post do
         image_tag(f.image.url(:thumb)).html_safe
       end
       column :updated_at
+      column :published_at do |f|
+        if f.published_at.nil?
+          "Not published"
+        else
+          f.published_at
+        end
+      end
       actions
     end
 
@@ -46,6 +53,13 @@ ActiveAdmin.register Post do
       end
       row :created_at
       row :updated_at
+      row :published_at do |f|
+        if f.published_at.nil?
+          "Not published"
+        else
+          f.published_at
+        end
+      end
       active_admin_comments
     end
   end
