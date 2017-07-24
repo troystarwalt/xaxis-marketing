@@ -4,15 +4,15 @@ class PostsController < ApplicationController
 
   def index
     if params[:tag]
-      @posts =  Post.tagged_with(params[:tag]).paginate(page: params[:page])
+      @posts =  Post.published.tagged_with(params[:tag]).paginate(page: params[:page])
     else
-      @posts = Post.paginate(page: params[:page]).order(sort_button + ' ' + sort_direction)
+      @posts = Post.published.paginate(page: params[:page]).order(sort_button + ' ' + sort_direction)
     end
     @all_tags = Post.tag_counts.pluck(:name)
   end
 
   def show
-    @post = Post.friendly.find(params[:id])  # get the post from the params
+    @post = Post.published.friendly.find(params[:id])  # get the post from the params
 
     @next_posts = @post.next
     @previous_posts = @post.previous
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     # Learning section
     @last_expert = ExpertInterview.last_three
     # posts for the recent news section
-    @posts = Post.includes(:tags).order("published_at DESC").first(5)
+    @posts = Post.includes(:tags).published.order("published_at DESC").first(5)
     @latest_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     posts = @posts.map{|post| post.get_main_json}
