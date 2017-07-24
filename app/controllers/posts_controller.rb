@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def sort_button
-    Post.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+    Post.column_names.include?(params[:sort]) ? params[:sort] : "published_at"
   end
 
   def sort_direction
