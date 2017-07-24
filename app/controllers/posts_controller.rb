@@ -31,9 +31,8 @@ class PostsController < ApplicationController
     # Learning section
     @last_expert = ExpertInterview.last_three
     # posts for the recent news section
-    @posts = Post.includes(:tags).order("updated_at DESC").first(5)
+    @posts = Post.includes(:tags).order("published_at DESC").first(5)
     @latest_post = @posts.first
-    # @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
     posts = @posts.map{|post| post.get_main_json}
     posts.each do |x|
