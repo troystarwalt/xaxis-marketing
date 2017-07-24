@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     # Learning section
     @last_expert = ExpertInterview.last_three
     # posts for the recent news section
-    @posts = Post.includes(:tags).order("created_at DESC").first(5)
+    @posts = Post.includes(:tags).order("updated_at DESC").first(5)
     @latest_post = @posts.first
     # @initial_post = @posts.first
     @tags = ActsAsTaggableOn::Tag.most_used
