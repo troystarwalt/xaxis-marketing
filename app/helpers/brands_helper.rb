@@ -49,7 +49,6 @@ module BrandsHelper
         twitter: "https://twitter.com/Xaxistweets",
         instagram: "http://instagram.com/xaxis"
       },
-      boilerplate: "<p>Xaxis programmatically connects advertisers to audiences across all addressable channels to deliver measurable outcomes for brands. Through the expert use of proprietary data and advertising technology, along with unparalleled media access, Xaxis delivers scalable media solutions for clients in 47 markets across North America, Europe, Asia Pacific, Latin America, the Middle East and Africa. Advertisers working with Xaxis and its specialist companies, Triad Retail Media, Light Reaction and plista, achieve exceptionally high return on advertising spend. For more information, visit <a href='https://www.xaxis.com'>www.xaxis.com</a>.</p>",
       logo: "<p>The vertical Xaxis logo lock-up is the preferred arrangement, and is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>The horizontal Xaxis logo is to be used for smaller applications and endorsements. It is available in six variations. In most cases, and whenever possible, use the 4-color version. The negative version of the logo should only be used on a color background.</p>
       <p>For detailed logo usage, please refer to the Xaxis Brand Guidelines.</p>",
@@ -90,7 +89,6 @@ module BrandsHelper
         twitter: "https://twitter.com/triadretail/",
         instagram: "https://www.instagram.com/triadretail/"
       },
-      boilerplate: "<p>Triad Retail Media helps the world’s leading retailers and brands create, manage and operate digital media programs, turning their highly trafficked websites into valuable publishing properties. Walmart, eBay, Asda, Toys'R'Us, CVS, Sam’s Club, Staples and Kohl’s are among the major global retailers that rely on Triad Retail Media to connect more than 1,500 brands with shoppers in the purchase mindset. Headquartered in St. Petersburg, Florida, with nearly 700 team members in 14 offices worldwide, Triad Retail Media is the global leader in digital retail media. Founded in 2004, it is part of the Xaxis family of companies, under WPP’s media-buying arm GroupM. For more information, visit <a href='http://www.tiadretail.com'>www.TriadRetail.com</a> or its social media channels: <a href='https://www.linkedin.com/company/triad-retail-media?trk=nav_account_sub_nav_company_admin'>LinkedIn</a>, <a href='https://www.facebook.com/triadretail'>Facebook</a>, <a href='https://twitter.com/triadretail/'>Twitter</a> or <a href='https://www.instagram.com/triadretail/'>Instagram</a>.</p>",
       logo: "<p>The logo is a unique piece of artwork and must never be modified or altered in any way without prior approval. The preferred version of the logo is the vertical orientation; however, if a horizontal version is necessary, the secondary, non-stacked version may be used.</p>
 
       <p>The Triad Retail Media brand mark (with or without tagline) is to be used in all internal and external deliverables. This includes correspondence, proposals, contracts, editorial strategies, creative decks, and any other documentation that represents the brand and voice of Triad. </p>
@@ -137,9 +135,6 @@ module BrandsHelper
           linkedin: "https://www.linkedin.com/company/plista-gmbh",
           twitter: "https://twitter.com/plista",
         },
-        boilerplate: "<p>plista is a global platform for data-driven native advertising in premium editorial environments. The Berlin based company successfully brings advertisers and publishers together since 2008 and is one of the pioneers in its segment. plista offers direct, single-source access to a broad portfolio of native solutions. With its proprietary real-time Recommendation Technology, plista is able to deliver both content and advertising that matches users’ individual interests – across all channels and devices.</p>
-        <p>Thousands of advertisers and publishers worldwide trust in the unique tech know-how of plista. The native ad formats stand out through their strong engagement character and enable brands to efficiently target audiences along the entire sales funnel. This way, advertisers can easily pursue branding as well as performance marketing goals.</p>
-        <p>At the same time, plista empowers publishers to engage their visitors with customized recommendations. This lets publishers get the best out of their website or app and benefit from outstanding content monetization, increased website stickiness and sustainable traffic growth. plista employs over 200 people worldwide and offers its native solutions on four continents.</p>",
         logo: "<p>The primary plista logo should be used on a white background. The reversed white logo can be used on colored background.</p>",
         font: "<p>plista uses the Calibri font for use in the office and in presentations. The font is a component of Microsoft Office for Windows and Apple Macintosh and does not need to be downloaded.</p>
 
@@ -180,7 +175,6 @@ module BrandsHelper
           twitter: "https://twitter.com/LightReaction",
           instagram: "https://instagram.com/LightReaction/"
         },
-        boilerplate: "<p>Light Reaction guarantees real outcomes for brands by combining proprietary media, data and technology at scale. The company’s approach to performance marketing reaches consumers across devices to drive real outcomes for brands. Light Reaction is available in 31 markets across North America, Europe, Asia and the Middle East.  For more information, visit Light Reaction at <a href='http://www.lightreaction.com'>www.lightreaction.com</a>.</p>",
         logo: "<p>Both the primary and horizontal logos are available in three different color treatments, which need to be chosen according to how and where you plan to use the logo.</p>",
         font: "<p>Typography plays a significant role in Light Reaction’s visual system. Universe LT STD is the primary font family of Light Reaction. It should be used in three different weights: Light, Roman and Bold.</p>
         <p>For cases where Universe is not available, Arial can be used in Regular and Bold weights.</p>",
